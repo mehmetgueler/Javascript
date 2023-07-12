@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.fill()</title>
+</head>
+<body><script>
+/*La méthode fill() est une méthode intégrée dans le prototype de l'objet Array en JavaScript. Elle permet de remplir les éléments d'un tableau avec une valeur spécifique.
+
+La syntaxe de la méthode fill() est la suivante :
+
+        array.fill(value, start, end)
+
+value : La valeur avec laquelle remplir les éléments du tableau.
+start (facultatif) : L'indice de départ à partir duquel remplir les éléments. Par défaut, c'est 0 (le début du tableau).
+end (facultatif) : L'indice de fin jusqu'auquel remplir les éléments. Par défaut, c'est la longueur du tableau.
+
+
+Voici un exemple concret pour illustrer l'utilisation de la méthode fill()*/
+
+const array1 = [1, 2, 3, 4, 5];
+
+// Fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4)); 
+// Affiche [1, 2, 0, 0, 5]
+
+
+/*Dans cet exemple, nous avons un tableau appelé monTableau contenant les nombres de 1 à 5. Nous utilisons la méthode fill() sur ce tableau pour remplacer les éléments aux indices 2 et 3 (inclus) par la valeur 0.
+
+Après l'exécution de la méthode fill(), le tableau monTableau est modifié et affiche [1, 2, 0, 0, 5]. Les éléments aux indices 2 et 3 ont été remplacés par la valeur 0.
+
+La méthode fill() modifie directement le tableau existant et ne crée pas de nouveau tableau. Elle permet de remplir les éléments avec n'importe quelle valeur, que ce soit un nombre, une chaîne de caractères, un objet ou une autre valeur.
+
+N'hésitez pas à expérimenter avec la méthode fill() en modifiant les valeurs de départ et de fin, ainsi que la valeur de remplissage, pour répondre à vos besoins spécifiques.*/
+
+// Fill with 5 from position 1
+console.log(array1.fill(5, 1)); // Affiche: [1, 5, 5, 5, 5]
+
+console.log(array1.fill(6)); // Affiche: [6, 6, 6, 6, 6]
+
+/************************************************************************************/
+
+
+
+ 
+    
+    
+    
+    
+/************************************************************************************/
+const nestedArray = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+nestedArray[0].fill(0);
+nestedArray[1].fill(70, 1, 2);
+nestedArray[2].fill(100, 2);
+
+console.log(nestedArray);
+
+/*Dans cet exemple, nous avons un tableau nestedArray qui contient des sous-tableaux. Nous appliquons la méthode fill() sur chaque sous-tableau pour remplacer ses éléments par des valeurs spécifiques. Voici la signification de chaque ligne de code :
+
+nestedArray[0].fill(0);
+La première ligne remplit tous les éléments du premier sous-tableau [1, 2, 3] avec la valeur 0. Après cette ligne, le contenu du tableau nestedArray sera le suivant :
+[0, 0, 0],
+
+
+nestedArray[1].fill(70, 1, 2);
+La deuxième ligne remplit les éléments du deuxième sous-tableau [4, 5, 6] avec la valeur 70, en spécifiant une plage d'indices de 1 à 2 (non inclus). Cela signifie que seul l'élément à l'indice 1 sera remplacé par 70. Après cette ligne, le contenu du tableau nestedArray sera le suivant :
+[4, 70, 6],
+
+
+nestedArray[2].fill(100, 2);
+La troisième ligne remplit les éléments du troisième sous-tableau [7, 8, 9] avec la valeur 100, à partir de l'indice 2 jusqu'à la fin du tableau. Cela signifie que les éléments à l'indice 2 et suivants seront remplacés par 100. Après cette ligne, le contenu du tableau nestedArray sera le suivant :
+[7, 8, 100]
+
+Enfin, si nous affichons nestedArray dans la console à la fin de l'exécution, nous obtiendrons le résultat: 
+0:(3) [0, 0, 0]
+1:(3) [4, 70, 6]
+2:(3) [7, 8, 100]
+length:3
+/************************************************************************************/
+   
+
+
+
+    
+/*Supposons que vous développiez une application de gestion des tâches. Vous avez un tableau de tâches à accomplir, et vous souhaitez initialiser ce tableau avec des tâches par défaut lorsqu'un utilisateur crée un nouveau projet.*/  
+    
+// Tableau initial vide pour les tâches
+let tasks = [];
+
+// Fonction pour initialiser les tâches par défaut
+function initializeDefaultTasks() {
+  const defaultTasks = ['Tâche 1', 'Tâche 2', 'Tâche 3'];
+  tasks = new Array(defaultTasks.length).fill({ status: 'À faire' });
+  
+  // Assigner les noms des tâches par défaut
+  defaultTasks.forEach((taskName, index) => {
+    tasks[index].name = taskName;
+  });
+}
+
+// Appel de la fonction pour initialiser les tâches par défaut
+initializeDefaultTasks();
+
+// Affichage des tâches
+console.log(tasks);
+
+/*Dans cet exemple, nous avons une fonction initializeDefaultTasks() qui initialise les tâches par défaut. Nous avons un tableau defaultTasks contenant les noms des tâches par défaut que nous voulons assigner.
+
+La méthode fill() est utilisée pour remplir le tableau tasks avec des objets représentant les tâches par défaut. Nous utilisons new Array(defaultTasks.length) pour créer un nouveau tableau de la même longueur que le tableau defaultTasks, puis nous utilisons fill({ status: 'À faire' }) pour remplir chaque élément du tableau avec un objet initialisé avec le statut 'À faire'.
+
+Ensuite, nous utilisons une boucle forEach() pour assigner les noms des tâches par défaut à chaque objet tâche du tableau tasks.
+
+Après l'exécution du code, le tableau tasks contiendra les tâches par défaut avec leurs noms et le statut initial 'À faire'. Vous pouvez ensuite utiliser ce tableau dans votre application pour afficher les tâches, les modifier, etc.
+
+Cet exemple illustre comment la méthode fill() peut être utilisée pour initialiser un tableau avec des valeurs par défaut dans le contexte du développement d'applications web. Vous pouvez l'adapter en fonction de vos besoins spécifiques en ajoutant d'autres propriétés aux objets de tâches ou en utilisant des valeurs différentes.
+
+N'hésitez pas à explorer davantage la méthode fill() et à l'intégrer dans vos projets pour simplifier l'initialisation de tableaux avec des valeurs par défaut.*/
+    
+    
+</script>
+</body>
+</html>

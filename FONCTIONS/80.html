@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+    Les fonctions;  arguments <!--
+
+Arguments est un objet JavaScript qui est automatiquement créé dans chaque fonction
+et qui contient tous les arguments passés à la fonction lors de son appel.
+
+L'objet arguments peut être utilisé pour accéder aux arguments passés à une fonction,
+même si le nombre d'arguments n'est pas connu à l'avance ou s'il varie d'un appel à l'autre.
+L'objet arguments ressemble à un tableau, car il possède une propriété length qui indique le nombre d'arguments passés, 
+t des éléments numérotés à partir de 0 qui contiennent les arguments eux-mêmes.-->
+<script>
+
+function afficherArguments() {
+  for (let i = 0; i < arguments.length; i++) {
+    console.log("Argument " + i + " : " + arguments[i]);
+  }
+}
+
+afficherArguments("Bonjour", "à", "tous"); // Affiche "Argument 0 : Bonjour", "Argument 1 : à", "Argument 2 : tous"
+
+/*Dans cet exemple, la fonction afficherArguments() utilise une boucle for pour parcourir tous les éléments de l'objet
+arguments et afficher leur valeur. La fonction est appelée avec trois arguments, qui sont tous affichés à la console.
+
+Il est important de noter que l'objet arguments est un objet spécial et que certaines opérations
+qui fonctionnent normalement avec des tableaux ne fonctionnent pas avec arguments.
+Par exemple, l'objet arguments n'a pas de méthodes slice() ou push()*/
+/***************************************************************************************************/
+
+
+
+
+
+
+
+
+/***************************************************************************************************/
+function arguments(a,b) { 
+  for (let i = 0; i < arguments.length; i++) {
+    const element = arguments[i];
+    console.log(element);
+    
+  }
+}
+
+arguments(1, 2 ,3, 4, 5, 6)
+
+/***************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************************************/
+/*Imaginons que nous ayons un script JavaScript qui effectue des opérations sur une grande 
+quantité de données. Pour vérifier que ces opérations sont effectuées correctement,
+nous voulons afficher les résultats pour les 10 premières données. Dans ce cas,
+nous pouvons utiliser une boucle qui exécute une fonction pour chaque élément de données
+et affiche le résultat dans la console. Par exemple, nous pourrions avoir une fonction 
+qui calcule la moyenne d'un tableau de données, et utiliser une boucle pour afficher
+les moyennes des 10 premiers éléments du tableau. De cette façon, nous pouvons rapidement
+vérifier si nos calculs sont corrects, sans avoir à afficher toutes les données dans la console.*/
+// Définition d'une fonction qui calcule la moyenne d'un tableau de données
+// function moyenne(data) {
+//   let somme = 0;
+//   for (let i = 0; i < data.length; i++) {
+//     somme += data[i];
+//   }
+//   return somme / data.length;
+// }
+
+// // Définition d'un tableau de données
+// const data = [3, 5, 2, 7, 4, 6, 8, 1, 9, 10, 12, 13, 15, 11];
+
+// // Boucle pour afficher les moyennes des 10 premiers éléments du tableau
+// for (let i = 0; i < 10; i++) {
+//   const moy = moyenne(data.slice(0, i + 1)); // Calcul de la moyenne des i+1 premiers éléments
+//   console.log(`Moyenne des ${i + 1} premiers éléments : ${moy}`);
+// }
+
+/*Ce code calcule la moyenne des 10 premiers éléments d'un tableau de données, 
+en affichant le résultat dans la console pour chaque sous-ensemble de données.
+La boucle for parcourt les 10 premiers éléments du tableau, et la fonction
+moyenne() calcule la moyenne des éléments jusqu'à l'élément en cours.
+Le résultat est affiché dans la console avec une chaîne de caractères qui indique
+le nombre d'éléments utilisés pour le calcul. De cette façon, nous pouvons facilement
+vérifier que les résultats sont corrects pour les premiers éléments du tableau.*/
+
+
+</script>
+</body>
+
+</html>

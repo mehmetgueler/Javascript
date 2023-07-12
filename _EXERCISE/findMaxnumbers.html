@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+/*===================================================================================================================*/
+function findMax(numbers) {
+  let max = numbers[0]; // On initialise max avec le premier élément du tableau
+
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i]; // Si l'élément actuel est plus grand que max, on met à jour max
+    }
+  }
+
+  return max;
+}
+
+const numbers = [10, 5, 8, 20, 3, 15];
+console.log(findMax(numbers)); // Résultat : 20
+/*===================================================================================================================*/
+
+
+
+
+
+
+
+/*===================================================================================================================*/
+function trouverMax(tableau) {
+  return Math.max(...tableau);
+}
+
+const monTableau = [5, 12, 8, 25, 3];
+const max = trouverMax(monTableau);
+console.log(max); // Affiche : 25
+
+/*Dans cette solution, nous utilisons la fonction Math.max(...tableau) pour trouver la valeur maximale dans le tableau. Les trois points ... sont utilisés pour étaler les éléments du tableau en tant qu'arguments de la fonction Math.max. Cela nous permet de trouver directement la valeur maximale sans avoir besoin d'une boucle explicite.
+
+⁡⁢⁣⁢Notez que cette approche est plus concise et directe, mais elle peut ne pas être aussi performante que la boucle for pour des tableaux très grands. Cependant, elle offre une alternative élégante pour des tableaux de taille raisonnable.⁡*/
+/*===================================================================================================================*/
+
+
+</script>
+</body>
+</html>

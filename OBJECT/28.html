@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!--La méthode isPrototypeOf() est une méthode de l'objet Object en JavaScript
+ qui permet de vérifier si un objet est un prototype d'un autre objet.
+La syntaxe de la méthode est la suivante :-->
+
+prototypeObj.isPrototypeOf(object)
+<script>
+
+function foo() {
+    nom : 'pascal'
+}
+
+let instance    = new foo();
+// Crée une instance de l'objet foo() et stocke cette instance dans la variable instance.
+
+let checkProTypeof = foo.prototype.isPrototypeOf(instance)
+/*Vérifie si l'objet prototype de la fonction foo() est un prototype de l'objet instance,
+ et stocke le résultat (true ou false) dans la variable checkProTypeof.*/
+
+
+ console.log(checkProTypeof);//true
+
+
+const animal = {
+  makeSound() {
+    console.log('Animal sound');
+  }
+};
+
+const cat = Object.create(animal);
+
+cat.makeSound(); // Output: "Animal sound"
+
+console.log(animal.isPrototypeOf(cat)); // Output: true
+
+/*Dans cet exemple, nous avons créé deux objets, animal et cat. L'objet cat a été créé
+en utilisant la méthode Object.create() en utilisant animal comme prototype. 
+Nous avons ensuite appelé la méthode makeSound() sur cat, qui a en fait appelé la méthode
+ makeSound() de son prototype, animal. Enfin, nous avons utilisé la méthode 
+ isPrototypeOf() pour vérifier si animal est un prototype de cat, ce qui renvoie true 
+ car cat a été créé en utilisant animal comme prototype.*/
+/****************************************************************************************/
+
+
+
+
+
+
+
+
+ // Création de la fonction Animal
+function Animal() {
+  this.type = 'unknown'; // Ajoute une propriété type à chaque instance créée
+}
+
+// Création de la fonction Mammal
+function Mammal() {
+  this.hasFur = true; // Ajoute une propriété hasFur à chaque instance créée
+}
+
+// Définition du prototype de Mammal comme étant Animal.prototype
+Mammal.prototype = Object.create(Animal.prototype);
+
+// Création de la fonction Cat
+function Cat() {
+  this.sound = 'meow'; // Ajoute une propriété sound à chaque instance créée
+}
+
+// Définition du prototype de Cat comme étant Mammal.prototype
+Cat.prototype = Object.create(Mammal.prototype);
+
+// Création d'une instance de Cat
+let myCat = new Cat();
+
+// Vérification si Cat.prototype est un prototype de myCat
+console.log(Cat.prototype.isPrototypeOf(myCat)); // Output: true
+
+// Vérification si Mammal.prototype est un prototype de myCat
+console.log(Mammal.prototype.isPrototypeOf(myCat)); // Output: true
+
+// Vérification si Animal.prototype est un prototype de myCat
+console.log(Animal.prototype.isPrototypeOf(myCat)); // Output: true
+
+// Vérification si Object.prototype est un prototype de myCat
+console.log(Object.prototype.isPrototypeOf(myCat)); // Output: true
+
+/*Cet exemple utilise l'héritage de prototype pour établir des relations
+entre les fonctions Animal, Mammal et Cat. Animal est la fonction parente
+et Mammal hérite du prototype d'Animal, tandis que Cat hérite du prototype de Mammal.
+
+Nous créons ensuite une instance de Cat appelée myCat et utilisons la méthode
+isPrototypeOf() pour vérifier si 
+Cat.prototype, Mammal.prototype, Animal.prototype et Object.prototype 
+sont des prototypes de myCat. Chaque prototype étant un prototype de myCat, 
+les résultats de chaque vérification sont true.*/
+
+</script>
+
+</body>
+</html>

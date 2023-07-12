@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.keys()</title>
+</head>
+<body><script>
+
+/*Array.prototype.keys() est une méthode en JavaScript qui retourne un nouvel objet itérable contenant les clés (indices) pour chaque élément dans un tableau. Cela permet de parcourir les indices des éléments du tableau dans une boucle for...of.
+Syntaxe :
+                        array.keys()
+
+array: est le tableau sur lequel vous appelez la méthode keys().
+
+La valeur de retour de la méthode Array.prototype.keys() est un nouvel objet itérable (un itérator) qui contient les clés (indices) pour chaque élément du tableau.
+
+L'itérateur retourné est un objet qui implémente le protocole d'itérateur avec les méthodes suivantes :
+
+next(): Cette méthode permet de récupérer le prochain élément de l'itérateur. Elle renvoie un objet avec deux propriétés :
+ -value: La valeur actuelle de l'élément (la clé ou l'indice du tableau).
+ -done: Un booléen qui indique si la fin de l'itérateur a été atteinte (true si l'itérateur a parcouru tous les éléments, sinon false).*/
+
+
+ const myArray = ['value1', 'value2', 'value3'];
+
+const iterateur = myArray.keys();
+
+for (const key of iterateur) {
+  console.log(key);
+}
+/* Affiche: 0
+            1
+            2
+
+/*Dans cet exemple, nous avons un tableau myArray contenant les éléments ['value1', 'value2', 'value3'].
+En appelant myArray.keys(), nous obtenons un objet itérable appelé keysIterator qui contient les clés (indices) des éléments du tableau.
+Nous utilisons ensuite une boucle for...of pour parcourir chaque élément de keysIterator.
+À chaque itération, la variable key contient la clé (indice) de l'élément en cours dans le tableau.
+Le résultat affiche les clés 0, 1 et 2, qui sont les indices des éléments 'value1', 'value2', 'value3' dans le tableau myArray.
+La méthode Array.prototype.keys() est utile lorsque vous avez besoin de parcourir uniquement les indices d'un tableau sans accéder directement aux valeurs des éléments. Cela peut être utile lorsque vous voulez manipuler spécifiquement les indices ou les combiner avec d'autres itérables.*/
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************************************/
+//Exemple d'utilisation de next() :
+
+const myArr = ['a', 'b', 'c'];
+
+const keysIterator = myArray.keys();
+
+console.log(keysIterator.next()); // { value: 0, done: false }
+console.log(keysIterator.next()); // { value: 1, done: false }
+console.log(keysIterator.next()); // { value: 2, done: false }
+console.log(keysIterator.next()); // { value: undefined, done: true }
+
+/*Dans cet exemple, l'itérateur keysIterator parcourt successivement les clés 0, 1 et 2 du tableau myArray, et lorsqu'il atteint la fin, done devient true et value devient undefined.
+
+L'itérateur est itérable lui-même, ce qui signifie qu'il peut être utilisé dans une boucle for...of pour parcourir les clés directement, comme montré dans l'exemple précédent.
+Il est important de noter que Array.prototype.keys() retourne un itérable pour les clés, pas les valeurs des éléments du tableau. Si vous souhaitez accéder aux valeurs, vous pouvez utiliser d'autres méthodes d'itération telles que Array.prototype.forEach(), Array.prototype.map(), Array.prototype.filter(), etc., qui donnent accès à la valeur de chaque élément dans le tableau.*/
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************************************/
+
+
+
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+</script>   
+</body>
+</html>

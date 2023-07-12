@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--La syntaxe de la méthode hasOwnProperty() est la suivante :-->
+
+    nomDeLobjet.hasOwnProperty(nom_de_la_propriété)
+
+<!-- nomDeLobjet : l'objet sur lequel on souhaite vérifier l'existence d'une propriété.
+nom_de_la_propriété : le nom de la propriété que l'on souhaite vérifier.
+La méthode renvoie true si l'objet possède la propriété en question, et false sinon.*/
+
+/*La méthode hasOwnProperty() est utilisée pour déterminer si un objet possède une propriété
+spécifique. Cette méthode renvoie une valeur booléenne (true ou false)
+indiquant si l'objet possède la propriété en question.
+
+Il est important de noter que cette méthode ne vérifie pas si la propriété est héritée à partir de la
+chaîne de prototypes de l'objet, elle ne renvoie que true si la propriété est directement définie sur
+l'objet lui-même.
+
+Cette méthode est utile pour éviter des erreurs lors de la manipulation des objets, notamment 
+lorsqu'on itère sur leurs propriétés ou qu'on cherche à accéder à une propriété spécifique. En
+vérifiant si une propriété existe sur un objet avant d'y accéder, on évite des erreurs de type 
+"undefined" ou "null"-->
+
+<script>
+
+// Création d'un objet nommé "unObjet" avec 3 propriétés nommées "propriete1", "propriete2" et "propriete3"
+let unObjet = {
+propriete1:"valeur1",
+propriete2:"valeur1",
+propriete3: 'valeur3'
+};
+
+// Appel de la méthode "hasOwnProperty" sur l'objet "unObjet" avec chaque propriété en paramètre pour vérifier leur existence
+let hasProp1 = unObjet.hasOwnProperty("propriete1");//true
+let hasProp2 = unObjet.hasOwnProperty("propriete2");//true
+let hasProp3 = unObjet.hasOwnProperty("propriete3");//true
+let hasProp4 = unObjet.hasOwnProperty("propriete4");//false il 'unObjet' n'a pas de proprité 4
+
+console.log(hasProp1, hasProp2, hasProp3, hasProp4);//true true true false
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+let lObjet = {
+    propriete1: 1,
+    propriete2: 2,
+    propriete3: 3,
+}
+
+let methode1 = lObjet['hasOwnProperty']('propriete1');
+let methode2 = lObjet['hasOwnProperty']('propriete2');
+let methode3 = lObjet['hasOwnProperty']('propriete3');
+let methode4 = lObjet['hasOwnProperty']('propriete4');
+
+console.log(methode1);//true
+console.log(methode2);//true
+console.log(methode3);//true
+console.log(methode4);//true
+/*La syntaxe avec les crochets [] est utilisée pour accéder à la méthode "hasOwnProperty()",
+car c'est une propriété de l'objet et non une méthode globale. Nous avons également stocké
+les résultats de chaque appel de méthode dans des variables, puis les avons imprimés dans
+la console à l'aide de "console.log()"*/
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+// Vérifier si une propriété existe sur un objet***********************
+const monObjet = {
+  nom: "Jean",
+  age: 30
+};
+
+if (monObjet.hasOwnProperty("nom")) {
+  console.log("L'objet possède une propriété 'nom'");
+} else {
+  console.log("L'objet ne possède pas la propriété 'nom'");
+}
+
+
+
+
+//Vérifier si une propriété est héritée*******************************
+const monObjet2 = {
+  nom: "Jean",
+  age: 30
+};
+
+const lObjet2 = Object.create(monObjet2);
+
+if (lObjet2.hasOwnProperty("nom")) {
+  console.log("L'objet possède une propriété 'nom'");
+} else {
+  console.log("L'objet ne possède pas la propriété 'nom'");
+}
+
+
+
+
+//Itérer sur les propriétés d'un objet****************************
+const lObjet3 = {
+  nom: "Jean",
+  age: 30
+};
+
+for (const prop in lObjet3) {
+  if (lObjet3.hasOwnProperty(prop)) {
+    console.log(`La propriété '${prop}' est définie sur l'objet`);
+  } else {
+    console.log(`La propriété '${prop}' est héritée de la chaîne de prototypes`);
+  }
+}
+
+
+/*Il est important de noter que la méthode hasOwnProperty() vérifie uniquement l'existence 
+d'une propriété dans l'objet lui-même, et pas dans sa chaîne de prototypes. Si l'on souhaite
+vérifier l'existence d'une propriété dans l'objet et dans ses prototypes, on peut utiliser 
+la méthode in.*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+  FONCTIONS IMBRIQUÉES  Les fonction en cascade
+  Nested function
+<script>
+
+// Définition de la fonction "x" avec deux arguments "a" et "b"
+function x(a, b) {
+  // Définition de la fonction imbriquée "y" avec deux arguments "c" et "d"
+  function y(c, d) {
+    console.log(c, d);
+  }
+  // Appel de la fonction "y" avec les arguments "a" et "b"
+  // La fonction "y" est appelée dans la portée de la fonction "x"
+  // L'appel de "y" renvoie l'exécution de la fonction "y" avec les arguments "a" et "b"
+  // Ensuite, le résultat de l'exécution de la fonction "y" est renvoyé à l'appelant de la fonction "x"
+  // Dans ce cas, le résultat de l'appel de la fonction "y" est l'affichage de "arg1" et "arg2" à la console
+  return y(a, b);
+}
+
+x('arg1', 'arg2');
+
+// Appel de la fonction "x" avec les arguments "arg1" et "arg2"
+// La fonction "x" est appelée avec les arguments "arg1" et "arg2"
+// Cela déclenche l'exécution de la fonction "x"
+// La fonction "x" appelle ensuite la fonction "y" avec les arguments "arg1" et "arg2"
+// La fonction "y" affiche "arg1" et "arg2" à la console
+/*********************************************************************************************/
+
+
+function aFoo(a, b) {
+  function bFoo(c) {
+    console.log(c * c);    // Affichage de la valeur de "c" au carré à la console
+  }
+  return bFoo(a) + bFoo(b);
+}  // Appel de la fonction "bFoo" avec l'argument "a"
+  // La fonction "bFoo" est appelée avec l'argument "a"
+  // L'appel de "bFoo(a)" renvoie l'exécution de la fonction "bFoo" avec l'argument "a"
+  // Dans ce cas, la fonction "bFoo" affiche la valeur de "a" au carré à la console
+  // Ensuite, la valeur renvoyée par l'appel de "bFoo(a)" est utilisée dans l'addition suivante
+  // Appel de la fonction "bFoo" avec l'argument "b"
+  // La fonction "bFoo" est appelée avec l'argument "b"
+  // L'appel de "bFoo(b)" renvoie l'exécution de la fonction "bFoo" avec l'argument "b"
+  // Dans ce cas, la fonction "bFoo" affiche la valeur de "b" au carré à la console
+  // Ensuite, la valeur renvoyée par l'appel de "bFoo(b)" est utilisée dans l'addition suivante
+  // L'addition de la valeur renvoyée par l'appel de "bFoo(a)" et celle de "bFoo(b)" est renvoyée à l'appelant de la fonction "aFoo"
+  // Dans ce cas, le résultat de l'addition est affiché à la console, qui est le résultat final de l'exécution de la fonction "aFoo"
+
+
+  aFoo(5, 10);
+// Appel de la fonction "aFoo" avec les arguments "5" et "10"
+// La fonction "aFoo" est appelée avec les arguments "5" et "10"
+// Cela déclenche l'exécution de la fonction "aFoo"
+// La fonction "aFoo" appelle ensuite la fonction "bFoo" deux fois avec les arguments "5" et "10" respectivement
+// La fonction "bFoo" affiche la valeur de chaque argument au carré à la console
+// Ensuite, la fonction "aFoo" retourne l'addition des résultats des deux appels à "bFoo", qui est "25 + 100" = 125
+// Ce résultat est affiché à la console en tant que résultat final de l'exécution de la fonction "aFoo"
+/*********************************************************************************************/
+
+
+
+
+
+
+/*********************************************************************************************/
+function foo1(a) {
+  function foo2(b) {
+    console.log(b);
+  }
+  return foo2(a)  // Retourne l'exécution de foo2 avec l'argument a
+}
+
+foo1(5);// Appelle la fonction foo1 avec 5 comme argument
+
+/*- La fonction foo1 prend un argument a.
+- À l'intérieur de foo1, il y a une autre fonction appelée foo2 qui prend un argument b et imprime la valeur de b dans la console.
+- Enfin, foo1 retourne l'exécution de foo2 avec l'argument a.
+- Lorsque foo1 est appelé avec 5 comme argument, foo2 est également appelé avec 5 comme argument, ce qui imprime 5 dans la console.
+- Donc, la sortie de ce code serait 5.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mfoo1(a) {
+  function mfoo2(b) {
+    function mfoo3(c) {
+      function mfoo4(d) {
+        return a + b + c + d;
+      }
+      
+      return mfoo4; // La fonction 'foo3' retourne la fonction 'foo4'
+    }
+    return mfoo3; // La fonction 'foo2' retourne la fonction 'foo3'
+  }
+  return mfoo2; // La fonction 'foo1' retourne la fonction 'foo2'
+}
+
+let avar = mfoo1(4)(5)(6)(7); // Appel de la fonction 'foo1' avec les arguments 4, 5, 6 et 7
+console.log(avar); // Affichage du résultat retourné par 'foo4': 22 (4 + 5 + 6 + 7)
+
+
+/*Dans cet exemple, la fonction "foo1" retourne la fonction "foo2", qui elle-même retourne la fonction
+"foo3", qui à son tour retourne la fonction "foo4".
+La fonction "foo4" ajoute les quatre arguments passés à travers toutes les fonctions imbriquées.
+En appelant la fonction "foo1" avec les arguments 4, 5, 6 et 7, cela retourne la fonction "foo2",
+qui elle retourne la fonction "foo3", qui elle retourne enfin la fonction "foo4". 
+La variable "avar" contiendra donc la fonction "foo4", et en l'appelant, nous obtenons le résultat
+de l'addition des quatre arguments passés initialement.*/
+
+
+
+
+
+  </script>
+</body>
+
+</html>

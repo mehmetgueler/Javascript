@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+  <script>
+
+/* Création d'un constructeur d'objet en JavaScript
+ à l'aide de la méthode classique en utilisant la fonction*/
+
+ // Définition d'une fonction constructeur
+function myFoo() {
+  this.nom    = 'pascal';
+  this.prenom = 'blaise';
+}
+// Utilisation du constructeur pour créer un nouvel objet
+let personne = new myFoo()
+
+console.log(personne.nom);// affiche: pascal
+console.log(personne.prenom);//affiche: blaise
+console.log(personne);//myFoo {nom: 'pascal', prenom: 'blaise'}
+
+/*Dans ce code, la fonction myFoo sert de constructeur pour les objets que nous créons en utilisant
+l'opérateur new. Lorsque nous appelons la fonction myFoo avec new, un nouvel objet est créé
+avec les propriétés nom et prenom initialisées à 'pascal' et 'blaise', respectivement.
+
+La méthode classique de création de constructeurs d'objet en JavaScript utilise une fonction
+qui définit les propriétés de l'objet en utilisant l'objet this. Lorsque la fonction est appelée
+avec l'opérateur new, elle crée un nouvel objet et initialise ses propriétés.
+
+En résumé, ce code illustre comment créer un constructeur d'objet en utilisant une fonction
+en JavaScript, en utilisant la méthode classique. Ce type de constructeur d'objet est
+couramment utilisé pour créer des objets avec des propriétés spécifiques en JavaScript*/
+
+
+
+//PEUT ETRE DECLARÉ DANS UNE VARIABLE///
+
+let maFonction = function () {
+  this.nom_x    = 'ritchie';
+  this.prenom_x = 'dennis';
+}
+
+let personne_x = new maFonction()
+
+console.log(personne_x.xnom);
+console.log(personne_x.xprenom);
+console.log(personne_x);
+
+
+
+  </script>
+</body>
+</html>

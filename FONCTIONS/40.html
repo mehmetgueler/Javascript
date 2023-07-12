@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+    FONCTION IMBRIQUÉE : utilisation d'une fonction dans une autre fonction
+    Nested function
+<script>
+
+
+function externe(parametre1) {
+  console.log("Je suis la fonction externe avec le paramètre " + parametre1);
+
+  function interne(parametre2) {  //  fonction interne
+    console.log("Je suis la fonction interne avec le paramètre " + parametre2);
+  }
+  interne("valeur2");  // Appel de la fonction interne
+}
+
+externe("valeur1");// Appel de la fonction externe
+
+/*Ici, nous avons une fonction nommée "externe" qui prend un paramètre "parametre1".
+À l'intérieur de cette fonction, nous avons défini une autre fonction nommée "interne"
+qui prend un paramètre "parametre2". Nous avons également appelé la fonction interne à
+partir de la fonction externe.
+
+Lorsque nous appelons la fonction externe avec l'argument "valeur1", elle affiche le message
+"Je suis la fonction externe avec le paramètre valeur1" dans la console,
+puis elle appelle la fonction interne avec l'argument "valeur2", qui affiche le message
+ "Je suis la fonction interne avec le paramètre valeur2" dans la console.
+
+Cet exemple montre comment une fonction peut appeler une autre fonction à l'intérieur d'elle-même,
+et comment les paramètres peuvent être transmis de la fonction externe à la fonction interne.*/
+/*************************************************************************************/
+
+
+
+
+
+
+/*************************************************************************************/
+// Définition de la première fonction
+function printName(name) {
+  console.log('Bonjour ' + name);
+}
+
+function greet() {// Définition de la deuxième fonction
+  let name = 'John';
+  printName(name); // Appel de la première fonction avec le paramètre 'name'
+}
+
+// Appel de la deuxième fonction
+greet(); // La fonction 'printName' est appelée à partir de la fonction 'greet'
+
+/*Dans cet exemple, la fonction greet appelle la fonction printName en lui passant
+le paramètre name. Lorsque la fonction greet est appelée, elle définit d'abord la valeur de name,
+puis elle appelle la fonction printName en utilisant cette valeur.
+La fonction printName affiche ensuite le message "Bonjour John" dans la console.
+**************************************************************************************/
+
+
+
+
+
+
+
+/*************************************************************************************/
+function multiplpardeux(num) {
+  return num * 2;
+}
+
+function ajouterdeux(num) {
+  return num + 2;
+}
+
+function multiplierEtAjouter(num1, num2) {
+  let result = multiplpardeux(num1);
+  result = ajouterdeux(result + num2);
+  return result;
+}
+
+console.log(multiplierEtAjouter(5, 3)); // Output : 15
+/*************************************************************************************/
+
+
+
+
+
+
+/*************************************************************************************/
+// La première fonction, "calculerTotal", calcule le montant total en multipliant le prix unitaire par la quantité
+function calculerTotal(prixUnitaire, quantite) {
+  let total = prixUnitaire * quantite;
+  return total;
+}
+
+// La deuxième fonction, "imprimerFacture", prend en paramètres le nom du client, le prix unitaire et la quantité, et affiche une facture à l'écran
+function imprimerFacture(nomClient, prixUnitaire, quantite) {
+  let total = calculerTotal(prixUnitaire, quantite);
+  console.log("Facture pour " + nomClient);
+  console.log("Prix unitaire : " + prixUnitaire);
+  console.log("Quantité : " + quantite);
+  console.log("Total : " + total);
+}
+
+imprimerFacture("John Doe", 10, 5);// Appel de la fonction "imprimerFacture" avec des arguments spécifiques
+
+
+/*La fonction "calculerTotal" prend en paramètres le prix unitaire et la quantité d'un produit,
+et retourne le montant total de la commande en multipliant ces deux valeurs.
+
+La fonction "imprimerFacture" prend en paramètres le nom du client, le prix unitaire et la quantité 
+d'un produit, calcule le montant total en appelant la fonction "calculerTotal", 
+et affiche une facture à l'écran en utilisant console.log.
+
+Enfin, la fonction "imprimerFacture" est appelée avec des arguments spécifiques pour générer
+une facture pour un client particulier avec un prix unitaire et une quantité donnés.*/
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+        Fonctions simple (sans arguments)
+
+<script>
+
+/*Une fonction, dans le contexte de la programmation, est une unité de code autonome qui effectue une tâche spécifique. Elle regroupe un ensemble d'instructions, appelées le corps de la fonction, qui peuvent être exécutées à plusieurs endroits du programme en utilisant un appel à la fonction.
+
+Les fonctions sont utilisées pour organiser et structurer le code, réduire la duplication du code et faciliter la réutilisation. Elles permettent de diviser un programme en tâches plus petites et plus gérables, appelées fonctions, qui peuvent être appelées lorsque nécessaire.
+
+Une fonction se compose généralement des éléments suivants :
+
+Signature de la fonction : La signature de la fonction comprend son nom et la liste des paramètres qu'elle accepte. Les paramètres sont des variables utilisées par la fonction pour recevoir des valeurs lors de son appel.
+
+Corps de la fonction : Le corps de la fonction contient l'ensemble des instructions qui seront exécutées lorsque la fonction est appelée. Il définit le comportement de la fonction et peut inclure des opérations, des calculs, des conditions, des boucles et d'autres instructions.
+
+Valeur de retour : Une fonction peut également renvoyer une valeur en utilisant le mot-clé return. La valeur de retour est le résultat de l'exécution de la fonction et peut être utilisée dans d'autres parties du code qui appellent la fonction.
+
+Voici un exemple simple de déclaration et d'appel d'une fonction en JavaScript :*/
+
+function afficherHeure() {
+  const date = new Date();
+  const heure = date.getHours();
+  const minutes = date.getMinutes();
+  
+  console.log(`Il est ${heure} heures et ${minutes} minutes.`);
+}
+
+afficherHeure(); // Appel de la fonction
+
+
+/*Dans cet exemple, nous avons une fonction nommée afficherHeure qui ne prend aucun argument. À l'intérieur de cette fonction, nous utilisons l'objet Date pour obtenir la date et l'heure actuelles. Ensuite, nous extrayons l'heure et les minutes de cette date en utilisant les méthodes getHours() et getMinutes().
+
+Ensuite, nous utilisons console.log() pour afficher le message "Il est X heures et Y minutes." dans la console, où X est remplacé par la valeur de heure et Y par la valeur de minutes.
+
+En appelant simplement la fonction afficherHeure(), nous pouvons obtenir l'heure actuelle affichée dans la console.
+
+Cet exemple illustre comment une fonction sans argument peut être utilisée pour effectuer une tâche spécifique, dans ce cas afficher l'heure actuelle. En encapsulant cette action dans une fonction, nous pouvons réutiliser facilement ce code à différents endroits de notre programme sans avoir à le réécrire.*/
+
+
+
+
+</script>
+</body>
+</html>

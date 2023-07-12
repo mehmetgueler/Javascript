@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+/*=======================================================================================================================*/
+function countVowels(str) {
+  // Convertir la chaîne en minuscules pour simplifier la recherche des voyelles
+  const lowerCaseStr = str.toLowerCase();
+    
+  let vowelCount = 0; // Initialiser un compteur pour les voyelles
+  
+  // Parcourir chaque caractère de la chaîne
+  for (let i = 0; i < lowerCaseStr.length; i++) {
+    const char = lowerCaseStr[i];
+    
+    // Vérifier si le caractère est une voyelle
+    if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      vowelCount++;
+    }
+  }
+  
+  // Renvoyer le nombre de voyelles comptées
+  return vowelCount;
+}
+
+console.log(countVowels("hello")); // Résultat : 2
+console.log(countVowels("programming")); // Résultat : 3
+console.log(countVowels("Créer")); // 1 (vous pouvez ajouter: é, è, ë, ê, â, à dans la condition)
+/*=======================================================================================================================*/
+
+
+
+
+
+
+
+
+
+
+console.log("....");
+/*=======================================================================================================================*/
+function voyelles(str) {
+  // Utiliser une expression régulière pour rechercher toutes les voyelles dans la chaîne
+  const nbrvoyelles = str.match(/[aeiou]/gi);
+  
+  // Si aucune voyelle n'est trouvée, renvoyer 0
+  if (!nbrvoyelles) {
+    return 0;
+  }
+  
+  // Renvoyer le nombre de voyelles trouvées
+  return nbrvoyelles.length;
+}
+
+console.log(voyelles("Salut")); // Résultat : 2
+console.log(voyelles("Trouver les nombres des voyelles")); // Résultat : 3
+/*=======================================================================================================================*/
+
+
+
+</script>
+</body>
+</html>

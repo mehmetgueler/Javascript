@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Function</title>
+</head>
+<body>
+            Fonction récursive
+
+<script>
+
+/*Une fonction récursive est une fonction qui s'appelle elle-même à l'intérieur de sa propre définition. En d'autres termes, une fonction récursive résout un problème en le subdivisant en cas plus simples et en utilisant la même fonction pour résoudre ces cas plus simples.
+
+Une fonction récursive comporte généralement deux parties :
+
+Cas de base : Il s'agit de la condition dans laquelle la fonction cesse de s'appeler elle-même et renvoie directement une valeur sans effectuer d'autres appels récursifs. Cela permet de définir la fin de la récursion et d'éviter une boucle infinie.
+
+Cas récursif : Il s'agit de la partie de la fonction où elle s'appelle elle-même avec des arguments modifiés. Cela permet de résoudre le problème de manière répétitive en se rapprochant du cas de base à chaque appel récursif.
+
+L'utilisation d'une fonction récursive peut simplifier la résolution de problèmes complexes en les décomposant en sous-problèmes plus simples. Cependant, il est important de s'assurer que chaque appel récursif progresse vers le cas de base pour éviter une récursion infinie.*/
+
+
+function sommeNombres(n) {
+  // Cas de base
+  if (n === 1) {
+    return 1;
+  }
+  
+  // Cas récursif
+  return n + sommeNombres(n - 1);
+}
+
+console.log(sommeNombres(5)); // Affiche 15 (1 + 2 + 3 + 4 + 5)
+
+/*Dans cet exemple, la fonction sommeNombres s'appelle elle-même avec un argument réduit à chaque appel récursif. Lorsque n atteint 1, la fonction atteint le cas de base et renvoie directement la valeur 1. Les appels récursifs se résolvent ensuite en remontant la pile d'appels, ajoutant chaque nombre à la somme cumulative*/
+
+
+
+
+
+
+
+
+
+
+/*Une fonction récursive peut être divisée en plusieurs étapes :
+
+Définition du cas de base : Le cas de base est la condition dans laquelle la fonction récursive s'arrête et retourne un résultat sans effectuer d'appels récursifs supplémentaires. Il est essentiel d'avoir un cas de base pour éviter une boucle infinie. Chaque appel récursif doit progresser vers le cas de base.
+
+Décomposition du problème : Dans la partie récursive de la fonction, le problème initial est décomposé en un ou plusieurs sous-problèmes plus simples. Ces sous-problèmes doivent être des versions plus petites ou plus simples du problème initial.
+
+Appel récursif : À l'intérieur de la fonction, elle s'appelle elle-même en résolvant les sous-problèmes décomposés. Les appels récursifs utilisent généralement des paramètres modifiés pour progresser vers le cas de base.
+
+Combinaison des résultats : Lorsque les appels récursifs se résolvent et atteignent le cas de base, les résultats sont combinés pour obtenir le résultat final de la fonction.*/
+
+function factoriel(n) {
+  // Cas de base
+  if (n === 0) {
+    return 1;
+  }
+  
+  // Cas récursif
+  return n * factoriel(n - 1);
+}
+
+console.log(factoriel(5)); // Affiche 120 (5! = 5 * 4 * 3 * 2 * 1)
+
+/*Dans cet exemple, la fonction factoriel s'appelle elle-même avec un argument réduit (n - 1) à chaque appel récursif. Lorsque n atteint 0, la fonction atteint le cas de base et renvoie directement la valeur 1. Les appels récursifs se résolvent ensuite en remontant la pile d'appels, multipliant chaque nombre jusqu'à atteindre le résultat final.
+
+⁡⁢⁣⁢Il est important de noter que les fonctions récursives doivent être conçues de manière à ce que chaque appel récursif réduise le problème et progresse vers le cas de base. Si les appels récursifs ne se résolvent pas correctement, cela peut entraîner une boucle infinie ou une dépassement de la pile d'appels.*/
+
+
+
+
+
+
+
+
+//Appels récursifs et conditions d'arrêt
+function decompte(t) {
+    if (t > 0) {
+        console.log(t);
+        return decompte(t - 1);
+    }else{
+        return t;
+    }
+};
+
+decompte(7);
+
+/*La fonction decompte prend un paramètre t qui représente le nombre à partir duquel nous voulons effectuer le décompte.
+
+À l'intérieur de la fonction, il y a une condition if qui vérifie si t est supérieur à 0. Si c'est le cas, la fonction affiche la valeur actuelle de t à l'aide de console.log(t) et effectue un appel récursif à decompte avec t - 1.
+
+L'appel récursif signifie que la fonction decompte est appelée à nouveau avec t - 1 en tant que nouvel argument. Cela permet d'effectuer le décompte à rebours jusqu'à ce que t atteigne 0.
+
+Lorsque t atteint 0, la condition if est fausse et la fonction retourne t, mettant ainsi fin à la récursion.
+
+En appelant la fonction decompte avec un argument de départ de 7 (decompte(7)), le code effectuera un décompte à rebours de 7 à 0 en affichant chaque valeur à la console.
+
+Le résultat de l'exécution du code sera l'affichage de nombres de 7 à 0 à la console.*/
+
+
+</script>
+</body>
+</html>

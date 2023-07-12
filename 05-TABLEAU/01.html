@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau en Javascript</title>
+</head>
+<body><script>
+
+/*Accéder aux éléments d'un tableau
+
+Indexation des éléments
+Dans un tableau, chaque élément est associé à un index. L'index est un numéro entier qui représente la position de l'élément dans le tableau. L'index du premier élément est généralement 0, le deuxième élément a un index de 1, et ainsi de suite.
+
+Pour accéder aux éléments d'un tableau en JavaScript, vous devez utiliser l'indice de chaque élément. L'indice commence à 0 pour le premier élément, puis s'incrémente de 1 pour chaque élément suivant.
+
+Supposons que vous ayez un tableau appelé monTableau contenant les éléments suivants : "élément 1", "élément 2" et "élément 3".
+
+Pour accéder à un élément spécifique du tableau, vous utilisez la notation des crochets ([]) en spécifiant l'indice de l'élément souhaité. Par exemple, monTableau[0] accède au premier élément du tableau, monTableau[1] accède au deuxième élément et monTableau[2] accède au troisième élément.
+
+Voici un exemple de code JavaScript qui illustre cela :*/
+
+// Déclaration du tableau
+var monTableau = ["élément 1", "élément 2", "élément 3"];
+                //  console.log(monTableau[0]);
+                //  console.log(monTableau[1]);
+                //  console.log(monTableau[2]);
+
+// Accéder aux éléments du tableau
+var premierElement = monTableau[0]; // Accède au premier élément
+var deuxiemeElement = monTableau[1]; // Accède au deuxième élément
+var troisiemeElement = monTableau[2]; // Accède au troisième élément
+
+// Affichage des éléments dans la console
+console.log(premierElement); // Affiche "élément 1"
+console.log(deuxiemeElement); // Affiche "élément 2"
+console.log(troisiemeElement); // Affiche "élément 3"
+
+/*Dans cet exemple, nous déclarons le tableau monTableau contenant trois éléments. Ensuite, nous utilisons la notation avec les crochets pour accéder à chaque élément individuel du tableau en spécifiant son indice.
+
+N'oubliez pas que les indices commencent à partir de zéro (0), donc le premier élément a un indice de 0, le deuxième a un indice de 1, et ainsi de suite.*/
+
+
+
+
+
+
+
+/*Accès et modification des éléments
+Une fois que vous avez accédé à un élément d'un tableau, vous pouvez le lire ou le modifier selon vos besoins. Voici comment vous pouvez faire :*/
+
+let monTab = ['valeur1', 'valeur2', 'valeur3'];
+console.log(monTab[1]); // Affiche 'valeur2'
+
+monTab[1] = 'kiwi'; // Modifie l'élément à l'index 1
+console.log(monTab[1]); // Affiche 'kiwi'
+
+
+
+
+
+
+/*Longueur d'un tableau
+La propriété length d'un tableau vous permet de connaître le nombre d'éléments qu'il contient. Voici un exemple :*/
+
+
+let myArray = [50, 'ada', 'c++'];
+console.log(myArray.length); // Affiche 3
+
+
+
+
+
+
+/*Méthodes de parcours des éléments
+Il existe plusieurs méthodes pour parcourir les éléments d'un tableau. Les boucles for et forEach() sont deux options couramment utilisées.
+
+La boucle for vous permet de parcourir les éléments en utilisant les index. Voici un exemple :*/
+
+let fruits = ['pomme', 'banane', 'orange'];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+  }
+/*      Affiche : pomme
+                  banane
+                  orange
+*/
+
+
+
+/*La méthode forEach() est une méthode pratique pour parcourir les éléments d'un tableau. Elle prend une fonction de rappel en argument, qui sera exécutée pour chaque élément du tableau. Voici un exemple :*/
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+/*      Affiche : pomme
+                  banane
+                  orange
+*/
+
+
+</script>
+</body>
+</html>

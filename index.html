@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<script>
+
+
+let users = [
+  { nom: 'John Doe', email: 'john.doe@example.com' },
+  { nom: 'Jane Smith', email: 'jane.smith@example.com' },
+  { nom: 'Mike Johnson', email: 'mike.johnson@example.com' },
+  { nom: 'Emily Davis', email: 'emily.davis@example.com' }
+];
+
+// Création du tableau HTML
+let table = document.createElement('table');
+
+// Création de l'en-tête du tableau
+let thead = document.createElement('thead');
+let headerRow = document.createElement('tr');
+let headers = ['Nom', 'Email'];
+
+headers.forEach(function(headerText) {
+  let th = document.createElement('th');
+  th.textContent = headerText;
+  headerRow.appendChild(th);
+});
+
+thead.appendChild(headerRow);
+table.appendChild(thead);
+
+// Création des lignes du tableau avec les données des utilisateurs
+let tbody = document.createElement('tbody');
+
+users.forEach(function(user) {
+  let row = document.createElement('tr');
+  let nomCell = document.createElement('td');
+  let emailCell = document.createElement('td');
+
+  nomCell.textContent = user.nom;
+  emailCell.textContent = user.email;
+
+  row.appendChild(nomCell);
+  row.appendChild(emailCell);
+  tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+
+// Ajout du tableau à un élément existant dans la page
+let tableContainer = document.getElementById('table-container');
+tableContainer.appendChild(table);
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

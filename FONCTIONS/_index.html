@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+<script>
+/*En programmation, une fonction est un bloc de code réutilisable conçu pour effectuer une tâche spécifique. Elle permet de regrouper des instructions afin d'accomplir une action ou de résoudre un problème particulier. L'utilisation de fonctions présente plusieurs avantages :
+
+Modularité : Les fonctions permettent de diviser un programme en parties plus petites et autonomes. Cela facilite la compréhension du code, le rend plus lisible et facilite la maintenance.
+
+Réutilisabilité : Une fois une fonction écrite, elle peut être appelée et réutilisée à plusieurs endroits dans le programme. Cela évite la duplication de code et permet de gagner du temps lors du développement.
+
+Abstraction : Les fonctions permettent d'abstraire des détails d'implémentation complexes derrière une interface simple. Cela permet aux autres développeurs d'utiliser une fonction sans avoir à se soucier de la façon dont elle est mise en œuvre.
+
+Structuration du code : En utilisant des fonctions, vous pouvez organiser votre code en divisant des tâches complexes en sous-tâches plus petites et gérables. Cela facilite également le débogage et la correction des erreurs.
+
+Passage de paramètres : Les fonctions peuvent prendre des paramètres en entrée, ce qui permet de personnaliser leur comportement en fonction des valeurs fournies. Les paramètres permettent de transmettre des données à la fonction pour qu'elle les utilise lors de son exécution.
+
+Retour de valeurs : Les fonctions peuvent également renvoyer une valeur en sortie après avoir effectué leurs calculs ou leurs traitements. Cela permet de récupérer un résultat ou une information spécifique provenant de la fonction.
+
+En résumé, les fonctions en programmation servent à structurer, réutiliser et simplifier le code en regroupant des instructions spécifiques pour effectuer des tâches définies. Elles améliorent la lisibilité, la maintenabilité et la modularité du code, tout en facilitant la résolution de problèmes.
+
+En JavaScript, la syntaxe pour déclarer une fonction est la suivante :*/
+
+
+
+/****************************************************************************************************************************/
+function nomDeLaFonction() {
+   // Corps de la fonction
+   // Instructions à exécuter
+   // ...
+  }
+
+
+
+
+/*function est le mot-clé utilisé pour déclarer une fonction.
+nomDeLaFonction est le nom que vous choisissez pour votre fonction. Il doit être unique et refléter la tâche que la fonction effectue.
+Le corps de la fonction est délimité par des accolades {} et contient les instructions à exécuter.*/
+/*****************************************************************************************************************************/
+
+
+
+
+/*****************************************************************************************************************************/
+/*Exécution d'une fonction
+Lorsque nous exécutons une fonction en JavaScript, nous faisons en sorte que l'ordinateur exécute un ensemble d'instructions spécifiques qui se trouvent à l'intérieur de cette fonction. Voici comment cela fonctionne :
+
+1.) Appel de la fonction :
+Pour exécuter une fonction, nous utilisons son nom suivi de parenthèses. Par exemple :*/
+
+nomDeLaFonction();
+
+/*
+2.) Exécution du code de la fonction :
+Lorsque nous appelons la fonction, le programme se déplace à l'intérieur de cette fonction et exécute les instructions qui s'y trouvent. Les instructions sont exécutées séquentiellement, une après l'autre, du haut vers le bas.
+
+3.) Accomplissement de la tâche :
+Le code à l'intérieur de la fonction est conçu pour accomplir une tâche spécifique. Il peut s'agir de calculs, de modifications de variables, de l'affichage de messages, ou d'autres actions selon ce que la fonction a été programmée pour faire.
+
+4.) Retour au point d'appel :
+Une fois que le code à l'intérieur de la fonction a été exécuté, le programme retourne à l'endroit où la fonction a été appelée. Il continue son exécution à partir de là.
+
+L'exécution d'une fonction est utile lorsque nous avons un ensemble d'instructions que nous voulons réutiliser à plusieurs endroits dans notre programme. Plutôt que de copier-coller le même code à plusieurs endroits, nous pouvons simplement appeler la fonction à chaque endroit où nous avons besoin d'exécuter ce code spécifique.
+
+En comprenant comment appeler et exécuter une fonction, vous pourrez utiliser cette fonctionnalité de base pour organiser et simplifier votre code./******************************************************************************************************************************/
+
+
+
+
+
+
+
+/***************************************************************************************************************************/
+function direBonjour() {
+  console.log("Bonjour !");
+}
+
+direBonjour(); // Appel de la fonction
+
+/*Dans cet exemple, nous avons une fonction nommée direBonjour. À l'intérieur de cette fonction, nous avons une seule instruction qui affiche le message "Bonjour !" dans la console à l'aide de console.log().
+
+Ensuite, nous appelons la fonction en utilisant son nom suivi de parenthèses : direBonjour();. Lorsque cette ligne est exécutée, le programme se déplace à l'intérieur de la fonction et exécute l'instruction console.log("Bonjour !");, affichant ainsi le message "Bonjour !" dans la console.
+
+L'exemple montre comment encapsuler une action (afficher un message de salutation) dans une fonction et l'exécuter en appelant simplement cette fonction. Cela permet de réutiliser facilement cette action à différents endroits de notre programme sans avoir à réécrire le code correspondant.
+
+Cet exemple simple démontre comment une fonction est exécuté. Dans des cas plus complexes, les fonctions peuvent prendre des paramètres, effectuer des calculs, utiliser des boucles ou des conditions, et bien plus encore. Cependant, le principe fondamental de l'exécution reste le même : appeler la fonction pour exécuter son code interne.*/
+/******************************************************************************************************************************/
+
+
+
+</script>
+</body>
+</html>

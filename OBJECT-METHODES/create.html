@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les méthodes fondamentales des objets</title>
+</head>
+<body>
+<script>
+/*La méthode Object.create() est une fonction(méthode) statique de l'objet Object en JavaScript. Elle permet de créer un nouvel objet en utilisant un objet existant comme prototype. Cela permet de mettre en place une relation de prototype entre les objets, ce qui facilite l'héritage des propriétés et des comportements.
+
+Voici la syntaxe générale de Object.create() :
+
+                Object.create(proto)
+                Object.create(proto, objetPropriétés)
+
+
+proto : 
+L'objet qui servira de prototype pour le nouvel objet. C'est l'objet à partir duquel le nouvel objet héritera ses propriétés et comportements.
+
+propertiesObject (facultatif) : 
+Un objet contenant les propriétés supplémentaires à ajouter à l'objet nouvellement créé. Chaque propriété est définie en tant que paire clé-valeur dans cet objet.
+
+
+
+
+Lorsque Object.create() est utilisé, le nouvel objet créé héritera des propriétés et des méthodes de l'objet prototype spécifié. Si une propriété ou une méthode est appelée sur l'objet créé, JavaScript cherchera d'abord cette propriété ou cette méthode dans l'objet créé lui-même. S'il ne la trouve pas, il la recherchera ensuite dans le prototype et dans la chaîne de prototypes jusqu'à ce qu'il la trouve ou atteigne l'objet de base Object.prototype.
+
+Cette approche basée sur les prototypes permet une gestion flexible des objets et facilite l'héritage des fonctionnalités. Elle favorise également la réutilisation du code et permet d'organiser les objets de manière modulaire.
+
+Il est important de noter que Object.create() n'effectue pas une copie exacte de l'objet prototype. Au lieu de cela, il établit une relation de prototype entre l'objet créé et le prototype spécifié. Cela signifie que les propriétés ou les méthodes ajoutées ou modifiées sur le prototype seront répercutées sur tous les objets ayant ce prototype comme prototype.
+
+La méthode Object.create() est couramment utilisée dans le développement web pour créer des objets avec des relations de prototype et pour mettre en œuvre des concepts tels que l'héritage des propriétés et des comportements.*/
+
+
+
+// Prototype commun pour tous les objets
+let forme = {
+  aire: function() {
+    console.log("Calcul de l'aire de la forme.");
+  }
+};
+
+// Création d'un nouvel objet avec le prototype forme
+let cercle = Object.create(forme);
+cercle.rayon = 5;
+cercle.calculerCirconference = function() {
+  let circonference = 2 * Math.PI * this.rayon;
+  console.log("La circonférence du cercle est : " + circonference);
+};
+
+// Utilisation de l'objet cercle
+cercle.aire(); // Appel de la méthode héritée du prototype forme
+cercle.calculerCirconference(); // Appel de la méthode spécifique au cercle
+
+/*Dans cet exemple, nous avons l'objet forme avec une méthode aire qui sera héritée par tous les objets créés avec ce prototype.
+
+En utilisant Object.create(), nous créons un nouvel objet cercle en utilisant forme comme prototype. L'objet cercle hérite donc de la méthode aire de l'objet forme.
+
+Ensuite, nous ajoutons une propriété spécifique au cercle, rayon, et une méthode spécifique au cercle, calculerCirconference. Cette méthode utilise la propriété rayon de l'objet cercle pour calculer la circonférence du cercle.
+
+Ainsi, en utilisant l'objet cercle, nous pouvons appeler à la fois la méthode héritée aire du prototype forme et la méthode spécifique calculerCirconference pour effectuer des calculs liés à un cercle.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Prototype commun pour tous les animaux
+let animal = {
+  manger: function() {
+    console.log("L'animal mange.");
+  }
+};
+
+// Création d'un objet chien avec le prototype animal
+let chien = Object.create(animal);
+chien.aboyer = function() {
+  console.log("Le chien aboie !");
+};
+
+// Création d'un objet chat avec le prototype animal
+let chat = Object.create(animal);
+chat.miauler = function() {
+  console.log("Le chat miaule !");
+};
+
+chien.manger(); // Appel de la méthode héritée du prototype animal
+chien.aboyer(); // Appel de la méthode spécifique au chien
+
+chat.manger(); // Appel de la méthode héritée du prototype animal
+chat.miauler(); // Appel de la méthode spécifique au chat
+
+
+/*Dans cet exemple, nous créons un objet animal avec une méthode manger. Ensuite, nous utilisons Object.create() pour créer un nouvel objet chien avec animal comme prototype. Cela signifie que l'objet chien hérite de la méthode manger de l'objet animal.
+
+Nous pouvons ensuite ajouter une méthode spécifique au chien, aboyer, à l'objet chien. Ainsi, l'objet chien a à la fois la méthode héritée du prototype manger et sa propre méthode aboyer.
+
+L'utilisation de Object.create() permet de créer des objets avec une hiérarchie de prototypes, ce qui facilite l'héritage des propriétés et des méthodes entre les objets.
+
+Points importants à retenir sur Object.create() :
+
+Object.create(prototype) crée un nouvel objet avec prototype comme prototype.
+Le paramètre prototype peut être null ou un objet existant.
+L'objet créé avec Object.create() hérite des propriétés et des méthodes du prototype.
+Les propriétés et les méthodes ajoutées directement à l'objet créé ne sont pas partagées avec d'autres objets ayant le même prototype.
+La chaîne de prototypes permet l'héritage des propriétés et des méthodes à travers plusieurs niveaux.
+Object.create() est couramment utilisé dans le contexte de la programmation orientée objet en JavaScript pour créer des objets avec une relation de prototype et pour implémenter l'héritage des propriétés et des comportements entre les objets.
+
+
+
+⁡⁢⁣⁣Cet exemple est purement illustratif et ne représente pas une situation réelle dans le contexte du development web.
+
+Dans un contexte réel, l'utilisation de Object.create() peut être plus pertinente lors de la création de structures d'objets ou de modèles de données qui nécessitent l'héritage des propriétés et des comportements. Cela peut être utile dans les frameworks JavaScript, les bibliothèques ou les applications web complexes où la gestion de modèles d'objets est nécessaire.
+
+Par exemple, dans un framework JavaScript comme React, Object.create() pourrait être utilisé pour créer des composants réutilisables qui héritent de fonctionnalités communes à partir d'un composant de base. Cela permet de partager du code et de faciliter la maintenance et l'évolutivité du code.
+
+Il est important de noter que la méthode Object.create() en elle-même n'est pas utilisée directement pour afficher des éléments interactifs ou réaliser des actions spécifiques dans un site web. Elle est plutôt utilisée pour créer des objets avec des relations de prototype et faciliter la gestion des modèles d'objets.⁡*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+</body>
+</html>

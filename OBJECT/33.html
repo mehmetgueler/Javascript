@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*La méthode toString() est une méthode des objets en JavaScript qui renvoie une chaîne
+de caractères représentant l'objet. Cette méthode est souvent utilisée pour afficher
+des informations sur un objet dans la console ou dans l'interface utilisateur. */
+ 
+
+let lobjet         = {nom : 'pascal'};
+let  lobjtoString  = lobjet.toString();
+console.log(lobjtoString);//[object Object]
+
+
+function myObj() {
+    this.nom = 'Pascal Blaise';
+
+}
+
+
+myObj.prototype.toString = function () {
+    console.log(this.nom);
+}
+
+let personne = new myObj;
+let result   = personne.toString();
+///////////////////////////////////////////////////////////////////////////////
+
+
+let lapersonne = {
+  nom: "Julie",
+  age: 30,
+  
+  // Définition d'une méthode toString pour l'objet personne
+  toString: function() {
+    return "Nom : " + this.nom + ", Age : " + this.age;
+  }
+};
+
+console.log(lapersonne.toString()); // Affiche "Nom : Julie, Age : 30"
+
+
+/*Dans cet exemple, nous avons défini un objet personne avec deux
+propriétés nom et age. Nous avons également défini une méthode
+toString() pour l'objet personne. Cette méthode renvoie une chaîne de
+caractères qui contient le nom et l'âge de la personne.
+
+Ensuite, nous avons utilisé la méthode toString() pour afficher une
+représentation de l'objet personne dans la console à l'aide de
+console.log(). La méthode toString() a été automatiquement appelée
+lorsque nous avons passé l'objet personne en argument de console.log().
+
+Notez que vous pouvez personnaliser la représentation renvoyée par la
+méthode toString() en retournant une chaîne de caractères qui contient
+les informations que vous souhaitez afficher. Cela peut être utile
+pour les objets complexes qui contiennent plusieurs propriétés, afin
+de faciliter le débogage et l'affichage des informations pour les
+utilisateurs.*/
+
+    </script>
+</body>
+</html>

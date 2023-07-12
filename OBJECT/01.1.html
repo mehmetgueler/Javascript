@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets</title>
+</head>
+<body><script>
+
+/*En programmation orientée objet, un objet est une instance spécifique d'une classe. Une classe est un modèle ou un plan qui définit les caractéristiques et les comportements communs à un ensemble d'objets.
+
+Un objet est une entité autonome qui peut avoir des propriétés (variables) et des méthodes (fonctions) associées qui lui permettent d'effectuer des actions et de manipuler ses propres données. Les propriétés représentent l'état de l'objet, tandis que les méthodes représentent son comportement.
+
+Par exemple, supposons que nous ayons une classe Voiture qui définit les caractéristiques et les comportements communs aux voitures. À partir de cette classe, nous pouvons créer plusieurs objets de voitures spécifiques, chacun ayant ses propres valeurs pour les propriétés telles que la couleur, la marque, le modèle, etc. Les objets de voiture peuvent également avoir des méthodes telles que démarrer, accélérer, freiner, qui définissent leur comportement.*/
+
+class Voiture {
+  constructor(couleur, marque, modele) {
+    this.couleur = couleur;
+    this.marque = marque;
+    this.modele = modele;
+  }
+
+  démarrer() {
+    console.log("La voiture démarre.");
+  }
+
+  accélérer() {
+    console.log("La voiture accélère.");
+  }
+
+  freiner() {
+    console.log("La voiture freine.");
+  }
+}
+
+// Création d'un objet de voiture
+let maVoiture = new Voiture("rouge", "Toyota", "Corolla");
+
+// Utilisation des propriétés
+console.log(maVoiture.couleur); // affiche "rouge"
+console.log(maVoiture.marque); // affiche "Toyota"
+
+// Utilisation des méthodes
+maVoiture.démarrer(); // affiche "La voiture démarre."
+maVoiture.accélérer(); // affiche "La voiture accélère."
+maVoiture.freiner(); // affiche "La voiture freine."
+
+/*Dans cet exemple, maVoiture est un objet de la classe Voiture. Il a ses propres valeurs pour les propriétés couleur, marque et modele, et peut exécuter les méthodes démarrer(), accélérer() et freiner(). Chaque objet de voiture créé à partir de la classe Voiture est une instance distincte avec ses propres données et comportements.*/
+
+
+</script>  
+</body>
+</html>

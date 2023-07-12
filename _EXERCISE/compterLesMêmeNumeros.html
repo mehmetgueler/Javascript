@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+/*========================================================================================================================*/
+function countOccurrences(arr, target) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// Exemple d'utilisation :
+const numbers = [1, 2, 3, 4, 2, 2, 5, 2];
+console.log(countOccurrences(numbers, 2)); // Résultat : 4
+console.log(countOccurrences(numbers, 5)); // Résultat : 1
+console.log(countOccurrences(numbers, 7)); // Résultat : 0
+/*========================================================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*========================================================================================================================*/
+console.log(".....");
+function countOccurrences(arr, target) {
+  return arr.reduce((count, element) => {
+    if (element === target) {
+      count++;
+    }
+    return count;
+  }, 0);
+}
+
+const numeros = [1, 2, 3, 4, 2, 2, 5, 2];
+console.log(countOccurrences(numeros, 2)); // Résultat : 4
+console.log(countOccurrences(numeros, 5)); // Résultat : 1
+console.log(countOccurrences(numeros, 7)); // Résultat : 0
+/*========================================================================================================================*/
+
+
+
+</script>
+</body>
+</html>

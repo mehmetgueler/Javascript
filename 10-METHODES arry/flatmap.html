@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.flatMap()</title>
+</head>
+<body><script>
+
+/*La méthode flatMap() permet d'appliquer une fonction à chaque élément du tableau, puis d'aplatir le résultat en un tableau. Cela correspond à l'enchaînement des méthodes map() et flat() avec une profondeur de 1. L'utilisation de flatMap() est souvent plus efficace que la combinaison de ces deux opérations, car elle les exécute de manière optimisée en une seule étape.
+La syntaxe de flatMap() est la suivante :
+
+    const new_array = arr.flatMap(function callback(currentValue[, index[, array]]) {
+        // retourne l'élément pour new_array
+    }[, thisArg]);
+    
+
+callback: La méthode flatMap() utilise une fonction de rappel, appelée "callback", pour produire chaque élément du nouveau tableau. Cette fonction de rappel peut prendre jusqu'à trois arguments :
+
+  1.) currentValue : Il s'agit de la valeur actuellement traitée du tableau.
+  2.) index (optionnel) : C'est l'indice de l'élément en cours de traitement dans le tableau.
+  3.) array (optionnel) : C'est le tableau sur lequel la méthode flatMap() a été appelée.
+
+  De plus, il est possible de spécifier un quatrième argument optionnel, thisArg, qui permet de définir la valeur à utiliser comme contexte this lors de l'exécution de la fonction de rappel.
+
+
+La valeur de retour de flatMap() est un nouveau tableau qui est formé en concaténant les éléments résultants de l'application de la fonction de rappel à chaque élément du tableau d'origine. Ce nouveau tableau est aplati d'un niveau de profondeur, ce qui signifie que tout tableau retourné par la fonction de rappel est déroulé et que ses éléments sont directement inclus dans le tableau final.*/
+
+
+
+
+const numbers = [5, 10, 15, 20];
+
+console.log(numbers.map(number => [number + 1]));// Affiche: [[6], [11], [16], [21]]
+console.log(numbers.flatMap(number => [number + 1]));// Affiche: [6, 11, 16, 21]
+
+// Seul un niveau est aplati
+console.log(numbers.flatMap(number => [[number + 1]]));// Affiche: [[6], [11], [16], [21]]
+
+/*Dans cet exemple, nous avons le tableau numbers contenant les valeurs [5, 10, 15, 20]. En utilisant map(), nous appliquons une fonction de rappel qui ajoute 1 à chaque élément du tableau. Le résultat est un tableau de tableaux où chaque valeur est encapsulée dans un tableau.
+
+En revanche, avec flatMap(), la même fonction de rappel est appliquée, mais le résultat est un tableau plat où les valeurs individuelles sont directement incluses, sans être encapsulées dans des tableaux supplémentaires.
+
+Dans le dernier exemple, flatMap() est utilisé avec une fonction de rappel qui retourne un tableau de tableaux. Cependant, comme nous sommes en train d'aplatir un seul niveau, le résultat final est un tableau de tableaux où chaque sous-tableau est maintenu intact.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Supposons que vous ayez un tableau multidimensionnel représentant une liste de produits dans un magasin, avec différents niveaux de catégories. Chaque produit est un objet avec des propriétés telles que le nom, le prix, etc. Vous souhaitez aplatir ce tableau multidimensionnel pour obtenir une liste simple de tous les produits disponibles.*/
+
+const products = [
+  {
+    category: 'Vêtements',
+    items: [
+      { name: 'T-shirt', price: 20 },
+      { name: 'Pantalon', price: 40 }
+    ]
+  },
+  {
+    category: 'Électronique',
+    items: [
+      { name: 'Téléviseur', price: 500 },
+      { name: 'Ordinateur portable', price: 1000 },
+      { name: 'Smartphone', price: 800 }
+    ]
+  }
+];
+
+const flattenedProducts = products.flatMap(category => category.items).flat();
+
+// console.log(flattenedProducts);
+
+/*Affiche :
+[
+  { name: 'T-shirt', price: 20 },
+  { name: 'Pantalon', price: 40 },
+  { name: 'Téléviseur', price: 500 },
+  { name: 'Ordinateur portable', price: 1000 },
+  { name: 'Smartphone', price: 800 }
+]
+
+Dans cet exemple, le tableau products est un tableau multidimensionnel contenant des catégories de produits et les produits correspondants. En utilisant la méthode flatMap(), nous mappons chaque catégorie à son tableau d'éléments et obtenons un tableau de tous les produits. Ensuite, nous utilisons flat() pour aplatir ce tableau et obtenir une liste simple de tous les produits disponibles.
+
+Cela peut être utile lorsque vous avez des données structurées avec des niveaux de profondeur et que vous souhaitez obtenir une liste plate pour un traitement ou une manipulation ultérieure.
+
+⁡⁢⁣⁣Il est important de noter que les combinaisons possibles dépendent des besoins spécifiques de votre cas d'utilisation. D'autres méthodes telles que reduce(), sort(), slice(), concat() etc., peuvent également être utilisées en combinaison avec flatMap() pour obtenir des résultats plus complexes ou spécifiques.⁡*/
+
+
+
+
+
+</script>
+</body>
+</html>

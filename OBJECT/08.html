@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les objets</title>
+</head>
+<body>
+<script>
+//accéder aux propriétés d'un objet
+
+let user = {
+  firstname: 'Nikola',
+  name: 'Tesla', 
+  birth: 1856
+};
+
+
+/*Pour accéder aux propriétés d'un objet en JavaScript, il y a deux principales méthodes : la notation par point (dot notation) et la notation entre crochets (bracket notation).
+
+Notation pointée (Notation par point ou dot notation) :
+
+/*Dans la notation par point, nous utilisons le nom de l'objet suivi d'un point et du nom de la propriété pour accéder à sa valeur.
+Par exemple :*/
+
+console.log(user.firstname); // Accède à la propriété 'firstname' de l'objet 'user'*/
+console.log(user.name);
+
+
+
+
+
+
+
+
+
+
+/*Notation entre crochets (bracket notation) :
+
+Dans la notation entre crochets, nous utilisons le nom de l'objet suivi de crochets contenant une chaîne de caractères représentant le nom de la propriété.*/
+
+console.log(user["firstname"]); // Affiche "John"
+console.log(user["name"]); // Affiche 30
+console.log(user["birth"]); // Affiche "Ingénieur"
+
+/*La notation par point est généralement préférée lorsque le nom de la propriété est statique et connu à l'avance, tandis que la notation entre crochets est utile lorsque le nom de la propriété est dynamique ou lorsqu'il contient des caractères spéciaux.*/
+
+
+
+
+
+
+
+
+
+
+/*******En JavaScript, la notation par point (dot notation) est généralement considérée comme la méthode préférée pour accéder aux propriétés d'un objet. Elle est plus couramment utilisée et offre une syntaxe plus concise et plus lisible. Voici quelques détails supplémentaires sur la notation par point :
+
+Avantages de la notation par point :
+
+Clarté et lisibilité : La notation par point est généralement plus facile à lire et à comprendre, car elle suit une structure simple et familière.
+Praticité : Elle permet un accès direct et immédiat aux propriétés de l'objet sans nécessiter de manipulations supplémentaires.
+Complétion automatique (autocomplétion) : Lorsque tu utilises un éditeur de code ou un environnement de développement intégré (IDE), la notation par point facilite l'autocomplétion des noms de propriétés, ce qui peut être très utile pour éviter les erreurs de frappe ou pour explorer rapidement les propriétés disponibles d'un objet.
+Limitations de la notation par point :
+
+Propriétés dynamiques : Si le nom de la propriété est généré dynamiquement ou stocké dans une variable, la notation par point n'est pas directement applicable. Dans ce cas, la notation entre crochets est plus appropriée.
+Cependant, il est important de noter que la notation entre crochets (bracket notation) offre une flexibilité supplémentaire dans certains cas spécifiques :
+
+Propriétés dynamiques : Si le nom de la propriété est contenu dans une variable ou généré dynamiquement ou propriétés avec des noms spéciaux : Si le nom de la propriété contient des caractères spéciaux ou des espaces, la notation entre crochets permet de les accéder. Par exemple :*/
+
+
+let personne = {
+  "nom de famille": "jerry Lawson",
+  "date de naissance": "01/12/1940"
+};
+
+console.log(personne["nom de famille"]); // Affiche "jerry Lawson"
+console.log(personne["date de naissance"]); // Affiche "01/12/1940"
+
+/*En résumé, la notation par point est généralement préférée pour accéder aux propriétés d'un objet en JavaScript en raison de sa clarté, de sa lisibilité et de sa praticité. Cependant, la notation entre crochets est utilisée dans des cas spécifiques tels que les propriétés dynamiques ou les noms de propriétés avec des caractères spéciaux. Il est recommandé de choisir la méthode appropriée en fonction du contexte et des besoins spécifiques de ton code.*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*Méthode Object.keys() :
+
+Utilise la méthode Object.keys(objet) pour obtenir un tableau contenant les clés (noms des propriétés) de l'objet.
+Object.keys(obj)*/
+
+let keys = Object.keys(user); // Obtient un tableau contenant les clés des propriétés de l'objet 'user'
+console.log(keys); // Affiche les clés des propriétés de 'user'
+
+/*Dans cet exemple, la méthode Object.keys(personne) est appelée avec l'objet personne en tant qu'argument. Elle renvoie un tableau contenant les noms des propriétés énumérables de l'objet personne, dans cet ordre spécifique. Le tableau résultant, dans cet exemple, sera  ['firstname', 'name', 'birth'] */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

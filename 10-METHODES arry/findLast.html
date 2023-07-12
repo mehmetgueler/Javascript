@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.findLast()</title>
+</head>
+<body><script>
+/* La méthode findLast() parcourt un tableau dans le sens inverse et renvoie le premier élément rencontré qui correspond au critère fourni par la fonction de test passée en argument. Si aucun élément ne correspond au critère, la valeur undefined est renvoyée.
+
+La méthode findLast() exécute une fonction de rappel pour chaque élément du tableau, en partant de la fin jusqu'au début, jusqu'à ce que la fonction de rappel renvoie une valeur équivalente à true. Lorsque cela se produit, findLast() renvoie la valeur de l'élément correspondant et arrête le parcours du tableau. Si la fonction de rappel ne renvoie jamais de valeur équivalente à true, findLast() renvoie undefined.
+
+La fonction de rappel est appelée pour chaque index du tableau, même pour les indices où aucune valeur n'est définie. Les emplacements vides dans les tableaux creux sont traités comme étant undefined.
+
+Si vous fournissez un argument thisArg à findLast(), il sera utilisé comme valeur de this pour chaque appel de la fonction de rappel. Si aucun thisArg n'est fourni, la valeur undefined sera utilisée pour this.
+
+Il est important de noter que la méthode findLast() n'affecte pas le tableau d'origine sur lequel elle est appelée, mais la fonction de rappel fournie peut le modifier. Les éléments traités par findLast() sont figés au moment du premier appel à la fonction de rappel. Cela signifie que :
+
+La fonction de rappel ne parcourra pas les éléments ajoutés après le début de l'appel à findLast().
+Les éléments qui sont affectés à des indices qui ont déjà été visités ne seront pas revus par la fonction de rappel.
+Les éléments qui sont affectés à des indices en dehors de l'intervalle du tableau ne seront pas parcourus par la fonction de rappel.
+Si un élément existant du tableau est modifié par la fonction de rappel avant d'être traité, la valeur passée à la fonction de rappel sera celle au moment où findLast() visite l'indice de l'élément.
+Les éléments supprimés avec delete seront quand même parcourus.
+Il est important de prendre en compte que les modifications concurrentes du tableau peuvent rendre le code difficile à comprendre et devraient généralement être évitées.
+
+La méthode findLast() est générique et ne dépend pas du type spécifique des éléments du tableau. Elle s'attend simplement à ce que la valeur this ait une propriété length et des propriétés dont les clés sont des entiers.*/
+
+
+
+
+
+const myArray = [5, 12, 50, 130, 44];
+
+const found = myArray.findLast((element) => element > 45);
+
+console.log(found); // Affiche: 130
+
+/*Dans cet exemple, nous avons un tableau myArray contenant une liste de nombres. La fonction de test passée à la méthode findLast() vérifie si un élément est supérieur à 45. La méthode findLast() parcourt le tableau dans le sens inverse, et lorsque le premier élément qui satisfait la condition est trouvé, il est renvoyé.
+
+Dans ce cas, la fonction de test renvoie true lorsque l'élément est supérieur à 45. La méthode findLast() commence à parcourir le tableau à partir de la fin. Lorsqu'elle atteint l'élément 130, elle le renvoie car il est le premier élément satisfaisant la condition.
+
+En affichant found, nous obtenons le résultat attendu qui est 130.*/
+
+
+
+
+
+const students = [
+  { id: 1, name: 'Soraka',  grade: 95 },
+  { id: 2, name: 'Ahri',    grade: 87 },
+  { id: 3, name: 'Akali',   grade: 92 },
+  { id: 4, name: 'Lee Sin', grade: 78 },
+];
+
+const targetGrade = 90;
+
+const lastHighAchiever = students.findLast(student => student.grade >= targetGrade);
+
+if (lastHighAchiever) {
+  console.log(`Le dernier étudiant ayant obtenu une note supérieure ou égale à ${targetGrade} est ${lastHighAchiever.name}.`);
+} else {
+  console.log(`Aucun étudiant n'a obtenu une note supérieure ou égale à ${targetGrade}.`);
+}
+
+/*Dans cet exemple, nous avons un tableau d'étudiants avec leurs identifiants, noms et notes. Nous voulons trouver le dernier étudiant ayant obtenu une note supérieure ou égale à 90. Nous utilisons la méthode findLast() en passant une fonction de rappel qui vérifie si la note de l'étudiant est supérieure ou égale à targetGrade.
+
+La méthode findLast() parcourt les étudiants depuis la fin du tableau jusqu'au début. Lorsqu'elle trouve un étudiant dont la note est supérieure ou égale à targetGrade, elle renvoie cet étudiant et s'arrête. Si aucun étudiant ne correspond au critère, elle renvoie undefined.
+
+Ensuite, nous vérifions si lastHighAchiever est défini. Si c'est le cas, nous affichons le nom de l'étudiant trouvé. Sinon, nous indiquons qu'aucun étudiant n'a obtenu une note supérieure ou égale à 90.*/
+
+
+
+</script>
+</body>
+</html>

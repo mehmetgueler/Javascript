@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/************************************************************************************************************/
+let monTab = ["val1","val2","val3","val4","val5","val6"];
+let result;
+
+for (result in monTab){
+    console.log(monTab[result]);
+}
+/************************************************************************************************************/
+
+
+
+/************************************************************************************************************/
+let tableau = [1, 2, "trois", 4, "cinq"];
+
+function parcourirTableau(tableau) {
+  for (let index in tableau) {
+    if (typeof tableau[index] === "number") {
+      console.log("L'élément " + index + " est un nombre : " + tableau[index]);
+    } else if (typeof tableau[index] === "string") {
+      console.log("L'élément " + index + " est une chaîne de caractères : " + tableau[index]);
+    } else {
+      console.log("L'élément " + index + " n'est ni un nombre ni une chaîne de caractères : " + tableau[index]);
+    }
+  }
+}
+
+parcourirTableau(tableau);
+/************************************************************************************************************/
+
+
+/************************************************************************************************************/
+let monTableau = ["valeur1", 2, "valeur3", 4, "valeur5", 6];
+
+// Boucle for-in pour parcourir les éléments du tableau
+for (let index in monTableau) {
+  let element = monTableau[index]; // récupère l'élément courant
+
+  // Vérifie si l'élément est une valeur numérique et est paire
+  if (typeof element === 'number' && element % 2 === 0) {
+    console.log(`L'élément à l'index ${index} est un nombre pair : ${element}`);
+  } 
+  // Vérifie si l'élément est une chaîne de caractères commençant par "valeur"
+  else if (typeof element === 'string' && element.startsWith('valeur')) {
+    console.log(`L'élément à l'index ${index} est une chaîne de caractères commençant par "valeur" : ${element}`);
+  }
+  // Si l'élément ne satisfait aucune des deux conditions précédentes, affiche un message générique
+  else {
+    console.log(`L'élément à l'index ${index} ne correspond à aucun critère spécifique : ${element}`);
+  }
+}
+/************************************************************************************************************/
+
+
+
+
+/************************************************************************************************************/
+let tableauImbrique = [1, 2, [3, 4], 5];
+
+for(let index in tableauImbrique) {
+  if(Array.isArray(tableauImbrique[index])) { // Vérifie si l'élément est un tableau
+    console.log(`L'élément à l'index ${index} est un tableau !`);
+    for(let nestedIndex in tableauImbrique[index]) {
+      console.log(`L'élément imbriqué à l'index ${nestedIndex} est ${tableauImbrique[index][nestedIndex]}`);
+    }
+  } else {
+    console.log(`L'élément à l'index ${index} est ${tableauImbrique[index]}`);
+  }
+}
+
+
+
+let tableau1 = ["valeur1", 2, ["valeur3.1", 4]];
+let tableau2 = [5, "valeur6", ["valeur7.1", 8]];
+
+let nouveauTableau = [tableau1, tableau2];
+
+for(let i in nouveauTableau){
+  console.log(`Tableau ${i}:`);
+  for(let j in nouveauTableau[i]){
+    if(Array.isArray(nouveauTableau[i][j])){
+      console.log(`  Sous-tableau ${j}:`);
+      for(let k in nouveauTableau[i][j]){
+        console.log(`    Sous-sous-valeur ${k}: ${nouveauTableau[i][j][k]}`);
+      }
+    } else {
+      console.log(`  Valeur ${j}: ${nouveauTableau[i][j]}`);
+    }
+  }
+}
+/************************************************************************************************************/
+
+
+/**
+ *! Il est généralement déconseillé d'utiliser for in pour parcourir les tableaux en JavaScript, car cette boucle est en réalité
+*!conçue pour parcourir les propriétés des objets. Lorsque vous utilisez for in sur un tableau, vous pouvez rencontrer des problèmes
+*!si le tableau a des propriétés personnalisées (ou si des propriétés ont été ajoutées à l'objet Array.prototype), ce qui peut entraîner des résultats imprévus.
+
+*!Il est recommandé d'utiliser plutôt la boucle for of ou la méthode forEach pour parcourir les éléments d'un tableau en JavaScript,
+*!car elles ont été spécialement conçues pour cette tâche. Cela garantit que seuls les éléments du tableau seront parcourus et que
+*!les propriétés personnalisées ou les propriétés de Array.prototype ne seront pas prises en compte.*/
+
+
+
+</script>
+</body>
+</html>

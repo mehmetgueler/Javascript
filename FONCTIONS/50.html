@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+    "Fonctions imbriquées (fonction interne) avec paramètres & arguments
+<script>
+
+
+
+function foo1(a) {
+  function foo2(b) {
+    function foo3(c) {
+      function foo4(d) {
+        return a + b + c + d;// La fonction "foo4" retourne la somme des arguments "a", "b", "c" et "d"
+      }
+      return foo4;// La fonction "foo3" retourne la fonction "foo4"
+    }
+    return foo3;    // La fonction "foo2" retourne la fonction "foo3"
+  }
+  return foo2;  // La fonction "foo1" retourne la fonction "foo2"
+
+}
+
+let foncImbriques = foo1(5)(10)(15)(20);
+// Appel de la fonction "foo1" avec l'argument "5"
+// Cela retourne une fonction qui prend un argument "b"
+// L'appel de cette fonction avec l'argument "10" retourne une autre fonction qui prend un argument "c"
+// L'appel de cette fonction avec l'argument "15" retourne une autre fonction qui prend un argument "d"
+// L'appel de cette fonction avec l'argument "20" retourne le résultat de l'exécution de la fonction "foo4" avec les arguments "5", "10", "15" et "20"
+
+
+// Affichage de la valeur renvoyée par l'exécution de la fonction "foo4" avec les arguments "5", "10", "15" et "20"
+console.log(foncImbriques); // Affiche "50" à la console
+/**************************************************************************************/
+/**************************************************************************************/
+function mfoo1(a, a2) {
+  function mfoo2(b, b2) {
+    function mfoo3(c, c2) {
+      function mfoo4(d, d2) {
+        return a + a2 + b + b2 + c + c2 + d + d2;
+      }
+      return mfoo4;
+    }
+    return mfoo3; 
+  }
+  return mfoo2;  
+}
+
+let foncImbriques2 = mfoo1(5, 10)(10, 15)(15, 20)(20, 25);
+
+console.log(foncImbriques2);
+/**************************************************************************************/
+
+
+
+
+
+
+
+
+/**************************************************************************************/
+function add(a, b, c) {
+  return a + b + c;
+}
+
+const x = 5;
+const y = 10;
+const z = 15;
+
+const result = add(x, y, z);
+
+console.log(result);
+
+/*Ce code définit une fonction nommée 'add' qui prend trois paramètres (a, b et c) et renvoie la somme des trois.
+Ensuite, trois variables (x, y et z) sont définies avec des valeurs de 5, 10 et 15, respectivement.
+La fonction 'add' est ensuite appelée avec les variables en tant qu'arguments, et le résultat est stocké dans la variable 'result'.
+Enfin, le résultat est affiché dans la console en utilisant la méthode 'console.log'.
+
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+function calculerMoyenne(nombres) {
+function calculerSomme() {
+  let somme = 0;
+  for (let i = 0; i < nombres.length; i++) {
+    somme += nombres[i];
+  }
+  return somme;
+}
+
+// Fonction imbriquée qui calcule la moyenne des nombres dans le tableau
+function calculerMoyenne() {
+  let somme = calculerSomme();
+  return somme / nombres.length;
+}
+
+// La fonction principale retourne le résultat de la fonction calculerMoyenne
+return calculerMoyenne();
+}
+
+// Appel de la fonction principale avec un tableau de nombres en argument
+let nombres = [4, 8, 12, 16, 20];
+let moyenne = calculerMoyenne(nombres);
+console.log(moyenne);
+
+/*Dans cet exemple, la fonction calculerMoyenne prend en argument un tableau de nombres.
+Elle contient deux fonctions imbriquées : calculerSomme qui calcule la somme des nombres
+dans le tableau et calculerMoyenne qui utilise la fonction calculerSomme pour calculer la
+moyenne des nombres dans le tableau. 
+Finalement, la fonction principale retourne le résultat de la fonction calculerMoyenne.
+
+Lorsque la fonction principale est appelée avec un tableau de nombres, la moyenne des nombres
+est calculée et affichée dans la console. Ce code est utile pour calculer la moyenne d'un ensemble
+ de nombres sans avoir à réécrire le code à chaque fois*/
+
+
+</script>
+</body>
+</html>

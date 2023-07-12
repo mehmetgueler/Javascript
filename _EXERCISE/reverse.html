@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+const inputString = "hello IA";
+
+function isPalindrome (str){
+    const reversedWord = str.split("") .reverse() .join("");
+    return reversedWord === str;
+} 
+
+
+console.log(isPalindrome("radar")); //true
+console.log(isPalindrome("level")); //true
+console.log(isPalindrome("kayak")); //true
+console.log(isPalindrome("hello")); //false
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

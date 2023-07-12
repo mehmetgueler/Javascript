@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--documentElement est une propriété de l'objet document en JavaScript.
+Elle renvoie l'élément racine (l'élément <html>) du document actuel en tant qu'objet.
+
+L'élément racine est le parent direct de tous les autres éléments de la page et contient 
+toutes les balises HTML de la page.-->
+
+const elementRacine = document.documentElement;
+<br /><br /><br />
+<!--Une fois que vous avez récupéré l'élément racine, vous pouvez accéder à ses propriétés
+et méthodes pour effectuer différentes actions sur la page HTML.-->
+
+    <script>
+
+let racine = document.documentElement.nodeName;
+document.write(racine + '<br><br>');// HTML
+console.log(racine);// HTML
+
+
+const elementRacine = document.documentElement;
+document.write(elementRacine);// [object HTMLHtmlElement]
+console.log(elementRacine);
+
+
+
+/*Dans le premier code, nous avons utilisé la propriété "doctype" pour récupérer le type de document,
+tandis que dans le deuxième code, nous avons utilisé la propriété "documentElement" pour récupérer
+l'élément racine du document.
+
+Le type de document est une information qui est stockée dans le doctype et qui indique au navigateur
+quel type de document il est en train de traiter (par exemple, HTML5, XHTML, etc.).
+
+L'élément racine du document (documentElement) représente l'élément HTML qui contient tous les
+autres éléments de la page. Cette propriété est utile pour accéder à certaines informations de
+l'en-tête de la page, telles que les balises meta ou les liens CSS.*/
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

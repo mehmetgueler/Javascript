@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+    Les fonctions; utilisation length 
+<script>
+
+
+
+ function compterParametres(nom, prenom, age) {
+
+    let nombresParametre = compterParametres.length;
+  
+    console.log(nombresParametre);
+
+}
+
+
+compterParametres();// Appel de la fonction avec aucun paramètre
+
+/*Lorsque vous appelez cette fonction sans aucun paramètre, elle ne prendra aucun argument
+et la valeur de compterParametres.length sera 3.
+Cela est dû au fait que la fonction x est définie avec trois paramètres (a, b, et c)
+et que compterParametres.length renvoie le nombre de paramètres attendus par la fonction.*/
+/*****************************************************************************************/
+
+
+
+
+
+
+/*****************************************************************************************/
+function lengthEnFonction(nom, prenom, naissance, pays) {
+    let lengthparam = lengthEnFonction.length;
+
+    console.log(lengthparam); // 4
+
+}
+
+lengthEnFonction('newton', 'isaac', '1643', 'england');
+/*****************************************************************************************/
+
+
+
+
+
+/*Connaître le nombre de paramètres attendus par une fonction peut être utile dans différents cas,
+
+Lorsque vous utilisez des fonctions génériques qui peuvent prendre un nombre variable d'arguments,
+telles que Math.max() ou console.log(), il peut être utile de connaître le nombre de paramètres 
+réellement passés à la fonction afin de pouvoir traiter les arguments de manière appropriée.
+
+Lorsque vous travaillez avec des fonctions qui prennent un nombre précis de paramètres,
+il peut être important de s'assurer que tous les paramètres nécessaires ont été passés à la fonction,
+sinon elle risque de produire des erreurs ou de ne pas fonctionner correctement.
+
+Dans le cadre de la programmation fonctionnelle, il peut être utile de connaître le nombre de paramètres
+d'une fonction afin de pouvoir la composer avec d'autres fonctions de manière appropriée.
+
+En résumé, connaître le nombre de paramètres d'une fonction peut être utile pour garantir que la 
+fonction est utilisée de manière appropriée et pour permettre une composition appropriée des fonctions 
+dans des scénarios de programmation fonctionnelle*/
+
+
+
+</script>
+</body>
+
+</html>

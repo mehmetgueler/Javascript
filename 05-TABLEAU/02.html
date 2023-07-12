@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification & Maniuplation tableau</title>
+</head>
+<body><script>
+
+/*Ajout et suppression d'éléments dans un tableau
+
+Ajout d'éléments à la fin
+Pour ajouter un élément à la fin d'un tableau, vous pouvez utiliser la méthode push(). Voici un exemple :*/
+
+let nombres = [10, 11, 12, 13, 14];
+nombres.push(15);
+console.log(nombres); // Affiche [10, 11, 12, 13, 14, 15]
+
+
+
+
+
+/*Ajout d'éléments au début
+Pour ajouter un élément au début d'un tableau, vous pouvez utiliser la méthode unshift(). Voici un exemple :*/
+
+let monTab = ["valeur2", "valeur3", "valeur3"];
+monTab.unshift('valAjouté');
+console.log(monTab); // Affiche  ['valAjouté', 'valeur2', 'valeur3', 'valeur3']
+
+
+
+
+
+
+
+/*Ajout d'éléments à une position spécifique
+Pour insérer un élément à une position spécifique dans un tableau, vous pouvez utiliser la méthode splice(). Voici un exemple :*/
+
+
+let fruits = ['pomme', 'banane', 'orange'];
+fruits.splice(1, 0, 'kiwi');
+console.log(fruits); // Affiche ['pomme', 'kiwi', 'banane', 'orange']
+
+/*La méthode splice() prend trois arguments : l'index à partir duquel insérer les éléments, le nombre d'éléments à supprimer (dans notre cas, 0 pour n'en supprimer aucun), et les éléments à insérer.
+
+
+
+
+
+
+Suppression d'éléments par index
+Pour supprimer un élément d'un tableau en utilisant son index, vous pouvez utiliser la méthode splice() avec un deuxième argument de 1. Voici un exemple :*/
+
+let panier = ['pomme', 'banane', 'orange'];
+panier.splice(1, 1);
+console.log(panier); // Affiche ['pomme', 'orange']
+
+
+
+
+
+/*Suppression d'éléments spécifiques
+
+Si vous connaissez la valeur d'un élément que vous souhaitez supprimer, vous pouvez utiliser la méthode filter() pour créer un nouveau tableau sans cet élément. Voici un exemple :*/
+
+
+let legumes = ['Brocoli ', 'Haricots ', 'Fenouil'];
+legumes = legumes.filter(legume => legume !== 'Fenouil');
+console.log(legumes); // Affiche ['Brocoli', 'Haricots']
+
+/*La méthode filter() crée un nouveau tableau contenant uniquement les éléments qui satisfont la condition spécifiée.*/
+
+
+
+
+
+</script> 
+</body>
+</html>

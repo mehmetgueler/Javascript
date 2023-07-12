@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*En JavaScript, chaque objet est lié à un autre objet appelé prototype. Le prototype est utilisé pour
+ajouter des propriétés et des méthodes à un objet, ainsi que pour hériter de propriétés et de méthodes d'un autre objet.
+
+Par défaut, tous les objets en JavaScript ont un prototype commun, qui est l'objet "Object.prototype".
+Cependant, vous pouvez créer des prototypes personnalisés en utilisant la méthode "Object.create()"
+ou en définissant directement la propriété "prototype" d'une fonction constructeur.
+
+Voici un exemple d'utilisation de la méthode "Object.create()" pour créer un objet avec un prototype
+personnalisé :*/
+
+// Définition du prototype personnalisé
+let animal = {
+  manger: function() {
+    console.log('Je mange de la nourriture.');
+  }
+};
+
+// Création d'un nouvel objet avec le prototype personnalisé
+let chat = Object.create(animal);
+
+// Ajout d'une propriété à l'objet créé
+chat.nom = 'Moustache';
+
+// Utilisation de la méthode héritée du prototype
+chat.manger(); // affiche "Je mange de la nourriture."
+/*
+Dans cet exemple, nous avons créé un objet "animal" avec une méthode "manger". Ensuite, nous
+avons créé un nouvel objet "chat" en utilisant la méthode "Object.create()" et en passant l'objet
+"animal" comme prototype. Enfin, nous avons ajouté une propriété "nom" à l'objet "chat" et utilisé la
+méthode "manger" héritée du prototype "animal".
+
+Il est important de noter que toutes les propriétés et méthodes définies dans un prototype
+personnalisé sont partagées par tous les objets qui utilisent ce prototype. Cela peut être utile pour
+créer des objets avec des propriétés et des méthodes communes, tout en conservant la flexibilité de
+personnaliser chaque objet individuellement.*/
+
+
+
+
+
+
+///////////////////////EXEMPLE D'UTILISATION PROTOTYPE///////////////////////////////
+function exPrototype(param1, param2, param3, param4) {
+this.propriete1 = param1;// déclare une propriété nommée "propriete1" et assigne la valeur de "param1" à cette propriété
+this.propriete2 = param2;
+this.propriete3 = param3;
+this.propriete4 = param4;
+}
+
+exPrototype.prototype.methode = function() {
+return this.propriete1 + " " + this.propriete2 + " " + this.propriete3 + " " + this.propriete4;
+// renvoie une chaîne de caractères qui concatène les valeurs de toutes les propriétés de l'objet en cours
+}
+let instance = new exPrototype("valeur1", "valeur2", "valeur3", "valeur4");// crée une nouvelle instance de l'objet "exPrototype" avec les paramètres définis et l'assigne à la variable "instance"
+
+let resultat = instance.methode();// appelle la méthode "methode" sur l'objet "instance" et assigne le résultat à la variable "resultat"
+console.log(resultat);//valeur1 valeur2 valeur3 valeur4
+////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+///////////////////////EXEMPLE D'UTILISATION PROTOTYPE///////////////////////////////
+function prototype_calcule(nombre1, nombre2, nombre3, nombre4) {
+this.propriete1 = nombre1;
+this.propriete2 = nombre2;
+this.propriete3 = nombre3;
+this.propriete4 = nombre4;
+}
+
+
+prototype_calcule.prototype.methode = function() {
+return this.propriete1  + this.propriete2 + this.propriete3  + this.propriete4;
+// calcule la somme des valeurs de toutes les propriétés de l'objet en cours et renvoie le résultat
+}
+
+
+let instance_calcule = new prototype_calcule(10, 20, 30, 40);
+// crée une nouvelle instance de l'objet "prototype_calcule" avec les paramètres "10... et l'assigne à la variable "instance_calcule"
+
+
+
+let resultatDeCalcul = instance_calcule.methode();
+// appelle la méthode "methode" sur l'objet "instance_calcule" et assigne le résultat à la variable "resultatDeCalcul"
+
+
+
+
+console.log(resultatDeCalcul);
+////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    </script>
+</body>
+</html>

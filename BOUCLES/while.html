@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*La boucle while est une boucle de répétition en JavaScript qui répète un bloc de code
+tant qu'une condition spécifiée est vraie. La syntaxe de base est :*/
+
+while (condition) {
+// instructions à exécuter tant que la condition est vraie
+}
+
+/*La condition est une expression qui est évaluée avant chaque itération de la boucle.
+Si elle est vraie, le bloc de code est exécuté, puis la condition est à nouveau évaluée. Si la condition est fausse, la boucle se termine et le programme passe à la ligne suivante.
+
+Voici un exemple d'utilisation de la boucle while pour afficher les nombres de 1 à 5 :*/
+
+let i = 1;
+while (i <= 5) {
+console.log(i);
+i++;
+}
+
+/*Cet exemple initialise la variable d'itération i à 1 et exécute le bloc de code tant
+ que i est inférieur ou égal à 5. Le code affiche les nombres de 1 à 5 dans la console.
+
+La boucle while peut également être utilisée avec des tableaux et des chaînes de caractères.
+Par exemple, voici un exemple qui utilise une boucle while pour parcourir un tableau 
+et afficher chacun de ses éléments :*/
+
+let arr = ["un", "deux", "trois"];
+let i = 0;
+while (i < arr.length) {
+console.log(arr[i]);
+i++;
+}
+
+/*Cet exemple initialise la variable d'itération i à 0 et exécute le bloc de code tant que i 
+est inférieur à la longueur du tableau. Le code affiche les éléments du tableau un par un.
+
+En résumé, la boucle while est utile lorsque vous devez répéter un bloc de code jusqu'à
+ce qu'une certaine condition soit remplie, que ce soit pour les nombres, les tableaux,
+les chaînes de caractères, ou d'autres types de données.*/
+
+
+
+
+//Trouver l'index d'un nombre premier dans un tableau
+
+function estPremier(élément, index, array) {
+  var début = 2;  // On initialise la variable début à 2
+  while (début <= Math.sqrt(élément)) {  // On vérifie que début est inférieur ou égal à la racine carrée de l'élément
+    if (élément % début < 1) {  // Si l'élément est divisible par début, on retourne false
+      return false;
+    } else {
+      début++;  // Sinon, on incrémente la variable début
+    }
+  }
+  return élément > 1;  // Si l'élément est supérieur à 1, il est premier, donc on retourne true
+}
+
+console.log([4, 6, 8, 12].findIndex(estPremier)); // -1, aucun élément trouvé n'est premier
+console.log([4, 6, 7, 12].findIndex(estPremier)); // 2, l'élément 7 à l'indice 2 est premier
+
+/*La fonction estPremier prend trois arguments : élément, index et array. Dans cet exemple, nous n'utilisons que élément,
+ qui correspond à l'élément du tableau que la méthode findIndex() est en train d'évaluer.
+
+La fonction estPremier utilise un algorithme simple pour déterminer si un nombre est premier.
+Elle commence par initialiser la variable début à 2, puis elle boucle tant que début est inférieur
+ou égal à la racine carrée de élément. Pendant chaque itération, elle vérifie si élément est divisible par début. 
+Si c'est le cas, elle retourne false, ce qui signifie que élément n'est pas premier.
+Sinon, elle incrémente début et continue la boucle. Si elle parvient à sortir de la boucle sans avoir retourné false,
+elle vérifie si élément est supérieur à 1, ce qui signifie qu'il est premier, et elle retourne true.
+
+Dans le premier appel à findIndex(), nous passons un tableau qui ne contient que des nombres non premiers.
+findIndex() évalue chaque élément du tableau en appelant la fonction estPremier, qui retourne toujours false.
+Par conséquent, findIndex() ne trouve aucun élément qui satisfait la condition, et il renvoie -1.
+
+Dans le deuxième appel à findIndex(), nous passons un tableau qui contient un nombre premier (7). findIndex() évalue chaque élément
+du tableau en appelant la fonction estPremier. Lorsqu'il évalue l'élément 7, la fonction estPremier retourne true, ce qui signifie que
+l'élément 7 satisfait la condition. findIndex() renvoie donc l'indice de cet élément, qui est 2.*/
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

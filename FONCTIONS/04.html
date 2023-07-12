@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+    Utilisation return
+<script>
+/*En JavaScript, l'instruction return est utilisée dans une fonction pour renvoyer une valeur spécifique à partir de cette fonction. Lorsque la fonction est exécutée, elle peut effectuer des calculs, des manipulations de données ou d'autres opérations, puis utiliser return pour renvoyer le résultat final à l'endroit où la fonction a été appelée. La valeur renvoyée peut être de n'importe quel type de données JavaScript, tel que string, number, boolean, object, array, etc.
+
+Rôle de return : 
+L'instruction return permet à une fonction de renvoyer une valeur calculée, transformée ou obtenue lors de son exécution. Une fois que return est exécuté, la fonction se termine immédiatement, et la valeur spécifiée après return est renvoyée à l'endroit où la fonction a été appelée.
+
+Utilisation de return pour les fonctions avec valeur de retour : 
+Lorsqu'une fonction a une valeur de retour, il est courant d'utiliser l'instruction return pour renvoyer cette valeur. Cela permet d'obtenir le résultat de la fonction et de l'utiliser dans d'autres parties du code.
+
+Sortie de fonction sans valeur de retour explicite : 
+Il est possible qu'une fonction ne renvoie pas explicitement de valeur en utilisant return. Dans ce cas, la fonction renverra automatiquement la valeur undefined. Cependant, il est important de noter que si return est utilisé sans valeur après l'instruction, la fonction sera arrêtée immédiatement, et aucune valeur ne sera renvoyée explicitement.
+
+Utilisation de return pour sortir d'une fonction prématurément : 
+Dans certains cas, une fonction peut nécessiter de sortir prématurément sans exécuter le reste du code. Cela peut se produire si une condition est remplie ou si une situation spécifique se produit. L'utilisation de return permet de sortir immédiatement de la fonction sans terminer son exécution.
+
+Valeur de retour multiple : 
+En JavaScript, une fonction ne peut renvoyer qu'une seule valeur. Cependant, si tu as besoin de renvoyer plusieurs valeurs, tu peux utiliser des structures de données telles que des tableaux ou des objets pour regrouper ces valeurs et les renvoyer ensemble.
+
+L'instruction return joue un rôle essentiel en JavaScript en permettant aux fonctions de renvoyer des valeurs calculées ou obtenues pendant leur exécution. Cela facilite l'utilisation des résultats de la fonction dans d'autres parties du code.
+
+L'instruction return est utilisée pour renvoyer une valeur spécifique à partir d'une fonction. Elle est essentielle pour obtenir le résultat d'une fonction et l'utiliser dans d'autres parties du code. Il est important de comprendre et d'utiliser correctement return pour garantir un comportement cohérent et prévisible des fonctions..*/
+
+
+
+function calcSomme(a, b) {
+  let somme = a + b;
+  return somme;
+}
+
+let resultat = calcSomme(5, 3);
+console.log(resultat); // Affiche 8
+
+/*Dans cet exemple, nous avons une fonction appelée calcSomme qui prend deux paramètres a et b. À l'intérieur de la fonction, nous effectuons une opération pour calculer la somme de a et b, puis nous stockons ce résultat dans la variable somme.
+
+Ensuite, nous utilisons l'instruction return pour renvoyer cette valeur de somme à l'endroit où la fonction a été appelée. Cela permet d'obtenir le résultat du calcul de la somme à l'extérieur de la fonction.
+
+Ensuite, nous appelons la fonction calcSomme avec les arguments 5 et 3. Le résultat de l'appel de fonction est assigné à la variable resultat. En utilisant console.log, nous affichons le contenu de resultat dans la console, qui dans ce cas est 8 (la somme de 5 et 3).
+
+Cet exemple illustre comment l'instruction return permet de renvoyer une valeur spécifique (dans ce cas, la somme calculée) à partir d'une fonction. Cela nous permet d'utiliser le résultat de la fonction dans d'autres parties de notre programme.*/
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+
+/*******************************************************************************************************************************/
+function calcCarre(nombre) {
+  return nombre * nombre;
+}
+
+let resultCarre = calcCarre(4);
+console.log(resultCarre); // Affiche 16
+
+/*Dans cet exemple, nous avons une fonction calcCarre qui prend un paramètre nombre. À l'intérieur de la fonction, nous multiplions nombre par lui-même pour calculer le carré de ce nombre.
+
+Ensuite, nous utilisons l'instruction return pour renvoyer la valeur calculée, c'est-à-dire le carré de nombre. Lorsque return est exécuté, la fonction se termine immédiatement et renvoie cette valeur à l'endroit où la fonction a été appelée.
+
+En appelant la fonction calcCarre avec l'argument 4, nous assignons le résultat de l'appel de fonction à la variable resultat. En utilisant console.log, nous affichons le contenu de resultat dans la console, qui est 16 (le carré de 4).
+
+Cet exemple illustre comment l'instruction return est utilisée pour renvoyer une valeur spécifique (dans ce cas, le carré calculé) à partir d'une fonction avec une valeur de retour. Cela nous permet d'obtenir le résultat de la fonction et de l'utiliser dans d'autres parties de notre code.*/
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************************/
+/*Utilisation de return pour sortir d'une fonction prématurément:
+
+Lorsqu'une fonction a une valeur de retour, il est généralement recommandé d'utiliser l'instruction return pour renvoyer cette valeur. Cela permet d'obtenir le résultat de la fonction et de l'utiliser dans d'autres parties du code.
+
+L'utilisation de return peut se faire à tout moment à l'intérieur de la fonction. Une fois que return est exécuté, la fonction se termine immédiatement et le contrôle est renvoyé à l'endroit où la fonction a été appelée.
+
+Sortir de la function peut être utile dans certains cas
+
+Si la fonction a un effet de bord (c'est-à-dire qu'elle effectue une action, mais n'a pas besoin de retourner une valeur),
+il est courant de ne pas inclure de return ou d'utiliser return; pour retourner undefined.
+
+Si une fonction a des comportements conditionnels, elle peut être amenée à retourner undefined si aucune des conditions n'est remplie.
+
+Si une fonction doit retourner une valeur qui n'existe pas ou qui n'est pas encore déterminée,
+elle peut retourner undefined pour indiquer qu'elle n'a pas de valeur valide à retourner pour le moment.*/
+
+
+
+function verifierAge(age) {
+  if (age < 18) {
+    return "Vous êtes mineur. L'accès est refusé."; // Sortie prématurée avec une valeur de retour
+  }
+
+  console.log("Accès autorisé. Bienvenue !");
+  // Le code restant de la fonction ne sera pas exécuté si l'âge est supérieur ou égal à 18
+}
+
+let resultat1 = verifierAge(15);
+console.log(resultat1); // Affiche "Vous êtes mineur. L'accès est refusé."
+
+let resultat2 = verifierAge(20);
+// Si l'âge est supérieur ou égal à 18, seule la phrase "Accès autorisé. Bienvenue !" sera affichée, sans valeur de retour explicite
+
+
+
+/*Dans cet exemple, nous avons une fonction verifierAge qui prend un paramètre age. À l'intérieur de la fonction, nous vérifions si age est inférieur à 18. Si c'est le cas, nous utilisons return pour sortir prématurément de la fonction et renvoyer le message "Vous êtes mineur. L'accès est refusé.".
+
+Si age est supérieur ou égal à 18, le reste du code de la fonction ne sera pas exécuté. Dans cet exemple, nous avons une instruction console.log pour afficher le message "Accès autorisé. Bienvenue !", qui ne sera exécutée que si l'âge est supérieur ou égal à 18. Cependant, aucune valeur de retour explicite n'est spécifiée.
+
+Lorsque nous appelons la fonction verifierAge avec l'argument 15, nous assignons le résultat de l'appel de fonction à la variable resultat1. En utilisant console.log, nous affichons le contenu de resultat1 dans la console, qui est le message "Vous êtes mineur. L'accès est refusé."
+
+En revanche, lorsque nous appelons la fonction verifierAge avec l'argument 20, aucune valeur de retour explicite n'est spécifiée, mais la phrase "Accès autorisé. Bienvenue !" est affichée à l'aide de console.log. Cela démontre que le code restant de la fonction ne sera pas exécuté si l'âge est supérieur ou égal à 18 et que la fonction sortira immédiatement.
+
+Cet exemple illustre comment utiliser return pour sortir prématurément d'une fonction en fonction de conditions spécifiques. Cela permet de contrôler le flux d'exécution de la fonction et de sortir immédiatement lorsque cela est nécessaire.*/
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************************/
+/* Lorsqu'une fonction a besoin de renvoyer plusieurs valeurs, il est possible d'utiliser des structures de données comme des tableaux ou des objets pour regrouper ces valeurs et les renvoyer ensemble. Voici un exemple pour illustrer cette situation :*/
+
+
+
+function obtenirInfosUtilisateur() {
+  let nom = "Ada LOVELACE";
+  let age = 30;
+  let ville = "London";
+
+  return [nom, age, ville];
+}
+
+let user = obtenirInfosUtilisateur();
+console.log(user[0]); // Affiche "Ada LOVELACE"
+console.log(user[1]); // Affiche 30
+console.log(user[2]); // Affiche "London"
+
+/*Dans cet exemple, la fonction obtenirInfosUtilisateur regroupe trois informations sur un utilisateur : son nom, son âge et sa ville. Au lieu de renvoyer ces valeurs individuellement, nous les regroupons dans un tableau en utilisant return [nom, age, ville].
+
+Lorsque nous appelons la fonction obtenirInfosUtilisateur, le résultat de l'appel de fonction est assigné à la variable resultat. En affichant les éléments du tableau resultat, nous pouvons accéder aux différentes valeurs renvoyées par la fonction en utilisant des indices (par exemple, resultat[0] pour le nom, resultat[1] pour l'âge, etc.).*/
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************************/
+/*Utilisation d'un objet pour renvoyer plusieurs valeurs :*/
+
+function obtenirInfosProduit() {
+  let produit = {
+    nom: "Ordinateur portable",
+    prix: 1200,
+    stock: 10
+  };
+
+  return produit;
+}
+
+let infosProduit = obtenirInfosProduit();
+console.log(infosProduit.nom); // Affiche "Ordinateur portable"
+console.log(infosProduit.prix); // Affiche 1200
+console.log(infosProduit.stock); // Affiche 10
+
+
+/*Dans cet exemple, nous avons une fonction appelée obtenirInfosProduit qui a pour rôle de renvoyer un objet contenant différentes informations sur un produit. Au lieu de renvoyer chaque information individuellement, nous utilisons return pour regrouper ces valeurs dans un objet et les renvoyer ensemble.
+
+Lorsque nous appelons la fonction obtenirInfosProduit et stockons le résultat dans une variable infosProduit, nous obtenons un objet qui représente les informations du produit. Cet objet a plusieurs propriétés, telles que nom, prix et stock, qui contiennent les valeurs correspondantes du produit.
+
+En utilisant la notation par point, nous pouvons accéder aux différentes propriétés de l'objet infosProduit. Par exemple, infosProduit.nom nous donne le nom du produit, infosProduit.prix nous donne le prix du produit, et ainsi de suite. En utilisant cette approche, nous pouvons extraire les valeurs renvoyées par la fonction et les utiliser dans d'autres parties de notre programme
+
+En utilisant cet exemple, nous pouvons clairement voir comment la fonction obtenirInfosProduit renvoie un objet contenant les informations du produit, qui sont ensuite accessibles à l'aide de la notation par point. Cela nous permet d'obtenir les détails spécifiques du produit, tels que son nom, son prix et son stock, et de les utiliser selon nos besoins.*/
+
+/*******************************************************************************************************************************/
+
+
+</script>
+</body>
+</html>

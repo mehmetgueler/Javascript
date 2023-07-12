@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méhtode reduce() sur les tableaux</title>
+</head>
+<body><script>
+
+    /*La méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste
+(de la gauche vers la droite) afin de la réduire à une seule valeur.
+
+**          arr.reduce(callback)
+**         arr.reduce(callback, valeurInitiale)
+
+
+
+**  callback
+La fonction à exécuter sur chaque valeur de la liste (sauf le premier si aucune valeurInitiale n'est fournie),
+ elle prend quatre arguments en entrée :
+
+**  accumulateur
+La valeur précédemment retournée par le dernier appel du callback, ou valeurInitiale, si elle est fournie (voir ci-après) 
+(c'est la valeur « accumulée » au fur et à mesure des appels
+
+**  valeurCourante
+La valeur de l'élément courant actuellement manipulé dans le tableau.
+
+**  index ((Facultatif))
+L'index de l'élément courant actuellement manipulé dans le tableau.
+
+**  array ((Facultatif))
+Le tableau sur lequel on a appelé la méthode reduce().
+
+valeurInitialeFacultatif
+Une valeur utilisée comme premier argument lors du premier appel de la fonction callback. Si aucune valeur initiale n'est fournie,
+ le premier élément du tableau est utilisé (et la boucle de traitement ne le parcourera pas). 
+ Si on appelle reduce() sur un tableau vide sans fournir de valeur initiale, on aura une erreur.    */
+/*******************************************************************************************/
+
+// Définition de la fonction de réduction qui prend quatre paramètres : l'accumulateur, la valeur courante, l'indice et le tableau
+function lesNombres(acc, cur, index, array) {
+    // Retourne la somme de l'accumulateur et de la valeur courante
+    console.log(acc);
+    return acc + cur;
+}
+
+let unTab = [10, 20, 30, 40, 50];
+
+// Appel de la méthode reduce() sur le tableau avec la fonction de réduction
+let usereduce = unTab.reduce(lesNombres);
+
+console.log(usereduce);
+
+
+
+
+
+
+
+
+
+
+
+// /*******************************************************************************************/
+// const array1 = [1, 2, 3, 4];
+
+// const initialValue = 0;// Définition de la valeur initiale de l'accumulateur
+
+
+// // Utilisation de la méthode reduce pour calculer la somme des éléments du tableau, en utilisant initialValue comme valeur initiale de l'accumulateur
+// const sumWithInitial = array1.reduce(
+//   // Définition de la fonction de rappel qui prend en paramètres l'accumulateur et l'élément courant du tableau, et qui renvoie la somme de l'accumulateur et de l'élément courant
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue
+// );
+
+// // Affichage de la somme calculée
+// console.log(sumWithInitial);// 10
+// /*Ici, la méthode reduce() est utilisée pour calculer la somme des éléments
+// du tableau array1. La valeur initiale de l'accumulateur est définie à 0,
+// ce qui signifie que la somme commence à 0. La fonction de rappel ajoute
+// l'élément courant de array1 à l'accumulateur à chaque itération, et la
+// somme finale est renvoyée par la méthode reduce().
+// /*******************************************************************************************/
+
+
+
+
+
+
+// /*******************************************************************************************/
+// // On crée un tableau "shoppingCart" contenant des objets représentant des articles avec leur nom, leur quantité et leur prix
+// const shoppingCart = [
+//   { name: "Apples", qty: 2, price: 0.5 },
+//   { name: "Bananas", qty: 3, price: 0.8 },
+//   { name: "Cherries", qty: 1, price: 2.0 },
+// ];
+
+// // On utilise la méthode reduce() sur le tableau "shoppingCart" pour calculer le total des achats
+// const total = shoppingCart.reduce((acc, cur) => {
+//   // On calcule le total pour l'élément en cours de traitement en multipliant sa quantité par son prix
+//   const itemTotal = cur.qty * cur.price;
+//   // On renvoie la somme de l'accumulateur et du total de l'élément en cours de traitement
+//   return acc + itemTotal;
+//   // On initialise l'accumulateur à 0
+// }, 0);
+
+// // On affiche le résultat du calcul total dans la console
+// console.log(total); // Output : 5.4
+// /*******************************************************************************************/
+
+    </script>
+</body>
+</html>

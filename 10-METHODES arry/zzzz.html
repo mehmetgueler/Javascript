@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.isArray()</title>
+</head>
+<body><script>
+
+/*Array.isArray() est une méthode statique en JavaScript qui permet de déterminer si une variable est un tableau (instance de la classe Array) ou non. Elle retourne une valeur booléenne (true ou false) selon le résultat.
+
+La syntaxe de la méthode isArray() est la suivante :
+
+                Array.isArray(value)
+
+value: La variable que vous souhaitez vérifier si elle est un tableau ou non.
+
+
+La valeur de retour de la méthode Array.isArray() est un boolean (valeur booléenne), qui peut être soit true si l'argument passé à la méthode est un tableau, soit false s'il ne s'agit pas d'un tableau.*/
+
+
+
+
+// Définition des variables
+let v = "'Cogito, ergo sum'- Descartes (Je pense, donc je suis)";
+let w = ["val1", "val2", "val3", "val4", "val5", "val6"];
+let x = new Array("valueA", "valueB", "valueC", "valueD", "valueE");
+let y = [];
+let z = new Array();
+
+// Vérification si les variables sont des tableaux
+let vIsArray = Array.isArray(v);
+let wIsArray = Array.isArray(w);
+let xIsArray = Array.isArray(x);
+let yIsArray = Array.isArray(y);
+let zIsArray = Array.isArray(z);
+
+// Affichage des résultats
+console.log(`La variable 'v' est-elle un tableau ? : ${vIsArray}`);
+console.log(`La variable 'w' est-elle un tableau ? : ${wIsArray}`);
+console.log(`La variable 'x' est-elle un tableau ? : ${xIsArray}`);
+console.log(`La variable 'y' est-elle un tableau ? : ${yIsArray}`);
+console.log(`La variable 'z' est-elle un tableau ? : ${zIsArray}`);
+
+
+
+/*Les variables vIsArray, wIsArray, xIsArray, yIsArray et zIsArray sont utilisées pour stocker les résultats des vérifications pour savoir si les variables respectives v, w, x, y et z sont des tableaux ou non.
+La méthode Array.isArray() est utilisée pour effectuer ces vérifications. Elle renvoie true si la variable est un tableau et false sinon.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>   
+</body>
+</html>

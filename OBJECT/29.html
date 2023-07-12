@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- L'opérateur instanceof permet de tester si un objet possède, dans sa chaîne
+ de prototype, la propriété prototype d'un certain constructeur.
+La syntaxe de l'opérateur instanceof est la suivante :-->
+
+  objet instanceof Classe
+
+<script>
+
+function demo() {
+    
+}
+
+function demo2() {
+    
+}
+
+
+let instance1       = new demo();
+let verification    = instance1 instanceof demo;
+console.log(verification);//true
+
+let instance2       = new demo();
+let verification2   = instance2 instanceof demo2;
+console.log(verification2);//ffalse
+///////////////////////////////////////////////////////////////////////////
+
+
+
+////////Vérifier si un objet est une instance d'une classe/////////////////
+function Personne(nom, age) {
+  this.nom = nom;
+  this.age = age;
+}
+
+var personne1 = new Personne("Alice", 25);
+
+console.log(personne1 instanceof Personne); // true
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////Vérifier si un objet est une instance d'une classe parente/////////
+function Animal() {
+  this.type = "Animal";
+}
+
+function Chien() {
+  this.nom = "Rex";
+}
+Chien.prototype = new Animal();
+
+var chien1 = new Chien();
+
+console.log(chien1 instanceof Animal); // true
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////Vérifier si un objet est une instance d'un type de données/////////
+
+var nombre = 5;
+
+console.log(nombre instanceof Number); // false
+console.log(typeof nombre); // "number"
+
+var nombreObjet = new Number(5);
+
+console.log(nombreObjet instanceof Number); // true
+console.log(typeof nombreObjet); // "object"
+
+
+
+    </script>
+</body>
+</html>

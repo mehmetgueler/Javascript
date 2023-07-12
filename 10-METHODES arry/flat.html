@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.flat()</title>
+</head>
+<body><script>
+
+/*Cette méthode est utilisée pour aplatir un tableau multidimensionnel en créant un nouveau tableau contenant tous les éléments des sous-tableaux.
+
+Syntaxe :
+
+arr.flat
+arr.flat([depth])
+
+depth (facultatif) : Indique la profondeur d'aplatissement souhaitée. Par défaut, la valeur est de 1. Si depth est un entier négatif, la méthode aplatit tous les niveaux de profondeur. Si depth est 0, la méthode renvoie une copie superficielle de l'array.
+
+
+⁡⁢⁣⁣La méthode flat() retourne un nouveau tableau avec les éléments aplatis. Elle ne modifie pas le tableau d'origine.
+Si aucun élément n'est présent dans l'array, la méthode flat() renvoie un tableau vide.
+Les éléments vides ou non définis (undefined) dans l'array sont ignorés lors de l'aplatissement.
+La méthode flat() ne modifie pas les sous-tableaux. Si vous modifiez les éléments des sous-tableaux après avoir appliqué flat(), ces modifications se refléteront dans le tableau aplati.
+La profondeur d'aplatissement peut être spécifiée jusqu'à une valeur maximale de 2 ** 53 - 1.
+⁡
+Méthodes liées :
+
+Array.prototype.flatMap() : Cette méthode permet d'aplatisser un tableau et de mapper simultanément les éléments en utilisant une fonction de mappage.
+Array.prototype.concat() : Cette méthode concatène les tableaux et renvoie un nouveau tableau résultant.*/
+
+
+const arr = [1, 2, [3, 4, [5, 6]]];
+
+const flattened = arr.flat();
+console.log(flattened);// Affiche: [1, 2, 3, 4, [5, 6]]
+
+const deeplyFlattened = arr.flat(2);
+console.log(deeplyFlattened);// Affiche: [1, 2, 3, 4, 5, 6]
+/**************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/**************************************************************************************************************/
+/*La méthode flat() permet de retirer les "trous" d'un tableau, c'est-à-dire les emplacements vides ou non définis (undefined) entre les éléments. Lorsqu'un tableau contient des emplacements vides, ceux-ci sont ignorés lors de l'aplatissement, et le résultat ne contient que les éléments valides.*/
+
+
+const myArr = [1, 2, , 4, 5];
+const applatir = arr.flat();
+
+console.log(applatir);// Affiche: 123
+/*Dans cet exemple, le tableau arr contient un emplacement vide entre les éléments 2 et 4. Lorsque nous utilisons flat(), cet emplacement vide est ignoré et le résultat applatir ne contient que les éléments valides.*/
+/**************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/**************************************************************************************************************/
+const projectTasks = [
+  { id: 1, title: 'Faire la recherche', assignedTo: 'Julie' },
+  { id: 2, title: 'Créer les maquettes', assignedTo: 'Dexter' },
+  [
+    { id: 3, title: 'Implémenter la fonctionnalité A', assignedTo: 'Julie' },
+    { id: 4, title: 'Tester la fonctionnalité A', assignedTo: 'Dexter' }
+  ],
+  { id: 5, title: 'Finaliser la documentation', assignedTo: 'John' }
+];
+
+const allTasks = projectTasks.flat(Infinity);
+
+console.log(allTasks);
+
+/*Affiche:
+[
+  { id: 1, title: 'Faire la recherche', assignedTo: 'Julie' },
+  { id: 2, title: 'Créer les maquettes', assignedTo: 'Dexter' },
+  { id: 3, title: 'Implémenter la fonctionnalité A', assignedTo: 'Julie' },
+  { id: 4, title: 'Tester la fonctionnalité A', assignedTo: 'Dexter' },
+  { id: 5, title: 'Finaliser la documentation', assignedTo: 'Julie' }
+]
+
+Dans cet exemple, le tableau projectTasks contient des objets représentant des tâches dans un projet. Certains éléments sont des tableaux imbriqués contenant des tâches supplémentaires. En utilisant flat(Infinity), nous aplatissions le tableau en spécifiant une profondeur maximale de manière à aplatir tous les niveaux de sous-tableaux, quel que soit leur nombre de niveaux d'imbrication.
+
+Ainsi, nous obtenons un tableau allTasks qui contient toutes les tâches, qu'elles soient directement présentes dans le tableau d'origine ou dans les sous-tableaux.
+
+Cela peut être utile lorsque vous travaillez avec des données structurées représentant une hiérarchie de tâches ou de sous-tâches, et que vous souhaitez obtenir une liste plate de toutes les tâches pour une gestion ou une manipulation simplifiée.*/
+/**************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/**************************************************************************************************************/
+/*La méthode flat() peut être utilisée en conjonction avec d'autres méthodes de tableau pour effectuer des opérations plus complexes. 
+Supposons que vous ayez un tableau multidimensionnel représentant une liste de contacts avec leurs informations. Vous souhaitez aplatir le tableau, filtrer les contacts dont l'âge est supérieur à 30 ans, puis récupérer uniquement leurs noms.*/
+
+const contacts = [
+  { name: 'John', age: 25 },
+  { name: 'Lisa', age: 35 },
+  [
+    { name: 'Tom', age: 40 },
+    { name: 'Emily', age: 28 }
+  ],
+  { name: 'Mike', age: 30 }
+];
+
+const filteredNames = contacts
+  .flat()
+  .filter(contact => contact.age > 30)
+  .map(contact => contact.name);
+
+console.log(filteredNames);// Affiche: 'Lisa', 'Tom']
+
+
+/*Dans cet exemple, nous utilisons flat() pour aplatir le tableau contacts. Ensuite, nous utilisons filter() pour filtrer les contacts dont l'âge est supérieur à 30 ans. Enfin, nous utilisons map() pour extraire uniquement les noms de ces contacts filtrés.
+
+Le résultat final, filteredNames, est un nouveau tableau contenant les noms des contacts dont l'âge est supérieur à 30 ans.
+
+Cet exemple illustre comment combiner flat() avec d'autres méthodes pour effectuer des opérations complexes sur des tableaux multidimensionnels et extraire des informations spécifiques selon des critères définis.*/
+
+
+</script>
+</body>
+</html>

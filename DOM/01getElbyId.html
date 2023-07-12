@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mon-style {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<!--getElementById est une méthode de l'objet document en JavaScript qui permet de récupérer un élément HTML unique à partir de son identifiant id.*/-->
+
+
+
+ <h1 id="titre">Titre de la page</h1>
+ <p>Contenu de la page...</p>
+
+
+
+
+
+<div id="exemple">Appuyer sur le bouton pour afficher le contenu modifié</div>
+<div id="exemple1">Un texte dans un div avec ID 'exemple1'</div>
+<div id="exemple2">Un texte dans un div avec ID 'exemple2'</div>
+<div id="exemple3">Un texte à afficher dans la console'</div>
+
+
+
+
+
+<button onclick="avecFonction()">appuyer</button>
+
+
+<p id="mon-paragraph">Mon paragraphe de départ</p>
+<button onclick="ajouterStyle()">Ajouter une classe CSS</button>
+
+<script>
+//// CHANGEMENT d'un titre dans la page
+
+let titre = document.getElementById('titre');// Récupère l'élément avec l'identifiant 'titre'
+titre.textContent = "Exemples getElementById";// Modifie le contenu textuel de l'élément
+
+
+
+//// Récupérer un élément avec l'identifiant(ID) et modifiler le contenu par innerHTML
+document.getElementById('exemple1').innerHTML='Texte recupére par getElementById et remplacé par innerHTML ';
+
+
+
+
+//Récupérer un éléement avec l'identifiant(ID) et stocker le contenu dans une variable pour una usage ultérieur
+let stockIDexemple2 = document.getElementById('exemple2').innerHTML//sans modification du contenu
+
+//Récupérer un éléement avec l'identifiant(ID) et stocker le contenu dans une variable avec nouveau contenu
+let stockage = document.getElementById('exemple2').innerHTML = "Modifiction contenu de l'élément et stockage dans une variable ";
+console.log(stockage);//Modifiction contenu de l'élément et stockage dans une variable 
+
+
+
+
+
+//Récupérer un élément(bouton) avec l'ID, insérer un centenu dans la page en modifiant le contenu d'un autre élément spécifique ID
+function avecFonction(){
+    document.getElementById('exemple').innerHTML = "Exemple avec bouton"
+}
+////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////
+function consoleLog() {
+      let afficherMsgDansConsole = document.getElementById("exemple3").innerHTML;
+      console.log(afficherMsgDansConsole);
+  }
+  consoleLog();
+////////////////////////////////////////
+
+
+
+///// CSS
+function ajouterStyle() {
+			let element = document.getElementById("mon-paragraph");
+			element.classList.add("mon-style");
+		}
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

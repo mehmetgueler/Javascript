@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+  "Fonctions imbriquées (fonction interne) en JavaScrip
+    Appel une fonction interne (récupérer les valeurs des fonctions interne ) 
+  <script>
+
+function x(a) {
+    function y() {
+        function z() {
+            console.log(a);
+        }
+        return z();  // La fonction "y" retourne l'appel de la fonction "z"
+
+    }
+    return y();      // La fonction "x" retourne l'appel de la fonction "y"
+
+}
+
+let unvar = x('salut');
+
+/*La fonction "x" prend un argument "a" et retourne l'appel de la fonction "y".
+La fonction "y" ne prend pas d'argument et retourne l'appel de la fonction "z".
+La fonction "z" ne prend pas d'argument et affiche la valeur de "a" à la console
+(définie dans la portée de la fonction "x").
+L'appel de la fonction "x" avec l'argument "salut" affiche "salut" à la console.*/
+/***************************************************************************************************/
+
+
+
+
+/********MÊME EXEMPLE AVEC VARIABLE******************************************************************/
+
+let xx = function (a, b, c) {
+  let yy =  function () {
+    let zz =  function z() {
+            console.log(a,b,c);
+        }
+        return zz();  
+
+    }
+    return yy();      
+
+}
+
+const sousFonction = xx('salut', 'c\'est', 'personne :)');
+
+
+
+
+
+
+
+/***************************************************************************************************/
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+propertyIsEnumerable() <!--  est une méthode de l'objet Object en JavaScript qui
+renvoie une valeur booléenne indiquant si la propriété spécifiée d'un objet peut
+être énumérée en utilisant une boucle for...in. Cette méthode vérifie si la
+propriété est propre à l'objet (et non héritée de sa chaîne de prototypes) et si
+elle est énumérable.
+
+La syntaxe de propertyIsEnumerable() est la suivante :-->
+
+objet.propertyIsEnumerable(nomDeLaPropriété);
+
+ <!-- où objet est l'objet sur lequel vous souhaitez effectuer la vérification et
+nomDeLaPropriété est le nom de la propriété que vous souhaitez vérifier. La
+méthode renvoie true si la propriété est énumérable et false sinon. Notez que
+même si une propriété est définie sur un objet, elle ne sera pas énumérable si sa
+valeur est undefined.
+
+La méthode propertyIsEnumerable() est utile pour vérifier si une propriété peut
+être parcourue avec une boucle for...in. Si vous voulez vérifier si une propriété
+existe sur un objet sans vérifier si elle est énumérable, vous pouvez utiliser
+la méthode hasOwnProperty().-->
+<script>
+
+//Vérifier si une propriété est énumérable
+
+const monObjet = {
+  propriete1: 'valeur1',
+  propriete2: 'valeur2'
+};
+
+console.log(monObjet.propertyIsEnumerable('propriete1')); // true
+console.log(monObjet.propertyIsEnumerable('toString')); // false (méthode héritée de Object.prototype et non énumérable)
+
+
+//Parcourir les propriétés énumérables d'un objet
+const voiture = {
+  marque: 'Ford',
+  modele: 'Mustang',
+  annee: 1969
+};
+
+for (let prop in voiture) {
+  if (voiture.propertyIsEnumerable(prop)) {
+    console.log(`${prop} : ${voiture[prop]}`);
+  }
+}
+
+////Utiliser une boucle for...in pour itérer sur les propriétés énumérables d'un objet/
+const obj = { a: 1, b: 2 };
+Object.defineProperty(obj, 'c', { value: 3, enumerable: false }); // définir une propriété non énumérable
+for (let prop in obj) {
+  console.log(prop); // affiche "a" et "b", mais pas "c"
+}
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+//Vérifier si un objet est extensible et si une propriété est énumérable
+const unObj = { a: 1 };
+console.log(Object.isExtensible(unObj)); // true
+Object.defineProperty(unObj, 'b', { value: 2, enumerable: false });
+console.log(unObj.propertyIsEnumerable('b')); // false
+
+
+
+
+</script>
+</body>
+</html>

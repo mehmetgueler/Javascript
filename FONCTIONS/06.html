@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Function</title>
+</head>
+<body>
+            Fonction anonyme
+<script>
+
+/*Une fonction anonyme en JavaScript (également appelée fonction sans nom) est une fonction qui n'a pas de nom associé. Elle est définie sans utiliser un identifiant habituel comme avec les fonctions nommées. Au lieu de cela, elle est créée en utilisant une expression de fonction c'est à dire assigner la fonction à une variable sans lui attribuer de nom spécifique.
+
+Les fonctions anonymes peuvent être utilisées de différentes manières :
+
+Assignation à une variable : Une fonction anonyme peut être assignée à une variable en tant que valeur. Cela permet de stocker la fonction dans la variable pour une utilisation ultérieure.
+
+Arguments de fonction : Les fonctions anonymes peuvent être utilisées comme arguments dans d'autres fonctions. Elles peuvent être passées comme paramètres et exécutées à l'intérieur de la fonction appelante.
+
+Fonctions auto-exécutables (IIFE) : Les fonctions anonymes peuvent être immédiatement invoquées après leur définition. Elles sont souvent entourées de parenthèses pour former une expression et suivies de parenthèses supplémentaires pour les appeler immédiatement.
+
+Les fonctions anonymes offrent une flexibilité en permettant de créer des fonctions ad hoc sans avoir à leur attribuer un nom spécifique. Elles sont largement utilisées dans JavaScript, en particulier dans les cas où une fonction est utilisée ponctuellement et n'a pas besoin d'être réutilisée ailleurs dans le code.*/
+
+
+
+
+
+
+
+
+
+/*Lorsqu'une fonction anonyme est assignée à une variable, cela signifie simplement que la fonction est définie sans nom spécifique et est ensuite stockée dans une variable pour une utilisation ultérieure.
+
+L'assignation d'une fonction anonyme à une variable offre plusieurs avantages :
+
+Réutilisation de la fonction : En assignant une fonction anonyme à une variable, vous pouvez l'utiliser à plusieurs endroits dans votre code sans avoir à la redéfinir à chaque fois. Il suffit d'appeler la variable contenant la fonction pour l'exécuter.
+
+Passage de fonctions en tant qu'arguments : L'assignation d'une fonction anonyme à une variable facilite le passage de cette fonction en tant qu'argument à d'autres fonctions. Cela est couramment utilisé dans les callbacks, où vous pouvez définir une fonction anonyme et la passer en tant qu'argument à une fonction qui l'appellera à un moment donné.
+
+Encapsulation du code : En assignant une fonction anonyme à une variable, vous pouvez encapsuler du code spécifique dans cette fonction sans qu'elle ne soit accessible en dehors de la portée de la variable. Cela peut aider à éviter les conflits de noms et à maintenir une meilleure organisation du code.
+
+L'assignation d'une fonction anonyme à une variable est une pratique courante en JavaScript et est souvent utilisée pour des tâches spécifiques qui nécessitent une fonction ad hoc sans nécessiter de nom spécifique.*/
+
+
+// Déclaration d'une fonction anonyme assignée à la variable "somme"
+var somme = function(a, b) {
+  return a + b;
+};
+
+// Appel de la fonction anonyme via la variable "somme"
+var resultat = somme(3, 5);
+console.log(resultat); // Affiche 8
+
+/* Dans cet exemple, nous déclarons une fonction anonyme en utilisant la syntaxe function(a, b) { ... }. Cette fonction anonyme prend deux paramètres a et b et renvoie la somme de ces deux valeurs.
+
+Ensuite, nous assignons cette fonction anonyme à la variable somme. Cela signifie que nous pouvons maintenant utiliser la variable somme comme une fonction, en lui passant des arguments et en récupérant le résultat.
+
+Dans l'exemple, nous appelons la fonction anonyme en utilisant la variable somme et lui passons les arguments 3 et 5. Le résultat de l'addition est stocké dans la variable resultat et affiché dans la console.
+
+Cet exemple illustre comment une fonction anonyme peut être utilisée en tant que valeur, assignée à une variable et appelée ultérieurement. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*En JavaScript, les fonctions anonymes peuvent être utilisées comme arguments dans d'autres fonctions. Cela signifie que vous pouvez définir une fonction anonyme sans nom spécifique et la passer en tant que paramètre à une autre fonction.
+
+L'utilisation de fonctions anonymes comme arguments permet une grande flexibilité et facilite la création de fonctions ad hoc pour répondre à des besoins spécifiques. Cela permet également de déléguer des actions ou des comportements spécifiques à des fonctions qui seront exécutées par la fonction appelante.
+
+Lorsque vous utilisez une fonction anonyme comme argument, vous pouvez l'invoquer à l'intérieur de la fonction appelante en utilisant la syntaxe habituelle pour appeler une fonction. Cela vous permet d'exécuter le code contenu dans la fonction anonyme au moment approprié, en fonction du contexte de la fonction appelante.
+
+Les fonctions anonymes en tant qu'arguments sont couramment utilisées dans des situations telles que :
+
+Les callbacks : Vous pouvez définir une fonction anonyme et la passer en tant que callback à une fonction qui sera appelée lorsque certaines actions sont effectuées ou qu'un événement se produit.
+Les fonctions de traitement de tableaux : Des fonctions telles que map, filter ou reduce acceptent souvent des fonctions anonymes pour spécifier le comportement à appliquer à chaque élément du tableau.
+Les fonctions asynchrones : Les fonctions telles que setTimeout ou fetch peuvent prendre une fonction anonyme en tant que callback à exécuter après une certaine temporisation ou lorsqu'une réponse est reçue.
+En utilisant des fonctions anonymes comme arguments, vous pouvez créer des fonctionnalités plus flexibles et réutilisables dans votre code. Cela permet de séparer les préoccupations et de déléguer des comportements spécifiques à des fonctions spécialisées.*/
+
+
+
+
+function afficherMessage(callback) {
+  console.log("Début de l'exécution de la fonction afficherMessage.");
+  callback();
+  console.log("Fin de l'exécution de la fonction afficherMessage.");
+}
+
+afficherMessage(function() {
+  console.log("Je suis une fonction anonyme utilisée comme argument.");
+});
+
+/*Dans cet exemple, nous avons une fonction appelée afficherMessage qui prend une fonction anonyme comme argument, que nous appelons également un "callback". La fonction afficherMessage exécute d'abord un message de début, puis invoque le callback, puis exécute un message de fin.
+
+Lorsque nous appelons afficherMessage, nous passons une fonction anonyme en tant qu'argument. Cette fonction anonyme affiche simplement un message spécifique.
+
+Lors de l'exécution de afficherMessage, la fonction anonyme est invoquée grâce à l'appel callback(), et le message correspondant est affiché dans la console.
+
+Cet exemple illustre comment une fonction anonyme peut être utilisée comme argument dans une autre fonction, notamment dans le cas de callbacks où le comportement souhaité peut varier en fonction du contexte d'exécution.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*En JavaScript, les fonctions anonymes peuvent être immédiatement invoquées après leur définition en les entourant de parenthèses pour former une expression. Ces fonctions auto-exécutables sont souvent utilisées pour encapsuler du code et créer un contexte privé.
+
+L'expression (function() { ... }) définit la fonction anonyme. Les parenthèses externes sont utilisées pour convertir la fonction en une expression, ce qui permet son exécution immédiate. Les parenthèses vides () après l'expression appellent la fonction, déclenchant ainsi son exécution immédiate.
+
+L'un des avantages clés des IIFE est la création d'une portée locale pour le code à l'intérieur de la fonction. Cela signifie que les variables et les fonctions déclarées à l'intérieur de l'IIFE sont limitées à cet espace local et n'interfèrent pas avec le reste du code. Cela aide à éviter les collisions de noms de variables et les problèmes liés à la pollution de l'espace global.
+
+Les IIFE sont souvent utilisées dans des scénarios tels que :
+
+L'encapsulation de code : L'IIFE permet de regrouper du code spécifique dans un contexte isolé, ce qui peut être utile pour organiser et structurer le code, ainsi que pour éviter les conflits de noms.
+
+La protection des variables : Les variables déclarées à l'intérieur de l'IIFE sont uniquement accessibles à l'intérieur de celle-ci, offrant ainsi une protection contre les modifications indésirables de variables externes.
+
+La création de modules : Les IIFE sont couramment utilisées pour créer des modules JavaScript, où des variables et des fonctions peuvent être définies dans l'IIFE et exposées uniquement via un objet de retour, protégeant ainsi l'accès direct aux variables internes.
+
+En résumé, les IIFE sont des fonctions anonymes qui sont immédiatement invoquées après leur définition. Elles offrent un moyen pratique d'encapsuler du code, de créer une portée locale et de protéger les variables. Elles sont souvent utilisées pour créer des modules, gérer les dépendances et organiser le code JavaScript de manière modulaire.*/
+
+
+(function() {
+  var message = "Ceci est une fonction anonyme auto-exécutée (IIFE).";
+  console.log(message);
+})();
+
+/*Dans cet exemple, nous déclarons une fonction anonyme entre parenthèses (function() { ... }). Les parenthèses externes entourent la fonction pour la convertir en une expression, et les parenthèses vides () immédiatement après appellent la fonction, déclenchant son exécution immédiate.
+
+À l'intérieur de l'IIFE, nous avons une variable message qui contient une chaîne de caractères. Ensuite, nous utilisons console.log pour afficher ce message dans la console.
+
+L'IIFE est utile pour encapsuler du code et créer un contexte privé. Dans cet exemple, le code à l'intérieur de l'IIFE est exécuté immédiatement sans avoir à appeler explicitement la fonction. Cela peut être utile pour exécuter du code de configuration initial, éviter les collisions de noms de variables avec le reste du code, ou simplement encapsuler du code pour une meilleure organisation et modularité.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*"Ad hoc" est un terme qui signifie "pour un cas particulier" ou "créé spécifiquement pour répondre à un besoin immédiat". Dans le contexte des fonctions, une fonction ad hoc est une fonction créée de manière ponctuelle pour répondre à un besoin spécifique sans avoir besoin d'être réutilisée ailleurs dans le code.
+
+Les fonctions ad hoc sont souvent créées lorsqu'il est nécessaire d'accomplir une tâche spécifique qui ne se répète pas fréquemment dans le code ou qui n'a pas de nécessité de réutilisation. Elles sont souvent implémentées comme des fonctions anonymes (sans nom spécifique) pour plus de simplicité.
+
+L'utilisation de fonctions ad hoc permet d'éviter de créer des fonctions nommées supplémentaires qui ne seraient utilisées que dans un contexte spécifique. Cela permet de garder le code plus concis et de ne pas encombrer l'espace global avec des fonctions dont la portée est limitée à un seul endroit.
+
+Un exemple concret d'utilisation d'une fonction ad hoc pourrait être lors du tri d'une liste d'objets selon un critère spécifique. Si le tri n'est nécessaire qu'à un seul endroit dans le code et ne se répète pas ailleurs, il serait plus simple de créer une fonction ad hoc pour effectuer le tri plutôt que de créer une fonction nommée séparée pour cette tâche.
+
+
+Supposons que vous ayez un tableau contenant des données d'utilisateurs avec leur nom et leur âge, et vous voulez filtrer les utilisateurs ayant un âge supérieur à 30 ans. Plutôt que de définir une fonction nommée séparée pour ce filtrage, vous pouvez utiliser une fonction ad hoc directement lors du filtrage :*/
+
+
+const utilisateurs = [
+  { nom: "Avril", age: 25 },
+  { nom: "Cynthia", age: 40 },
+  { nom: "Neela", age: 30 },
+  { nom: "Dianthe", age: 35 }
+];
+
+const utilisateurs30Plus = utilisateurs.filter(function(utilisateur) {
+  return utilisateur.age > 30;
+});
+
+console.log(utilisateurs30Plus);
+
+/*Dans cet exemple, nous utilisons la méthode filter pour filtrer les utilisateurs ayant un âge supérieur à 30. La fonction ad hoc est définie directement en tant qu'argument de filter et retourne true si l'utilisateur a un âge supérieur à 30, sinon false.
+
+La fonction ad hoc est créée spécifiquement pour répondre à ce besoin de filtrage et ne sera utilisée que pour cette tâche précise. Elle est définie directement lors de l'appel à filter, ce qui rend le code plus concis et évite la création d'une fonction nommée séparée uniquement pour cette tâche de filtrage.
+
+L'utilisation de fonctions ad hoc de cette manière permet de garder le code plus clair et de regrouper la logique de filtrage avec la fonction filter elle-même, sans créer de fonctions supplémentaires qui ne seraient utilisées que pour cette tâche spécifique.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

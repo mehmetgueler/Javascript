@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--document.body est l'élément dans lequel le contenu du document est situé. Dans les documents avec
+un élément <body> celui-ci est retourné, et dans les documents de type frameset l'élément
+<frameset> le plus extérieur est retourné.
+
+Même si body est modifiable, lui affecter une nouvelle valeur retire tous les éléments enfants du <body> existant.-->
+
+<p> Devient toi même</p> 
+<p>Friedrich Nietzsche</p>
+
+<button onclick="objBody()">click</button>
+
+<div id="leresultat">affiche body chaque click</div>
+
+
+<script>
+
+
+function foo() {
+    let objRef = document.body.innerHTML;
+    document.write(objRef); 
+//chaque click le nombre de messages affichés est multiplié par la valeur précédente 
+}
+
+
+function objBody(){
+	var objRef	=	document.body.innerHTML;
+	document.getElementById("leresultat").innerHTML = objRef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.from()</title>
+</head>
+<body><script>
+
+/*La méthode Array.from() est une méthode statique de l'objet Array qui permet de créer un nouvel tableau(une copie superficielle)à partir d'un objet itérable (comme un tableau, une chaîne de caractères, un objet semblable à un tableau, etc.) ou d'une structure de données semblable à un tableau.
+Syntaxe:
+            Array.from(arrayLike [, fonctionMap [, thisArg]])
+
+arrayLike: C'est un objet semblable à un tableau ou un objet itérable dont vous souhaitez créer un tableau. Cela peut être une instance de Array, une chaîne de caractères, un objet Set, un objet Map, ou tout autre objet itérable.
+
+fonctionMap (facultatif): C'est un argument optionnel, une fonction à appliquer à chacun des éléments du tableau. Cette fonction est appelée avec chaque élément de arrayLike en tant que premier argument et retourne la valeur correspondante à l'élément dans le tableau résultant. En d'autres termes, vous pouvez utiliser cette fonction pour effectuer une transformation sur chaque élément lors de la création du nouveau tableau.
+
+thisArg (facultatif): C'est un argument optionnel. Si vous spécifiez une fonction fonctionMap, vous pouvez également fournir thisArg qui représente la valeur à utiliser pour this lors de l'exécution de la fonction fonctionMap. Cela vous permet de contrôler le contexte dans lequel la fonction est appelée.
+
+Valeur de retour:
+La méthode Array.from() renvoie une nouvelle instance de Array qui est créée à partir des éléments de arrayLike. Les éléments de arrayLike sont traités dans l'ordre de leur indexabilité et ajoutés au nouveau tableau. Si arrayLike est déjà un tableau, une copie superficielle de celui-ci est renvoyée. Sinon, les éléments de arrayLike sont copiés dans un nouvel Array.*/
+
+
+// Création d'un nouveau tableau à partir d'une chaîne de caractères
+const str = 'Hello, World!';
+const chars = Array.from(str);
+console.log(chars); // ['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']
+
+
+// Création d'un tableau à partir d'un objet semblable à un tableau
+const obj = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
+const arr = Array.from(obj);
+console.log(arr); // ['a', 'b', 'c']
+
+
+// Utilisation de la fonction de rappel pour transformer les éléments
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = Array.from(numbers, num => num * 2);
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

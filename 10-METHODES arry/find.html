@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.find()</title>
+</head>
+<body><script>
+
+/*La méthode find() est une méthode disponible sur le prototype de l'objet Array en JavaScript. Elle permet de chercher et de retourner la première occurrence d'un élément dans un tableau qui satisfait une condition donnée.
+        
+**            arr.find(callback(element[, index[, tableau]])[, thisArg])
+
+array : Le tableau sur lequel la méthode find() est appelée.
+callback: Une fonction de rappel (callback) qui est appelée pour chaque élément du tableau. Cette fonction détermine si un élément correspond à la condition de recherche. La fonction callback prend généralement trois arguments :
+
+1.) element: L'élément actuellement traité dans le tableau.
+
+2.) index (optionnel) : L'indice de l'élément actuel du tableau.
+
+3.) array (optionnel) : Le tableau d'origine sur lequel find() est appelée.
+
+thisArg (optionnel) : Une valeur optionnelle utilisée comme this lorsque la fonction de rappel est appelée.
+
+
+La méthode find() parcourt chaque élément du tableau d'origine et exécute la fonction de rappel sur chaque élément. La première fois que la fonction de rappel retourne une valeur true pour un élément donné, cet élément est retourné en tant que résultat de la méthode find(). Si aucun élément ne satisfait la condition de recherche, la méthode find() renvoie undefined.*/
+
+
+
+//Voici un exemple concret pour illustrer l'utilisation de la méthode find() :
+
+const legumes = ['Endive', 'Betterave', 'Poireau', 'Pomme de terre'];
+
+// Trouver le premier fruit commençant par la lettre 'b'
+const result = legumes.find((fruit) => fruit.startsWith('B'));//case sensible!
+
+console.log(result); // Affiche 'banana'
+
+/*Dans cet exemple, nous avons un tableau legumes contenant des noms de legumes. Nous utilisons la méthode find() pour chercher le premier fruit qui commence par la lettre 'b' en utilisant une fonction de rappel qui utilise la méthode startsWith() pour vérifier si le nom du fruit commence par 'b'. Le premier fruit qui satisfait cette condition est 'banana', et c'est ce fruit qui est retourné en tant que résultat de la méthode find().
+
+La méthode find() est particulièrement utile lorsque vous avez besoin de trouver la première occurrence d'un élément dans un tableau en fonction d'une condition spécifique. Elle vous permet d'effectuer une recherche efficace et de récupérer rapidement l'élément recherché.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+/*******************************************************************************************/
+let monTablo = [1, 2, 3, 4, 5, 6, 7 ,8];
+
+function condition(element, index, array) {
+  return element == 6;//  "condition"  renvoie "true" si le troisième argument est égal à 6
+}
+
+// Utilisation de la méthode "find" pour trouver le premier élément du tableau qui satisfait la condition
+let foundElement = monTablo.find(condition);//find renvoie tous les par
+console.log(foundElement);
+
+/*Dans cet exemple, nous avons un tableau appelé monTablo contenant les nombres de 1 à 8. Ensuite, nous avons une fonction appelée condition qui est utilisée comme fonction de rappel avec la méthode find().
+
+La fonction condition prend trois arguments : element, index et array. Ces arguments correspondent respectivement à l'élément en cours d'itération, à l'index de cet élément dans le tableau et au tableau lui-même.
+
+Dans notre exemple, la fonction condition vérifie si l'élément element est égal à 6. Si c'est le cas, la fonction renvoie true, sinon elle renvoie false.
+
+Ensuite, nous utilisons la méthode find() sur monTablo en passant la fonction condition comme argument. La méthode find() itère sur chaque élément de monTablo et exécute la fonction condition sur chaque élément. Elle s'arrête dès qu'elle trouve le premier élément pour lequel la fonction condition renvoie true.
+
+Dans ce cas précis, après l'exécution du code, la variable foundElement contiendra la valeur 6, car c'est le premier élément de monTablo qui satisfait la condition de la fonction condition.
+
+Enfin, nous affichons la valeur de foundElement dans la console, qui sera donc 6.
+
+L'utilisation de la méthode find() avec une fonction de rappel comme condition permet de trouver le premier élément d'un tableau qui satisfait une condition spécifique. Dans cet exemple, nous recherchons le premier élément égal à 6, mais vous pouvez adapter la fonction condition pour effectuer d'autres types de recherches en fonction de vos besoins.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+const users = [
+  { id: 1, name: 'Satomi',  age: 25 },
+  { id: 2, name: 'Asuka',   age: 30 },
+  { id: 3, name: 'Machika', age: 20 }
+];
+
+const user = users.find((user) => user.age === 30); //// Trouver l'utilisateur avec l'age
+const userID3 = users.find((user) => user.id === 3);// Trouver l'utilisateur avec l'ID 3
+
+console.log(user);    // {id: 2, name: 'Asuka', age: 30}
+console.log(userID3);  //{id: 3, name: 'Machika', age: 20}
+
+/*Dans cet exemple, nous avons un tableau users qui contient des objets représentant des utilisateurs. Chaque objet utilisateur a une propriété id et une propriété name. Nous utilisons la méthode find() pour trouver l'utilisateur dont l'ID est égal à 3 en utilisant une fonction de rappel qui compare la propriété id de chaque utilisateur avec la valeur recherchée.
+
+La méthode find() parcourt les objets du tableau users et renvoie le premier objet qui correspond à la condition de recherche, c'est-à-dire l'utilisateur avec l'ID 3 dans notre cas.
+
+Vous pouvez adapter cet exemple en utilisant un tableau d'objets correspondant à votre cas d'utilisation spécifique. Assurez-vous de modifier la condition dans la fonction de rappel pour qu'elle corresponde à votre critère de recherche.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+let monTableau = [1, 3, 5, 8, 9, 10, 11, 13];
+
+// Définition de la fonction de rappel qui renvoie vrai (true) si l'élément est pair
+function estPair(element) {
+  return element % 2 === 0;
+}
+
+// Utilisation de la méthode find() avec la fonction de rappel pour trouver le premier élément pair
+let resultat = monTableau.find(estPair);
+
+// Affichage du résultat
+console.log(resultat); // 8
+
+/*Dans cet exemple, nous avons un tableau appelé monTableau qui contient les nombres suivants : [1, 3, 5, 8, 9, 10, 11, 13]. Ensuite, nous avons une fonction appelée estPair qui vérifie si un nombre est pair.
+
+La fonction estPair prend un argument element, qui correspond à chaque élément du tableau lorsqu'elle est utilisée avec la méthode filter(). À l'intérieur de la fonction, nous utilisons l'opérateur modulo % pour vérifier si le reste de la division de element par 2 est égal à 0. Si c'est le cas, cela signifie que element est pair et la fonction retourne true, sinon elle retourne false.
+
+Ensuite, nous utilisons la méthode filter() sur monTableau en passant la fonction estPair comme argument. La méthode filter() itère sur chaque élément du tableau et exécute la fonction estPair sur chacun d'eux. Elle crée ensuite un nouveau tableau contenant uniquement les éléments pour lesquels la fonction estPair renvoie true, c'est-à-dire les nombres pairs.
+
+Dans ce cas précis, après l'exécution du code, le tableau nombresPairs contiendra les nombres pairs extraits de monTableau, c'est-à-dire [8, 10].
+
+La méthode filter() est très pratique pour filtrer les éléments d'un tableau en fonction d'une condition donnée, et elle est souvent utilisée avec une fonction de rappel comme estPair pour effectuer des filtrages personnalisés..*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+let fruits = [
+  { name: "pomme", color: "rouge" },
+  { name: "banane", color: "jaune" },
+  { name: "kiwi", color: "vert" },
+  { name: "fraise", color: "rouge" },
+];
+
+// Utilisation de la méthode find sur le tableau d'objets pour trouver le premier élément qui correspond à la condition donnée (ici, la couleur est "rouge")
+let fruitRouge = fruits.find((fruit) => fruit.color === "rouge");
+
+// Affichage du résultat trouvé
+console.log(fruitRouge); // { name: 'pomme', color: 'rouge' }
+
+
+
+// Utilisation de la méthode find avec une fonction de callback externe pour déterminer si un fruit est comestible ou non
+function isComestible(fruit) {
+  let fruitsNonComestibles = ["pomme", "avocat", "mangue"];
+  return !fruitsNonComestibles.includes(fruit.name);
+}
+
+let fruitComestible = fruits.find(isComestible);
+
+// Affichage du résultat trouvé
+console.log(fruitComestible); // {name: 'banane', color: 'jaune'}
+
+/*Dans cet exemple, nous avons un tableau appelé fruits qui contient des objets représentant différents fruits. Chaque objet fruit a deux propriétés : name qui représente le nom du fruit et color qui représente sa couleur.
+
+Ensuite, nous avons une fonction appelée isComestible qui prend un argument fruit. Cette fonction vérifie si un fruit est comestible en utilisant la méthode includes() pour vérifier si le nom du fruit (fruit.name) est inclus dans le tableau fruitsNonComestibles. Si le nom du fruit n'est pas inclus dans ce tableau, cela signifie que le fruit est comestible et la fonction renvoie true, sinon elle renvoie false.
+
+Le tableau fruitsNonComestibles contient les noms de certains fruits non comestibles, tels que "pomme", "avocat" et "mangue". La fonction isComestible retourne true pour tous les fruits dont le nom n'est pas inclus dans ce tableau, indiquant qu'ils sont comestibles.
+
+Ensuite, nous utilisons la méthode find() sur le tableau fruits pour trouver le premier fruit comestible. Nous passons la fonction isComestible comme argument à la méthode find(). La méthode find() itère sur chaque objet fruit du tableau fruits et exécute la fonction isComestible sur chacun d'eux. Elle renvoie le premier fruit pour lequel la fonction isComestible retourne true.
+
+Après l'exécution du code, la variable fruitComestible contiendra le premier fruit comestible trouvé dans le tableau fruits. Si aucun fruit comestible n'est trouvé, la variable fruitComestible sera undefined.
+
+L'utilisation de la méthode find() avec une fonction de rappel comme isComestible permet de rechercher rapidement et facilement des éléments dans un tableau qui satisfont une condition spécifique. Dans cet exemple, nous recherchons le premier fruit comestible, mais vous pouvez adapter la fonction isComestible pour filtrer selon d'autres critères en fonction de vos besoins*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+let myArray = [1, 2, 3, 4, 5];
+
+function findEven(element, index, array) {
+  console.log(`Element: ${element}, Index: ${index}, Array: ${array}`);
+  return element % 2 === 0;
+}
+
+let trouverElement = myArray.find(findEven);
+console.log(`Found element: ${trouverElement}`);
+/*  Element: 1, Index: 0, Array: 1,2,3,4,5
+    Element: 2, Index: 1, Array: 1,2,3,4,5
+    element: 2*/
+
+
+
+/*Dans cet exemple, nous avons créé un tableau de nombres entiers appelé myArray. Ensuite, nous avons défini une fonction 
+appelée findEven qui prend trois arguments : l'élément actuel du tableau (element), son index (index) et le tableau lui-même (array).
+
+La fonction findEven affiche simplement les valeurs de chaque argument en utilisant console.log(),
+puis renvoie true si l'élément actuel est pair.
+
+Enfin, nous avons appelé la méthode find() sur le tableau myArray, en passant la fonction findEven comme argument.
+La méthode find() appelle la fonction findEven pour chaque élément du tableau jusqu'à ce qu'elle renvoie true.
+Lorsqu'un élément satisfait la condition, find() renvoie cet élément.
+
+Dans cet exemple, find() appelle la fonction findEven pour chaque élément du tableau myArray.
+La fonction findEven affiche les valeurs de chaque argument pour chaque appel, puis renvoie true si l'élément est pair.
+La méthode find() trouve le premier élément pair du tableau, qui est 2, et le renvoie. La valeur de foundElement sera donc 2.
+
+En résumé, l'utilisation des trois arguments dans la fonction find() permet d'accéder à des informations supplémentaires sur les 
+éléments du tableau et de les utiliser pour déterminer si un élément satisfait une condition donnée.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

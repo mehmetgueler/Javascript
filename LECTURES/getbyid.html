@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemple complexe avec getElementById</title>
+	<script>
+		window.addEventListener('load', function() {
+			// Récupérer le formulaire et les éléments de formulaire
+			let form = document.getElementById('mon-formulaire');
+			let nomInput = document.getElementById('nom');
+			let emailInput = document.getElementById('email');
+			let messageTextarea = document.getElementById('message');
+			let submitButton = document.getElementById('envoyer');
+
+			// Ajouter un gestionnaire d'événements pour le bouton Envoyer
+			submitButton.addEventListener('click', function(event) {
+				event.preventDefault(); // Empêcher l'envoi du formulaire
+				// Valider les champs de formulaire
+				if (nomInput.value.trim() === '') {
+					alert('Veuillez entrer votre nom');
+					return;
+				}
+				if (emailInput.value.trim() === '') {
+					alert('Veuillez entrer votre adresse e-mail');
+					return;
+				}
+				if (messageTextarea.value.trim() === '') {
+					alert('Veuillez entrer votre message');
+					return;
+				}
+				// Envoyer les données du formulaire à un serveur (non inclus dans cet exemple)
+				alert('Le formulaire a été envoyé !');
+				form.reset();
+			});
+
+			// Ajouter un gestionnaire d'événements pour le champ de saisie de nom
+			nomInput.addEventListener('blur', function() {
+				// Valider le champ de saisie de nom
+				if (nomInput.value.trim() === '') {
+					nomInput.classList.add('erreur');
+					nomInput.setCustomValidity('Veuillez entrer votre nom');
+				} else {
+					nomInput.classList.remove('erreur');
+					nomInput.setCustomValidity('');
+				}
+			});
+
+			// Ajouter un gestionnaire d'événements pour le champ de saisie d'e-mail
+			emailInput.addEventListener('blur', function() {
+				// Valider le champ de saisie d'e-mail
+				if (emailInput.value.trim() === '') {
+					emailInput.classList.add('erreur');
+					emailInput.setCustomValidity('Veuillez entrer votre adresse e-mail');
+				} else if (!isValidEmail(emailInput.value.trim())) {
+					emailInput.classList.add('erreur');
+					emailInput.setCustomValidity('Veuillez entrer une adresse e-mail valide');
+				} else {
+					emailInput.classList.remove('erreur');
+					emailInput.setCustomValidity('');
+				}
+			});
+
+			// Ajouter un gestionnaire d'événements pour le champ de saisie de message
+			messageTextarea.addEventListener('blur', function() {
+				// Valider le champ de saisie de message
+				if (messageTextarea.value.trim() === '') {
+					messageTextarea.classList.add('erreur');
+					messageTextarea.setCustomValidity('Veuillez entrer votre message');
+				} else {
+					messageTextarea.classList.remove('erreur');
+					messageTextarea.setCustomValidity('');
+				}
+			});
+
+			// Fonction utilitaire pour valider une adresse e-mail
+			function isValidEmail(email) {
+				let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return regex.test(email);
+			}
+		});
+	</

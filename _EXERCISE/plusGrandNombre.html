@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+/****************************************************************************************************************************/
+function maxElement(arr) {
+  // Vérifier si le tableau est vide
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  // Supposons que le premier élément est le maximum temporaire
+  let max = arr[0];
+
+  // Parcourir le tableau pour trouver le maximum
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+
+  return max;   // Retourner le maximum trouvé
+}
+
+// Exemple d'utilisation :
+const numbers = [10, 5, 20, 8, 15];
+console.log(maxElement(numbers)); // Résultat : 20
+/****************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/****************************************************************************************************************************/
+function findMaxNumber(arr) {
+  return Math.max(...arr);
+}
+
+const nombres = [5, 10, 2, 8, 15, 3];
+console.log(`Le plus grand nombre est : ${findMaxNumber(nombres)}`); // Résultat : 15
+
+/*La fonction findMaxNumber est une fonction qui prend un tableau arr comme argument et renvoie le plus grand nombre contenu dans ce tableau en utilisant la méthode Math.max().
+
+La ligne clé de cette fonction est return Math.max(...arr);. Ici, l'opérateur de décomposition (...) est utilisé pour "déplier" le tableau arr et passer ses éléments individuellement à la méthode Math.max(). La méthode Math.max() prend un nombre indéfini d'arguments et renvoie le plus grand nombre parmi eux.
+
+Par exemple, si vous appelez findMaxNumber([5, 10, 2, 8, 15, 3]), l'opérateur de décomposition ...arr transforme le tableau [5, 10, 2, 8, 15, 3] en une liste d'arguments individuels passés à Math.max(), comme ceci : Math.max(5, 10, 2, 8, 15, 3). La méthode Math.max() renverra alors le plus grand nombre parmi ces arguments, qui est 15.
+
+Ainsi, la fonction findMaxNumber renvoie le plus grand nombre contenu dans le tableau passé en argument, et dans l'exemple donné avec const numbers = [5, 10, 2, 8, 15, 3], elle renverra 15.*/
+/****************************************************************************************************************************/
+
+
+
+</script>
+</body>
+</html>

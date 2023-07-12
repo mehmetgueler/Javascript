@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="implementation"></div>
+
+
+
+ <script>
+/*L'interface DOMImplementation représente un objet fournissant des méthodes
+ qui ne dépendent pas d'un document particulier. Un tel objet est renvoyé par
+ la propriété Document.implementation.
+
+Propriété
+Cette interface n'a pas de propriété spécifique et n'en hérite aucune.
+
+Méthodes
+Pas de méthode héritée.
+
+DOMImplementation.createDocument()
+Crée et retourne un XMLDocument.
+
+DOMImplementation.createDocumentType()
+Crée et retourne un DocumentType.
+
+DOMImplementation.createHTMLDocument()
+Crée et retourne un Document HTML.
+
+***********  DOMImplementation.hasFeature()
+Retourne un Boolean (en-US) indiquant si une caractéristique donnée est supportée ou non.
+Cette fonction n'est pas fiable et est conservée uniquement à des fins de compatibilité :
+à l'exception des requêtes liées au SVG, elle renvoie toujours la valeur true (vrai).
+Les anciens navigateurs sont très incohérents dans leur comportement.*/
+
+let implement = document.implementation;
+document.getElementById('implementation').innerHTML = implement.hasFeature('HTML','1.0')
+
+
+
+
+
+
+if (document.implementation.hasFeature('Core', '2.0')) {
+  if (document.implementation.hasFeature('DocumentTraversal', '2.0')) {
+    if (document.implementation.hasFeature('ElementTraversal', '1.0')) {
+      if (typeof document.documentElement.getBoundingClientRect === 'function') {
+        console.log('Le navigateur prend en charge la méthode getBoundingClientRect() de l\'objet Element.');
+      } else {
+        console.log('Le navigateur ne prend pas en charge la méthode getBoundingClientRect() de l\'objet Element.');
+      }
+    } else {
+      console.log('Le navigateur ne prend pas en charge ElementTraversal 1.0.');
+    }
+  } else {
+    console.log('Le navigateur ne prend pas en charge DocumentTraversal 2.0.');
+  }
+} else {
+  console.log('Le navigateur ne prend pas en charge Core 2.0.');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </script>   
+</body>
+</html>

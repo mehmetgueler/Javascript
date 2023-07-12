@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* La méthode copyWithin() est une méthode de tableau qui permet de copier une partie du tableau
+ et de la remplacer dans un autre emplacement du même tableau. Si l'argument fin est omis, 
+ les éléments copiés seront ceux jusqu'à la fin du tableau. Cette méthode est disponible pour les tableaux typés tels que
+ Int8Array, Uint8Array, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, et Float64Array
+ 
+ La méthode copyWithin() prend deux arguments:
+
+target : target: L'index où les éléments copiés doivent être placés. Cela peut être un nombre positif ou négatif.
+Les valeurs négatives sont traitées comme des index en partant de la fin du tableau.
+Si target est supérieur ou égal à la longueur du tableau, rien ne sera copié.
+
+start: L'index de départ où la copie doit commencer. Cela peut être un nombre positif ou négatif.
+Les valeurs négatives sont traitées comme des index en partant de la fin du tableau. 
+Si start est supérieur ou égal à la longueur du tableau, rien ne sera copié. Si start est omis, il sera considéré comme 0.
+
+end: L'index de fin où la copie doit s'arrêter. Cela peut être un nombre positif ou négatif.
+Les valeurs négatives sont traitées comme des index en partant de la fin du tableau.
+Si end est supérieur ou égal à la longueur du tableau, la copie s'arrêtera à la fin du tableau.
+ Si end est omis, il sera considéré comme la longueur du tableau.*/
+
+
+ const fruits = ['banane', 'pomme', 'orange', 'fraise', 'mangue'];
+
+// copier les éléments 0 et 1 et les remplacer à la position 3
+fruits.copyWithin(3, 0, 2);
+
+console.log(fruits);
+// Output: ["banane", "pomme", "orange", "banane", "pomme"]
+
+//Dans cet exemple, copyWithin(3, 0, 2) copie les éléments 0 et 1 du tableau fruits et les remplace à la position 3.
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+
+// copier les éléments 6 à la fin et les remplacer à la position 3
+alpha.copyWithin(3, 6);
+
+console.log(alpha);
+// Output: ["a", "b", "c", "g", "h", "i", "j", "h", "i", "j"]
+
+
+
+
+
+
+
+//Tableau imbriqué
+const my2DArr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+my2DArr.copyWithin(0, 1, 2);
+console.log(my2DArr); // Output: [[4, 5, 3], [4, 5, 6], [7, 8, 9]]
+/*
+Ici, nous avons un tableau my2DArr contenant trois tableaux imbriqués. En appelant copyWithin(0, 1, 2), 
+nous indiquons que nous voulons copier une portion du premier sous-tableau à partir de 
+l'indice 1 (élément 2) et la coller à partir de l'indice 0 (premier élément) du même sous-tableau. 
+Le résultat modifie directement le tableau my2DArr et le premier sous-tableau devient [4, 5, 3]*/
+
+
+
+
+
+
+const data = [
+  [
+    [1, 2],
+    [3, 4]
+  ],
+  [
+    [5, 6],
+    [7, 8]
+  ],
+  [
+    [9, 10],
+    [11, 12]
+  ]
+];
+
+// copier les éléments [5, 6], [7, 8], [9, 10], [11, 12]
+// et les remplacer par les éléments [1, 2], [3, 4]
+// à partir de l'index 1 dans le premier sous-tableau
+data[0].copyWithin(1, 1);
+document.write(data);
+console.log(data);/*[
+                    [
+                        [1, 2],
+                        [3, 4]
+                    ],
+                    [
+                        [5, 6],
+                        [7, 8]
+                    ],
+                    [
+                        [9, 10],
+                        [11, 12]
+                    ]
+                    ]
+                    */
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

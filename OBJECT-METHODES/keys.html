@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les méthodes fondamentales des objets</title>
+</head>
+<body>
+<script>
+/*La méthode Object.keys(objet) est une méthode statique de l'objet Object en JavaScript. Elle renvoie un tableau contenant les noms des propriétés énumérables d'un objet.
+
+Explications détaillées de la méthode Object.keys() :
+
+Object.keys(objet) prend en paramètre l'objet dont les propriétés doivent être énumérées.
+La méthode renvoie un tableau contenant les noms des propriétés énumérables de l'objet.
+Les propriétés énumérables sont celles qui peuvent être parcourues lors de l'itération sur l'objet.
+Les propriétés héritées ne sont pas incluses, seules les propriétés propres (directement définies sur l'objet) sont retournées.
+L'ordre des noms de propriétés dans le tableau est basé sur l'ordre de définition des propriétés dans l'objet.
+Si l'objet passé en paramètre est null ou undefined, une erreur de type TypeError sera levée.*/
+
+let personne = {
+  nom: "John",
+  age: 30,
+  profession: "Ingénieur"
+};
+
+let proprietes = Object.keys(personne);
+console.log(proprietes); // Affiche : ["nom", "age", "profession"]
+
+/*Dans cet exemple, nous utilisons Object.keys() pour obtenir un tableau contenant les noms des propriétés de l'objet personne. Le tableau résultant est ["nom", "age", "profession"], qui sont les noms des propriétés énumérables de l'objet personne.
+
+La méthode Object.keys() est couramment utilisée pour itérer sur les propriétés d'un objet à l'aide d'une boucle, ou pour effectuer des opérations spécifiques sur les propriétés d'un objet, telles que la vérification de l'existence d'une propriété, la création d'un nouvel objet avec des propriétés sélectionnées, etc.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Supposons que nous ayons un formulaire de connexion sur notre site web avec des champs d'entrée pour le nom d'utilisateur et le mot de passe. Nous souhaitons valider les données saisies par l'utilisateur avant de les envoyer au serveur. Voici comment nous pouvons utiliser Object.keys() pour obtenir les noms des champs du formulaire : 
+
+<form id="login-form">
+  <input type="text" name="username" placeholder="Nom d'utilisateur">
+  <input type="password" name="password" placeholder="Mot de passe">
+  <button type="submit">Se connecter</button>
+</form>
+*/
+
+
+const form = document.getElementById('login-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  const formData = new FormData(form);
+  const formDataObject = Object.fromEntries(formData.entries());
+  
+  const fieldNames = Object.keys(formDataObject);
+  console.log(fieldNames);
+  
+  // Validation des champs du formulaire...
+});
+
+/*Nous récupérons le formulaire à l'aide de document.getElementById() et ajoutons un écouteur d'événement sur l'événement submit.
+
+Lorsque le formulaire est soumis, nous utilisons event.preventDefault() pour empêcher l'envoi par défaut du formulaire.
+
+Nous créons un objet FormData à partir du formulaire pour obtenir les données saisies par l'utilisateur.
+
+Nous convertissons l'objet FormData en un objet JavaScript à l'aide de Object.fromEntries() pour faciliter la manipulation des données.
+
+En utilisant Object.keys(), nous obtenons un tableau contenant les noms des champs du formulaire. Nous les affichons ensuite dans la console.
+
+À partir de là, nous pouvons effectuer la validation des champs du formulaire selon nos besoins.
+
+Dans cet exemple, Object.keys() est utilisé pour extraire les noms des champs du formulaire à partir des données saisies par l'utilisateur. Cela permet de récupérer dynamiquement les noms des champs, ce qui peut être utile pour des opérations telles que la validation ou l'envoi des données.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+</body>
+</html>

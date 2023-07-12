@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les méthodes fondamentales des objets</title>
+</head>
+<body>
+<script>
+/*La méthode Object.assign() est une méthode statique de l'objet Object en JavaScript. Elle est utilisée pour copier les valeurs de toutes les propriétés énumérables de un ou plusieurs objets source vers un objet cible. 
+
+                    Object.assign(cible, ...sources)
+
+
+
+Voici comment utiliser Object.assign() :*/
+
+let cible = {};
+let source1 = { propriete1: "valeur1" };
+let source2 = { propriete2: "valeur2" };
+
+Object.assign(cible, source1, source2);
+
+console.log(cible);
+// Affiche : { propriete1: "valeur1", propriete2: "valeur2" }
+
+
+/*Dans cet exemple, nous avons un objet cible vide et deux objets source1 et source2, chacun avec une propriété. En utilisant Object.assign(), nous copions les valeurs des propriétés des objets source dans l'objet cible. Le résultat est l'objet cible avec les propriétés et les valeurs des objets sources.
+
+
+
+La méthode Object.assign() permet de copier les propriétés énumérables et propres (non héritées) d'un ou plusieurs objets source vers un objet cible. Elle utilise l'opération [[Get]] sur l'objet source et [[Set]] sur l'objet cible, ce qui signifie qu'elle déclenche les éventuels accesseurs ou mutateurs associés aux propriétés. Ainsi, au lieu de simplement copier ou définir de nouvelles propriétés, Object.assign() affecte directement les propriétés existantes de l'objet cible.
+
+Cependant, il est important de noter que si l'un des objets sources contient des accesseurs (getters/setters), il est déconseillé d'utiliser Object.assign() uniquement pour fusionner de nouvelles propriétés dans un prototype. Dans ce cas, il est préférable d'utiliser Object.getOwnPropertyDescriptor() et Object.defineProperty() pour copier les définitions des propriétés, y compris leur énumérabilité, dans les prototypes.
+
+La méthode Object.assign() copie également les propriétés de type String et Symbol. Les propriétés de l'objet cible seront surchargées par celles de l'objet source si elles ont la même clé.
+
+Il est important de noter que si une erreur se produit lors de l'exécution de Object.assign(), par exemple si une propriété n'est pas accessible en écriture, une exception de type TypeError sera levée. Cependant, il est à noter que l'objet cible aura déjà été modifié avec les propriétés ajoutées avant l'erreur.
+
+Enfin, il est bon de savoir que Object.assign() n'entraînera pas d'erreur si des valeurs null ou undefined sont fournies en tant que valeurs sources.
+
+L'utilisation de Object.assign() est courante pour la fusion d'objets, la copie d'objets ou l'ajout de nouvelles propriétés à un objet existant. C'est une méthode pratique pour manipuler les propriétés des objets en JavaScript.*/
+/*******************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************/
+/*Supposons que nous devons mettre à jour les informations d'un utilisateur à partir d'un formulaire de modification. Nous avons un objet utilisateur avec les informations actuelles de l'utilisateur, et nous voulons mettre à jour ces informations à partir des données saisies dans le formulaire. Voici comment nous pouvons utiliser Object.assign() pour effectuer cette mise à jour :*/
+
+let utilisateur = {
+  nom: " Tim Berners-Lee",
+  email: "timberners-lee@cern.com",
+  age: 30
+};
+
+// Données saisies dans le formulaire de modification
+let formulaire = {
+  nom: "Jane Smith",
+  email: "jane.smith@example.com"
+};
+
+// Mise à jour des informations de l'utilisateur
+Object.assign(utilisateur, formulaire);
+
+console.log(utilisateur);
+// Affiche : {nom: 'Jane Smith', email: 'jane.smith@example.com', age: 30}
+
+/*Dans cet exemple, nous avons un objet utilisateur avec les informations actuelles de l'utilisateur telles que le nom, l'e-mail et l'âge. Ensuite, nous avons un objet formulaire qui représente les données saisies dans le formulaire de modification. En utilisant Object.assign(), nous copions les propriétés de l'objet formulaire dans l'objet utilisateur, ce qui met à jour les informations de l'utilisateur avec les nouvelles valeurs.
+
+Cet exemple illustre comment Object.assign() peut être utilisé pour fusionner les propriétés de plusieurs objets sources dans un objet cible, ce qui permet de mettre à jour les informations de manière efficace.
+
+Dans le contexte du développement web, cette méthode peut être utilisée dans différentes situations, comme la fusion des options de configuration, la combinaison des données provenant de différentes sources, etc.*/
+
+
+
+
+
+
+
+</script> 
+</body>
+</html>

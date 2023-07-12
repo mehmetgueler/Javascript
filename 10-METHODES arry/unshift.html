@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode unshift sur les Tableau</title>
+</head>
+<body>
+    <script>
+//La méthode unshift() en JavaScript ajoute un ou plusieurs éléments au début d'un tableau et retourne la nouvelle longueur du tableau
+
+
+let monTableau = ["val1","val2","val3","val4","val5","val6"];
+// let monTableau = new Array("val1","val2","val3","val4","val5","val6");// Consturcteur new Array
+
+console.log('Tableau initial: ' + monTableau);//Tableau initial: val1,val2,val3,val4,val5,val6
+
+let unshiftMonTab = monTableau.unshift('unshif1', 'unshift2')
+console.log(unshiftMonTab);// 8  !(renvoie la nouvelle longueur du tableau)
+console.log(monTableau);// (8) ['unshif1', 'unshift2', 'val1', 'val2', 'val3', 'val4', 'val5', 'val6']
+
+
+
+
+
+
+
+let myArr = [2, 3, 4];
+console.log("Mon tableau initial: " + myArr);
+
+// Ajout d'un élément au début du tableau
+myArr.unshift(1);
+console.log("Tableau après l'ajout de 1: " + myArr);
+
+// Ajout de plusieurs éléments au début du tableau
+myArr.unshift(-2, -1, 0);
+console.log("Tableau après l'ajout de -2, -1, 0: " + myArr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

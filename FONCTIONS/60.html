@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+
+<body>
+    "Fonctions imbriquées (fonction interne) en JavaScrip
+        Changer les paramètres sous-fonctions
+    <script>
+
+function mFoo(){
+    function mFoo2(b) {
+        console.log(b);
+    }
+    return mFoo2;    // La fonction "mFoo" retourne la fonction "mFoo2"
+}
+
+// Appel de la fonction "mFoo" qui retourne la fonction "mFoo2"
+mFoo()('salut');
+
+// Fonctionnement :
+// La fonction "mFoo" définit une fonction imbriquée "mFoo2" qui prend un argument "b" et affiche sa valeur à la console.
+// La fonction "mFoo" retourne la fonction "mFoo2".
+// Ensuite, la fonction "mFoo" est appelée, ce qui retourne la fonction "mFoo2".
+// Finalement, cette fonction est appelée avec l'argument "salut", ce qui affiche "salut" à la console.
+/************************************************************************************/
+
+
+
+
+
+
+/************************************************************************************/
+function myFoo() {
+    let value = 'string';
+        function myFoo2(value) {
+            console.log(value);
+        }
+        return myFoo2; 
+}
+
+
+myFoo()();
+/*************************************************************************************/
+
+
+        
+
+
+
+/*************************************************************************************/
+function outerFunction() {
+    let outerVar = 'outerValue';
+    function innerFunction(innerParam) {
+        let innerVar = 'innerValue';
+        console.log(`innerParam: ${innerParam}`); // Affiche la valeur de innerParam
+        console.log(`innerVar: ${innerVar}`); // Affiche la valeur de innerVar
+        console.log(`outerVar: ${outerVar}`); // Affiche la valeur de outerVar
+    }
+    return innerFunction;
+}
+const returnedFunction = outerFunction();
+returnedFunction('paramètre interne'); // Appel de la fonction retournée avec un argument
+
+/*Ici, la fonction outerFunction définit une variable outerVar et une fonction innerFunction,
+qui prend un paramètre innerParam et définit une variable innerVar.
+
+La fonction outerFunction renvoie la fonction innerFunction, qui peut être appelée plus tard avec un argument.
+
+Dans l'exemple, la fonction returnedFunction est égale à la fonction innerFunction retournée par outerFunction.
+ Cette fonction est ensuite appelée avec un argument, "paramètre interne".
+
+Lorsque la fonction innerFunction est exécutée, elle affiche la valeur de innerParam,
+ innerVar et outerVar. Notez que outerVar est accessible à partir de innerFunction, 
+ car elle a été définie dans le même environnement de fermeture.*/
+/*************************************************************************************/
+
+
+
+
+
+    </script>
+</body>
+
+</html>

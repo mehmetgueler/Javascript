@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*Les chaînes de caractères peuvent être traitées comme des tableaux de caractères,
+avec chaque caractère ayant un index numérique correspondant. Cela signifie que les
+boucles peuvent être utilisées pour parcourir les caractères d'une chaîne.*/
+
+//Parcourir une chaîne de caractères
+let maChaine = "Javascript World!";
+for (let i = 0; i < maChaine.length; i++) {
+  console.log(maChaine[i]);
+}
+
+/*Dans cet exemple, la variable "i" est initialisée à zéro, la condition de la boucle
+vérifie que "i" est inférieur à la longueur de la chaîne de caractères(calculée avec la méthode ".length")
+et à chaque itération, "i" est incrémenté de 1. Ainsi, la boucle parcourt chaque caractère de la chaîne,
+en commençant par l'indice 0 et en terminant à l'indice "maChaine.length - 1".
+
+Il est important de noter que les chaînes de caractères sont des valeurs immuables en JavaScript,
+ce qui signifie qu'elles ne peuvent pas être modifiées directement.
+Si vous voulez modifier une chaîne, vous devez créer une nouvelle chaîne
+avec les modifications nécessaires.*/
+
+
+let maChaine = "Bonjour le monde!";
+let nombreDeLettres = 0;
+
+for(let i = 0; i < maChaine.length; i++) {
+  if(maChaine[i] === "e") {
+    nombreDeLettres++;
+  }
+}
+
+console.log("Le nombre de lettres 'e' dans la chaîne est de " + nombreDeLettres);
+
+/*Dans cet exemple, la boucle parcourt chaque caractère de la chaîne en commençant par
+l'indice 0 et en terminant à l'indice "maChaine.length - 1". À chaque itération,
+le code vérifie si le caractère actuel est égal à la lettre "e". Si c'est le cas,
+la variable "nombreDeLettres" est incrémentée de 1. Finalement, le code affiche 
+le nombre total de lettres "e" dans la chaîne.*/
+
+
+//utilisation for of
+let str = "Bonjour le monde !";
+
+for (let char of str) {
+  console.log(char);
+}
+
+
+    </script>    
+</body>
+</html>

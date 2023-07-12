@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*En JavaScript, la méthode delete est utilisée pour supprimer une propriété d'un objet.
+ Sa syntaxe générale est la suivante :
+ ""delete object.nomPropriete;""    */
+
+ let myObject = {
+  propriete1   : 'valeur1',
+  propriete2   : 'valeur2',
+  propriete3   : 'valeur3'
+};
+// Affichage de l'objet "myObject" dans la console AVANT LA SUPPRESSION
+console.log(myObject);//{propriete1: 'valeur1', propriete2: 'valeur2', propriete3: valeur3}
+
+
+// Utilisation de la méthode "delete" pour supprimer la propriété "naissance" de l'objet
+delete myObject.propriete3;
+/*!!!!!Dans le cas où vous souhaitez réutiliser la propriété supprimée, il est recommandé
+d'ajouter tout de suite sa une nouvelle valeur à la propriété pour éviter toute confusion ou 
+comportement inattendu.
+myObject.propriete3 = 'nouvellevaleur';             */
+
+// Récupération des valeurs de propriétés de l'objet "langues" dans "methodeconstructeur"
+let lenom       = myObject.nom;
+let leprenom    = myObject.prenom;
+let lanaissance = myObject.naissance;
+
+
+// Affichage de l'objet "myObject" mis à jour dans la console
+console.log(myObject); // {propriete1: 'valeur1', propriete2: 'valeur2'}
+
+/*Il est important de noter que la méthode delete ne supprime que la propriété de l'objet,
+pas sa valeur. Si vous souhaitez également supprimer la valeur de la propriété, vous devez
+affecter la valeur undefined à la propriété après avoir utilisé la méthode delete.
+
+myObject.propriete_x = undefined;*/
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

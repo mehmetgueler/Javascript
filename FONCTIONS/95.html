@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+    Les fonctions; return ++
+<script> 
+
+let personne = function () {
+    let nomprenom = ' honore de balzac';
+    return nomprenom;
+}
+
+
+let lapersonne = personne();
+console.log(lapersonne);
+/**********************************************************************************/
+
+
+
+
+
+
+/**********************************************************************************/
+// On définit une fonction anonyme (sans nom) qui renvoie un objet avec une méthode 'nom'
+let personnex = function() {
+  // On définit une variable locale 'nom' dans la fonction
+  let nom = 'Jean de La Fontaine';
+
+  // On retourne un objet avec une méthode 'nom' qui renvoie la valeur de la variable 'nom'
+  return {
+    nom: function() {
+      return nom;
+    }
+  };
+}();
+
+// On appelle la méthode 'nom' de l'objet retourné par la fonction et on stocke le résultat dans une variable
+let lapersonnex = personnex.nom();
+
+// On affiche le résultat dans la console
+console.log(lapersonnex);
+
+/*
+Lorsque nous déclarons personnex comme une fonction anonyme qui renvoie un objet,
+cela signifie que nous pouvons stocker cet objet dans une variable, comme ceci :
+let personnex = function() { ... }();. Le () à la fin de la définition de la fonction
+signifie que nous appelons immédiatement cette fonction et que nous stockons le résultat dans la variable personnex.
+
+L'objet retourné par la fonction personnex a une méthode nommée nom, qui renvoie la valeur
+de la variable nom. La variable nom est définie dans la fonction personnex en tant que variable locale.
+Cela signifie qu'elle est accessible uniquement à l'intérieur de la fonction et ne peut pas être modifiée
+ou lue depuis l'extérieur de la fonction.
+
+Pour accéder à la méthode nom de l'objet retourné par la fonction, nous utilisons la 
+syntaxe personnex.nom(). Cela signifie que nous appelons la méthode nom de l'objet personnex.
+Nous stockons ensuite la valeur renvoyée par cette méthode dans la variable lapersonnex.
+
+Enfin, nous affichons le résultat dans la console avec console.log(lapersonnex),
+ qui devrait afficher la chaîne de caractères 'Jean de La Fontaine'
+*/
+
+
+
+
+
+var personz	=	function(){
+	var prenomnom		=	"une personne";
+	return {
+		getprenomnom:function(){
+			return prenomnom;
+		},
+		isimdegistir:function(nouveaunom){
+			prenomnom		=	nouveaunom;
+		}
+	}
+}();
+
+personz.isimdegistir("changement nom");
+var lapersonz	=	personz.getprenomnom();
+console.log(lapersonz);
+
+
+</script>
+</body>
+
+</html>

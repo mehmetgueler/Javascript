@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode pop() sur les Tableaux</title>
+</head>
+<body><script>
+
+/*La méthode pop() est utilisée pour supprimer le dernier élément d'un tableau, et elle retourne cet élément supprimé.
+⁡⁢⁣⁣Cette méthode modifie directement le tableau d'origine en enlevant l'élément de sa fin. 
+⁡
+Voici la syntaxe:
+
+                        arr.pop()
+
+
+Paramètres :
+La méthode pop() ne prend aucun paramètre.
+
+Valeur de retour :
+La méthode pop() retourne l'élément supprimé du tableau. Si le tableau est vide, la méthode renverra undefined.
+
+La méthode pop() est une méthode générique qui peut être utilisée ou appliquée sur des objets similaires à des tableaux. Cependant, il est important de noter que les objets sur lesquels pop() est utilisé doivent avoir une propriété length qui reflète la fin d'une série de propriétés numérotées consécutives. Si cette condition n'est pas remplie, le comportement peut être imprévisible.
+
+Lorsque vous appelez pop() sur un tableau vide, il renverra la valeur undefined, car il n'y a aucun élément à supprimer.*/
+
+
+const myArray = [1, 2, 3, 4, 5];
+
+const lastElement = myArray.pop();
+
+console.log(lastElement); // Affiche : 5
+console.log(myArray);     // Affiche : [1, 2, 3, 4]
+
+/*Nous avons un tableau myArray contenant les éléments [1, 2, 3, 4, 5].
+Nous appelons la méthode pop() sur ce tableau.
+La méthode pop() supprime le dernier élément du tableau, qui est 5, et le retourne.
+Nous stockons la valeur retournée (dans notre cas, 5) dans la variable lastElement.
+Le tableau myArray est maintenant modifié et ne contient plus l'élément 5. Il contient désormais [1, 2, 3, 4].
+Nous affichons la valeur de lastElement dans la console, qui est 5, et le tableau myArray qui a été modifié et n'inclut plus 5.
+La méthode pop() est souvent utilisée lorsque nous voulons traiter le dernier élément d'un tableau avant de le supprimer. Par exemple, si nous mettons en œuvre une pile (stack) en utilisant un tableau, nous pouvons utiliser pop() pour supprimer l'élément supérieur de la pile et le récupérer en même temps.*/
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

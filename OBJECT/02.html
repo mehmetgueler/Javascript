@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+  <script>
+
+//CRÉER UN OBJET AVEC L'EXPRESSION 'NEW'
+
+let personne = new Object();
+    personne.nom        = 'pascal';
+    personne.prenom     = 'blaise';
+    personne.naissance  = 1623;
+
+let lenom           = personne.nom
+let leprenom        = personne.prenom
+let lanaissance     = personne.naissance
+
+console.log(lenom, leprenom, lanaissance);
+//*********************************************FIN**************************************
+
+
+//La notation [] permet de définir dynamiquement le nom de la propriété à ajouter.
+
+let personne_x = new Object();
+
+personne_x['nom']        = 'pascal';
+personne_x['prenom']     = 'blaise';
+personne_x['naissance']  = 1623;
+
+
+let nom_x            = personne_x.nom;
+let prenom_x         = personne_x.prenom;
+let naissance_x      = personne_x.naissance
+
+console.log(nom_x, prenom_x, naissance_x);
+/*La notation avec les crochets est particulièrement utile lorsque le nom de la propriété
+ doit être déterminé dynamiquement, par exemple en utilisant une variable.
+ 
+ Par exemple, si vous aviez une variable nomPropriete contenant le nom de la propriété
+ à ajouter, vous pourriez utiliser la notation avec les crochets comme ceci : */
+
+ let nomPropriete = 'nom';
+personne_x[nomPropriete] = 'pascal';
+//Dans ce cas, la propriété nom serait ajoutée à l'objet xpersonne avec la valeur 'pascal'.
+
+/*En résumé, la notation avec les crochets est utile pour ajouter des propriétés à un objet 
+lorsque le nom de la propriété est déterminé dynamiquement, par exemple en utilisant une 
+variable. La notation pointée est généralement considérée comme plus lisible et plus concise 
+lorsque le nom de la propriété est statique.
+voir 04.html et */
+
+  </script>
+</body>
+</html>

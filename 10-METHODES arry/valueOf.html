@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode valueOf() sur les Tableaux</title>
+</head>
+<body>
+    <script>
+/*En JavaScript, la méthode valueOf() est une méthode de l'objet Array qui renvoie le tableau lui-même.
+En d'autres termes, l'appel de la méthode valueOf() sur un tableau renvoie le tableau sous forme d'objet*/
+
+
+let myArray = ['foo', 'bar', 'baz'];
+let myArrayObject = myArray.valueOf();
+console.log(myArrayObject); // affiche ["foo", "bar", "baz"]
+
+/*Notez que la méthode valueOf() est appelée implicitement par JavaScript chaque fois qu'un tableau doit être converti
+ en une valeur primitive (par exemple, lors de l'utilisation de l'opérateur == pour comparer deux tableaux).
+ Dans ce cas, la méthode valueOf() retourne le tableau lui-même, car les tableaux ne peuvent pas être convertis en une valeur primitive.*/
+
+
+let myArray1 = ['foo', 'bar', 'baz'];
+let myArray2 = ['foo', 'bar', 'baz'];
+console.log(myArray1 == myArray2); // affiche "false"
+
+
+/*Dans cet exemple, l'opérateur == compare les deux tableaux. Comme les tableaux ne peuvent pas être comparés directement,
+ JavaScript appelle implicitement la méthode valueOf() sur chaque tableau pour les convertir en valeurs primitives,
+ qui sont ensuite comparées. Puisque chaque appel à valueOf() renvoie le tableau lui-même, les deux tableaux sont considérés comme différents, même s'ils ont les mêmes éléments.*/
+
+
+
+
+
+ /**************************************************************************************************/
+ let monTableau = new Array("val1","val2","val3","val4","val5","val6"); 
+
+noveauTab = monTableau.valueOf(); // utilisation de la méthode valueOf() pour créer une copie du tableau
+
+console.log(monTableau); // affiche le tableau d'origine
+console.log(noveauTab); // affiche la copie du tableau créée avec valueOf()
+
+monTableau.fill('newval'); // remplit le tableau d'origine avec la valeur 'newval' (variable modifié)
+
+console.log(noveauTab); // affiche la copie du tableau, qui n'a pas été modifiée par la méthode fill()
+console.log(monTableau); // affiche le tableau d'origine modifié par la méthode fill()
+//ici output affiche
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

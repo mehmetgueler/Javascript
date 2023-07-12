@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<script>
+
+//CREER UNE FONCTION DANS UN OBJET ET LES PARAMETRER
+
+let personne = {
+  nom       : 'pascal',
+  prnom     : 'blaise',
+  naissance : 1623,
+    details: function () {
+      this.metier = 'science';
+      this.hobby = 'mathématiques';
+  }
+};
+
+personne.details() //!!!! NE PAS OUBLIER DECLANCHER FUNCTION
+
+let lenom    = personne.nom;
+let leprenom = personne.prnom;
+
+let lemetier = personne.metier;
+let lehobby  = personne.hobby;
+
+console.log(lenom, leprenom, lemetier, lehobby);
+/*Dans cet exemple, this est utilisé pour se référer à l'objet personne dans la méthode
+  details. this est un mot-clé spécial en JavaScript qui fait référence à l'objet
+  actuel, c'est-à-dire l'objet qui a appelé la méthode.
+ 
+ Dans ce cas précis, l'utilisation de this permet de modifier les propriétés de l'objet
+  personne en utilisant la notation pointée (this.metier et this.hobby).
+  Cela signifie que les propriétés metier et hobby sont ajoutées dynamiquement 
+  à l'objet personne lors de l'appel de la méthode details.
+
+En utilisant this, on évite également de créer des variables supplémentaires pour
+  stocker les valeurs des propriétés metier et hobby. Cela rend le code plus concis 
+  et plus facile à lire et à comprendre. */
+
+
+
+</script>
+</body>
+</html>

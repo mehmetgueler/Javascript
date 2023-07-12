@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.findLastIndex()</title>
+</head>
+<body><script>
+
+/*La méthode findLastIndex() parcourt le tableau en sens inverse et renvoie l'indice du premier élément qui satisfait la condition définie par une fonction de test. Si aucun élément ne correspond à cette condition, -1 est renvoyé.
+
+Syntaxes :
+
+
+/*L'exemple de code donné démontre l'utilisation de la fonction findLastIndex en JavaScript.
+
+La fonction findLastIndex est utilisée pour trouver l'index du dernier élément dans un tableau qui satisfait une condition donnée. Elle prend deux arguments : une fonction de rappel (callback) et un paramètre optionnel thisArg.
+
+Le premier ensemble d'exemples montre l'utilisation des fonctions fléchées (arrow functions) comme fonction de rappel. Les fonctions fléchées sont concises et ont une instruction de retour implicite. Le premier exemple utilise une fonction fléchée avec un seul paramètre element. Le deuxième exemple utilise une fonction fléchée avec deux paramètres element et index. Le troisième exemple utilise une fonction fléchée avec trois paramètres element, index et array. Ces fonctions fléchées peuvent être utilisées directement comme fonction de rappel pour findLastIndex.
+
+Le deuxième ensemble d'exemples montre l'utilisation d'une fonction de rappel définie séparément. fnRappel représente une fonction de rappel qui peut être passée à findLastIndex. Le premier exemple utilise la fonction de rappel fnRappel sans le paramètre thisArg. Le deuxième exemple utilise la fonction de rappel fnRappel avec le paramètre thisArg, qui définit la valeur de this à l'intérieur de la fonction de rappel.
+
+Le troisième ensemble d'exemples montre l'utilisation de fonctions de rappel définies en ligne à l'aide du mot-clé function. Ces fonctions ont les mêmes paramètres que les fonctions fléchées. Le premier exemple utilise une fonction de rappel avec un seul paramètre element. Le deuxième exemple utilise une fonction de rappel avec deux paramètres element et index. Le troisième exemple utilise une fonction de rappel avec trois paramètres element, index et array. Le quatrième exemple est similaire au troisième exemple, mais inclut également le paramètre thisArg.
+
+Dans l'ensemble, l'exemple de code montre différentes façons de définir et d'utiliser des fonctions de rappel avec différents paramètres pour la fonction findLastIndex.*/
+
+
+
+
+
+
+
+
+/**********************************************************************************************************/
+const numbers = [10, 5, 20, 15, 25, 30];
+const target = 20;
+
+const lastIndex = numbers.findLastIndex(element => element > target);
+
+if (lastIndex !== -1) {
+  console.log(`Le dernier élément supérieur à ${target} se trouve à l'index ${lastIndex}.`);
+} else {
+  console.log(`Aucun élément n'est supérieur à ${target} dans le tableau.`);
+}
+
+/* Dans cet exemple, nous avons un tableau de nombres et nous voulons trouver l'index du dernier élément supérieur à 20. Nous utilisons la méthode findLastIndex() en passant une fonction de rappel qui vérifie si l'élément est supérieur à target.
+
+La méthode findLastIndex() parcourt les éléments du tableau depuis la fin jusqu'au début. Lorsqu'elle trouve un élément satisfaisant la condition, elle renvoie son index et s'arrête. Si aucun élément ne correspond à la condition, elle renvoie -1.
+
+Dans notre exemple, la valeur renvoyée pour lastIndex sera l'index de l'élément 25, qui est le dernier élément supérieur à 20 dans le tableau. */
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************/
+const nombres = [10, 20, 30, 40, 50, 60, 70, 8];
+
+function isGreaterThanThreshold(element) {
+  return element > 50;
+}
+
+const lastI = nombres.findLastIndex(isGreaterThanThreshold);
+
+console.log(lastI);// Affiche : 7
+
+/*Dans cet exemple, nous avons un tableau numbers contenant des nombres. La fonction isGreaterThanThreshold() est utilisée comme fonction de test. Elle renvoie true si un élément est supérieur à 50.
+
+La méthode findLastIndex() parcourt le tableau de la fin vers le début et renvoie l'indice du premier élément pour lequel la fonction de test renvoie true. Dans notre cas, le dernier élément qui satisfait la condition est 70, qui se trouve à l'indice 6 dans le tableau. Donc, la valeur 6 est renvoyée.*/
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************/
+const posts = [
+  { id: 1, title: 'Post 1', likes: 10 },
+  { id: 2, title: 'Post 2', likes: 20 },
+  { id: 3, title: 'Post 3', likes: 15 },
+  { id: 4, title: 'Post 4', likes: 25 },
+  { id: 5, title: 'Post 5', likes: 5 }
+];
+
+function findLastLikedPostIndex(posts) {
+  return posts.findLastIndex(post => post.likes > 15);
+}
+
+const lastLikedPostIndex = findLastLikedPostIndex(posts);
+
+if (lastLikedPostIndex !== -1) {
+  console.log(`Le dernier article aimé se trouve à l'indice ${lastLikedPostIndex}.`);
+  console.log(posts[lastLikedPostIndex]);//Affiche: {id: 4, title: 'Post 4', likes: 25}
+} else {
+  console.log(`Aucun article n'a été aimé selon le critère spécifié.`);
+}
+
+
+/*Dans cet exemple, la fonction findLastLikedPostIndex() est définie pour trouver l'indice du dernier article qui a reçu plus de 15 likes. La méthode findLastIndex() est appelée sur le tableau posts, et la fonction de rappel (post) => post.likes > 15 est utilisée pour vérifier si le nombre de likes d'un article est supérieur à 15.
+
+Si un article est trouvé avec un nombre de likes supérieur à 15, la méthode findLastIndex() renvoie l'indice de cet article. Sinon, elle renvoie -1 pour indiquer qu'aucun article ne correspond à la condition.
+
+Dans cet exemple, la variable lastLikedPostIndex est utilisée pour stocker le résultat de l'appel à findLastLikedPostIndex(posts). Ensuite, une condition est utilisée pour vérifier si l'indice retourné est différent de -1, ce qui signifie qu'un article a été trouvé. Si c'est le cas, vous pouvez effectuer des actions supplémentaires en utilisant cet indice, par exemple pour afficher les détails de l'article correspondant..*/
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*RegExp (ou Regular Expression) est un objet intégré à JavaScript qui permet de travailler avec des expressions
+régulières, c'est-à-dire des motifs de caractères utilisés pour la recherche et la manipulation de chaînes de texte.
+
+Les expressions régulières sont utilisées pour rechercher, extraire et manipuler des chaînes de texte en appliquant
+un motif ou un modèle. Par exemple, si vous avez une chaîne de texte contenant des adresses e-mail,
+ vous pouvez utiliser une expression régulière pour rechercher et extraire toutes les adresses e-mail de la chaîne.
+
+Voici un exemple de code qui utilise une expression régulière pour valider une adresse e-mail :*/
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+var email = "test@example.com";
+if (validateEmail(email)) {
+  console.log("L'adresse e-mail est valide.");
+} else {
+  console.log("L'adresse e-mail est invalide.");
+}
+
+
+
+
+/*Dans cet exemple, la variable re contient une expression régulière qui utilise un motif de caractères pour
+valider une adresse e-mail. La méthode test() de l'objet RegExp est ensuite utilisée pour tester si l'adresse
+e-mail fournie en entrée correspond au motif défini dans l'expression régulière. Si l'adresse e-mail est valide,
+la fonction renvoie true. Sinon, elle renvoie false.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

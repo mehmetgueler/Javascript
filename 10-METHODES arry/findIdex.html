@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.findIndex()</title>
+</head>
+<body><script>
+
+/*La méthode findIndex() est une méthode de l'objet Array.prototype en JavaScript. Elle est utilisée pour rechercher le premier élément d'un tableau qui satisfait une condition donnée et renvoie son index. Voici une explication de son fonctionnement :
+Syntaxe :
+
+        arr.findIndex(callback(element[, index[, array]])[, thisArg])
+
+callback : Une fonction qui est appelée pour chaque élément du tableau. Elle prend trois arguments optionnels :
+  1.) element : L'élément courant en cours d'itération.
+  2.) index (facultatif) : L'index de l'élément courant en cours d'itération.
+  3.) array (facultatif) : Le tableau sur lequel la méthode findIndex() a été appelée.
+
+thisArg (facultatif) : Un objet à utiliser comme valeur this lors de l'exécution de la fonction callback.
+
+
+La méthode findIndex() itère sur chaque élément du tableau et exécute la fonction callback sur chaque élément. Si la fonction callback renvoie true pour un élément spécifique, la méthode findIndex() renvoie l'index de cet élément. Si aucun élément ne satisfait la condition, la méthode renvoie -1.
+
+Voici un exemple pour illustrer son utilisation :*/
+
+
+
+
+/* Exemple 1 : Trouver l'indice d'un élément dans un tableau ******************************/
+const fruits = ['pomme', 'orange', 'banane', 'ananas'];
+
+// La fonction de rappel retourne "true" si l'élément est égal à "banane"
+const index = fruits.findIndex((element) => element === 'banane');
+
+console.log(index); // Affiche: 2 (car l'indice de la banane dans le tableau est 2)
+
+/*Dans cet exemple, la méthode findIndex() est utilisée pour trouver l'indice de l'élément "banane"
+ dans le tableau "fruits". La fonction de rappel vérifie si l'élément est égal à "banane", 
+ et retourne true s'il correspond. La méthode findIndex() renvoie l'indice de l'élément
+  "banane" dans le tableau "fruits", qui est 2.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+/*Exemple 2 : Trouver l'indice du premier nombre pair dans un tableau***********************/
+const numbers = [1, 3, 5, 6, 8, 9, 10];
+
+// La fonction de rappel retourne "true" si l'élément est pair
+const index1 = numbers.findIndex((element) => element % 2 === 0);
+
+console.log(index1); // Affiche: 3 
+
+/*Dans cet exemple, nous avons un tableau numbers contenant une liste de nombres. Nous utilisons la méthode findIndex() pour rechercher le premier élément du tableau qui est pair.
+
+La méthode findIndex() est appelée sur le tableau numbers avec une fonction de rappel (element) => element % 2 === 0. Cette fonction vérifie si un élément est pair en utilisant l'opérateur modulo % pour vérifier si le reste de la division de l'élément par 2 est égal à zéro. Si c'est le cas, cela signifie que l'élément est pair et la fonction renvoie true.
+
+La méthode findIndex() itère sur chaque élément du tableau numbers et exécute la fonction de rappel sur chacun d'entre eux. Lorsque la première occurrence d'un élément pair est trouvée, la méthode findIndex() renvoie son index.
+
+Dans cet exemple, l'élément 6 est le premier élément pair du tableau numbers, et donc la méthode findIndex() renvoie son index, qui est 3. En conséquence, la valeur de index1 est 3.
+
+Ensuite, nous affichons index1 dans la console à l'aide de console.log(), ce qui donne la sortie suivante : 3
+
+Cela signifie que le premier élément pair dans le tableau numbers est situé à l'index 3.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+/*Exemple 3 : Trouver l'indice du premier élément qui satisfait une condition***************
+Supposons que nous ayons un tableau d'objets représentant des utilisateurs et que nous voulions trouver l'index du premier utilisateur ayant un certain ID. Voici comment cela pourrait être réalisé :*/
+
+const users = [
+  { id: 1, name: 'Marie' },
+  { id: 2, name: 'Stéphanie' },
+  { id: 3, name: 'Emma' },
+  { id: 4, name: 'Fabien' },
+];
+
+const targetId = 3;
+
+const foundIndex = users.findIndex(user => user.id === targetId);
+
+if (foundIndex !== -1) {
+  console.log(`The user "${users[foundIndex].name}" has the ID ${targetId}.`);
+} else {
+  console.log(`No user found with the ID ${targetId}.`);
+}
+
+
+/*Dans l'exemple donné, nous avons un tableau appelé users qui contient des objets représentant des utilisateurs. Chaque objet utilisateur a un id et un name. Nous souhaitons trouver l'index de l'utilisateur dont l'id correspond à la valeur cible targetId.
+
+La méthode findIndex() est appelée sur le tableau users avec une fonction de rappel (user => user.id === targetId). Cette fonction vérifie si l'id de chaque utilisateur correspond à la valeur targetId. Lorsqu'un utilisateur avec l'id recherché est trouvé, la fonction renvoie true, indiquant que l'utilisateur satisfait la condition de recherche.
+
+La méthode findIndex() parcourt chaque élément du tableau users et exécute la fonction de rappel sur chacun d'eux. Lorsque la première occurrence d'un utilisateur avec l'id recherché est trouvée, la méthode findIndex() renvoie son index. Si aucun utilisateur ne correspond à la condition de recherche, la méthode renvoie -1.
+
+Dans cet exemple, nous cherchons l'utilisateur avec un id de 3. La méthode findIndex() parcourt les objets utilisateur du tableau users et trouve que l'utilisateur ayant un id de 3 est à l'index 2. Par conséquent, la valeur de index est 2.
+
+Ensuite, nous utilisons une structure conditionnelle pour afficher un message approprié en fonction du résultat de la recherche. Si l'index est différent de -1, cela signifie qu'un utilisateur correspondant a été trouvé, nous affichons donc le nom de l'utilisateur et l'id correspondant. Sinon, nous affichons un message indiquant qu'aucun utilisateur n'a été trouvé avec l'id spécifié..*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));//Affiche: 3
+
+/*Dans cet exemple, nous avons un tableau array1 contenant une liste de nombres. Nous utilisons la méthode findIndex() pour trouver l'index du premier élément du tableau qui satisfait une condition spécifique.
+
+La méthode findIndex() est appelée sur le tableau array1 avec une fonction de rappel (element) => element > 13. Cette fonction vérifie si un élément est supérieur à 13. Si c'est le cas, elle renvoie true.
+
+La méthode findIndex() itère sur chaque élément du tableau array1 et exécute la fonction de rappel sur chacun d'eux. Lorsque la première occurrence d'un élément satisfaisant la condition est trouvée, la méthode findIndex() renvoie son index.
+
+Dans cet exemple, nous recherchons le premier nombre supérieur à 13 dans le tableau array1. Lorsque la méthode findIndex() parcourt les éléments du tableau, elle trouve que l'élément 130 est le premier nombre supérieur à 13. Par conséquent, elle renvoie son index, qui est 3.
+
+Ensuite, nous affichons l'index retourné par findIndex() dans la console à l'aide de console.log(), ce qui donne la sortie suivante : 3
+
+Cela signifie que le premier nombre supérieur à 13 dans le tableau array1 est situé à l'index 3.*/
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+let monTableau = [1, 2, 3, 4, 5];
+
+function estPair(element) {
+  return element % 2 === 0;
+}
+
+let indexTrouve = monTableau.findIndex(estPair);
+console.log(`Le premier nombre pair se trouve à l'index ${indexTrouve}.`);
+
+/*Dans ce code, nous avons un tableau appelé monTableau contenant une liste de nombres. Nous voulons trouver l'index du premier nombre pair dans le tableau.
+
+La méthode findIndex() est utilisée sur le tableau monTableau avec la fonction de rappel estPair. La fonction estPair vérifie si un élément est pair en utilisant l'opérateur modulo (%) pour vérifier si le reste de la division de l'élément par 2 est égal à 0. Si la condition est vraie, la fonction renvoie true.
+
+La méthode findIndex() itère sur chaque élément du tableau monTableau et exécute la fonction estPair sur chaque élément. Lorsque le premier élément qui satisfait la condition est trouvé, la méthode findIndex() renvoie son index.
+
+Dans cet exemple, nous recherchons le premier nombre pair dans le tableau monTableau. Lorsque la méthode findIndex() itère sur les éléments du tableau, elle trouve que l'élément 2 est le premier nombre pair. Par conséquent, elle renvoie son index, qui est 1.
+
+Enfin, nous utilisons console.log() pour afficher un message indiquant l'index du premier nombre pair trouvé dans le tableau.
+
+Le résultat affiché sera : "Le premier nombre pair se trouve à l'index 1."
+/*******************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************/
+//Trouver l'index d'un nombre premier dans un tableau
+
+function estPremier(élément, index, array) {
+  var début = 2;  // On initialise la variable début à 2
+  while (début <= Math.sqrt(élément)) {  // On vérifie que début est inférieur ou égal à la racine carrée de l'élément
+    if (élément % début < 1) {  // Si l'élément est divisible par début, on retourne false
+      return false;
+    } else {
+      début++;  // Sinon, on incrémente la variable début
+    }
+  }
+  return élément > 1;  // Si l'élément est supérieur à 1, il est premier, donc on retourne true
+}
+
+console.log([4, 6, 8, 12].findIndex(estPremier)); // -1, aucun élément trouvé n'est premier
+console.log([4, 6, 7, 12].findIndex(estPremier)); // 2, l'élément 7 à l'indice 2 est premier
+
+/*La fonction estPremier prend trois arguments : élément, index et array. Dans cet exemple, nous n'utilisons que élément,
+ qui correspond à l'élément du tableau que la méthode findIndex() est en train d'évaluer.
+
+La fonction estPremier utilise un algorithme simple pour déterminer si un nombre est premier.
+Elle commence par initialiser la variable début à 2, puis elle boucle tant que début est inférieur
+ou égal à la racine carrée de élément. Pendant chaque itération, elle vérifie si élément est divisible par début. 
+Si c'est le cas, elle retourne false, ce qui signifie que élément n'est pas premier.
+Sinon, elle incrémente début et continue la boucle. Si elle parvient à sortir de la boucle sans avoir retourné false,
+elle vérifie si élément est supérieur à 1, ce qui signifie qu'il est premier, et elle retourne true.
+
+Dans le premier appel à findIndex(), nous passons un tableau qui ne contient que des nombres non premiers.
+findIndex() évalue chaque élément du tableau en appelant la fonction estPremier, qui retourne toujours false.
+Par conséquent, findIndex() ne trouve aucun élément qui satisfait la condition, et il renvoie -1.
+
+Dans le deuxième appel à findIndex(), nous passons un tableau qui contient un nombre premier (7). findIndex() évalue chaque élément
+du tableau en appelant la fonction estPremier. Lorsqu'il évalue l'élément 7, la fonction estPremier retourne true, ce qui signifie que
+l'élément 7 satisfait la condition. findIndex() renvoie donc l'indice de cet élément, qui est 2.*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

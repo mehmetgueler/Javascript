@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+    Portée (scope) des fonctions en JavaScript
+
+<script>
+
+/*Lorsque vous programmez en JavaScript, il est important de comprendre le concept de portée des fonctions. La portée, également appelée scope en anglais, détermine la visibilité et l'accessibilité des variables dans votre code. Une bonne compréhension de la portée vous permettra d'éviter des erreurs potentielles et d'écrire un code plus clair et plus efficace.
+
+Portée globale
+En JavaScript, une variable déclarée en dehors de toutes les fonctions est considérée comme une variable globale. Cela signifie qu'elle est accessible de partout dans votre code, y compris à l'intérieur des fonctions.
+Elle est accessible depuis n'importe quelle partie du programme, y compris à l'intérieur des fonctions.
+Les variables globales sont souvent utilisées pour stocker des valeurs qui doivent être partagées et accessibles à plusieurs fonctions.
+Elles existent pendant toute la durée d'exécution du programme.
+
+Portée locale
+En JavaScript, une variable déclarée à l'intérieur d'une fonction est considérée comme une variable locale. Cela signifie qu'elle n'est accessible qu'à l'intérieur de la fonction elle-même.
+Elle est créée lorsque la fonction est appelée et est détruite(*1) lorsque la fonction se termine.
+Les variables locales sont généralement utilisées pour stocker des valeurs temporaires spécifiques à une fonction.
+Elles ne sont pas accessibles depuis d'autres parties du programme en dehors de la fonction.*/
+
+
+
+
+
+let variableGlobale = "valeur de la variable golabale"; // Variable globale
+
+function maFonction() {
+  console.log(variableGlobale);
+}
+
+maFonction(); // Affiche "valeur de la variable globale"
+console.log(variableGlobale); // Affiche "valeur de la variable globale"
+
+/*Dans cet exemple, nous avons une variable globale appelée variableGlobale qui est définie en dehors de toutes les fonctions. Cela signifie que cette variable est accessible à la fois dans le contexte global et à l'intérieur des fonctions.
+
+La fonction maFonction() est définie pour illustrer l'accès à la variable globale. À l'intérieur de la fonction, nous utilisons console.log() pour afficher la valeur de variableGlobale. Lorsque nous appelons maFonction(), la sortie affichée sera "valeur de la variable globale".
+
+Ensuite, nous faisons un autre appel à console.log() en dehors de la fonction pour afficher à nouveau la valeur de variableGlobale. Comme la variable est globale, elle est accessible partout dans notre programme, y compris en dehors des fonctions.
+
+⁡⁢⁣⁣Il est généralement recommandé de limiter l'utilisation des variables globales, car elles peuvent causer des problèmes de lisibilité et de maintenabilité du code. Les variables locales offrent une meilleure encapsulation et évitent les conflits de noms.*/
+
+
+
+
+
+
+function exempleFonction() {
+  var variableLocale = 10;
+  console.log("Valeur de la variable local:", variableLocale);
+}
+
+exempleFonction();// Appel de la fonction
+
+// Tentative d'accéder à la variable locale en dehors de la fonction
+console.log("En dehors de la fonction :", variableLocale);
+
+/*Dans cet exemple JavaScript, nous avons une fonction appelée exempleFonction(). À l'intérieur de cette fonction, nous déclarons une variable locale variableLocale et lui attribuons la valeur 10.
+
+Lorsque nous appelons la fonction exempleFonction(), elle affiche la valeur de variableLocale à l'intérieur de la fonction, ce qui fonctionne correctement.
+
+Cependant, si nous essayons d'accéder à la variable variableLocale en dehors de la fonction, comme dans la dernière ligne du code, nous obtiendrons une erreur. Cela est dû à la portée locale de la variable, qui la rend inaccessible en dehors de la fonction dans laquelle elle est déclarée.
+
+Si nous exécutons ce code JavaScript, nous obtiendrons :
+
+À l'intérieur de la fonction : 10
+ReferenceError: variableLocale is not defined
+
+Cela confirme que la variable locale variableLocale n'est pas accessible en dehors de la fonction dans laquelle elle est définie.*/
+
+
+
+
+
+
+
+
+
+/*(*1)
+Lorsqu'une fonction est appelée, les variables locales sont créées et allouent de l'espace en mémoire pour stocker leurs valeurs. Lorsque la fonction se termine, l'espace mémoire alloué aux variables locales est libéré. Cela signifie que ces variables locales ne sont plus accessibles une fois que la fonction a terminé son exécution.
+
+Cependant, il est important de noter que la mémoire allouée à ces variables locales n'est pas immédiatement "détruite" ou libérée. Elle est simplement marquée comme disponible pour être réutilisée par d'autres parties du programme. Le processus de libération de la mémoire allouée est géré par le système d'exécution de la programmation, et il ne s'agit pas d'une destruction physique de la mémoire.
+
+En d'autres termes, la portée des variables locales est limitée à l'exécution de la fonction, et elles cessent d'exister en dehors de cette fonction. La mémoire allouée à ces variables est libérée pour être réutilisée à d'autres fins, mais cela ne signifie pas qu'elle est instantanément détruite ou effacée.*/
+
+</script>
+</body>
+</html>

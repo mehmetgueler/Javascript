@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/background.css">
+</head>
+
+<body>
+  <script>
+
+let tableau1 = new Array("indice0.0", "indice0.1", new Array("indice0.2.0", "indice0.2.1"));
+let tableau2 = new Array("indice1.0", "indice1.1", new Array("indice1.2.0", "indice1.2.1"));
+
+let nouveauTableau = new Array(tableau1, tableau2);
+
+for(let i=0; i<nouveauTableau.length; i++){
+  console.log("Element " + i + " : ");
+  for(let j=0; j<nouveauTableau[i].length; j++){
+    if(Array.isArray(nouveauTableau[i][j])){ //vérifie si c'est un tableau imbriqué
+      console.log("  Sous-element " + j + " : ");
+      for(let k=0; k<nouveauTableau[i][j].length; k++){
+        console.log("    Sous-sous-element " + k + " : " + nouveauTableau[i][j][k]);
+      }
+    }
+    else{
+      console.log("  Sous-element " + j + " : " + nouveauTableau[i][j]);
+    }
+  }
+}
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+/*************************************************************************************************************************/
+function filterLongStrings(arr) {
+  const filteredArray = arr.filter((str) => str.length > 5);
+  return filteredArray;
+}
+
+// Tester la fonction
+const strings = ["chat", "chien", "éléphant", "oiseau", "souris"];
+console.log(filterLongStrings(strings));
+// Résultat : ["chien", "éléphant", "souris"]
+/*************************************************************************************************************************/
+
+
+
+
+
+
+
+/*************************************************************************************************************************/
+function filterLStr(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > 5) {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
+}
+
+// Tester la fonction
+const chain = ["Lion", "Tamanoir", "Hippopotame", "Chimpanzé ", "Panthère"];
+console.log(filterLStr(chain));
+// Résultat : ['Tamanoir', 'Hippopotame', 'Chimpanzé ', 'Panthère']
+
+/*************************************************************************************************************************/
+</script>
+</body>
+</html>

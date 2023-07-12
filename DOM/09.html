@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head id="exemple"><!--head utilise un ID-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM (Document Object Model)</title>
+</head>
+<body>
+
+    <h1>Exemple documentMode</h1>
+	<p>La valeur de documentMode est : <span id="mode"></span></p>
+   
+   
+   <script>
+
+/*  document.head
+Retourne l'élément <head> du document courant. S'il y a plus d'un élément <head>, le premier est retourné.*/
+let objRef = document.head.id;// accède l'ID de head
+console.log(objRef);// exemple
+
+
+// en HTML: <head id="my-document-head">
+    var aHead = document.head;
+
+alert(aHead.id); // "my-document-head";
+
+alert( document.head === document.querySelector("head") ); // true
+/*************************************************************************************/
+
+
+
+/*************************************************************************************/
+/*La propriété characterSet est une propriété de lecture seule qui appartient à l'objet Document du DOM (Document Object Model) de JavaScript.
+ Elle représente l'encodage de caractères utilisé pour afficher la page actuelle.*/
+
+let objRef1 = document.characterSet;
+console.log(objRef1); // UTF-8
+
+
+
+/*  INPUT ENCODING
+La propriété inputEncoding est une propriété de lecture seule qui appartient à l'objet
+Document du DOM (Document Object Model) de JavaScript. Elle représente l'encodage de caractères utilisé pour charger la page actuelle.*/
+
+const inputEncoding = document.inputEncoding;
+console.log(inputEncoding); // Affiche "UTF-8"
+/*La propriété characterSet est une propriété de l'objet document du DOM (Document
+Object Model) de JavaScript, qui contient l'encodage de caractères défini dans
+la balise <meta> de l'en-tête <head> de la page HTML. Si la balise <meta>
+n'est pas présente dans la page, alors la propriété characterSet retourne la
+valeur de l'encodage par défaut du navigateur.
+
+La propriété inputEncoding est également une propriété de l'objet document du
+DOM de JavaScript, mais elle contient l'encodage de caractères utilisé pour
+charger la page web. Cette propriété est automatiquement définie par le
+navigateur lorsqu'il charge la page, en utilisant l'encodage spécifié dans la
+balise <meta> si elle est présente, ou en utilisant un encodage par défaut si
+elle est absente.
+
+Donc, en résumé, characterSet et inputEncoding ont des différences subtils mais
+importants : characterSet se réfère à l'encodage défini dans la balise <meta>
+de la page, tandis que inputEncoding se réfère à l'encodage utilisé pour
+charger la page. Dans la plupart des cas, ces deux valeurs seront les mêmes,
+mais il est important de comprendre leur différence pour certains cas spécifiques
+où ils pourraient être différents.*/
+/*************************************************************************************/
+
+
+
+
+
+
+
+
+/*************************************************************************************/ /**
+ **  Indique si le document est affiché en mode dégradé (Quirks mode) ou dans le respect des standards.
+ **    Valeurs
+ * "BackCompat" si le document est a ffiché en mode "quirks" ;
+ * 
+*/mode = document.compatMode;
+console.log(mode); //CSS1Compat
+/*************************************************************************************/
+
+
+
+
+
+/*HTML DOM Document documentMode******************************************************/
+
+// Récupération de la valeur de documentMode
+var mode = document.documentMode;
+
+// Affichage de la valeur dans la page
+document.getElementById("mode").textContent = mode;
+
+// Affichage de la valeur dans la console
+console.log(mode); //undefined
+
+
+
+
+
+/*DefaultView************************************************************************/
+// Récupération de l'objet window associé au document
+var win = document.defaultView;
+
+// Utilisation de la méthode resizeTo() pour redimensionner la fenêtre
+win.resizeTo(500, 500);
+/************************************************************************************/
+
+
+
+
+
+/*La propriété documentURI
+de l'interface Document renvoie l'emplacement du document sous forme "string" (chaîne de caractères).
+
+Initialement, la spécification DOM3 définissait cet attribut en lecture/écriture.
+ Dans la norme actuelle DOM, il est en lecture seule.*/
+
+ var docURI = document.documentURI;
+ console.log(docURI);//http://127.0.0.1:3000/DOM/09.html
+/************************************************************************************/
+
+
+
+
+/* document.location
+La propriété document.location (ou document.location.href) de l'objet document du DOM en JavaScript 
+permet de récupérer ou de définir l'URL de la page web actuellement chargée dans le navigateur.*/
+
+let currentUrl = document.location.href;
+console.log(currentUrl);
+
+document.location.href = "https://www.example.com";
+
+document.location.reload();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

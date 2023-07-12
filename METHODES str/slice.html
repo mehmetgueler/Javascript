@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*La méthode slice() est une méthode native de JavaScript qui permet d'extraire une portion d'une chaîne de caractères ou d'un tableau,
+  et de la retourner sous forme d'un nouveau tableau ou d'une nouvelle chaîne.
+
+La syntaxe de la méthode slice() est la suivante :*/
+
+//sql
+    array.slice(start, end)
+
+//lua
+    string.slice(start, end)
+
+//start : la position de départ (optionnelle). Si cette valeur est omise, la méthode considère le début de l'élément source.
+//end : la position de fin (optionnelle). Si cette valeur est omise, la méthode considère la fin de l'élément source.
+
+//Notez que la méthode slice() ne modifie pas l'élément source, mais retourne une nouvelle chaîne ou un nouveau tableau. Cela signifie que l'élément source reste inchangé.
+
+/* UTILISATION DE LA MÉTHODE SLICE() AVEC DES TABLEAUX
+Lorsqu'elle est utilisée avec des tableaux, la méthode slice() permet d'extraire une partie du tableau et de la retourner sous forme d'un nouveau tableau*/
+
+    const arr = [1, 2, 3, 4, 5];
+    // Extraire les deux premiers éléments
+    const result1 = arr.slice(0, 2); // [1, 2]
+    // Extraire les éléments du milieu
+    const result2 = arr.slice(1, 4); // [2, 3, 4]
+    // Extraire les deux derniers éléments
+    const result3 = arr.slice(-2); // [4, 5]
+
+/*Dans le premier exemple, nous avons extrait les deux premiers éléments du tableau en spécifiant les positions de départ et de fin.
+  Dans le deuxième exemple, nous avons extrait les éléments du milieu en spécifiant les positions de départ et de fin.
+  Dans le troisième exemple, nous avons extrait les deux derniers éléments du tableau en spécifiant uniquement la position de départ comme une valeur négative.*/
+
+//UTILISATION DE LA MÉTHODE SLICE() AVEC DES CHAÎNES DE CARACTÈRES
+
+    const str = "Hello, world!";
+
+    // Extraire la première lettre
+    const result1 = str.slice(0, 1); // "H"
+    
+    // Extraire le mot "world"
+    const result2 = str.slice(7, 12); // "world"
+    
+    // Extraire les deux derniers caractères
+    const result3 = str.slice(-2); // "d!"
+    /*Dans le premier exemple, nous avons extrait la première lettre de la chaîne de caractères en spécifiant la position de départ et de fin.
+      Dans le deuxième exemple, nous avons extrait le mot "world" en spécifiant les positions de départ et de fin.
+      Dans le troisième exemple, nous avons extrait les deux derniers caractères de la chaîne de caractères en spécifiant uniquement la position de départ comme une valeur négative.*/
+
+
+/*
+Si l'argument de fin est un nombre négatif, cela signifie que l'on compte à partir de la fin de la chaîne.
+ Par exemple, si la chaîne a une longueur de 10 et que l'argument de fin est -3, cela signifie que la fin de la sous-chaîne sera à la position 7 (10 - 3).
+
+Si l'argument de fin est omis, la sous-chaîne s'étendra jusqu'à la fin de la chaîne.
+
+Si l'argument de début est supérieur ou égal à la longueur de la chaîne, la méthode renverra une chaîne vide.
+
+Si l'argument de fin est inférieur ou égal à l'argument de début, la méthode renverra également une chaîne vide.
+
+Les chaînes de caractères sont des objets immuables en JavaScript, ce qui signifie que la méthode slice() ne modifie pas la chaîne originale mais renvoie une nouvelle chaîne.
+
+En gardant ces cas particuliers à l'esprit, on peut utiliser la méthode slice() de manière efficace pour extraire des sous-chaînes de caractères
+d'une chaîne de caractères existante en JavaScript.*/
+
+
+</script>
+</body>
+</html>

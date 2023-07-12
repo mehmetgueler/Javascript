@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.push()</title>
+</head>
+<body><script>
+
+/*La méthode push() est une méthode intégrée (built-in) de JavaScript pour les tableaux (arrays). Elle permet d'ajouter un ou plusieurs éléments à la fin d'un tableau existant et de retourner la nouvelle longueur du tableau.
+
+La méthode push() est une méthode générique qui peut être utilisée avec Function.call() ou Function.apply() sur des objets similaires à des tableaux.
+
+Lorsque push() est appelée, elle se base sur la propriété length du tableau pour déterminer à partir de quel index les valeurs données doivent être insérées. Si la propriété length ne peut pas être convertie en nombre, l'index utilisé est 0. Si la propriété length n'est pas définie, elle est alors créée.
+
+Il est important de noter que la méthode push() ne peut pas être utilisée sur des chaînes de caractères ou sur l'objet arguments car ces types de données sont immuables, ce qui signifie qu'ils ne peuvent pas être modifiés après leur création.
+
+          array.push(element1, element2, ..., elementN);
+
+array : C'est le tableau auquel vous souhaitez ajouter des éléments.
+
+element1, element2, ..., elementN : Ce sont les éléments que vous voulez ajouter au tableau. Vous pouvez spécifier un ou plusieurs éléments séparés par des virgules.
+
+⁡⁢⁣⁣La méthode push() modifie directement le tableau sur lequel elle est appelée en ajoutant les éléments fournis à la fin du tableau. Elle retourne ensuite la nouvelle longueur du tableau après l'ajout des éléments⁡*/
+
+
+
+
+
+/***************************************************************************************/
+let methodePush = [];
+methodePush.push("push1");
+methodePush.push("push2");
+console.log(methodePush); // affiche ['push1', 'push2']
+/***************************************************************************************/
+
+
+
+
+
+/***************************************************************************************/
+let monTab = [1, 2, 3];
+
+console.log('Mon tableau avant push(): ' + monTab);
+let nouvelleLongueur = monTab.push(4, 5);
+console.log('Mon tableau après push(): ' + monTab); // Output: [1, 2, 3, 4, 5]
+console.log('Nouvelle longueur: ' + nouvelleLongueur); // Output: 5
+/***************************************************************************************/
+
+
+
+
+
+
+/***************************************************************************************/
+let my3DArr = [  [ [1, 2], [3, 4], [5, 6] ],
+  [ [7, 8], [9, 10], [11, 12] ]
+];
+
+// Affichage du tableau initial
+console.log('My Initial 3D Array: ');
+console.log(my3DArr);
+
+// Utilisation de la méthode push pour ajouter un élément à la fin du deuxième tableau à la profondeur 2
+my3DArr[1].push([13, 14]);
+
+// Affichage du tableau après l'ajout d'un nouvel élément
+console.log('My 3D Array after push(): ');
+console.log(my3DArr);
+/***************************************************************************************/
+
+
+
+
+
+
+
+
+
+/***************************************************************************************/
+/*Supposons que vous développiez une application de gestion de liste de tâches. Vous avez un tableau vide appelé tasks qui contiendra les différentes tâches à accomplir. Les utilisateurs peuvent ajouter de nouvelles tâches à la liste à l'aide d'un formulaire.*/
+
+let tasks = []; // Tableau vide pour stocker les tâches
+
+// Fonction pour gérer l'ajout d'une nouvelle tâche
+function addTask(newTask) {
+  tasks.push(newTask); // Ajoute la nouvelle tâche à la fin du tableau
+  console.log('Tâche ajoutée :', newTask);
+  console.log('Liste des tâches :', tasks);
+}
+
+// Exemple d'ajout de tâches
+addTask('Faire les courses');
+addTask('Préparer la présentation');
+addTask('Appeler le client');
+
+/*Dans cet exemple, nous avons une fonction addTask() qui prend en paramètre une nouvelle tâche newTask. Lorsque la fonction est appelée, elle utilise la méthode push() pour ajouter la nouvelle tâche à la fin du tableau tasks. Ensuite, elle affiche un message indiquant la tâche qui a été ajoutée, ainsi que la liste mise à jour des tâches.
+
+Chaque fois que la fonction addTask() est appelée avec une nouvelle tâche, celle-ci est ajoutée à la liste tasks en utilisant push(). Par conséquent, à chaque nouvel appel de la fonction, la tâche est ajoutée à la fin du tableau.
+
+Cet exemple illustre comment la méthode push() peut être utilisée pour ajouter dynamiquement des éléments à un tableau. Dans une application réelle, vous pourriez utiliser cette approche pour permettre aux utilisateurs d'ajouter des éléments à une liste, comme des tâches, des messages, des notes, etc.*/
+/***************************************************************************************/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les méthodes fondamentales des objets</title>
+</head>
+<body>
+<script>
+/*La méthode Object.entries() est une méthode statique de l'objet Object en JavaScript. Elle permet de renvoyer un tableau contenant les paires clé-valeur d'un objet, sous la forme d'un tableau à deux dimensions. Chaque élément du tableau résultant est un tableau contenant la clé en première position et la valeur associée en deuxième position.
+
+Voici la syntaxe de Object.entries() :
+
+        Object.entries(objet);
+
+objet : L'objet dont on souhaite obtenir les paires clé-valeur.
+
+La méthode Object.entries() renvoie un tableau contenant les paires clé-valeur énumérables de l'objet, dans le même ordre que celui fourni par une boucle for...in. Cela signifie que les propriétés héritées via la chaîne de prototypes ne sont pas incluses dans le tableau résultant.
+
+Voici un exemple d'utilisation de Object.entries() :*/
+
+const objet = { a: 1, b: 2, c: 3 };
+
+const entries = Object.entries(objet);
+
+console.log(entries);
+// Affiche : [["a", 1], ["b", 2], ["c", 3]]
+
+
+/*Dans cet exemple, nous avons un objet objet avec plusieurs propriétés et valeurs. En utilisant Object.entries(objet), nous obtenons un tableau contenant les paires clé-valeur de l'objet. Chaque paire clé-valeur est représentée par un tableau à deux dimensions, avec la clé en première position et la valeur en deuxième position.
+
+La méthode Object.entries() est utile lorsque nous avons besoin d'itérer sur les paires clé-valeur d'un objet, que ce soit pour effectuer des opérations de transformation, de filtrage ou d'affichage.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Supposons que nous avons un formulaire HTML avec des champs de saisie, et nous voulons récupérer les valeurs saisies par l'utilisateur et les envoyer à un serveur. Voici comment nous pouvons utiliser Object.entries() pour obtenir les paires clé-valeur des champs de saisie :*/
+
+// Obtention de la référence vers le formulaire HTML
+const formulaire = document.querySelector('#monFormulaire');
+
+// Fonction pour gérer la soumission du formulaire
+function soumettreFormulaire(event) {
+  event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+  const formData = new FormData(formulaire); // Obtention des données du formulaire
+
+  // Conversion des données FormData en objet JavaScript
+  const donneesFormulaire = Object.fromEntries(formData.entries());
+
+  // Envoi des données à un serveur (exemple fictif)
+  fetch('https://exemple.com/api/endpoint', {
+    method: 'POST',
+    body: JSON.stringify(donneesFormulaire),
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Traitement de la réponse du serveur
+    console.log(data);
+  });
+}
+
+// Écouteur d'événement pour la soumission du formulaire
+formulaire.addEventListener('submit', soumettreFormulaire);
+
+/*Dans cet exemple, nous utilisons Object.entries() pour obtenir les paires clé-valeur des champs de saisie du formulaire. Nous utilisons l'objet FormData pour obtenir les données du formulaire, puis nous convertissons ces données en un objet JavaScript en utilisant Object.fromEntries() en passant les entrées de FormData via formData.entries().
+
+Ensuite, nous envoyons les données au serveur en utilisant l'API Fetch. Cela peut être adapté à une requête réelle vers un endpoint d'API. Dans cet exemple, nous utilisons JSON.stringify() pour convertir les données en format JSON, et nous définissons l'en-tête 'Content-Type' à 'application/json' pour indiquer au serveur que les données sont au format JSON.
+
+Après avoir reçu la réponse du serveur, nous pouvons effectuer un traitement supplémentaire si nécessaire.
+
+Cet exemple montre comment Object.entries() peut être utilisé pour récupérer les données d'un formulaire HTML et les manipuler avant de les envoyer à un serveur. C'est un exemple concret d'utilisation de Object.entries() dans le développement web.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+</body>
+</html>

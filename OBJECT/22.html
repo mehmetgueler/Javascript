@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+/*Lorsque nous parlons d'objets imbriqués, cela signifie qu'un objet peut contenir d'autres objets comme valeurs de ses propriétés. Cette structure hiérarchique est couramment utilisée pour organiser et représenter des données complexes. Voici un exemple illustrant les objets imbriqués :*/
+
+
+let joueur = {
+  pseudo: "ShadowBlade",
+  niveau: 42,
+  guilde: {
+    nom: "Les Protecteurs",
+    membres: 50
+  },
+  inventaire: {
+    arme: "Épée de l'ombre",
+    armure: "Armure draconique",
+    potions: {
+      vie: 5,
+      mana: 3
+    }
+  }
+};
+
+/*Dans cet exemple, nous avons un objet joueur qui contient plusieurs propriétés, dont certaines sont des objets eux-mêmes. Les propriétés guilde et inventaire sont des objets imbriqués à l'intérieur de l'objet joueur.
+
+Pour accéder aux valeurs des propriétés dans des objets imbriqués, nous utilisons la notation point (objet.propriete) ou la notation crochet (objet['propriete']). Voici comment accéder à certaines valeurs dans notre exemple :*/
+
+console.log(joueur.pseudo);                        // Affiche : ShadowBlade
+console.log(joueur.guilde.nom);                    // Affiche : Les Protecteurs
+console.log(joueur.inventaire.armure);             // Affiche : Armure draconique
+console.log(joueur.inventaire.potions.vie);        // Affiche : 5
+
+/*Dans cet exemple, nous utilisons la notation point pour accéder aux propriétés pseudo, guilde.nom, inventaire.armure et inventaire.potions.vie de l'objet joueur.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Supposons que nous devons créer un site web pour un magasin en ligne. Nous pouvons utiliser des objets imbriqués pour représenter les informations relatives aux produits, aux catégories et aux commandes des clients.*/
+
+// Objet représentant un produit
+let produit = {
+  nom: "T-shirt",
+  prix: 19.99,
+  categorie: {
+    nom: "Vêtements",
+    sousCategorie: "Hauts"
+  },
+  disponibilite: true
+};
+
+// Objet représentant une commande
+let commande = {
+  numero: "CMD123",
+  date: "2023-07-11",
+  total: 79.96,
+  produits: [
+    { produit: produit, quantite: 2 },
+    { produit: { nom: "Pantalon", prix: 39.99 }, quantite: 1 }
+  ]
+};
+
+/*Dans cet exemple, nous avons un objet produit représentant un produit disponible dans le magasin en ligne. Cet objet comporte des propriétés telles que nom, prix, categorie (qui est un objet imbriqué avec nom et sousCategorie) et disponibilite.
+
+Ensuite, nous avons un objet commande représentant une commande passée par un client. Cet objet comporte des propriétés telles que numero, date, total et produits. La propriété produits est un tableau qui contient des objets imbriqués représentant les produits commandés ainsi que la quantité.
+
+Dans un contexte de développement web, nous pouvons utiliser ces objets imbriqués pour afficher les informations sur les produits, les catégories et les commandes sur différentes pages de notre site.
+
+Par exemple, pour afficher les détails d'une commande, nous pouvons utiliser une boucle pour parcourir les produits de la commande et afficher leurs informations :*/
+
+
+// Affichage des détails de la commande
+console.log("Commande #" + commande.numero);
+console.log("Date: " + commande.date);
+console.log("Total: " + commande.total);
+
+console.log("Produits commandés:");
+for (let item of commande.produits) {
+  console.log("- Produit: " + item.produit.nom);
+  console.log("  Prix unitaire: " + item.produit.prix);
+  console.log("  Quantité: " + item.quantite);
+  console.log("  Sous-total: " + item.produit.prix * item.quantite);
+}
+
+/*Dans cet exemple, nous utilisons une boucle for...of pour parcourir les objets produits de la commande et afficher les détails de chaque produit.
+
+Cet exemple montre comment les objets imbriqués peuvent être utilisés pour représenter et manipuler des informations complexes dans le développement web. Ils nous permettent d'organiser et de structurer les données de manière hiérarchique, ce qui facilite la gestion et l'affichage des informations sur notre site web.*/
+
+
+
+
+
+
+</script>
+</body>
+</html>

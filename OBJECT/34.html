@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+    <script>
+
+/*La méthode toLocalString() est utilisée dans les objets pour renvoyer
+une chaîne de caractères formatée selon les paramètres régionaux de
+l'utilisateur. Elle est souvent utilisée pour afficher des dates, des
+heures ou des nombres dans un format adapté à la langue et aux
+conventions de notation de l'utilisateur.
+
+La méthode prend en charge des options de formatage pour personnaliser
+la chaîne de caractères renvoyée. Elle est particulièrement utile pour
+les objets qui représentent des données sensibles à la localisation.*/
+
+//1
+let valeur1 = 1500;
+let result1 = valeur1.toLocaleString();
+console.log(valeur1);//1500
+
+//2
+let valeur2 = 1500;
+let result2 = valeur2.toLocaleString('en-US');
+console.log(result2);//1,500
+
+
+//3
+let valeur3 = 1500;
+let result3 = valeur3.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
+console.log(result3); // 1 500,00 €
+
+
+//5
+let valeur4 = 1500;
+let result4 = valeur4.toLocaleString('fr-CH', { style: 'currency', currency: 'CHF' });
+console.log(result4); // 1 500.00 CHF
+
+
+//3
+let valeur6 = 1500;
+let result6 = valeur6.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+console.log(result6); // $1,500.00
+
+
+
+//5
+let valeur7 = 1550;//arrondi
+let result7 = valeur7.toLocaleString('fr-CH', { style: 'currency', currency: 'CHF', maximumSignificantDigits:2 });
+console.log(result7); // CHF 1 600
+
+//5
+let valeur8 = 15850;//arrondi
+let result8 = valeur8.toLocaleString('fr-CH', { style: 'currency', currency: 'CHF', maximumSignificantDigits:2 });
+console.log(result8); // 16 000 CHF
+
+
+//7
+let valeur9 = 15850;
+let result9 = valeur9.toLocaleString('fr-CH', { style: 'currency', currency: 'CHF', minimumSignificantDigits:10 });
+console.log(result9); // 15 850.00000 CHF
+
+
+
+
+
+</script>
+</html>

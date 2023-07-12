@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+  <script>
+
+/*les paramètres peuvent être prédefinis dans l'objet utilisation des paramètres par défaut dans une méthode d'objet*/
+
+let personne = {
+    details:function (a='a_ParDefaut ', b='b_ParDefaut ', c='c_ParDefaut'){
+      let x  = a;
+      let y  = b;
+      let z  = c;
+      let message   =`paramètres définis par defaut: ${a} ${b}  ${c}`;// !concatenation
+      return message;
+    }
+};
+
+let lapersonne = personne.details()
+console.log(lapersonne);
+//*****************************     FIN     ***************************************************
+
+
+
+
+//*********************************************************************************************
+//les paramètre (a,b,c) peuvent stocker/exécuter les arguments renvoyés
+let personne_x = {
+    details:function (a, b, c){
+      let x  = a;
+      let y  = b;
+      let z  = c;
+      let message   ='argument renvoyés sont: '+ x + y +z;//!concat
+      return message;
+    }
+};
+                  //arguments renvoyée à la function de l'objet 'personne_x'
+let argumentspersonne_x = personne_x.details('valeur1', 'valeur2', 'valeur3')
+console.log(argumentspersonne_x);
+//**********************************************************************************************
+
+
+
+
+
+//**********************************************************************************************
+// Mêmes si les paramètre sont prédefinis la function executera les arguments renvoyés 
+
+let personne_y = {
+    details:function (a='parapredefinaA ', b='parapredefiniB ', c='parapredefiniC'){
+      let x  = a;
+      let y  = b;
+      let z  = c;
+      let message   ='paramètres prédefinis mais execute arguments renvoyés:'+ x + y +z;
+      return message;
+    }
+};
+
+let personne_w = personne_y.details('envoi1','envoi2', 'envoi3' )
+console.log(personne_w);
+//**********************************************************************************************
+
+
+
+  </script>
+</body>
+</html>

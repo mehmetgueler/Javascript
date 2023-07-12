@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les objets</title>
+</head>
+
+<body>
+<script>
+
+/*En JavaScript, il est possible d'utiliser une fonction en tant que méthode d'un objet. Lorsque cela est fait, la fonction devient une méthode de cet objet. Cette technique permet d'encapsuler la logique liée à l'objet et de définir des comportements spécifiques pour cet objet.
+
+Pour créer une méthode dans un objet, on peut simplement définir une propriété avec le nom souhaité et lui attribuer une fonction en tant que valeur. À l'intérieur de cette fonction, on peut utiliser le mot-clé "this" pour faire référence à l'objet lui-même.
+
+Par exemple, considérons un objet "personne" avec les propriétés "nom" et "age", ainsi qu'une méthode "saluer" qui affiche un message de salutation en utilisant les propriétés de l'objet. Voici comment cela peut être écrit en JavaScript : */
+
+let personne = {
+  nom: "Johnny",
+  age: 30,
+  saluer: function() {
+    console.log(`Bonjour ! Je m'appelle ${this.nom} et j'ai ${this.age} ans.`);
+  }
+};
+
+personne.saluer(); // Appel de la méthode "saluer" de l'objet "personne"
+
+/*Dans cet exemple, la méthode "saluer" est une fonction qui affiche un message de salutation avec le nom et l'âge de la personne. L'appel de la méthode "saluer()" à partir de l'objet "personne" exécute cette fonction et affiche le message de salutation dans la console.
+
+L'utilisation de fonctions dans les objets permet d'organiser et de gérer le code de manière modulaire. Cela offre la possibilité de définir des comportements spécifiques pour chaque objet et d'encapsuler la logique liée à cet objet. Les fonctions dans les objets sont largement utilisées pour implémenter des méthodes, effectuer des calculs, traiter des données et bien plus encore.*/
+//**************************************FIN********************************
+
+
+
+
+
+
+
+
+/* Voici quelques exemples courants d'utilisation des méthodes d'objet :
+
+Méthodes d'accès et de modification des propriétés :
+Les méthodes peuvent être utilisées pour accéder ou modifier les valeurs des propriétés d'un objet de manière contrôlée. Par exemple, considérons un objet person avec une méthode setAge() qui permet de définir l'âge de la person :*/
+
+let person = {
+  nom: "John",
+  age: 30,
+  setAge: function(nouvelAge) {
+    this.age = nouvelAge;
+  }
+};
+
+person.setAge(35); // Appel de la méthode pour définir l'âge à 35
+console.log(person.age); // Affiche 35
+
+/*Dans cet exemple, la méthode setAge() est définie dans l'objet person et utilise le mot-clé this pour faire référence à l'objet lui-même. Elle permet de modifier la valeur de la propriété age de l'objet person en utilisant le nouvel âge fourni en argument.*/
+
+
+
+
+
+
+
+
+
+
+/*Méthodes de calcul ou de traitement des données :
+Les méthodes peuvent être utilisées pour effectuer des calculs ou des traitements spécifiques sur les données d'un objet. Par exemple, considérons un objet calculatrice avec des méthodes addition() et multiplication() :*/
+
+let calculatrice = {
+  addition: function(a, b) {
+    return a + b;
+  },
+  multiplication: function(a, b) {
+    return a * b;
+  }
+};
+
+let resultatAddition = calculatrice.addition(5, 3); // Appel de la méthode d'addition
+console.log(resultatAddition); // Affiche 8
+
+let resultatMultiplication = calculatrice.multiplication(4, 2); // Appel de la méthode de multiplication
+console.log(resultatMultiplication); // Affiche 8
+
+/*Dans cet exemple, les méthodes addition() et multiplication() de l'objet calculatrice effectuent respectivement une addition et une multiplication des deux arguments fournis.*/
+
+
+
+
+
+
+
+
+/*Méthodes de manipulation de l'objet lui-même :
+Les méthodes peuvent également être utilisées pour effectuer des opérations de manipulation sur l'objet lui-même, comme l'ajout ou la suppression de propriétés. Par exemple, considérons un objet listeCourses avec des méthodes ajouterProduit() et supprimerProduit() :*/
+
+let listeCourses = {
+  produits: [],
+  ajouterProduit: function(produit) {
+    this.produits.push(produit);
+  },
+  supprimerProduit: function(produit) {
+    let index = this.produits.indexOf(produit);
+    if (index !== -1) {
+      this.produits.splice(index, 1);
+    }
+  }
+};
+
+listeCourses.ajouterProduit("Lait"); // Appel de la méthode pour ajouter un produit
+listeCourses.ajouterProduit("Pain");
+console.log(listeCourses.produits); // Affiche ["Lait", "Pain"]
+
+listeCourses.supprimerProduit("Lait"); // Appel de la méthode pour supprimer un produit
+console.log(listeCourses.produits); // Affiche ["Pain"]
+
+/*Dans cet exemple, les méthodes ajouterProduit() et supprimerProduit() de l'objet listeCourses permettent respectivement d'ajouter et de supprimer des produits de la liste des courses.
+
+Les méthodes d'objet offrent une flexibilité et un contrôle supplémentaires lors de la manipulation des objets en JavaScript. Elles te permettent d'encapsuler des fonctionnalités spécifiques à l'objet et d'effectuer des opérations personnalisées sur les données de l'objet.*/
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

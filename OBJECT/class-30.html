@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+/*Méthodes statiques
+Les méthodes statiques sont des méthodes qui appartiennent à la classe elle-même plutôt qu'aux instances de la classe. Elles sont définies en utilisant le mot-clé static devant le nom de la méthode. Les méthodes statiques peuvent être appelées directement sur la classe, sans créer d'objet à partir de celle-ci. Voici comment définir et utiliser une méthode statique :*/
+
+class MathUtil {
+  static doubler(nombre) {
+    return nombre * 2;
+  }
+}
+
+console.log(MathUtil.doubler(5)); // Affiche : 10
+
+/*Dans cet exemple, nous avons une classe MathUtil qui contient une méthode statique doubler(). Cette méthode prend un paramètre nombre et retourne le double de ce nombre. La méthode est appelée directement sur la classe MathUtil, sans avoir besoin de créer un objet à partir de cette classe.
+
+Les méthodes statiques sont utiles lorsqu'une fonctionnalité est liée à la classe elle-même plutôt qu'à une instance spécifique de la classe. Par exemple, les classes utilitaires qui fournissent des fonctionnalités mathématiques ou des opérations de conversion de données peuvent souvent utiliser des méthodes statiques.*/
+
+</script>
+</body>
+</html>

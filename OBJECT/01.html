@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les objets</title>
+</head>
+<body>
+          Déclarer un objet
+<script>
+
+/*Pour créer un objet en javascript, vous pouvez utiliser la syntaxe littérale d'objet en JavaScript. Il suffit d'ouvrir et de fermer des accolades {} pour déclarer un nouvel objet.*/
+
+let user = {};
+
+/*Ajout de propriétés à l'objet :
+
+Les objets JavaScript sont des collections de paires clé-valeur, où chaque clé est une propriété de l'objet et chaque valeur est la valeur associée à cette propriété. Vous pouvez ajouter des propriétés à un objet en utilisant la notation point (.) ou la notation entre crochets ([]).
+
+Exemple :*/
+
+user.propriete1 = "Valeur 1";
+user["la propriété2"] = "Valeur 2";
+
+/*
+user.propriete1 = "Valeur 1"; : Cette ligne utilise la notation pointée pour ajouter une propriété appelée propriete1 à l'objet user et lui attribuer la valeur "Valeur 1". La notation pointée est utilisée lorsque la clé est un identifiant valide sans espaces ni caractères spéciaux.
+
+user["la propriete2"] = "Valeur 2"; : Cette ligne utilise la notation entre crochets pour ajouter une propriété appelée "la propriete2" (avec des espaces) à l'objet user et lui attribuer la valeur "Valeur 2". La notation entre crochets est utilisée lorsque la clé contient des caractères spéciaux ou lorsque la clé est stockée dans une variable.
+
+Dans les deux cas, les propriétés sont ajoutées à l'objet user et associées à des valeurs spécifiques.
+
+⁡⁢⁣⁣Il est important de noter que les propriétés ajoutées peuvent être de n'importe quel type de données, y compris des chaînes de caractères, des nombres, des tableaux, des objets ou même des fonctions.⁡
+
+En utilisant ces méthodes d'ajout de propriétés, vous pouvez personnaliser et étendre les objets JavaScript en leur ajoutant des données et des fonctionnalités supplémentaires.*/
+
+
+
+let personne = {
+  nom: "Emmett Brown",
+  age: 30,
+};
+
+personne.profession = "Science";
+personne.pays  = "unknown";
+personne["les hobbies"] = "voiture, space" 
+
+console.log(personne);
+//Affiche : {nom: 'Emmett Brown', age: 30, profession: 'Science', pays: 'unknown', les hobbies: 'voiture, space'}
+
+
+/*Il est important de noter que la première méthode, la notation pointée, est généralement préférée lorsque la clé est connue à l'avance et est un identifiant valide. La notation entre crochets est utile lorsque la clé est dynamique, c'est-à-dire qu'elle est stockée dans une variable ou qu'elle contient des caractères spéciaux.⁡*/
+
+
+
+
+
+
+
+
+/*Lorsqu'un objet est créé dans un ordinateur-serveur, plusieurs étapes se produisent au niveau du système d'exécution et de la mémoire. Voici un aperçu simplifié du processus :
+
+Allocation de mémoire : Lorsqu'un objet est créé, de l'espace mémoire est alloué pour stocker ses propriétés et ses valeurs. La taille de l'espace mémoire nécessaire dépend de la structure de l'objet et des types de données qu'il contient.
+
+Initialisation des propriétés : Les propriétés de l'objet sont initialisées avec les valeurs spécifiées lors de sa création. Cela peut se faire via une notation littérale ou en appelant un constructeur d'objet.
+
+Référence de l'objet : Une référence à l'emplacement mémoire de l'objet est créée, permettant d'y accéder ultérieurement via une variable ou une autre structure de données.
+
+Gestion de la portée : En fonction du contexte de création de l'objet, des mécanismes de portée et de visibilité peuvent s'appliquer. Par exemple, si l'objet est créé dans une fonction, sa portée peut être limitée à cette fonction.
+
+Garbage collection : Les systèmes d'exécution JavaScript, tels que les moteurs de navigateur ou les environnements d'exécution côté serveur, disposent souvent d'un mécanisme de garbage collection. Ce mécanisme permet de libérer automatiquement la mémoire occupée par les objets qui ne sont plus référencés, ce qui évite les fuites de mémoire.
+
+Il est important de noter que le processus exact de création d'un objet peut varier en fonction de l'environnement d'exécution, du moteur JavaScript utilisé et des optimisations spécifiques mises en œuvre par ces systèmes. Les détails internes du fonctionnement de l'objet peuvent être complexes et dépendent de la mise en œuvre sous-jacente du langage.*/
+
+</script>
+</body>
+</html>

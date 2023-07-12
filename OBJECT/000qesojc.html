@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets</title>
+</head>
+<body><script>
+
+/* En théorie, un objet est une entité qui représente une instance spécifique d'une classe ou d'un type de données. Un objet est caractérisé par ses propriétés (également appelées attributs ou variables d'instance) et ses méthodes (également appelées fonctions membres).
+
+Voici quelques concepts importants liés à la théorie des objets :
+
+Propriétés : Les propriétés d'un objet sont des variables qui contiennent des données spécifiques à cet objet. Elles définissent l'état de l'objet. Par exemple, un objet "Voiture" peut avoir des propriétés telles que "couleur", "marque", "modèle" qui représentent les caractéristiques spécifiques de cette voiture.
+
+Méthodes : Les méthodes d'un objet sont des fonctions qui sont associées à cet objet et lui permettent de réaliser des actions ou d'effectuer des opérations. Les méthodes définissent le comportement de l'objet. Reprenons l'exemple de l'objet "Voiture". Il pourrait avoir des méthodes telles que "démarrer", "accélérer", "freiner" qui décrivent les actions que la voiture peut effectuer.
+
+Classe : Une classe est un modèle ou un plan pour créer des objets. Elle définit les propriétés et les méthodes communes à un ensemble d'objets. Une classe est une structure abstraite, tandis qu'un objet est une instance concrète de cette classe. Par exemple, la classe "Voiture" peut définir les caractéristiques et les comportements communs à toutes les voitures, tandis qu'un objet de la classe "Voiture" représente une voiture spécifique avec ses valeurs de propriétés et ses actions possibles.
+
+Instance : Une instance est un objet spécifique créé à partir d'une classe. Chaque instance a ses propres valeurs pour les propriétés définies dans la classe. Par exemple, vous pouvez créer plusieurs objets "Voiture" distincts, tels que "voiture1", "voiture2", "voiture3", etc., qui sont des instances individuelles de la classe "Voiture" avec leurs propres valeurs pour les propriétés telles que la couleur, la marque, le modèle.
+
+Encapsulation : L'encapsulation est un principe de la programmation orientée objet qui consiste à regrouper les données (propriétés) et les méthodes associées à un objet. Cela permet de cacher les détails internes et de fournir une interface pour interagir avec l'objet. L'encapsulation permet de contrôler l'accès aux propriétés et de protéger les données d'accès non autorisés.
+
+Héritage : L'héritage est un mécanisme qui permet à une classe d'hériter des propriétés et des méthodes d'une autre classe. Il permet de créer une relation de hiérarchie entre les classes. Une classe héritante (sous-classe) peut étendre et spécialiser les fonctionnalités d'une classe héritée (superclasse). Cela favorise la réutilisation du code et permet de modéliser des relations is-a (est un) entre les classes.
+
+Polymorphisme : Le polymorphisme est la capacité à traiter des objets de différentes classes de manière similaire en utilisant une interface commune. Cela permet de traiter des objets spécifiques comme s'ils étaient des objets plus généraux. Le polymorphisme facilite l'écriture de code générique et flexible, où différentes classes peuvent implémenter leurs propres versions de méthodes avec la même signature.
+
+La théorie des objets en programmation orientée objet fournit un moyen puissant de modéliser des entités et des interactions dans un programme. Elle permet de structurer le code de manière modulaire, de réutiliser le code, de simplifier la maintenance et d'abstraire les concepts du monde réel en une représentation logique.
+
+
+
+En JavaScript, la syntaxe pour créer un objet peut être réalisée de plusieurs manières. Voici les exemples couramment utilisés :
+
+Utilisation des accolades {} pour créer un objet littéral :*/
+
+let monObjet = { 
+  propriete1: valeur1,
+  propriete2: valeur2,
+  // ...
+};
+
+/* Dans ce code, nous avons un exemple de déclaration d'un objet littéral en JavaScript. Voici une explication étape par étape :
+
+La déclaration commence par le mot-clé let suivi d'un nom (dans cet exemple, monObjet) qui est le nom de la variable qui va contenir l'objet.
+
+Ensuite, nous utilisons les accolades {} pour entourer les propriétés et leurs valeurs. Les propriétés sont définies sous la forme propriete: valeur, où propriete est le nom de la propriété et valeur est la valeur associée à cette propriété.
+
+Chaque paire propriete: valeur est séparée par une virgule ,. Vous pouvez définir autant de paires propriete: valeur que vous le souhaitez pour définir les propriétés de votre objet.
+
+Les commentaires // ... indiquent qu'il est possible d'ajouter d'autres propriétés et valeurs au-delà de celles déjà présentes.
+
+Une fois l'objet défini, il est stocké dans la variable monObjet, prêt à être utilisé dans le reste du code.
+
+
+Vous pouvez utiliser cette déclaration pour créer des objets avec les propriétés spécifiques dont vous avez besoin. Par exemple, vous pouvez déclarer un objet "personne" avec des propriétés telles que nom, age, adresse, etc., et affecter des valeurs appropriées à ces propriétés.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Déclaration d'un objet avec une fonction constructrice en JavaScript.
+
+function CustomObject(prop1, prop2) {
+  this.propriete1 = prop1;
+  this.propriete2 = prop2;
+}
+
+let nouvelObjet = new CustomObject(valeur1, valeur2);
+
+
+
+
+
+
+
+/*Dans cet exemple, nous avons une déclaration d'une fonction constructrice appelée CustomObject et une utilisation de cette fonction pour créer un nouvel objet.
+
+La déclaration commence par la création d'une fonction appelée CustomObject. Cette fonction sert de fonction constructrice, qui est une fonction spéciale en JavaScript utilisée pour créer de nouveaux objets.
+
+Les paramètres prop1 et prop2 de la fonction CustomObject sont utilisés pour recevoir les valeurs que vous souhaitez assigner aux propriétés de l'objet. Ces paramètres agissent comme des variables locales à l'intérieur de la fonction constructrice.
+
+Lorsqu'un nouvel objet est créé à l'aide de la fonction constructrice avec l'opérateur new, JavaScript crée un objet vide et le lie automatiquement à this à l'intérieur de la fonction.
+
+this.propriete1 = prop1; assigne la valeur de prop1 (passée en paramètre) à la propriété propriete1 de l'objet nouvellement créé. L'utilisation de this dans ce contexte fait référence à l'objet qui est en cours de création.
+
+De même, this.propriete2 = prop2; assigne la valeur de prop2 (passée en paramètre) à la propriété propriete2 de l'objet nouvellement créé.
+
+Lorsque vous utilisez l'opérateur new avec la fonction constructrice, cela crée une nouvelle instance de l'objet en utilisant le prototype de la fonction constructrice. Cette nouvelle instance est stockée dans la variable nouvelObjet.
+
+En utilisant une fonction constructrice, vous pouvez créer des objets avec des propriétés spécifiques en passant les valeurs appropriées lors de la création de l'objet. Le mot-clé this est utilisé pour se référer à l'objet en cours de création à l'intérieur de la fonction constructrice. Cela permet d'assigner les valeurs aux propriétés de l'objet nouvellement créé.
+
+
+
+⁡⁢⁢⁢*** this :
+Dans une fonction constructrice en JavaScript, this fait référence à l'objet nouvellement créé lorsque vous utilisez l'opérateur new pour créer une instance de cet objet.
+
+
+let objet = new Objet(valeur1, valeur2);
+Lorsque vous appelez new Objet(valeur1, valeur2), la fonction constructrice Objet est exécutée avec this pointant vers l'objet nouvellement créé. Les lignes de code à l'intérieur de la fonction constructrice qui utilisent this font référence à cet objet en cours de création.
+
+Ainsi, this.propriete1 = propriete1; assigne la valeur de propriete1 (passée en paramètre) à la propriété propriete1 de l'objet nouvellement créé. De même, this.propriete2 = propriete2; assigne la valeur de propriete2 (passée en paramètre) à la propriété propriete2 de l'objet nouvellement créé.
+
+L'utilisation de this est essentielle pour associer les valeurs passées en paramètres aux propriétés de l'objet en cours de création. Cela permet d'initialiser l'objet avec les valeurs spécifiées lors de la création d'une nouvelle instance de cet objet à l'aide de la fonction constructrice.
+
+En résumé, this dans une fonction constructrice fait référence à l'objet nouvellement créé lors de l'utilisation de l'opérateur new. Il permet d'accéder et de manipuler les propriétés de l'objet en cours de création.⁡*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let objet = new Object();
+objet.propriete1 = valeur1;
+objet.propriete2 = valeur2;
+
+
+/*let objet = new Object(); : Cette ligne crée une nouvelle instance d'un objet en utilisant le constructeur Object. L'objet est initialisé comme un objet vide.
+
+objet.propriete1 = valeur1; : Cette ligne ajoute une propriété propriete1 à l'objet objet et lui assigne la valeur valeur1. On utilise la notation point (.) pour accéder à la propriété propriete1 de l'objet objet et lui assigner une valeur.
+
+objet.propriete2 = valeur2; : Cette ligne ajoute une propriété propriete2 à l'objet objet et lui assigne la valeur valeur2. Encore une fois, la notation point est utilisée pour accéder à la propriété propriete2 de l'objet objet et lui assigner une valeur.
+
+En utilisant le constructeur new Object(), vous créez un objet vide auquel vous pouvez ajouter des propriétés et assigner des valeurs en utilisant la notation point.
+
+Il est important de noter que cette méthode de déclaration d'objet avec le constructeur new Object() est moins courante que l'utilisation de la syntaxe d'objet littéral {}. La syntaxe d'objet littéral est plus concise et largement utilisée dans la plupart des cas. Cependant, le constructeur new Object() peut être utile dans certains scénarios spécifiques ou lorsque vous avez besoin d'exécuter un code supplémentaire dans le constructeur Object*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Classes (introduites dans ECMAScript 2015) :
+
+class Objet {
+  constructor(propriete1, propriete2) {
+    this.propriete1 = propriete1;
+    this.propriete2 = propriete2;
+  }
+}
+
+let objet = new Objet(valeur1, valeur2);
+
+
+
+
+
+
+/*Dans cet exemple, nous avons l'utilisation des classes en JavaScript pour créer un objet avec des propriétés spécifiques.
+
+La déclaration commence par la création d'une classe appelée Objet. Les classes sont une fonctionnalité introduite dans ECMAScript 2015 (ES6) qui permet de créer des objets et de les organiser de manière plus structurée.
+
+À l'intérieur de la classe, nous avons une méthode spéciale appelée constructor. Le constructor est une fonction spéciale qui est automatiquement appelée lorsqu'un nouvel objet est créé à partir de la classe. Il est utilisé pour initialiser les propriétés de l'objet.
+
+Le constructor prend en paramètre propriete1 et propriete2, qui sont utilisés pour recevoir les valeurs que vous souhaitez assigner aux propriétés de l'objet.
+
+À l'intérieur du constructor, nous utilisons le mot-clé this pour se référer à l'objet nouvellement créé. En utilisant this, nous pouvons définir les propriétés de l'objet en leur attribuant les valeurs correspondantes.
+
+this.propriete1 = propriete1; assigne la valeur de propriete1 (passée en paramètre) à la propriété propriete1 de l'objet nouvellement créé.
+
+De même, this.propriete2 = propriete2; assigne la valeur de propriete2 (passée en paramètre) à la propriété propriete2 de l'objet nouvellement créé.
+
+Ensuite, nous utilisons le mot-clé new suivi de l'appel à la classe Objet avec les valeurs spécifiées (valeur1 et valeur2) pour créer une nouvelle instance de l'objet. Cette instance est stockée dans la variable objet.
+
+En utilisant des classes, vous pouvez créer des objets avec des propriétés spécifiques en utilisant une syntaxe plus orientée objet. La méthode constructor permet d'initialiser les propriétés de l'objet lors de sa création à partir de la classe.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

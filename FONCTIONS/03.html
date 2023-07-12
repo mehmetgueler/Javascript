@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+    Foncion avec des arguments
+
+<script>
+
+/*L'un des aspects puissants des fonctions en javascript est leur capacité à accepter des paramètres, également connus sous le nom d'arguments. Les paramètres permettent de passer des valeurs spécifiques à une fonction, ce qui lui permet de travailler avec ces valeurs et d'effectuer des opérations basées sur elles.
+
+La déclaration d'une fonction avec des paramètres se fait en spécifiant les noms des paramètres entre parenthèses, séparés par des virgules. Voici un exemple de déclaration de fonction avec deux paramètres :*/
+
+
+// function nomDeLaFonction(parametre1, parametre2) {
+  // Code à exécuter en utilisant les paramètres
+  // ...
+// }
+
+// Appel de la fonction en passant des arguments
+// maFonction("valeur1", "valeur2");
+
+/*Les paramètres peuvent être n'importe quel type de données, tels que des nombres, des chaînes de caractères, des booléen des tableaux, des objets, ou même d'autres fonctions. Lorsque la fonction est appelée, des valeurs concrètes sont fournies pour chaque paramètre, correspondant à l'ordre dans lequel ils ont été déclarés.
+
+L'intérieur de la fonction peut utiliser les paramètres pour effectuer des calculs, manipuler des données ou exécuter un bloc de code spécifique. Les paramètres agissent comme des variables locales à l'intérieur de la fonction, et leur valeur est déterminée par les arguments fournis lors de l'appel de la fonction.
+
+Paramètres de fonction : Les paramètres d'une fonction sont des variables qui sont déclarées dans la déclaration de la fonction et qui servent à recevoir des valeurs lors de l'appel de la fonction. Ils permettent à la fonction d'accepter des données ou des informations nécessaires pour effectuer des opérations.
+
+Arguments de fonction : Les arguments d'une fonction sont les valeurs réelles fournies lors de l'appel de la fonction. Ils correspondent aux paramètres de la fonction, c'est-à-dire qu'ils sont assignés aux paramètres respectifs selon leur position lors de l'appel de la fonction.
+
+Correspondance des arguments : Lorsque vous appellez une fonction, les arguments fournis sont assignés aux paramètres de la fonction par correspondance de position. Le premier argument est assigné au premier paramètre, le deuxième argument au deuxième paramètre, et ainsi de suite.
+
+Valeurs par défaut des paramètres : Vous pouvez définir des valeurs par défaut pour les paramètres d'une fonction. Cela signifie que si aucun argument n'est fourni pour un paramètre lors de l'appel de la fonction, sa valeur par défaut sera utilisée à la place. Les paramètres avec des valeurs par défaut doivent être définis après les paramètres sans valeur par défaut dans la déclaration de la fonction.
+
+Nombre variable de paramètres : En JavaScript, vous pouvez déclarer des fonctions avec un nombre variable de paramètres en utilisant l'opérateur de propagation (...). Cela  permet de passer un nombre arbitraire d'arguments lors de l'appel de la fonction, qui sera rassemblé dans un tableau à l'intérieur de la fonction.*/
+
+
+
+function x (a, b, c, d, e) {
+  console.log(a, b, c, d, e);//Affiche: "a 5 true  undefined"
+}
+
+x ("a", 5, true, "")
+/*Lorsque vous appelez la fonction, vous fournissez des valeurs concrètes pour les paramètres :
+Remplacez ces valeurs par les valeurs spécifiques que vous souhaitez passer à la fonction pour les paramètres a, b, ...
+
+
+
+
+
+/*Par exemple, considérons une fonction qui effectue l'addition de deux nombres passés en tant que paramètres :*/
+
+function additionner(a, b) {
+    console.log(a + b);//Affiche: 8
+}
+
+additionner(5, 3)
+
+/*Dans cet exemple, la fonction additionner a deux paramètres, a et b. Lorsque la fonction est appelée avec les arguments 5 et 3, les paramètres a et b prennent respectivement les valeurs 5 et 3. Le code à l'intérieur de la fonction effectue ensuite l'addition de ces deux paramètres et affiche le résultat dans la console.
+
+L'utilisation de paramètres dans les fonctions permet de rendre le code plus flexible et réutilisable. Les fonctions peuvent être appelées avec différentes valeurs pour les paramètres, ce qui leur permet d'effectuer des actions spécifiques en fonction des arguments fournis.
+
+Il est également possible de définir des fonctions avec un nombre variable de paramètres en utilisant l'objet arguments. L'objet arguments est un objet spécial disponible à l'intérieur de chaque fonction qui contient tous les arguments passés lors de l'appel de la fonction, indépendamment du nombre de paramètres déclarés. Cela permet de créer des fonctions capables de traiter un nombre arbitraire d'arguments.*/
+
+
+
+
+
+
+
+/*Les parametre peuvent être prédefinis par exemple*/
+
+function calcPourcentage(TVA = 4.8, montant) {
+  console.log((TVA * montant) / 100);
+}
+
+calcPourcentage(undefined ,1000);
+
+/*Ce code définit une fonction appelée calcPourcentage qui calcule le pourcentage d'un montant donné en utilisant une taxe de valeur ajoutée (TVA). Voici une explication étape par étape :
+
+La fonction calcPourcentage est définie avec deux paramètres : TVA et montant. TVA représente le pourcentage de taxe à appliquer (avec une valeur par défaut de 4.8) et montant représente le montant sur lequel la taxe sera appliquée.
+
+À l'intérieur de la fonction, nous utilisons la formule (TVA * montant) / 100 pour calculer le montant de la taxe. Nous multiplions d'abord le montant par le pourcentage de taxe (TVA), puis divisons le résultat par 100 pour obtenir le montant de la taxe réel.
+
+Ensuite, nous utilisons console.log pour afficher le résultat du calcul de la taxe dans la console du navigateur.
+
+Enfin, nous appelons la fonction calcPourcentage avec les arguments undefined et 1000. En utilisant undefined comme premier argument, nous indiquons que nous souhaitons ignorer la valeur par défaut de TVA (4.8) et utiliser uniquement la valeur spécifiée pour montant (1000).
+
+Lorsque vous exécutes ce code, il va calculer la taxe en utilisant la valeur de TVA (4.8 par défaut) et le montant (1000). Le résultat sera affiché dans la console du navigateur.
+
+⁡⁢⁣⁣Il est important de noter que si un argument est fourni pour le paramètre "TVA" lors de l'appel de la fonction, la valeur par défaut sera remplacée par cet argument spécifié.⁡
+
+à tester avec différents valeurs
+
+calcPourcentage(5, 1000)*/
+
+
+
+
+
+//Vous pouvez passer une variable globale en tant qu'argument à une fonction,
+
+const maVariable = "Javascript";
+
+
+function afficherMessage(a) {
+    let fonctions = "Les fonctions"; // Variable locale à la fonction afficherMessage
+    console.log(`Bienvenue au cours: ${a} / ${fonctions}`);
+}
+
+afficherMessage(maVariable); // Passer la variable globale en tant qu'argument lors de l'appel de la fonction
+
+/*Dans cet exemple, nous avons déclaré la variable maVariable en tant que variable globale en dehors de la fonction. Ensuite, nous avons défini la fonction afficherMessage qui prend un paramètre a. Lorsque nous appelons la fonction afficherMessage en passant maVariable en tant qu'argument, la valeur de la variable globale maVariable est utilisée à l'intérieur de la fonction pour afficher le message dans la console.
+
+Ainsi, en passant la variable globale en tant qu'argument lors de l'appel de la fonction, vous pouvez utiliser sa valeur à l'intérieur de la fonction sans avoir à dépendre de la variable globale directement.*/
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+  

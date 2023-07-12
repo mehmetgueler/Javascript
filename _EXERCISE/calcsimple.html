@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+/*===================================================================================================================*/
+function calculatrice(a, b, c) {
+    if (c === '+') {
+        return a + b;
+    } if (c ==='-' ) {
+         return a - b
+    } if (c === '*') {
+        return a * b
+    } if (c === '/'){
+        return a / b
+    }  else{
+        console.log("nombre invalide");
+    }
+
+}
+console.log(calculatrice(5, 2, '+')); // Résultat : 7
+console.log(calculatrice(10, 3, '-')); // Résultat : 7
+console.log(calculatrice(4, 5, '*')); // Résultat : 20
+console.log(calculatrice(12, 4, '/')); // Résultat : 3
+/*===================================================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================================================*/
+console.log("....");
+
+function addition(a, b) {
+  return a + b;
+}
+
+function soustraction(a, b) {
+  return a - b;
+}
+
+function multiplication(a, b) {
+  return a * b;
+}
+
+function division(a, b) {
+  return a / b;
+}
+
+function calculatrice(a, b, c) {
+  switch (c) {
+    case '+':
+      return addition(a, b);
+    case '-':
+      return soustraction(a, b);
+    case '*':
+      return multiplication(a, b);
+    case '/':
+      return division(a, b);
+    default:
+      console.log("Opérateur invalide");
+      break;
+  }
+}
+console.log(calculatrice(5, 2, '+')); // Résultat : 7
+console.log(calculatrice(10, 3, '-')); // Résultat : 7
+console.log(calculatrice(4, 5, '*')); // Résultat : 20
+console.log(calculatrice(12, 4, '/')); // Résultat : 3
+/*===================================================================================================================*/
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntaxe de décomposition</title>
+</head>
+<body><script>
+/*L'opérateur de propagation (...), également appelé spread syntax en anglais, est un opérateur introduit dans JavaScript ES6. Il permet de décomposer un objet itérable (comme un tableau ou une chaîne de caractères) en ses éléments individuels lors de son utilisation dans certains contextes.
+
+L'opérateur de propagation effectue les actions suivantes :
+
+Décomposition d'un tableau :
+
+Lorsqu'il est utilisé pour décomposer un tableau, l'opérateur de propagation étend les éléments du tableau dans un nouvel endroit, comme un autre tableau ou les arguments d'une fonction.
+Par exemple, [...tableau] crée une copie des éléments du tableau dans un nouvel autre tableau.
+Il peut également être utilisé pour fusionner plusieurs tableaux en un seul. Par exemple, [...tableau1, ...tableau2] combine les éléments de tableau1 et tableau2 en un seul tableau.
+Décomposition d'une chaîne de caractères :
+
+Lorsqu'il est utilisé pour décomposer une chaîne de caractères, l'opérateur de propagation sépare les caractères de la chaîne et les place dans un tableau.
+Par exemple, [...chaine] produit un tableau contenant les caractères individuels de la chaîne.
+Passage des arguments d'une fonction :
+
+L'opérateur de propagation peut également être utilisé pour passer les éléments d'un tableau comme des arguments individuels à une fonction.
+Par exemple, maFonction(...tableau) permet de passer les éléments du tableau comme des arguments séparés à la fonction maFonction.
+L'opérateur de propagation offre une syntaxe concise et puissante pour travailler avec les éléments individuels d'un objet itérable. Il permet de décomposer les tableaux et les chaînes de caractères en éléments individuels, de fusionner des tableaux et de passer des arguments à des fonctions de manière dynamique. Cela facilite la manipulation des données et permet d'écrire un code plus expressif et concis.
+
+
+
+Décomposition d'un tableau :*/
+
+const monTab = [1, 2, 3];
+const tableauDecompose = [...monTab];
+
+console.log(tableauDecompose); // Affiche: [1, 2, 3]
+
+/*Dans cet exemple, nous utilisons l'opérateur de propagation (...) pour décomposer le tableau monTab en une liste d'éléments distincts. Ces éléments sont ensuite utilisés pour créer un nouveau tableau tableauDecompose. Le résultat est un nouveau tableau identique à tableau.*/
+
+
+
+
+
+//Décomposition d'une chaîne de caractères :
+const chaine = "Hello";
+const caracteres = [...chaine];
+
+console.log(caracteres); // Affiche: ["H", "e", "l", "l", "o"]
+
+/*Dans cet exemple, nous utilisons l'opérateur de propagation pour décomposer la chaîne de caractères chaine en un tableau caracteres. Chaque caractère de la chaîne est séparé et placé dans un élément individuel du tableau.*/
+
+
+
+
+
+
+
+//Passage des arguments à une fonction :
+
+function maFonction(a, b, c) {
+  console.log(a, b, c);
+}
+
+const tableau = [1, 2, 3];
+
+maFonction(...tableau); // Affiche: 1 2 3
+
+/*Dans cet exemple, nous avons une fonction maFonction qui attend trois arguments. Nous utilisons l'opérateur de propagation pour passer les éléments du tableau tableau comme arguments individuels à la fonction. Ainsi, chaque élément du tableau est assigné aux paramètres a, b et c respectivement lors de l'appel de la fonction.
+
+Ces exemples mettent en évidence différentes utilisations de l'opérateur de propagation (spread syntax) pour décomposer des tableaux, des chaînes de caractères et passer des arguments de manière dynamique.*/
+
+
+
+</script>
+</body>
+</html>

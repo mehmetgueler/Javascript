@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+<script>
+
+
+function calculerPrixTotal(quantite, prixUnitaire, tauxTVA) {
+  function calculerPrixHT() {
+    return quantite * prixUnitaire;
+  }
+
+  function calculerTVA() {
+    const prixHT = calculerPrixHT();
+    return prixHT * tauxTVA;
+  }
+
+  function calculerPrixTTC() {
+    const prixHT = calculerPrixHT();
+    const TVA = calculerTVA();
+    return prixHT + TVA;
+  }
+
+  const prixTTC = calculerPrixTTC();
+  return prixTTC;
+}
+
+const quantite = 5;
+const prixUnitaire = 10;
+const tauxTVA = 0.8;
+const prixTotal = calculerPrixTotal(quantite, prixUnitaire, tauxTVA);
+document.write(`Le prix total pour ${quantite} articles est de ${prixTotal} euros.`);
+
+
+/*function somme(a, b) {
+  function carre(x) {
+    return x * x;
+  }
+  function cube(y) {
+    return y * y * y;
+  }
+  return carre(a) + cube(b);
+}
+
+let resultat = somme(2, 3);
+document.write(resultat); // affiche 31
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

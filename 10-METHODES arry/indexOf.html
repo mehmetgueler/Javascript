@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode indexOf() sur les Tableaux</title>
+</head>
+<body><script>
+
+ /*La méthode indexOf  est une méthode en JavaScript qui permet de rechercher un élément spécifique dans un tableau et de renvoyer l'index de la première occurrence de cet élément. Si l'élément n'est pas trouvé dans le tableau, la méthode renverra -1.
+
+                        arr.indexOf(élémentRecherché)
+                        arr.indexOf(élémentRecherché, indiceDébut)
+    
+arr: est le tableau dans lequel la recherche est effectuée.
+élémentRecherché: est l'élément que vous souhaitez rechercher dans le tableau.
+indiceDébut (facultatif) est l'index de départ à partir duquel commencer la recherche. Si cet argument est omis, la recherche commence à partir de l'index 0. Si indiceDébut est un nombre négatif, la recherche se fait à partir de la fin du tableau.
+
+
+Valeur de retour :
+Si l'élément est trouvé dans le tableau, la méthode renvoie l'index de sa première occurrence.
+Si l'élément n'est pas trouvé dans le tableau, la méthode renvoie -1.*/
+
+
+
+const plats = ["Spaghetti", "Tartare", "Lasagne", "Risotto"];
+
+// Recherche de l'index de l'élément "Lasagne" dans le tableau
+const indexLasagne = plats.indexOf("Lasagne");
+console.log(indexLasagne); // Résultat : 2
+/*Dans cet exemple, la méthode indexOf() renvoie l'index 2, car l'élément "Lasagne" est présent à cet index dans le tableau.*/
+
+
+
+// Recherche de l'index de l'élément "Pizza" dans le tableau
+const indexPizza = plats.indexOf("Pizza");
+console.log(indexPizza); // Résultat : -1
+/*Dans cet exemple, la méthode indexOf() renvoie -1, car l'élément "Pizza" n'est pas présent dans le tableau.*/
+
+
+
+
+// On veut commencer la recherche à partir de l'index 1 (Tartare)
+const indiceDebut = 1;
+const indexRisotto = plats.indexOf("Risotto", indiceDebut);
+console.log(indexRisotto); // Résultat : 3
+
+/*Dans cet exemple, la méthode indexOf() recherche l'élément "Risotto" à partir de l'indice 1 (qui correspond à l'élément "Tartare"). Comme "Risotto" est présent à l'index 3 à partir de cet indice, le résultat est 3.
+
+⁡⁢⁣⁣Il faut noter que méthode indexOf() renvoie toujours l'index de la première occurrence de l'élément recherché. Si l'élément apparaît plusieurs fois dans le tableau, la méthode ne renverra que le premier index trouvé.⁡*/
+
+
+
+
+
+console.log(plats.indexOf("Tartare", 10));
+/*Dans cet exemple, la méthode indexOf() tente de rechercher l'élément "Tartare" à partir de l'indice 10. Cependant, l'indice 10 est hors limite car le tableau plats a seulement 4 éléments, allant de l'indice 0 à l'indice 3. Comme l'élément "Tartare" n'est pas trouvé à partir de cet indice, la méthode indexOf() renvoie -1.*/
+
+
+</script>
+</body>
+</html>

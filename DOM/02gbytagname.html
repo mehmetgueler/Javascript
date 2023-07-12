@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByName</title>
+</head>
+<body>
+
+<!--IL EST POSSIBLE QUE LA PRÉSENCE D'UN VOLUME IMPORTANT DE CODE DANS LA PAGE PUISSE ENTRAÎNER DES BUGS 
+IL EST RECOMMANDÉ DE COPIER-COLLER CHAQUE BLOC DE CODE DANS UNE PAGE DISTINCTE. -->
+
+
+<!--getElementsByTagName, permet de récupérer tous les éléments du DOM qui ont une
+balise HTML spécifiée. Cette méthode retourne également une liste d'éléments (NodeList)
+respondant à la balise donnée. Par exemple, document.getElementsByTagName('p')
+récupérera tous les éléments <p> de la page.
+
+Il est important de noter que getElementsByName est moins utilisé que getElementById
+ou querySelector, car l'attribut name n'est pas aussi largement utilisé que l'attribut id.-->
+
+
+
+
+<div>Powerfull Javascrip</div><!--L'indice du premier élément de type div est [0]-->
+<div>Le miel ne se périme jamais.</div>
+<p>Couleur bleu symbolise confiance.</p><!--L'indice du premier élément de type paragraphe est [0]-->
+
+
+
+<ul>
+<li>Pareidolia</li>
+<li>Verisimilitude</li>
+<li>Accismus</li>
+<li>Opinion</li>
+</ul>
+<br /><br /><br />
+
+
+
+<div id="unid"></div>
+<div id="secid"></div>
+<div id="troid"></div>
+<div id="quaid"></div>
+<div id="maListe"></div>
+<div id="listeboucle"></div>
+<script>
+
+/*********************************************************************/
+// Récupération le contenu du premier élément div de la page
+let exemple1 = document.getElementsByTagName('DIV')[0].innerHTML;
+// Affiche le contenu récupéré dans l'élément div ayant l'ID "unid"
+document.getElementById('unid').innerHTML = exemple1;
+/*********************************************************************/
+
+
+/*********************************************************************/
+// Récupération du premier élément "P" de la page
+// Si on ajoute du contenu, cela affectera également le contenu de l'élément P
+let exemple2= document.getElementsByTagName('P')[0].innerHTML;// = 'nouveau contenu'
+// Affichage du contenu récupéré dans la balise avec l'id "secid"
+document.getElementById('secid').innerHTML =  exemple2;
+/*********************************************************************/
+
+
+
+/*********************************************************************/
+// Sélectionne le premier élément de type "LI" dans le document
+let exemple3= document.getElementsByTagName('UL')[0].innerHTML;
+// Sélectionne l'élément ayant l'identifiant "quaid" et modifie son contenu avec le contenu de "exemple4"
+document.getElementById('troid').innerHTML = exemple3;
+// on peut faire la même chose pour la liste avec
+//let exemple= document.getElementsByTagName('LI')[l'indice de l'élément souhaité].innerHTML;
+/*********************************************************************/
+
+
+
+
+/*********************************************************************/
+// Récupération du nombre d'éléments "LI" de la page
+let elementsLi = document.getElementsByTagName('LI').length;
+// Ajout du nombre récupéré dans la balise avec l'id "maListe"
+document.getElementById('maListe').innerHTML = elementsLi;
+/*********************************************************************/
+
+
+/*********************************************************************/
+// Récupération de tous les éléments 'LI'
+var elementsLifor = document.getElementsByTagName('LI');
+// Boucle for pour parcourir tous les éléments
+for (var i = 0; i < elementsLifor.length; i++) {
+  // Ajout du contenu de chaque élément dans la div 'listeboucle' avec un saut de ligne entre chaque élément
+  document.getElementById('listeboucle').innerHTML += elementsLifor[i].innerHTML + '<br />';
+}
+/*********************************************************************/
+
+
+
+// Sélectionne tous les éléments du DOM ayant la balise spécifiée et les stocke dans la variable "recupererelement"
+let recupererelement = document.getElementsByTagName('*');
+// Récupère l'élément du DOM ayant l'ID "monid" et modifie son contenu avec le contenu de l'élément à l'indice 2 de la liste des éléments récupérés
+document.getElementById('monid').innerHTML = recupererelement[2].innerHTML;
+
+
+
+
+
+    </script>
+</body>
+</html>

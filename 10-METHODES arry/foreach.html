@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.forEach()</title>
+</head>
+<body><script>
+
+/*forEach() est une méthode intégrée dans JavaScript qui permet d'itérer sur les éléments d'un tableau et d'exécuter une fonction de rappel sur chaque élément, sans créer de nouveau tableau. Elle ne modifie pas le tableau d'origine et ne renvoie aucune valeur.
+Sytaxes:
+
+            arr.forEach(callback, thisArg);
+            arr.forEach(callback);
+
+
+arr.forEach(callback);
+
+arr : Le tableau sur lequel forEach() est appelé.
+callback : La fonction de rappel à exécuter pour chaque élément du tableau.
+La fonction de rappel peut prendre jusqu'à trois arguments :
+  1.) currentValue : La valeur de l'élément actuellement traité.
+  2.) index (optionnel) : L'index de l'élément actuellement traité.
+  3.) array (optionnel) : Le tableau sur lequel forEach() a été appelé.
+
+
+
+arr.forEach(callback, thisArg);
+
+thisArg (optionnel) : La valeur à utiliser comme contexte this lors de l'exécution de la fonction de rappel.
+Si thisArg est fourni, il sera utilisé comme valeur this à l'intérieur de la fonction de rappel. Sinon, la valeur undefined sera utilisée comme contexte this. Cela permet de spécifier explicitement le contexte this à utiliser lors de l'exécution de la fonction de rappel.
+
+
+
+La méthode forEach() exécute la fonction de rappel une fois pour chaque élément du tableau, dans l'ordre croissant des indices. Elle ne sera pas appelée pour les indices correspondant à des éléments supprimés ou non définis, mais elle sera appelée pour les éléments qui sont présents et dont la valeur est undefined.
+
+La fonction de rappel est appelée avec trois arguments :
+
+La valeur de l'élément en cours de traitement.
+L'index de l'élément en cours de traitement.
+Le tableau sur lequel forEach() a été appelé.
+Si un paramètre thisArg est fourni à la méthode forEach(), il sera utilisé comme valeur this pour chaque appel de la fonction de rappel. Sinon, la valeur undefined sera utilisée comme valeur this. La valeur this utilisée par la fonction de rappel est déterminée selon les règles normales pour déterminer la valeur this utilisée dans une fonction.
+
+Tous les éléments à traiter avec forEach() sont définis avant le premier appel de la fonction de rappel. Les éléments ajoutés au tableau après le début de l'exécution de forEach() ne seront pas visités par la fonction de rappel. Si des éléments déjà présents dans le tableau sont modifiés, leur valeur telle qu'elle était au moment du passage de forEach() sera utilisée dans la fonction de rappel. Les éléments supprimés ne sont pas parcourus.
+
+forEach() renvoie toujours undefined et ne peut donc pas être enchaînée avec d'autres méthodes. Son utilisation principale est d'effectuer des effets de bord, tels que des opérations de modification, sur chaque élément du tableau.
+
+⁡⁢⁣⁢Il est important de noter qu'il n'existe aucun moyen d'arrêter une boucle forEach() autre que de lever une exception. Si vous avez besoin de contrôler le flux d'exécution ou d'arrêter la boucle, vous pouvez envisager d'utiliser une boucle 
+for, 
+for...in, 
+for...of, 
+ou d'autres méthodes telles que 
+every(), 
+some(), 
+find(), 
+findIndex() 
+qui permettent de renvoyer une valeur pour décider de continuer ou d'arrêter la boucle.
+⁡
+En résumé, la méthode forEach() exécute la fonction de rappel une fois pour chaque élément du tableau, sans renvoyer de valeur et ne pouvant pas être enchaînée. Elle permet d'effectuer des opérations sur chaque élément du tableau, mais ne modifie pas le tableau lui-même.*/
+
+
+
+var fruits = ['pomme', 'banane', 'orange'];
+
+fruits.forEach(function(fruit, index) {
+  console.log(`Fruit ${(index + 1)} : fruit`);
+});
+/* Affiche : Fruit 1: pomme
+             Fruit 2: banane
+             Fruit 3: orange
+*/
+
+/*Dans cet exemple, nous avons un tableau fruits contenant trois éléments : "pomme", "banane" et "orange". Nous utilisons la méthode forEach() pour itérer sur chaque élément du tableau et exécuter une fonction de rappel pour chaque élément.
+
+Lorsque nous appelons fruits.forEach(...), nous passons une fonction de rappel anonyme en tant que premier argument. Cette fonction prend deux arguments : fruit et index.
+
+À chaque itération, la fonction de rappel est exécutée avec les valeurs correspondantes. fruit contient la valeur de l'élément du tableau en cours de traitement (par exemple, "pomme", "banane" ou "orange"). index contient l'indice de cet élément dans le tableau (0 pour "pomme", 1 pour "banane" et 2 pour "orange").
+
+À l'intérieur de la fonction de rappel, nous utilisons console.log() pour afficher un message indiquant le numéro du fruit et sa valeur. Nous utilisons une template literal (indiquée par les backticks `) pour inclure le numéro et le nom du fruit dans la chaîne de caractères.
+
+⁡⁢⁣⁣La méthode forEach() est utile lorsque vous souhaitez effectuer une action sur chaque élément d'un tableau sans modifier le tableau lui-même. Par exemple, vous pouvez utiliser forEach() pour afficher les éléments, effectuer des calculs ou appeler une autre fonction sur chaque élément⁡.*/
+/*************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*************************************************************************************************************/
+var numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function(number) {
+  var doubledNumber = number * 2;
+  console.log(doubledNumber);
+});
+/* Affiche: 2
+            4
+            6
+            8
+            10
+
+Dans cet exemple, nous avons un tableau numbers contenant les nombres 1, 2, 3, 4 et 5. Nous utilisons la méthode forEach() pour itérer sur chaque élément du tableau et exécuter une fonction de rappel pour chaque élément.
+
+Lorsque nous appelons numbers.forEach(...), nous passons une fonction de rappel anonyme en tant que premier argument. Cette fonction prend un seul argument, number, qui représente chaque élément du tableau lors de l'itération.
+
+À chaque itération, la fonction de rappel est exécutée avec la valeur de number correspondante. À l'intérieur de la fonction de rappel, nous multiplions number par 2 pour obtenir le double de chaque nombre, et nous stockons ce résultat dans la variable doubledNumber.
+
+Ensuite, nous utilisons console.log() pour afficher doubledNumber dans la console. Cela affiche chaque nombre du tableau, multiplié par 2, dans la console.*/
+/*************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/*************************************************************************************************************/
+var books = [
+  { titre: 'JavaScript: The Good Parts', auteur: 'Douglas Crockford' },
+  { titre: 'Eloquent JavaScript', auteur: 'Marijn Haverbeke' },
+  { titre: 'You Don\'t Know JS', auteur: 'Kyle Simpson' }
+];
+
+books.forEach(function(book) {
+  console.log(`Titre: ${book.titre}`);
+  console.log(`Auteur: ${book.auteur}`);
+  console.log('---');
+});
+
+/*Dans cet exemple, la fonction de rappel reçoit un seul argument, book, qui représente chaque objet livre à chaque itération. À l'intérieur de la fonction de rappel, nous accédons aux propriétés titre et auteur de chaque livre pour les afficher dans la console. Nous ajoutons également une ligne de séparation --- entre chaque livre pour une meilleure lisibilité.
+
+Lorsque nous exécutons ce code, il affiche la sortie suivante dans la console :
+
+Titre: JavaScript: The Good Parts
+Auteur: Douglas Crockford
+---
+Titre: Eloquent JavaScript
+Auteur: Marijn Haverbeke
+---
+Titre: You Don't Know JS
+Auteur: Kyle Simpson
+---
+/*************************************************************************************************************/
+
+
+
+
+
+
+const myArray = [
+        ['a', 'b'],
+        ['c', 'd', 'e'],
+        ['f']
+]; 
+
+console.log(myArray.length); // Affichage de la longueur du tableau principal: "3"
+
+myArray.forEach(subArray => { // Utilisation de la méthode forEach pour parcourir chaque tableau interne
+  console.log('Sous-tableau:'); // Affichage d'un message pour indiquer qu'il s'agit d'un sous-tableau
+  console.log(subArray.length); // Affichage de la longueur du sous-tableau
+  subArray.forEach(element => console.log(element)); // Utilisation de la méthode forEach pour afficher chaque élément du sous-tableau
+});
+
+/*Dans cet exemple, nous avons un tableau myArray contenant plusieurs tableaux imbriqués à différents niveaux. Nous utilisons la méthode forEach() pour parcourir chaque élément du tableau principal et effectuer une action spécifique sur chaque sous-tableau et chaque élément à l'intérieur de ces sous-tableaux.
+
+Tout d'abord, nous utilisons console.log(myArray.length) pour afficher la longueur du tableau principal, qui est égal à 3 dans cet exemple.
+
+Ensuite, nous utilisons myArray.forEach(...) pour itérer sur chaque élément du tableau principal. Nous utilisons une fonction de rappel anonyme qui prend subArray comme argument, représentant chaque sous-tableau à chaque itération.
+
+À l'intérieur de la fonction de rappel, nous affichons le message "Sous-tableau:" pour indiquer qu'il s'agit d'un sous-tableau, suivi de subArray.length pour afficher la longueur du sous-tableau.
+
+Ensuite, nous utilisons subArray.forEach(...) pour itérer sur chaque élément du sous-tableau. Nous utilisons une autre fonction de rappel anonyme qui prend element comme argument, représentant chaque élément du sous-tableau à chaque itération. À chaque itération, nous affichons element dans la console.
+
+Ainsi, l'exemple parcourt tous les niveaux du tableau myArray, affichant la longueur de chaque sous-tableau et les éléments correspondants.
+
+Cet exemple illustre comment utiliser forEach() pour itérer sur un tableau imbriqué et effectuer des actions spécifiques à chaque niveau. Vous pouvez adapter la fonction de rappel pour réaliser d'autres opérations en fonction de vos besoins.
+
+Lorsque nous exécutons ce code, il affiche la sortie suivante dans la console :
+3
+Sous-tableau:
+2
+a
+b
+Sous-tableau:
+3
+c
+d
+e
+Sous-tableau:
+1
+f
+*/
+
+
+
+
+
+
+
+
+
+
+
+  </script>  
+</body>
+</html>

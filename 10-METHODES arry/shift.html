@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode shift() sur les Tableaux</title>
+</head>
+<body>
+   <script> /**
+**Array.prototype.shift()
+**La méthode shift() permet de retirer le premier élément d'un tableau et de renvoyer cet élément.
+**Cette méthode modifie la longueur du tableau.*/
+
+
+var monTab = [1, 2, 3, 4, 5];
+
+console.log('MonTabOrInitial: ' + monTab);//  MonTabInitial: 1,2,3,4,5
+
+
+// On utilise la méthode shift() pour supprimer le premier élément du tableau et le récupérer
+var shiftelement = monTab.shift();
+
+// On affiche le tableau après l'utilisation de la méthode shift()
+console.log(monTab); // Output: [2, 3, 4, 5]
+
+// On affiche l'élément supprimé par la méthode shift()
+console.log('Élément supprimé: ' + shiftelement);
+
+// On affiche le tableau après l'utilisation de la méthode shift()
+console.log('Mon tableau après shift() ' + monTab);
+
+// On utilise la méthode shift() une deuxième fois pour supprimer le premier élément du tableau et le récupérer
+let shiftelement2 = monTab.shift();
+
+// On affiche le tableau après la deuxième utilisation de la méthode shift()
+console.log(monTab); // Output: [3, 4, 5]
+
+// On affiche l'élément supprimé par la méthode shift()
+console.log('Élément supprimé de mon nouveau tab: ' + shiftelement2);
+
+// On affiche le tableau après la deuxième utilisation de la méthode shift()
+console.log('Mon tableau maintenant: ' + monTab);
+
+
+
+
+
+
+
+
+
+
+   </script> 
+</body>
+</html>

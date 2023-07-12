@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+    Les fonctions; utilisation caller 
+<script> /**
+caller est une propriété de l'objet function en JavaScript qui permet de récupérer une référence à la fonction
+ qui a appelé la fonction courante. Cette propriété peut être utilisée pour remonter la chaîne
+ d'appels de fonction et pour examiner les fonctions qui ont appelé la fonction courante.
+
+La propriété caller retourne la fonction appelante sous forme d'objet function ou null
+si la fonction a été appelée depuis le code global. Cette propriété est souvent utilisée
+pour implémenter des fonctionnalités telles que la récursivité et les rappels,
+qui nécessitent de remonter la pile d'appels pour accéder à des informations sur les fonctions appelantes.
+
+**   function.nomDeLaPropriete.call(thisArg, arg1, arg2, ...);
+
+Voici un exemple simple qui montre comment utiliser la propriété caller pour remonter la chaîne d'appels de fonction :*/
+
+
+function fonction1() {
+  console.log("Je suis la fonction 1"); // Affiche "Je suis la fonction 1"
+  fonction2(); // Appelle la fonction fonction2()
+}
+
+function fonction2() {
+  console.log("Je suis la fonction 2"); // Affiche "Je suis la fonction 2"
+  console.log("La fonction appelante est : "); // Affiche "La fonction appelante est : "
+  console.log(fonction2.caller); // Affiche une référence à la fonction appelante, qui est fonction1() dans ce cas
+}
+
+fonction1(); 
+// Appelle la fonction fonction1(), qui affiche "Je suis la fonction 1",
+// "Je suis la fonction 2" et "La fonction appelante est : function fonction1() { ... }"
+
+
+/*Dans cet exemple, la fonction fonction2() utilise la propriété caller pour afficher la fonction appelante.
+La fonction fonction1() appelle fonction2() et donc fonction2.caller retourne une référence à la fonction fonction1().
+Cela permet à la fonction fonction2() de remonter la chaîne d'appels de fonction et d'accéder à des informations sur la fonction appelante.
+*******************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************************************/
+
+function principale() {
+    for (let i = 0; i <principale.caller.arguments.length; i++) {
+        console.log(autreFoo.arguments[i]);
+        
+    }
+}
+
+
+function autreFoo(a, b) {
+    principale()
+}
+
+autreFoo('victor', 'hugo')
+/*******************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************************************************************/
+function fonction1(parametre1, parametre2) {
+  fonction2();
+}
+
+function fonction2() {
+  const appelant = fonction2.caller;
+  if (appelant) {
+    const parametres = appelant.arguments;
+    console.log("Les paramètres de l'appelant sont : ");
+    console.log(parametres);
+  } else {
+    console.log("Pas d'appelant trouvé !");
+  }
+}
+
+fonction1("valeur1", "valeur2"); // Affiche "Les paramètres de l'appelant sont : ["valeur1", "valeur2"]"
+
+
+/*Dans cet exemple, la fonction fonction1() est appelée avec deux paramètres, "valeur1" et "valeur2".
+Lorsque la fonction fonction2() est appelée, elle utilise la propriété caller pour récupérer une référence
+à la fonction appelante. Ensuite, elle utilise la propriété arguments pour récupérer les paramètres
+de l'appelant et les afficher dans la console.
+
+Noter que arguments renvoie un objet de type Arguments, qui ressemble à un tableau mais
+n'en est pas vraiment un. Si tu veux travailler avec les paramètres comme un tableau normal,
+tu peux convertir arguments en un tableau à l'aide de Array.from(arguments)*/
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

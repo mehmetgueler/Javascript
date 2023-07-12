@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByName</title>
+
+    <style>
+div{
+    border: 1px dotted black; 
+    margin: 5px;
+    padding: 5px;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!--Pour utiliser cette méthode, vous devez accéder à l'objet document qui représente
+la page HTML. Ensuite, vous pouvez appeler la méthode getElementsByClassName()
+ en passant en paramètre le nom de la classe que vous souhaitez sélectionner.
+
+Voici un exemple de code qui utilise cette méthode pour sélectionner tous les éléments
+ayant la classe CSS "maClasse" et leur ajouter une bordure rouge :
+
+
+Récupération des éléments ayant la classe "maClasse"
+var elements = document.getElementsByClassName("maClasse");
+Parcours des éléments et ajout d'une bordure rouge
+for (var i = 0; i < elements.length; i++) {
+  elements[i].style.border = "1px solid red";
+}
+
+La première ligne récupère tous les éléments de la page qui ont la classe "maClasse" 
+et les stocke dans une variable elements. Ensuite, le code parcourt tous ces éléments
+à l'aide d'une boucle for et leur ajoute une bordure rouge en modifiant leur style
+CSS à l'aide de la propriété style.border.
+    
+Notez que la méthode getElementsByClassName() renvoie une collection d'éléments
+(un objet de type HTMLCollection), et non un tableau JavaScript.
+Vous pouvez donc accéder aux éléments de cette collection à l'aide de leur indice
+(comme dans l'exemple ci-dessus), mais pas utiliser les méthodes habituelles des 
+tableaux comme forEach() ou map().-->
+
+
+
+
+
+
+<div class="formatter4">javascrip</div>      <!-- un élément div avec la classe "formatter4" et le texte "javascrip" -->
+<div class="formatter5">Python</div>          <!-- un élément div avec la classe "formatter" et le texte "Python" -->
+<div class="formatter5">c++</div>             <!-- un élément div avec la classe "formatter" et le texte "c++" -->
+<div class="formatter1">Perl</div>           <!-- un élément div avec la classe "formatter1" et le texte "Perl" -->
+<div class="formatter2">Pascal</div>         <!-- un élément div avec la classe "formatter2" et le texte "Pascal" -->
+<div class="formatter3">ruby</div>           <!-- un élément div avec la classe "formatter3" et le texte "ruby" -->
+<div class="formatter5">C lang</div>          <!-- un élément div avec la classe "formatter" et le texte "C lang" -->
+<div class="formatter4">Lisp</div>           <!-- un élément div avec la classe "formatter4" et le texte "Lisp" -->
+
+<p id="leresultat"></p>                      <!-- un élément p avec l'identifiant "leresultat"-->
+
+
+<script>
+
+ // déclaration d'une variable "modifier" qui stocke le nombre d'éléments avec la classe "formatter2"
+let modifier = document.getElementsByClassName('formatter4').length;
+ // récupération de l'élément avec l'identifiant "leresultat" et modification de son contenu pour afficher le nombre stocké dans la variable "modifier"
+document.getElementById('leresultat').innerHTML = modifier;// affiche 2
+/****************************************************************************************************/
+
+
+
+
+/****************************************************************************************************/
+// // Sélectionne tous les éléments ayant la classe CSS "formatter4" et les stocke dans la variable
+let modifiercss = document.getElementsByClassName('formatter4');
+// Modifie l'arrière-plan du deuxième élément sélectionné en vert
+modifiercss[1].style.backgroundColor = 'green';
+/****************************************************************************************************/
+
+
+
+
+/****************************************************************************************************/
+// Sélectionne tous les éléments ayant la classe CSS "formatter5" et les stocke dans la variable
+let modifieArrPlan = document.getElementsByClassName('formatter5');
+
+// Parcourt tous les éléments sélectionnés et modifie leur arrière-plan en rouge
+for (let i = 0; i < modifieArrPlan.length; i++) {
+    modifieArrPlan[i].style.backgroundColor = 'red';
+}
+/****************************************************************************************************/
+
+
+
+    </script>
+</body>
+</html>

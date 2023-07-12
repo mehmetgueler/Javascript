@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><script>
+
+
+//Utiliser une boucle "for-in" pour itérer sur les propriétés d'un objet :
+
+let monObjet = { a: 1, b: 2, c: 3 };
+for (let prop in monObjet) {
+  console.log(prop + ": " + monObjet[prop]);
+}//Cette boucle "for-in" parcourt toutes les propriétés de l'objet et affiche leur nom et leur valeur.
+
+
+
+
+//Utiliser une boucle "for-of" avec Object.values() pour itérer sur les valeurs d'un objet :
+
+let monObjet1 = { a: 1, b: 2, c: 3 };
+for (let value of Object.values(monObjet1)) {
+  console.log(value);
+}//Cette boucle "for-of" parcourt toutes les valeurs de l'objet et les affiche.
+
+
+
+
+
+//Utiliser une boucle "for-in" avec Object.keys() pour itérer sur les noms de propriétés d'un objet :
+
+let monObjet2 = { a: 1, b: 2, c: 3 };
+for (let key of Object.keys(monObjet2)) {
+  console.log(key);
+}//Cette boucle "for-in" parcourt tous les noms de propriétés de l'objet et les affiche.
+
+
+
+
+
+//Utiliser une boucle "for-in" avec Object.entries() pour itérer sur les paires clé-valeur d'un objet :
+
+let monObjet3 = { a: 1, b: 2, c: 3 };
+for (let [key, value] of Object.entries(monObjet3)) {
+  console.log(key + ": " + value);
+}//Cette boucle "for-in" parcourt toutes les paires clé-valeur de l'objet et les affiche.
+
+
+
+
+    </script>
+</body>
+</html>

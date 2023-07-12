@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--MDN La méthode valueOf() renvoie la valeur primitive d'un objet donné. La syntaxe--> 
+
+object.valueOf()
+
+<!--La méthode valueOf() est une méthode en JavaScript qui est disponible pour tous les objets.
+     Elle renvoie la valeur primitive d'un objet.
+
+Lorsqu'un objet est utilisé dans un contexte qui attend une valeur primitive,comme lorsqu'il est
+ajouté à une chaîne de caractères ou lorsqu'il est utilisé dans une opération mathématique,
+JavaScript appelle automatiquement la méthode valueOf() de l'objet pour obtenir sa valeur primitive.
+
+La méthode valueOf() est souvent utilisée pour convertir un objet en valeur primitive explicite,
+même si ce comportement est souvent géré automatiquement par JavaScript.    -->
+
+    <script>
+
+let obj = {
+  a: 10,
+  b: 20,
+  c: 30,
+
+  // Ajoute une méthode 'valueOf' qui renvoie la somme des propriétés
+  valueOf: function() {
+    return this.a + this.b + this.c;
+  }
+};
+
+console.log(obj.valueOf()); // affiche 60
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+function foo(valeur) {
+    this.propriete = valeur;
+}
+
+
+foo.prototype.valueOf = function(){
+    return this.propriete
+}   
+
+let lobjet  = new foo(50);
+let result  = lobjet.valueOf();
+
+console.log(result);
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+let lobj = {
+  message: "Bonjour, monde !",
+  valueOf: function() {
+    return this.message;
+  }
+};
+
+console.log(lobj + " - au revoir !"); // affiche "Bonjour, monde ! - au revoir !"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+// UTILISATION 'RETURN'
+
+let personne = {
+  details: function () {
+    //Définition des variables locales
+    let nom       = 'pascal';
+    let prenom    = 'blaise';
+    let naissance = 1623;
+    let metier    = 'science';
+    let hobby     = 'mathématiques';
+    
+    let plus      = nom + ' ' + metier + ' ' + hobby;    //Concaténation des variables metier et hobby
+
+    return plus    //Retourne la valeur de la variable plus
+
+  }
+};
+
+let resultat = personne.details();
+console.log(resultat);//affiche 'pascal science mathématiques'
+//***********************************FIN*****************************************
+
+
+
+
+// UTILISATION METHODE TABLEAU []
+/*PAGE 02.html, PAGE 08.html
+Accéder aux propriétés d'un objet en JavaScript en utilisant la notation par indexation
+  (indexation fait référance l'utilisation des tableau)*/
+
+let personne_x = {
+  details_x: function () {
+    //Définition des variables locales
+    let nom       = 'pascal';
+    let prenom    = 'blaise';
+    let naissance = 1623;
+    let metier    = 'science';
+    let hobby     = 'mathématiques';
+                    //LES CROCHET n'affecte pas la valeur, affiche même résultat
+    let plus      = [nom + ' ' + metier + ' ' + hobby];    //Concaténation des variables metier et hobby
+
+    return plus    //Retourne la valeur de la variable plus
+
+  }
+};
+
+let leresultat = personne_x.details_x();
+console.log(leresultat);//affiche 'pascal science mathématiques'
+
+
+
+
+
+</script>
+</body>
+</html>

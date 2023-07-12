@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode flat sur les Tableaux</title>
+</head>
+<body>
+    <script>
+/*Array.prototype.toString()
+La méthode toString() renvoie une chaine de caractères représentant le tableau spécifié et ses éléments.
+        arr.toString()                                                                  */
+
+
+
+let monTableau = ["val1","val2","val3","val4","val5","val6"];
+const tabToString = monTableau.toString()
+console.log(tabToString);//val1,val2,val3,val4,val5,val6
+console.log(typeof(tabToString));//string
+
+
+
+
+/*Il est également possible d'utiliser la méthode JSON.stringify() pour convertir un tableau en une chaîne de caractères
+au format JSON. Cette méthode retourne une chaîne de caractères qui représente une valeur JavaScript sous forme de chaîne de caractères JSON.*/
+
+let myArray = ['foo', 'bar', 'baz'];
+console.log(JSON.stringify(myArray)); // affiche '["foo","bar","baz"]'
+
+/Notez que JSON.stringify() ne fonctionne pas avec des tableaux multidimensionnels ou des objets contenant des références circulaires, car ces structures de données ne sont pas valides en JSON.*/
+
+    </script>
+</body>
+</html>

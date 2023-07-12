@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*La boucle for est utilisée lorsque vous connaissez à l'avance le nombre de fois que vous
+souhaitez répéter une certaine action. Cette boucle est composée de trois parties :
+         Syntaxe générale de la boucle "for" en JavaScript*/
+
+for (initialisation; condition; incrémentation) {
+   // bloc de code à exécuter
+}
+
+/*Les trois parties de la boucle "for" sont :
+
+1)  L'initialisation : une instruction exécutée une seule fois au début de la boucle,
+souvent utilisée pour déclarer et initialiser la variable de boucle.
+
+2)  La condition : une expression booléenne qui est évaluée avant chaque
+itération de la boucle. Si la condition est vraie, le bloc de code est exécuté,
+sinon la boucle se termine.
+
+3)  L'incrémentation : une instruction exécutée à la fin de chaque itération de la boucle,
+souvent utilisée pour modifier la variable de boucle.
+*/
+
+
+
+
+/*La plupart du temps, la boucle "for" est utilisée pour parcourir des tableaux ou d'autres
+ structures de données, en utilisant une variable de boucle pour accéder à chaque élément.
+  Par exemple :*/
+
+  let tableau = [1, 2, 3, 4, 5];
+for (let i = 0; i < tableau.length; i++) {
+   console.log(tableau[i]);
+}
+
+/*Ce code parcourt un tableau "tableau" en utilisant une variable de boucle "i" 
+pour accéder à chaque élément. La condition "i < tableau.length" garantit que la boucle
+ s'arrête après avoir parcouru tous les éléments du tableau. La méthode "console.log" 
+ affiche chaque élément du tableau dans la console du navigateur*/
+
+
+
+
+ //Exécuter une boucle un nombre spécifique de fois :
+ for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+
+
+
+/*                QU'EST-CE  'INITIALISATION' EN INFORMATIQUE
+ En programmation, l'initialisation fait référence à la définition et à l'attribution de
+valeurs initiales à des variables ou à d'autres éléments de données. Dans le
+contexte de la boucle "for" en JavaScript, l'initialisation est la première partie
+de la structure de la boucle "for", qui est exécutée une seule fois avant que la
+boucle ne commence à s'exécuter.
+
+Dans la boucle "for", l'initialisation est généralement utilisée pour déclarer et
+initialiser la variable de boucle, qui est une variable utilisée pour contrôler
+le nombre d'itérations de la boucle. Par exemple, voici une boucle "for" qui
+utilise une variable de boucle nommée "i" :*/
+
+for (let i = 0; i < 10; i++) {
+   console.log(i);
+}
+
+
+/*Dans cet exemple, la partie "let i = 0" est l'initialisation de la boucle. Elle déclare
+une nouvelle variable "i" et l'initialise à 0. Cette initialisation ne se produit
+qu'une seule fois, au début de la boucle. La variable "i" est utilisée comme
+variable de boucle pour contrôler le nombre d'itérations de la boucle.
+
+En résumé, l'initialisation est l'étape de la définition et de l'attribution de
+valeurs initiales à des variables ou à d'autres éléments de données. Dans la boucle
+"for" en JavaScript, l'initialisation est la première partie de la structure de
+la boucle, utilisée pour déclarer et initialiser la variable de boucle.*/
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode unshift sur les Tableau</title>
+</head>
+<body>
+    <script>
+/*La méthode slice() permet de créer une nouvelle copie d'un tableau, en sélectionnant une partie de ce tableau.
+La méthode prend en paramètre un ou deux indices qui délimitent la portion du tableau que vous souhaitez extraire.
+
+    Si un seul paramètre est fourni, il s'agit de l'indice de départ de l'extraction,
+    et la méthode renvoie tous les éléments du tableau à partir de cet indice jusqu'à la fin du tableau.
+
+    Si deux paramètres sont fournis, le premier est l'indice de départ de l'extraction,
+    et le second est l'indice de fin (non inclus) de l'extraction. La méthode renvoie tous les éléments du tableau compris entre ces deux indices.
+
+
+/***************************************************************************************/
+const myArr = [1, 2, 3, 4, 5];
+const slicedArr = myArr.slice(2, 4);
+
+console.log("Tableau initial : " + myArr); // Tableau initial : 1,2,3,4,5
+console.log("Tableau slice : " + slicedArr); // Tableau slice : 3,4
+/***************************************************************************************/
+
+
+
+/***************************************************************************************/
+//Extraire une portion de tableau en partant de la fin
+const monTableau2 = ['a', 'b', 'c', 'd', 'e'];
+const resultat2 = monTableau2.slice(-3);
+
+console.log(resultat2); // Output: ['c', 'd', 'e']
+/***************************************************************************************/
+
+
+
+
+
+/***************************************************************************************/
+//Extraire une portion de tableau et modifier la copie obtenue
+
+const monTableau3 = ['a', 'b', 'c', 'd', 'e'];
+const resultat3 = monTableau3.slice(1, 4);
+
+resultat3[1] = 'nouvelle valeur';
+
+console.log(resultat3); // Output: ['b', 'nouvelle valeur', 'd']
+console.log(monTableau3); // Output: ['a', 'b', 'c', 'd', 'e']
+/***************************************************************************************/
+
+
+
+let fruits = ['banane', 'pomme', 'fraise', 'orange', 'kiwi'];
+
+let fruitsCopie = fruits.slice();// Copier le tableau entier avec slice()
+
+console.log('Tableau original: ', fruits);
+console.log('Copie du tableau: ', fruitsCopie);
+
+let fruitsExtraits = fruits.slice(1, 3);// Extraire une portion du tableau avec slice()
+
+console.log('Tableau original: ', fruits);
+console.log('Tableau extrait: ', fruitsExtraits);
+
+let fruitsRemplaces = fruits.slice(1, 3, 'raisin', 'mangue');// Remplacer une portion du tableau avec slice()
+
+console.log('Tableau original: ', fruits);
+console.log('Tableau modifié: ', fruitsRemplaces);
+
+
+
+
+
+
+// Tableau 3D avec 3 niveaux de profondeur
+const my3DArr = [  [    [1, 2],
+    [3, 4]
+  ],
+  [    [5, 6],
+    [7, 8]
+  ],
+  [    [9, 10],
+    [11, 12]
+  ]
+];
+
+// On applique la méthode slice pour extraire une partie du tableau 3D
+// On commence par extraire les 2 premiers niveaux de profondeur avec slice(0, 2)
+// On applique ensuite la méthode map sur ce sous-tableau pour itérer sur chaque élément du niveau 2
+// On applique ensuite la méthode slice sur chaque élément de niveau 2 pour extraire la première valeur de chaque sous-tableau
+// Cela nous donne un tableau 2D avec les deux premiers niveaux de profondeur et la première valeur de chaque sous-tableau de niveau 2
+const sliced3DArr = my3DArr.slice(0, 2).map(e1 => e1.slice(0, 2).map(e2 => e2.slice(0, 1)));
+
+// On affiche les deux tableaux pour comparer
+console.log("Tableau initial : ");
+console.log(my3DArr);
+console.log("Tableau slice : ");
+console.log(sliced3DArr);
+
+/* OUTPOUTS
+Tableau initial :
+[  [ [ 1, 2 ], [ 3, 4 ] ],
+  [ [ 5, 6 ], [ 7, 8 ] ],
+  [ [ 9, 10 ], [ 11, 12 ] ]
+]
+Tableau slice :
+[  [ [ 1 ], [ 3 ] ],
+  [ [ 5 ], [ 7 ] ]
+]
+
+*/
+
+
+
+    </script>
+</body>
+</html>
+

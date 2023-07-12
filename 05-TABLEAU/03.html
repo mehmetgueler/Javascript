@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux imbriquées</title>
+</head>
+<body><script>
+
+/*Tableaux multidimensionnels
+
+Un tableau multidimensionnel, également appelé tableau de tableaux, est un tableau qui contient d'autres tableaux en tant qu'éléments. Cela permet de créer des structures de données plus complexes, telles que des matrices ou des grilles.
+
+Déclaration d'un tableau multidimensionnel
+Pour déclarer un tableau multidimensionnel, vous pouvez simplement inclure des tableaux en tant qu'éléments à l'intérieur d'un tableau principal. 
+
+Voici un exemple :*/
+
+let tableauMultidimensionnel = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+/**********************************************************************************************************/
+console.log("...");
+/*Accès aux éléments d'un tableau multidimensionnel
+Pour accéder aux éléments d'un tableau multidimensionnel, vous devez spécifier l'index du tableau interne suivi de l'index de l'élément à l'intérieur de ce tableau. Voici un exemple :*/
+
+
+const tableau = [
+  [1, 2, 3],   // Première rangée l'indice [0]
+  [4, 5, 6],   // Deuxième rangée l'indice [1]
+  [7, 8, 9]    // Troisième rangée l'indice [2]
+];
+
+// Accès à un élément spécifique
+let element = tableau[0][0];
+/* Ici, nous utilisons l'indice [0] pour accéder à la première rangée du tableau multidimensionnel,
+puis l'indice [0] à l'intérieur de cette rangée pour accéder au premier élément.
+// Dans cet exemple, cela donne la valeur 1.*/
+console.log(element); // Affiche 1
+
+// Accès à un autre élément
+let autreElement = tableau[1][2];
+/*Ici, nous utilisons l'indice [1] pour accéder à la deuxième rangée du tableau multidimensionnel,
+puis l'indice [2] à l'intérieur de cette rangée pour accéder au troisième élément.
+Dans cet exemple, cela donne la valeur 6.*/
+console.log(autreElement); // Affiche 6
+
+
+/*Dans cet exemple, nous avons un tableau tableau qui contient trois rangées. Chaque rangée est elle-même un tableau imbriqué avec trois éléments.
+
+La première rangée est [1, 2, 3] et son indice est [0] car les indices de tableau commencent à partir de zéro. Cela signifie que pour accéder à la première rangée, nous utilisons tableau[0].
+
+La deuxième rangée est [4, 5, 6] et son indice est [1]. Nous pouvons y accéder en utilisant tableau[1].
+
+La troisième rangée est [7, 8, 9] et son indice est [2]. Nous pouvons y accéder en utilisant tableau[2].*/
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+
+console.log("...");
+/**********************************************************************************************************/
+
+const users = [
+  { id: 1, name: 'René Descartes',          age: 30,  hobbies: ['reading', 'swimming'] },
+  { id: 2, name: 'Jean Valjean',            age: 25,  hobbies: ['running', 'painting'] },
+  { id: 3, name: 'Natalie de Manerville',   age: 40,  hobbies: ['gardening', 'cooking'] }
+];
+
+// Accès au nom du premier utilisateur
+console.log(users[0].name); // René Descartes
+
+// Accès au premier hobby du deuxième utilisateur
+console.log(users[1].hobbies[0]); // running
+
+
+
+users.forEach(user => {
+  console.log(`${user.name} a les hobbies suivants:`);
+  user.hobbies.forEach(hobby => {
+    console.log(`- ${hobby}`);
+  });
+});
+
+/*Dans cet exemple nous avons un tableau appelé users contenant plusieurs objets représentant des utilisateurs. Chaque objet a des propriétés telles que id, name, age et hobbies.
+
+Pour accéder au nom du premier utilisateur, nous utilisons users[0].name. Cela signifie que nous accédons au premier élément du tableau users, puis à la propriété name de cet objet.
+
+Pour accéder au premier hobby du deuxième utilisateur, nous utilisons users[1].hobbies[0]. Cela signifie que nous accédons au deuxième élément du tableau users, puis au tableau hobbies de cet utilisateur, et enfin à son premier élément en utilisant l'indice [0].
+
+Nous utilisons une boucle forEach pour parcourir le tableau users et pour chaque utilisateur, nous affichons son nom suivi de ses hobbies. user représente chaque objet utilisateur dans le tableau.
+
+À l'intérieur de la boucle forEach principale, nous utilisons une autre boucle forEach pour parcourir le tableau hobbies de chaque utilisateur. Pour chaque hobby, nous l'affichons à l'aide de console.log. hobby représente chaque élément du tableau hobbies pour l'utilisateur actuel.*/
+/**********************************************************************************************************/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

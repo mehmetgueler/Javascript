@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/* Concaténer les éléments d'un tableau multi-dimensionnel en une chaîne de caractères en utilisant un séparateur personnalisé.*/
+const nestedArr = [  ["apple", "banana", "orange"],
+  ["carrot", "potato", "spinach"],
+  ["chicken", "beef", "fish"]
+];
+const separator1 = " - ";// Définition du séparateur
+
+let joinedArr = "";// Initialisation de la variable contenant le résultat de la concaténation
+
+for (let i = 0; i < nestedArr.length; i++) {// Boucle pour parcourir chaque sous-tableau
+
+  for (let j = 0; j < nestedArr[i].length; j++) {  // Boucle pour parcourir chaque élément du sous-tableau
+    joinedArr += nestedArr[i][j];    // Ajout de l'élément courant à la variable contenant le résultat de la concaténation
+    if (j !== nestedArr[i].length - 1) {    // Ajout du séparateur si l'élément courant n'est pas le dernier du sous-tableau
+      joinedArr += separator1;
+    }
+  }
+  // Ajout du séparateur si le sous-tableau courant n'est pas le dernier du tableau multi-dimensionnel
+  if (i !== nestedArr.length - 1) {
+    joinedArr += separator1;
+  }
+}
+console.log(joinedArr);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

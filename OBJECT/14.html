@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<script>
+// COUVERTURE DE L'OBJET (GLOBAL/LOCAL)
+
+/*La portée d'un objet en JavaScript se réfère à la visibilité des propriétés et des méthodes de cet objet. La portée d'un objet est généralement déterminée par le contexte dans lequel il est défini et utilisé. Voici quelques points importants à comprendre concernant la portée des objets en JavaScript :
+
+Portée globale : Si un objet est défini en dehors de toute fonction ou bloc de code, il est considéré comme ayant une portée globale. Cela signifie que l'objet est accessible depuis n'importe quel endroit du code. Par exemple :*/
+
+let monObjet = {
+  propriete: "valeur"
+};
+
+console.log(monObjet.propriete); // Accès à la propriété depuis n'importe où dans le code
+/**********************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************/
+/*Portée locale : 
+Si un objet est défini à l'intérieur d'une fonction ou d'un bloc de code, il est considéré comme ayant une portée locale. Cela signifie que l'objet n'est accessible qu'à l'intérieur de cette fonction ou de ce bloc de code. Par exemple : */
+
+function maFonction() {
+  let monObjet = {
+    propriete: "valeur"
+  };
+
+  console.log(monObjet.propriete); // Accès à la propriété à l'intérieur de la fonction
+}
+
+maFonction(); // Appel de la fonction
+
+/*Dans cet exemple, l'objet monObjet est défini à l'intérieur de la fonction maFonction(), ce qui limite sa portée à l'intérieur de cette fonction. Il ne peut pas être accédé en dehors de la fonction.*/
+/**********************************************************************************************************************/
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************/
+/*Portée d'objet : 
+Les propriétés et les méthodes d'un objet sont généralement accessibles à partir de l'objet lui-même, quelle que soit la portée dans laquelle il est défini. Par exemple :*/
+
+let monObjet2 = {
+  propriete: "valeur",
+  maMethode: function() {
+    console.log(this.propriete); // Accès à la propriété depuis la méthode de l'objet
+  }
+};
+
+monObjet2.maMethode(); // Appel de la méthode de l'objet
+
+/*Dans cet exemple, la méthode maMethode() est définie à l'intérieur de l'objet monObjet. Elle peut accéder à la propriété propriete de l'objet en utilisant le mot-clé this, qui fait référence à l'objet lui-même.
+
+Il est important de noter que la portée d'un objet ne limite pas la modification des propriétés de cet objet. Tant que l'objet est accessible, ses propriétés peuvent être modifiées de manière appropriée, quelle que soit la portée.*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+/*Utilisation utilisation boucle(s) dans les objets 
+Les boucles sont couramment utilisées pour parcourir les propriétés d'un objet et effectuer des opérations sur celles-ci. En JavaScript, il existe plusieurs méthodes pour itérer sur les propriétés d'un objet. Voici quelques exemples :
+
+Boucle for...in :
+La boucle for...in permet de parcourir toutes les propriétés énumérables d'un objet, y compris les propriétés héritées. Voici comment l'utiliser pour itérer sur les propriétés d'un objet :*/
+
+
+let joueur = {
+  pseudo: "ShadowBlade",
+  niveau: 42,
+  guilde: "Les Protecteurs"
+};
+
+for (let attribut in joueur) {
+  console.log(`L'attribut ${attribut} du joueur est : ${joueur[attribut]}`);
+}
+/*Affiche:
+L'attribut pseudo du joueur est : ShadowBlade
+L'attribut niveau du joueur est : 42
+L'attribut guilde du joueur est : Les Protecteurs
+
+Dans cet exemple, nous utilisons une boucle for...in pour parcourir chaque attribut de l'objet joueur. À chaque itération, la variable attribut contient le nom de l'attribut actuel. Nous utilisons ensuite cette variable pour accéder à la valeur correspondante dans l'objet joueur en utilisant la notation joueur[attribut]. Ensuite, nous affichons une phrase explicative indiquant le nom de l'attribut avec sa valeur correspondante.*/
+
+
+
+
+
+
+
+
+
+//Méthode Object.keys() avec une boucle for...of :
+
+
+let equipe = {
+  nom: "Les Aventuriers",
+  chef: "Capitaine Bravesteel",
+  quete: "La quête de l'Épée Sacrée"
+};
+
+let attributs = Object.keys(equipe);
+for (let attribut of attributs) {
+  console.log(`L'attribut ${attribut} de l'équipe est : ${equipe[attribut]}`);
+}
+/*Affiche:
+L'attribut nom de l'équipe est : Les Aventuriers
+L'attribut chef de l'équipe est : Capitaine Bravesteel
+L'attribut quete de l'équipe est : La quête de l'Épée Sacrée
+
+Dans cet exemple, nous utilisons la méthode Object.keys() pour obtenir un tableau contenant les noms des attributs de l'objet equipe. Ensuite, nous utilisons une boucle for...of pour itérer sur chaque attribut dans le tableau attributs. À chaque itération, la variable attribut contient le nom de l'attribut actuel. Nous utilisons ensuite cette variable pour accéder à la valeur correspondante dans l'objet equipe en utilisant la notation equipe[attribut]. Enfin, nous affichons une phrase explicative indiquant le nom de l'attribut avec sa valeur correspondante.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

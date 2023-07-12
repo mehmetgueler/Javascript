@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les méthodes fondamentales des objets</title>
+</head>
+<body>
+<script>
+/*La méthode Object.values() est une méthode statique de l'objet Object en JavaScript. Elle permet de renvoyer un tableau contenant les valeurs des propriétés énumérables d'un objet, dans l'ordre d'énumération.
+
+Voici la syntaxe de Object.values() : 
+
+Object.values(objet);
+objet : L'objet dont on souhaite obtenir les valeurs des propriétés.
+
+La méthode Object.values() renvoie un tableau contenant les valeurs des propriétés énumérables de l'objet, dans le même ordre que celui fourni par une boucle for...in. Les propriétés héritées via la chaîne de prototypes ne sont pas incluses dans le tableau résultant.
+
+Voici un exemple d'utilisation de Object.values() : */
+
+
+const objet = { 
+    a: 1, 
+    b: "str", 
+    c: true 
+};
+
+const valeurs = Object.values(objet);
+
+console.log(valeurs);
+// Affiche : [1, 'str', true]
+
+/*Dans cet exemple, nous avons un objet objet avec plusieurs propriétés et valeurs. En utilisant Object.values(objet), nous obtenons un tableau contenant les valeurs des propriétés de l'objet, dans le même ordre que celui de l'énumération.
+
+La méthode Object.values() est utile lorsque nous avons besoin de récupérer uniquement les valeurs des propriétés d'un objet, sans se soucier des clés associées.
+
+⁡⁢⁣⁣Il est important de noter que Object.values() suit l'ordre d'énumération des propriétés tel qu'il est défini dans la spécification ECMAScript, mais il n'y a aucune garantie que l'ordre soit le même dans tous les moteurs JavaScript. Dans la plupart des cas, l'ordre correspondra à celui d'ajout des propriétés à l'objet.
+⁡
+La méthode Object.values() est couramment utilisée dans le développement web pour traiter des objets et manipuler uniquement les valeurs de leurs propriétés.*/
+
+</script> 
+</body>
+</html>

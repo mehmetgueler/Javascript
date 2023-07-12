@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.includes()</title>
+</head>
+<body><script>
+
+/*includes() est une méthode JavaScript qui permet de déterminer si un tableau contient une valeur spécifique. Elle renvoie true si la valeur recherchée est présente dans le tableau, sinon elle renvoie false. Cette méthode a été introduite dans ECMAScript 2016 (ES7) et elle est très utile pour vérifier la présence d'un élément dans un tableau sans avoir besoin de parcourir manuellement tous les éléments.
+
+                array.includes(élémentRecherché)
+                array.includes(élémentRecherché, indiceDépart)
+
+
+élémentRecherché: La valeur que vous souhaitez rechercher dans le tableau. ( la comparaison est sensible à la casse)
+
+indiceDépart (facultatif): C'est un argument optionnel qui représente l'index à partir duquel commencer la recherche dans le tableau. Si cet index est supérieur ou égal à la longueur du tableau, la méthode renverra automatiquement false. Si indiceDépart est négatif, la recherche commencera depuis la fin du tableau (par exemple, -1 pour commencer à la fin).
+
+Valeur de retour:
+La méthode includes() renvoie un booléen (true ou false) indiquant si la valeur recherchée est présente dans le tableau.
+
+⁡⁢⁣⁣Il est important de noter que Array.prototype.includes() utilise l'algorithme SameValueZero pour déterminer si un élément donné est trouvé dans le tableau. L'algorithme SameValueZero est une comparaison stricte, similaire à l'opérateur === en JavaScript. Cela signifie que la recherche effectuée par includes() prend en compte la valeur et le type de l'élément recherché
+
+L'algorithme SameValueZero suit les règles suivantes pour déterminer si deux valeurs sont égales:
+
+Si les valeurs sont du même type et ont la même valeur, elles sont considérées comme égales.
+Les valeurs +0 et -0 sont considérées comme égales.
+Les valeurs NaN sont considérées comme égales (c'est-à-dire que NaN est égal à NaN, contrairement à l'algorithme de comparaison strict).
+
+Voici quelques exemples pour illustrer le comportement de l'algorithme SameValueZero avec includes() :*/
+
+
+const persos = ["Rexxar", "Khadgar", "Maiev", "Thrall", "Zul'jin"];
+
+console.log(persos.includes('Rexxar')); // true, 'Rexxar' est trouvé dans le tableau
+console.log(persos.includes('Maiev')); // true, 'Maiev' est trouvé dans le tableau
+console.log(persos.includes('Ragnaros')); // false, 'Frank' n'est pas trouvé dans le tableau
+console.log(persos.includes('khadgar')); // false, sensible à la casse!
+
+
+
+
+//Recherche de valeur sans spécifier d'indice de départ :
+const numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers.includes(30)); // true, 30 est trouvé dans le tableau
+console.log(numbers.includes(25)); // false, 25 n'est pas trouvé dans le tableau
+
+
+//Recherche de valeur en spécifiant un indice de départ :
+console.log(numbers.includes(30, 2)); // true, la recherche commence à partir de l'index 2 (valeur 30 est trouvée)
+console.log(numbers.includes(30, 3)); // false, la recherche commence à partir de l'index 3 (valeur 30 n'est pas trouvée)
+
+
+//Utilisation d'indices négatifs pour commencer la recherche à partir de la fin du tableau :
+console.log(numbers.includes(10, -5)); // true, la recherche commence à partir de l'index -5 (inclus) (premier élément, valeur 10 est trouvée)
+console.log(numbers.includes(10, -4)); // false, la recherche commence à partir de l'index -4 (valeur 10 n'est pas trouvée)
+
+
+//Recherche de la même valeur en spécifiant un indice de départ en dehors des limites du tableau :
+console.log(numbers.includes(20, 10)); // false, l'indice de départ 10 est en dehors des limites du tableau
+console.log(numbers.includes(50, -10)); // true, l'indice de départ -10 est en dehors des limites du tableau, mais l'algorithme SameValueZero tient compte du début ou de la fin du tableau pour la recherche
+
+
+
+
+
+
+
+
+// Vérifions le cas des valeurs spéciales, telles que NaN et -0
+const specialValues = [NaN, -0];
+
+console.log(specialValues.includes(NaN)); // true, NaN est trouvé dans le tableau
+console.log(specialValues.includes(0)); // true, 0 est trouvé dans le tableau (la valeur -0 est considérée égale à +0)
+console.log(specialValues.includes(-0)); // true, -0 est trouvé dans le tableau
+
+/*Dans cet exemple générique, nous avons un tableau specialValues qui contient des valeurs spéciales telles que NaN et les zéros -0 et +0. L'algorithme SameValueZero considère +0 (zéro positif) égal à -0 (zéro négatif). Cela signifie que lorsqu'on utilise Array.prototype.includes(), la méthode renvoie true pour -0 également, car -0 est considéré égal à +0 selon cet algorithme. Donc, le résultat de specialValues.includes(0) est bien true.*/
+
+
+
+</script>
+</body>
+</html>

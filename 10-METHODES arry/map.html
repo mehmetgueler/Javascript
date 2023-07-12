@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.map()</title>
+</head>
+<body><script>
+
+/*La méthode map() en JavaScript permet de créer un nouveau tableau en appliquant une fonction de transformation (callback) à chaque élément du tableau d'origine, dans l'ordre du tableau. Le résultat de chaque transformation devient un élément du nouveau tableau. 
+
+        const nouveauTableau = arr.map(callback [, thisArg])
+
+arr : Le tableau sur lequel vous appelez la méthode map().
+
+callback : La fonction utilisée pour créer chaque élément du nouveau tableau. Elle prend trois arguments :
+    1.) valeurCourante : La valeur de l'élément du tableau en cours de traitement lors de l'itération.
+    2.) indexFacultatif : L'index de l'élément en cours de traitement par la fonction (facultatif).
+    3.) tableauFacultatif : Le tableau sur lequel la méthode map() a été appelée (facultatif).
+
+thisArg (facultatif) : La valeur à utiliser pour this lors de l'exécution de callback. Par défaut, si thisArg n'est pas spécifié, la valeur de this sera l'objet global de l'environnement (par exemple, Window pour un navigateur
+
+
+
+
+map() exécute la fonction callback une fois pour chaque élément du tableau, dans l'ordre du tableau d'origine.
+
+La fonction callback est appelée uniquement pour les indices du tableau qui ont des valeurs affectées (y compris si ces valeurs sont undefined). Si des valeurs ont été supprimées ou n'ont jamais été initialisées, la fonction callback ne sera pas appelée pour ces indices.
+
+La fonction callback reçoit trois arguments :
+
+La valeur de l'élément en cours de traitement du tableau.
+L'index de cet élément.
+L'objet Array qui est parcouru (le tableau d'origine).
+Si vous utilisez le paramètre thisArg, il sera utilisé comme valeur de this lorsque la fonction callback est appelée. Sinon, la valeur undefined sera utilisée pour définir this. La valeur de this observée par la fonction callback est définie selon les règles usuelles de JavaScript.
+
+map() construit un nouveau tableau en retournant les résultats des transformations effectuées par la fonction callback. Le tableau d'origine reste inchangé.
+
+⁡⁢⁣⁢Attention : Si vous n'utilisez pas le résultat de map() ou si vous ne renvoyez pas de valeur dans la fonction callback, il vaut mieux utiliser forEach ou for...of plutôt que map(), car map() est destinée à créer un nouveau tableau à partir des résultats de la transformation.
+⁡
+La liste des éléments à traiter par map() est définie avant le premier appel à la fonction callback. Les éléments qui sont ajoutés au tableau après l'appel à map() ne seront pas traités par la fonction callback. De même, si des éléments ont été modifiés dans le tableau d'origine, la fonction callback utilisera la valeur initiale au moment où map() a été appelée.
+
+Si des éléments sont supprimés du tableau d'origine, ils ne seront pas traités par map(). Si le tableau contient des éléments undefined, le résultat du nouveau tableau contiendra également des éléments undefined.
+
+En résumé, map() permet d'appliquer une fonction de transformation à chaque élément d'un tableau pour créer un nouveau tableau basé sur les résultats de ces transformations, sans modifier le tableau d'origine.*/
+
+
+const nombres = [1, 2, 3, 4, 5];
+
+const carres = nombres.map(function(nombre) {
+  return nombre * nombre;
+});
+
+console.log(carres); // Résultat: [1, 4, 9, 16, 25]
+
+/*Dans cet exemple, la fonction de rappel function(nombre) { return nombre * nombre; } est utilisée pour transformer chaque élément du tableau nombres en calculant le carré de chaque nombre. Le nouveau tableau carres contiendra les carrés des nombres d'origine.*/
+
+
+
+
+
+
+// Conversion de Celcius en Fahrenheit 
+
+const temperaturesCelsius = [0, 20, 37, 15, 25];
+
+// Utilisation de map pour convertir les températures en degrés Fahrenheit
+const temperaturesFahrenheit = temperaturesCelsius.map(celsius => (celsius * 9/5) + 32);
+
+console.log(temperaturesFahrenheit);// Affiche : [32, 68, 98.6, 59, 77]
+
+/*Dans cet exemple nous avons un tableau temperaturesCelsius qui contient les températures en degrés Celsius.
+Nous utilisons la méthode map() pour parcourir chaque élément de temperaturesCelsius.
+Pour chaque élément (représenté par celsius), nous appliquons la formule de conversion pour obtenir la température en degrés Fahrenheit.
+Le résultat de chaque transformation est stocké dans un nouveau tableau appelé temperaturesFahrenheit.
+Le nouveau tableau temperaturesFahrenheit est affiché dans la console avec les températures converties en degrés Fahrenheit.*/
+
+
+
+
+
+
+
+
+/* Supposons que nous ayons un tableau d'objets représentant des produits avec leurs prix en euros, et nous voulons créer un nouveau tableau qui contiendra des chaînes de caractères décrivant chaque produit avec son prix en dollars (en supposant que le taux de change est de 1 euro = 1.18 dollars). */
+
+const products = [
+  { id: 1, name: 'T-shirt', price: 20 },
+  { id: 2, name: 'Jeans', price: 50 },
+  { id: 3, name: 'Shoes', price: 80 },
+  { id: 4, name: 'Hat', price: 15 },
+  { id: 5, name: 'Socks', price: 5 },
+];
+
+// Utilisation de map pour créer un nouveau tableau avec les descriptions des produits en dollars
+const productsInDollars = products.map(product => {
+  const priceInDollars = product.price * 1.18; // Conversion du prix en dollars
+  return `${product.name} - $${priceInDollars.toFixed(2)}`; // Formatage de la description
+});
+
+console.log(productsInDollars);
+
+/*Dans cet exemple avancé :
+
+Nous avons un tableau products contenant des objets représentant différents produits avec leur nom et leur prix en euros.
+Nous utilisons la méthode map() pour parcourir chaque objet product du tableau products.
+Pour chaque objet product, nous effectuons une conversion du prix en dollars en multipliant le prix en euros par le taux de change (1 euro = 1.18 dollars).
+Ensuite, nous construisons une chaîne de caractères décrivant le produit avec son prix en dollars en utilisant le template string (${}) pour insérer le nom du produit et le prix en dollars.
+Le résultat de chaque transformation est stocké dans un nouveau tableau appelé productsInDollars.
+Le nouveau tableau productsInDollars est affiché dans la console avec les descriptions des produits en dollars.
+Cet exemple démontre comment map() est utilisée pour créer un nouveau tableau avec des données transformées et formatées à partir du tableau d'objets d'origine. Cette approche permet de gagner du temps et d'effectuer facilement des opérations sur chaque élément du tableau en une seule étape.*/
+
+
+
+
+
+</script>
+</body>
+</html>

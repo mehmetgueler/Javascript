@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<script>
+
+// Assigner un objet à une variable distincte en JavaScript
+
+
+let personne = {nom: 'Friedrich ', prenom: 'Nietzsche', naissance: 1844};
+
+let lapersonne = personne;
+
+
+/*Lorsqu'un objet est assigné à une autre variable en JavaScript, la variable de destination ne reçoit pas directement une copie de l'objet. Au lieu de cela, elle fait référence au même objet en mémoire. Cela signifie que les deux variables pointent vers le même objet, et toute modification effectuée sur l'un des variables affectera l'objet auquel elles font référence, et sera visible à travers l'autre variable.
+
+Dans cet exemple, nous créons un objet "personne" avec les propriétés "nom", "prenom" et "naissance". Ensuite, nous assignons cet objet à la variable "lapersonne".
+
+À ce stade, "personne" et "lapersonne" font référence au même objet en mémoire. Si vous modifiez une propriété de l'objet via l'une des variables, la modification sera visible via l'autre variable :*/
+
+
+
+lapersonne.nom = ' Elisabeth Förster';
+console.log(personne.nom);  // Affiche 'Elisabeth Förster'
+
+
+console.log(personne);
+
+/*La sortie affichera 'Elisabeth Förster', car la modification de la propriété "nom" via "personne2" a également affecté la valeur de la propriété "nom" dans l'objet référencé par "personne1".
+
+
+
+
+
+
+
+
+
+
+
+
+Il est important de comprendre ce comportement lors de la manipulation d'objets en JavaScript, car cela peut parfois entraîner des résultats inattendus si on ne s'y attend pas. Si vous souhaitez créer une copie indépendante de l'objet, vous devez effectuer une copie profonde (deep copy) de celui-ci
+Voici un exemple de copie profonde :*/
+
+
+let personne1 = { nom: 'John', age: 30 };
+let personne2 = JSON.parse(JSON.stringify(personne1));
+
+
+/*Dans cet exemple, nous utilisons la méthode JSON.stringify pour convertir l'objet en une chaîne JSON, puis nous utilisons JSON.parse pour créer un nouvel objet à partir de cette chaîne JSON. Ainsi, "personne1" et "personne2" contiendront chacun un objet distinct en mémoire, et les modifications apportées à l'un n'affecteront pas l'autre.
+
+En résumé, lorsque vous assignez un objet à une variable en JavaScript, vous assignez en réalité une référence à l'objet en mémoire. Si vous souhaitez avoir des objets distincts, vous devez effectuer une copie profonde de l'objet pour créer une nouvelle référence distincte en mémoire.*/
+
+
+
+</script>
+</body>
+</html>

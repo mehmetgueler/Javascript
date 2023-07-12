@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+/*Héritage de classe
+L'héritage de classe permet de créer des classes dérivées (ou sous-classes) qui héritent des propriétés et des méthodes d'une classe parente (ou superclasse). Cela permet de réutiliser le code existant et d'étendre les fonctionnalités. Pour hériter d'une classe, on utilise le mot-clé extends suivi du nom de la classe parente. Voici comment cela fonctionne :*/
+
+
+class Employe {
+  constructor(nom, age, poste) {
+    this.nom = nom;
+    this.age = age;
+    this.poste = poste;
+  }
+
+  afficherDetails() {
+    console.log(`Nom : ${this.nom}`);
+    console.log(`Age : ${this.age}`);
+    console.log(`Poste : ${this.poste}`);
+  }
+}
+
+class Developpeur extends Employe {
+  constructor(nom, age, poste, langage) {
+    super(nom, age, poste);
+    this.langage = langage;
+  }
+
+  afficherDetails() {
+    super.afficherDetails();
+    console.log(`Langage de programmation : ${this.langage}`);
+  }
+}
+/* Dans cet exemple, nous avons une classe Employe avec un constructeur et une méthode afficherDetails(). Ensuite, nous créons une classe Developpeur qui hérite de la classe Employe en utilisant le mot-clé extends. La classe Developpeur a son propre constructeur et sa propre méthode afficherDetails(), qui étend la méthode de la classe parente en utilisant super.afficherDetails().
+Tu peux créer des objets à partir de la classe Developpeur et utiliser ses méthodes :*/
+
+
+const developpeur1 = new Developpeur('Gazleu', 30, 'Ingénieur', 'JavaScript');
+developpeur1.afficherDetails();
+
+/*Cela affichera les détails de l'employé, y compris le langage de programmation spécifique au développeur.*/
+
+
+</script>
+</body>
+</html>

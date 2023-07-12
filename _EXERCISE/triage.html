@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+function trierParPropriete(tableau, propriete) {
+  // Utiliser la méthode slice pour créer une copie du tableau d'origine
+  const tableauCopie = tableau.slice();
+  
+  // Utiliser la méthode sort avec une fonction de comparaison
+  tableauCopie.sort((a, b) => a[propriete] - b[propriete]);
+  
+  return tableauCopie;
+}
+
+const personnes = [
+  { nom: "Alice", age: 30 },
+  { nom: "Bob", age: 25 },
+  { nom: "Eve", age: 35 },
+  { nom: "David", age: 28 }
+];
+
+const personnesTrieParAge = trierParPropriete(personnes, "age");
+console.log(personnesTrieParAge);
+// Résultat :
+// [
+//   { nom: "Bob", age: 25 },
+//   { nom: "David", age: 28 },
+//   { nom: "Alice", age: 30 },
+//   { nom: "Eve", age: 35 }
+// ]
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

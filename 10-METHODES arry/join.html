@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.join()</title>
+</head>
+<body><script>
+
+/*La méthode join() en JavaScript permet de créer et de renvoyer une nouvelle chaîne de caractères en concaténant tous les éléments d'un tableau (ou d'un objet semblable à un tableau). Cette opération de concaténation utilise une virgule ou toute autre chaîne spécifiée en argument comme séparateur entre les éléments.
+
+Pour réaliser cette concaténation, les différents éléments du tableau sont convertis en chaînes de caractères, puis fusionnés pour former une seule chaîne. Si un élément du tableau a une valeur de undefined ou null, il sera converti en une chaîne vide dans le résultat final.
+
+La méthode join() est une fonction générique, ce qui signifie qu'elle peut également être utilisée avec des objets qui ressemblent à des tableaux (par exemple, des objets ayant une propriété length et des indices numériques).
+
+                      array.join()
+                      array.join(séparateur)
+
+array : Le tableau dont les éléments seront concaténés en une chaîne de caractères.
+séparator (Optionel): Le séparateur à utiliser pour séparer les éléments. Ce paramètre est facultatif. S'il est omis, la méthode utilisera une virgule par défaut comme séparateur.
+
+Valeur de retour
+La méthode join() renvoie une chaîne de caractères résultante en concaténant tous les éléments du tableau avec le séparateur spécifié.*/
+
+
+
+const fruits = ["Pomme", "Banane", "Orange"];
+const fruitsEnChaine = fruits.join(", ");
+console.log(fruitsEnChaine);// Affiche:  "Pomme, Banane, Orange"
+
+/* Dans cet exemple, la méthode join() est utilisée pour concaténer les éléments du tableau fruits en une seule chaîne de caractères, avec ", " comme séparateur. Le résultat est donc "Pomme, Banane, Orange".
+
+⁡⁢⁣⁣Il est important de noter que si le séparateur n'est pas spécifié, la méthode join() utilisera par défaut une virgule comme séparateur.
+
+La méthode join() est très utile pour convertir un tableau en une chaîne de caractères bien formatée, par exemple pour afficher des valeurs dans un format lisible par l'utilisateur.⁡ 
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************************************/
+/*Supposons que nous avons un tableau contenant les noms des membres d'une équipe de développement :
+Nous souhaitons afficher les noms des membres de l'équipe dans une phrase, séparés par des barres verticales, sauf pour le dernier membre qui sera précédé par "et". Voici comment utiliser la méthode join() pour obtenir ce format :*/
+
+const equipeDeveloppement = ["Ryu", "Zangief", "Blanka", "Vega", "Sagat"];
+
+// Convertir le tableau en une chaîne de caractères bien formatée
+const chaineEquipe = equipeDeveloppement.slice(0, -1).join(" | ") + " et " + equipeDeveloppement[equipeDeveloppement.length - 1];
+
+// Afficher la chaîne résultante
+// console.log(`L'équipe de développement est composée de : ${chaineEquipe}`);
+// Résultat : "L'équipe de développement est composée de : "Ryu | Zangief | Blanka | Vega et Sagat"
+
+
+/*Dans cet exemple nous avons un tableau equipeDeveloppement qui contient les noms des membres de l'équipe de développement.
+
+La méthode slice() est utilisée pour créer une nouvelle portion du tableau equipeDeveloppement. Dans cet exemple, nous utilisons slice(0, -1) pour obtenir tous les éléments du tableau sauf le dernier élément. Cela signifie que nous prenons les éléments de l'indice 0 jusqu'à l'indice avant le dernier élément. Ainsi, nous excluons le dernier élément "Sagat" du nouveau tableau.
+
+Après avoir obtenu la portion du tableau sans le dernier élément, nous utilisons la méthode join(" | ") pour concaténer tous les éléments de cette portion en une seule chaîne de caractères. Le séparateur spécifié est " | " (un espace suivi d'un trait vertical). Cela signifie que chaque élément du tableau sera séparé par " | " dans la chaîne résultante.
+
+Ensuite, nous concaténons la chaîne résultante de l'étape précédente (avec les éléments séparés par " | ") avec la chaîne " et " (suivie d'un espace) et l'élément du tableau qui était le dernier élément "Sagat".
+
+Enfin, nous utilisons console.log() pour afficher le résultat final dans la console. Nous utilisons une chaîne de template (entourée de backticks) pour inclure la chaîne chaineEquipe dans le message*/
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************************************/
+function concatenateArrayElements(arr) {
+  const fusion = Array.prototype.join.call(arr, " ¬ ");
+  console.log(fusion);
+}
+
+const myArray = [42, 'Hello', false, 'OpenAI'];
+concatenateArrayElements(myArray); // Résultat : '42 ¬ Hello ¬ false ¬ OpenAI'
+
+
+/*Dans cet exemple, nous avons une fonction nommée concatenateArrayElements(arr) qui prend un tableau arr en tant que paramètre. Cette fonction concatène les éléments du tableau en utilisant le symbole "¬" (espace insécable) comme séparateur, puis affiche le résultat sur la console.
+
+Le code utilise la méthode Array.prototype.join pour effectuer la concaténation, mais d'une manière particulière. Au lieu d'appeler directement arr.join(" ¬ "), le code utilise Array.prototype.join.call(arr, " ¬ "). Cela permet de spécifier le contexte (c'est-à-dire le tableau arr) sur lequel la méthode join sera exécutée avec le séparateur spécifié " ¬ ".
+
+Par exemple, si nous avons un tableau myArray contenant [42, 'Hello', false, 'OpenAI'], la fonction concatenateArrayElements(myArray) concatènera les éléments du tableau en une seule chaîne de caractères en plaçant " ¬ " entre chaque élément. Le résultat sera affiché sur la console comme suit:
+
+42 ¬ Hello ¬ false ¬ OpenAI
+
+Vous pouvez utiliser cette fonction pour concaténer les éléments de n'importe quel tableau en utilisant le symbole de votre choix comme séparateur.*/
+/**********************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************************************************************/
+/* Concaténer les éléments d'un tableau multi-dimensionnel en une chaîne de caractères en utilisant un séparateur personnalisé.*/
+const nestedArr = [  ["apple", "banana", "orange"],
+  ["carrot", "potato", "spinach"],
+  ["chicken", "beef", "fish"]
+];
+const separator1 = " - ";// Définition du séparateur
+
+let joinedArr = "";// Initialisation de la variable contenant le résultat de la concaténation
+
+for (let i = 0; i < nestedArr.length; i++) {// Boucle pour parcourir chaque sous-tableau
+
+  for (let j = 0; j < nestedArr[i].length; j++) {  // Boucle pour parcourir chaque élément du sous-tableau
+    joinedArr += nestedArr[i][j];    // Ajout de l'élément courant à la variable contenant le résultat de la concaténation
+    if (j !== nestedArr[i].length - 1) {    // Ajout du séparateur si l'élément courant n'est pas le dernier du sous-tableau
+      joinedArr += separator1;
+    }
+  }
+  // Ajout du séparateur si le sous-tableau courant n'est pas le dernier du tableau multi-dimensionnel
+  if (i !== nestedArr.length - 1) {
+    joinedArr += separator1;
+  }
+}
+console.log(joinedArr);
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

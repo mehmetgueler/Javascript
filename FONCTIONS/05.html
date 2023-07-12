@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fonctions</title>
+</head>
+<body>
+                        Utiliser des conditions dans les fonctions JavaScript
+<script>
+/*Dans le développement JavaScript, les fonctions jouent un rôle essentiel dans l'organisation et la réutilisation du code. Les conditions permettent de prendre des décisions basées sur des valeurs booléennes et d'exécuter différentes actions en conséquence. Dans ce chapitre, nous allons explorer comment utiliser les conditions dans les fonctions JavaScript pour effectuer des choix dynamiques et ajuster le comportement de nos fonctions en fonction des conditions spécifiques.
+
+Utiliser des déclarations conditionnelles dans les fonctions :
+Les instructions "if" et "else" : Nous pouvons utiliser ces instructions pour évaluer une condition et exécuter différentes parties du code en fonction de son résultat. Cela permet de réaliser des actions spécifiques en fonction d'une condition donnée.
+
+
+Conditions imbriquées dans les fonctions :
+-Les conditions peuvent être imbriquées pour effectuer des évaluations multiples et prendre des décisions en fonction de différents scénarios.
+-L'utilisation de plusieurs instructions "if", "else if" et "else" permet de créer des chemins de code flexibles basés sur des conditions spécifiques.
+
+
+Utilisation de l'instruction "switch" :
+-L'instruction "switch" peut être utilisée dans les fonctions pour effectuer des conditions multiples basées sur des valeurs spécifiques.
+-Elle offre une alternative à l'utilisation d'instructions "if" imbriquées et permet de gérer plusieurs cas avec une syntaxe plus concise.
+
+
+Passer des paramètres aux fonctions pour influencer les conditions :
+Les fonctions peuvent recevoir des paramètres qui peuvent être utilisés pour déterminer les conditions à l'intérieur de la fonction.
+En passant des valeurs différentes en tant qu'arguments lors de l'appel de la fonction, nous pouvons influencer les décisions prises par les conditions à l'intérieur de la fonction.*/
+
+
+
+/****************************************************************************************************************************/
+//  function nomDeLaFonction(paramètre1, paramètre2, ...) {
+//   if (condition1) {
+//     // Code à exécuter si la condition1 est vraie
+//   } else if (condition2) {
+//     // Code à exécuter si la condition1 est fausse et la condition2 est vraie
+//   } else {
+//     // Code à exécuter si toutes les conditions sont fausses
+//   }
+// }
+/****************************************************************************************************************************/
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+/****************************************************************************************************************************/
+ function obtenirStatutMembre(points) {
+  if (points >= 1000) {
+    return "Statut : Gold";
+  } else if (points >= 500) {
+    return "Statut : Silver";
+  } else {
+    return "Statut : Bronze";
+  }
+}
+
+console.log(obtenirStatutMembre(1500)); // Affiche "Statut : Gold"
+console.log(obtenirStatutMembre(750)); // Affiche "Statut : Silver"
+console.log(obtenirStatutMembre(250)); // Affiche "Statut : Bronze"
+
+/*Dans cet exemple, la fonction obtenirStatutMembre prend un paramètre points et utilise des conditions pour déterminer le statut d'un membre en fonction du nombre de points accumulés. Si le nombre de points est supérieur ou égal à 1000, le statut est "Gold". Si le nombre de points est supérieur ou égal à 500, le statut est "Silver". Sinon, si aucune de ces conditions n'est satisfaite, le statut est "Bronze".
+
+En appelant la fonction obtenirStatutMembre avec différents nombres de points, le statut du membre est déterminé en fonction des conditions évaluées. Cela permet d'attribuer des statuts spécifiques aux membres en fonction de leurs performances.*/
+/****************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************************************************************************************/
+function obtenirMessageSaison(saison) {
+  let message;
+
+  switch (saison) {
+    case "hiver":
+      message = "Il fait froid en hiver.";
+      break;
+    case "printemps":
+      message = "Les fleurs fleurissent au printemps.";
+      break;
+    case "été":
+      message = "Profitez du soleil et des vacances en été.";
+      break;
+    case "automne":
+      message = "Les feuilles tombent en automne.";
+      break;
+    default:
+      message = "Saison inconnue.";
+      break;
+  }
+
+  return message;
+}
+
+console.log(obtenirMessageSaison("hiver")); // Affiche "Il fait froid en hiver."
+console.log(obtenirMessageSaison("printemps")); // Affiche "Les fleurs fleurissent au printemps."
+console.log(obtenirMessageSaison("été")); // Affiche "Profitez du soleil et des vacances en été."
+console.log(obtenirMessageSaison("automne")); // Affiche "Les feuilles tombent en automne."
+console.log(obtenirMessageSaison("inconnue")); // Affiche "Saison inconnue."
+
+/*Dans cet exemple, la fonction obtenirMessageSaison prend un paramètre saison et utilise l'instruction switch pour associer un message en fonction de la saison donnée. Chaque cas (case) correspond à une saison spécifique, et le bloc de code à l'intérieur du cas est exécuté lorsque la saison correspond. Si aucun des cas ne correspond, le bloc de code dans la section default est exécuté.
+
+La fonction obtenirMessageSaison retourne ensuite le message correspondant à la saison donnée. En utilisant l'instruction switch, cette fonction permet de fournir un message spécifique en fonction de la saison choisie.*/
+/****************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************************************************************************************/
+ function calculerPrix(quantite) {
+  let prixUnitaire = 10;
+  let prixTotal;
+
+  if (quantite <= 0) {
+    prixTotal = 0;
+  } else if (quantite < 10) {
+    prixTotal = prixUnitaire * quantite;
+  } else if (quantite < 50) {
+    prixTotal = (prixUnitaire * quantite) * 0.9;
+  } else {
+    prixTotal = (prixUnitaire * quantite) * 0.8;
+  }
+
+  return prixTotal;
+}
+
+console.log(calculerPrix(90)); // Affiche le prix total pour une quantité de 720
+
+/*Dans cet exemple, la fonction calculerPrix prend en entrée la quantité d'un produit à acheter.
+En fonction de cette quantité, la fonction calcule le prix total à payer, en appliquant des réductions
+en fonction de la quantité achetée.
+
+Si la quantité est négative ou nulle, le prix total est fixé à 0. Si la quantité est inférieure à 10,
+le prix total est simplement égal au prix unitaire multiplié par la quantité.
+Si la quantité est comprise entre 10 et 50, le prix total est réduit de 10%.
+Enfin, si la quantité est supérieure à 50, le prix total est réduit de 20%.
+
+Ce type de fonction est utile dans des contextes où le prix des produits varie en fonction de la quantité achetée,
+comme dans une boutique en ligne par exemple.*/
+
+</script>    
+</body>
+</html>

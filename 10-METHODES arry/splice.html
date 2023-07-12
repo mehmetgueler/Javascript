@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.splice()</title>
+</head>
+<body><script>
+
+/*La méthode splice() est une méthode native en JavaScript qui permet de modifier le contenu d'un tableau en ajoutant, en supprimant ou en remplaçant des éléments. Elle peut prendre plusieurs arguments et a la syntaxe suivante :
+
+          array.splice(start, deleteCount, item1, item2, ...)
+
+start : C'est l'indice (index) à partir duquel la modification doit commencer.
+
+deleteCount : C'est le nombre d'éléments existants du tableau à supprimer à partir de l'indice start.
+
+item1, item2, ... : Ce sont les éléments à ajouter au tableau, à partir de l'indice start.
+
+
+Voici comment chaque argument fonctionne :
+
+L'argument start spécifie l'indice (index) à partir duquel vous souhaitez effectuer la modification. Cela peut être un indice positif ou négatif. Si l'indice est positif, il compte à partir du début du tableau, où 0 est le premier élément. Si l'indice est négatif, il compte à partir de la fin du tableau, où -1 est le dernier élément.
+
+L'argument deleteCount spécifie combien d'éléments existants du tableau doivent être supprimés à partir de l'indice start. Si vous voulez simplement ajouter des éléments sans supprimer aucun élément, vous pouvez passer 0 pour deleteCount.
+
+Les arguments item1, item2, ... sont les éléments que vous voulez ajouter au tableau, à partir de l'indice start. Vous pouvez spécifier un ou plusieurs éléments séparés par des virgules.
+
+La méthode splice() retourne un nouveau tableau contenant les éléments supprimés, le cas échéant. Si aucun élément n'est supprimé, elle renvoie un tableau vide ([]).
+
+Voici un exemple pour illustrer l'utilisation de splice() :*/
+
+let fruits = ['pomme', 'banane', 'orange'];
+
+// Insérer 'kiwi' à l'indice 1 sans supprimer d'éléments existants
+fruits.splice(1, 0, 'kiwi');
+console.log(fruits); // Affiche ['pomme', 'kiwi', 'banane', 'orange']
+
+/*Dans cet exemple, nous utilisons trois arguments :
+
+L'argument 1 spécifie l'index à partir duquel nous souhaitons effectuer la modification. Dans notre cas, nous voulons insérer l'élément 'kiwi' après la première position du tableau, donc à l'index 1.
+
+L'argument 0 spécifie combien d'éléments existants du tableau doivent être supprimés avant d'ajouter de nouveaux éléments. Dans notre cas, nous ne voulons supprimer aucun élément existant, nous passons donc 0.
+
+L'argument 'kiwi' est l'élément que nous voulons ajouter au tableau.
+
+Donc, lorsque nous exécutons fruits.splice(1, 0, 'kiwi'), cela signifie que nous voulons insérer l'élément 'kiwi' à l'index 1 du tableau fruits sans supprimer aucun élément. Le tableau est alors modifié comme suit :
+
+Avant : ['pomme', 'banane', 'orange']
+Après : ['pomme', 'kiwi', 'banane', 'orange']
+
+Ensuite, lorsque nous utilisons console.log(fruits), nous affichons le tableau fruits modifié, qui contient maintenant : ['pomme', 'kiwi', 'banane', 'orange'].*/
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************************/
+/*Supposons que vous ayez un tableau de tâches à faire et que vous souhaitiez effectuer des modifications dynamiques sur ce tableau en fonction des actions de l'utilisateur. Voici un exemple :*/
+
+
+let tasks = ['Faire la lessive', 'Faire les courses', 'Nettoyer la maison', 'Promener le chien'];
+
+// Supprimer la tâche 'Faire les courses'
+tasks.splice(1, 1);
+console.log(tasks); // Affiche ['Faire la lessive', 'Nettoyer la maison', 'Promener le chien']
+
+// Insérer une nouvelle tâche 'Préparer le dîner' à l'indice 2
+tasks.splice(2, 0, 'Préparer le dîner');
+console.log(tasks); // Affiche ['Faire la lessive', 'Nettoyer la maison', 'Préparer le dîner', 'Promener le chien']
+
+// Remplacer la tâche 'Nettoyer la maison' par 'Passer l'aspirateur'
+tasks.splice(1, 1, "Passer l'aspirateur");
+console.log(tasks); // Affiche ['Faire la lessive', "Passer l'aspirateur", 'Préparer le dîner', 'Promener le chien']
+
+
+/*Dans cet exemple, nous utilisons splice() pour effectuer différentes modifications sur le tableau tasks :
+
+Nous supprimons la tâche 'Faire les courses' en utilisant tasks.splice(1, 1). Cela supprime un seul élément à partir de l'indice 1 du tableau.
+
+Nous insérons une nouvelle tâche 'Préparer le dîner' à l'indice 2 en utilisant tasks.splice(2, 0, 'Préparer le dîner'). Cela n'implique pas la suppression d'éléments existants, donc nous passons 0 pour deleteCount.
+
+Nous remplaçons la tâche 'Nettoyer la maison' par 'Passer l'aspirateur' en utilisant tasks.splice(1, 1, "Passer l'aspirateur"). Cela supprime un seul élément à partir de l'indice 1 et ajoute le nouvel élément à cet indice.
+
+Après chaque modification, nous utilisons console.log() pour afficher le contenu mis à jour du tableau tasks.
+
+Cet exemple illustre comment la méthode splice() peut être utilisée pour effectuer des modifications dynamiques sur un tableau en ajoutant, supprimant ou remplaçant des éléments en fonction des besoins de votre application.*/
+/**********************************************************************************************/
+
+
+
+
+
+
+
+
+/**********************************************************************************************/
+let array3D = [
+  [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+  [[10, 11, 12], [13, 14, 15], [16, 17, 18]],
+  [[19, 20, 21], [22, 23, 24], [25, 26, 27]]
+];
+
+// Ajouter un nouvel élément [28, 29, 30] au sous-tableau à l'indice [1][1]
+array3D[1][1].splice(1, 0, 29);
+console.log(array3D);
+/*
+Affiche :
+[
+  [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+  [[10, 11, 12], [13, 29, 14, 15], [16, 17, 18]],
+  [[19, 20, 21], [22, 23, 24], [25, 26, 27]]
+]
+*/
+
+// Supprimer l'élément 13 du sous-tableau à l'indice [1][1]
+array3D[1][1].splice(2, 1);
+console.log(array3D);
+/*
+Affiche :
+[
+  [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+  [[10, 11, 12], [13, 29, 15], [16, 17, 18]],
+  [[19, 20, 21], [22, 23, 24], [25, 26, 27]]
+]
+*/
+
+
+/*Dans cet exemple, nous avons un tableau à 3 dimensions array3D. Nous utilisons splice() pour ajouter et supprimer des éléments dans le sous-tableau correspondant à l'indice [1][1] du tableau array3D.
+
+Nous utilisons array3D[1][1].splice(1, 0, 29) pour ajouter l'élément 29 à l'indice 1 du sous-tableau à l'indice [1][1]. Cela signifie que nous insérons l'élément 29 juste avant l'élément 14. Le résultat est affiché avec console.log().
+
+Ensuite, nous utilisons array3D[1][1].splice(2, 1) pour supprimer l'élément 13 du sous-tableau à l'indice [1][1]. Nous indiquons que nous voulons supprimer un seul élément à partir de l'indice 2. Le résultat est affiché à nouveau avec console.log().
+⁡⁢⁣⁣
+Notez que la méthode splice() est utilisée ici spécifiquement pour modifier le sous-tableau à l'indice [1][1] de array3D, et non pour modifier directement le tableau à 3 dimensions lui-même⁡.*/
+
+</script>
+</body>
+</html>

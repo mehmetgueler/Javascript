@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array.prototype.concat()</title>
+</head>
+<body>
+<script>/*
+La méthode Array.prototype.concat() est une méthode intégrée en JavaScript qui est utilisée pour fusionner deux ou plusieurs tableaux en un seul tableau. Elle crée un nouveau tableau qui contient les éléments des tableaux d'origine.
+"Elle ne modifie pas les tableaux existants" mais renvoie un nouveau tableau contenant les éléments des tableaux concaténés.
+
+        const newArray = array1.⁡⁣⁣⁢concat⁡(element1[, element2[, ...[, elementN]]])
+
+La méthode concat() est appelée sur un tableau existant (array1) et accepte un ou plusieurs arguments (element1, element2, ..., elementN) qui représentent les éléments ou les tableaux à concaténer. Voici une explication des différents éléments de la syntaxe :
+
+array1: Le tableau sur lequel la méthode concat() est appelée. Il représente le tableau de départ qui sera concaténé avec d'autres éléments ou tableaux.
+
+element1, element2, ..., elementN: Les éléments ou tableaux que vous souhaitez concaténer avec le tableau de départ. Vous pouvez passer plusieurs arguments séparés par des virgules pour concaténer plusieurs éléments.
+
+newArray: Le nouveau tableau résultant de la concaténation. La méthode concat() renvoie un nouveau tableau qui contient les éléments de array1 suivis des éléments passés en arguments.
+
+⁡⁢⁣⁣Il est important de noter que la méthode concat() crée un nouveau tableau et ne modifie pas les tableaux d'origine. Le tableau initial (array1) reste inchangé⁡.
+
+La méthode concat() est utile lorsque vous avez besoin de fusionner plusieurs tableaux ou d'ajouter des éléments supplémentaires à un tableau existant. Elle permet de créer facilement un nouveau tableau en combinant différentes sources de données.*/  
+
+
+
+
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const array3 = [7, 8, 9];
+
+const mergedArray = array1.concat(array2, array3);
+
+console.log(mergedArray);
+/*Dans cet exemple, nous avons trois tableaux distincts : array1, array2 et array3. En utilisant la méthode concat(), nous fusionnons ces tableaux en un seul tableau appelé mergedArray.
+
+Lorsque nous appelons array1.concat(array2, array3), la méthode concat() combine les éléments de array1, array2 et array3 dans l'ordre fourni. Le résultat est un nouveau tableau contenant tous les éléments de array1, array2 et array3 dans cet ordre. Dans cet exemple, le tableau résultant mergedArray sera [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+⁡⁢⁣⁣Il est important de noter que la méthode concat() ne modifie pas les tableaux d'origine, elle renvoie plutôt un nouveau tableau qui est le résultat de la fusion. Les tableaux d'origine restent inchangés.
+⁡
+De plus, la méthode concat() peut prendre en compte plusieurs arguments, ce qui signifie que vous pouvez fusionner plus de deux tableaux à la fois. Par exemple, array1.concat(array2, array3, array4) fusionnerait les éléments de array1, array2, array3 et array4 dans l'ordre spécifié.*/
+/************************************************************************************/
+
+
+
+
+
+
+
+
+/*Concaténer tableaux avec certains éléments*****************************************/
+const leTab1 = [1, 2, 3, 4];
+const leTab2 = ['a', 'b', 'c', 'd'];
+const leTab3 = ['x', 'y', 'z'];
+
+// Concaténer les éléments de leTab1 compris entre les indices 0 et 1 (inclus),
+// les éléments de leTab3, puis les éléments de leTab2 compris entre les indices 2 et 3 (inclus)
+const newTabconcatene = [].concat(leTab1[0], leTab1[1], leTab3, leTab2[2], leTab2[3]);
+
+console.log(newTabconcatene);
+// Output: [1, 2, 'x', 'y', 'z', 'c', 'd']
+
+/*Dans ce code, nous avons trois tableaux : leTab1, leTab2 et leTab3. Nous utilisons la méthode concat() pour concaténer les éléments de ces tableaux en un seul tableau newTabconcatene.
+
+La ligne const newTabconcatene = [].concat(leTab1[0], leTab1[1], leTab3, leTab2[2], leTab2[3]); utilise la méthode concat() pour effectuer la concaténation. Chaque élément ou tableau que nous voulons concaténer est passé en tant qu'argument à la méthode concat().
+
+Dans cet exemple, nous concaténons les éléments suivants :
+
+leTab1[0] : le premier élément du tableau leTab1, qui est 1.
+leTab1[1] : le deuxième élément du tableau leTab1, qui est 2.
+leTab3 : le tableau complet leTab3.
+leTab2[2] : le troisième élément du tableau leTab2, qui est 'c'.
+leTab2[3] : le quatrième élément du tableau leTab2, qui est 'd'.
+La méthode concat() combine tous ces éléments en un seul tableau newTabconcatene. Le résultat affiché dans la console sera [1, 2, 'x', 'y', 'z', 'c', 'd'].
+
+La méthode concat() crée un nouveau tableau et ne modifie pas les tableaux d'origine. Elle peut être utilisée pour concaténer des éléments ou des tableaux de différentes tailles et types en un seul tableau. C'est une méthode pratique pour fusionner des données provenant de plusieurs sources en un seul tableau.*/
+/************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/*Méthode décomposition**************************************************************/
+const tabDecomp1 = [1, 2, 3];
+const tabDecomp2 = [4, 5, 6];
+const tabDecomp3 = ["a", "b", "c"];
+
+// Utiliser la syntaxe de décomposition pour concaténer les tableaux et stocker le résultat dans un nouveau tableau
+const methodeDecomposer = [...tabDecomp1, ...tabDecomp2, ...tabDecomp3];
+
+// Afficher le nouveau tableau
+console.log(methodeDecomposer);
+// Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+/* Dans cet exemple, nous utilisons la syntaxe de décomposition (spread syntax) en JavaScript pour combiner les éléments de plusieurs tableaux en un seul tableau. La syntaxe de décomposition est représentée par les trois points de suspension (...).
+
+Dans ce code, nous avons trois tableaux distincts : tabDecomp1, tabDecomp2 et tabDecomp3. En utilisant la syntaxe de décomposition, nous fusionnons ces tableaux en un seul tableau appelé methodeDecomposer.
+
+La ligne const methodeDecomposer = [...tabDecomp1, ...tabDecomp2, ...tabDecomp3]; utilise la syntaxe de décomposition pour décomposer les éléments de chaque tableau (tabDecomp1, tabDecomp2 et tabDecomp3) en une liste d'éléments distincts. Ces éléments sont ensuite combinés dans le tableau methodeDecomposer en utilisant l'opérateur spread ....
+
+Le résultat affiché dans la console sera [1, 2, 3, 4, 5, 6, "a", "b", "c"]. Cela signifie que le tableau methodeDecomposer contient tous les éléments des tableaux tabDecomp1, tabDecomp2 et tabDecomp3, dans l'ordre spécifié.
+
+La syntaxe de décomposition est un moyen pratique et concis de fusionner des tableaux ou de copier leurs éléments dans un nouveau tableau. Elle peut également être utilisée pour passer des tableaux comme arguments à des fonctions ou pour créer des copies indépendantes de tableaux existants.(voir OPERATEURS/spread-syntax)
+
+En résumé, en utilisant la syntaxe de décomposition avec l'opérateur spread (...), vous pouvez combiner les éléments de plusieurs tableaux en un seul tableau de manière concise et efficace.*/
+/************************************************************************************/
+
+
+
+const tableau1 = [[1, 2], [3, 4]];
+const tableau2 = [[5, 6], [7, 8]];
+const tableau3 = [[9, 10]];
+
+const tableauConcatene = tableau1.concat(tableau2, tableau3);
+console.log(tableauConcatene);
+
+/*Dans cet exemple, nous avons trois tableaux imbriqués : tableau1, tableau2 et tableau3. Nous utilisons la méthode concat() pour les concaténer en un seul tableau tableauConcatene.
+
+La ligne const tableauConcatene = tableau1.concat(tableau2, tableau3); appelle la méthode concat() sur tableau1 et passe tableau2 et tableau3 en tant qu'arguments. Ces tableaux sont concaténés en séquence dans l'ordre où ils sont passés.
+
+Le résultat affiché dans la console sera un tableau imbriqué contenant tous les éléments des tableaux d'origine :
+
+Array(5)
+(index)  |  Values
+-----------------
+   0     | [1, 2]
+   1     | [3, 4]
+   2     | [5, 6]
+   3     | [7, 8]
+   4     | [9, 10]]
+length:5
+
+La méthode concat() fusionne les tableaux imbriqués en créant un nouveau tableau qui contient tous les sous-tableaux. Les tableaux d'origine, tableau1, tableau2 et tableau3, ne sont pas modifiés.*/
+
+</script>   
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*La boucle do while est similaire à la boucle while, à la différence qu'elle
+garantit l'exécution d'au moins une itération, même si la condition initiale est
+fausse. La syntaxe générale en JavaScript est :*/
+
+do {
+// instructions
+} while (condition);
+
+/*Cette boucle est souvent utilisée pour valider des entrées utilisateur ou pour
+effectuer une action jusqu'à ce qu'une condition soit remplie.
+Par exemple, pour parcourir une chaîne de caractères avec une boucle do while :*/
+
+let str = "Hello World!";
+let i = 0;
+
+do {
+  console.log(str[i]);
+  i++;
+} while (i < str.length);
+
+
+
+
+///////////////////Pour un tableau, on pourrait utiliser :
+
+let arr = [1, 2, 3, 4, 5];
+let i = 0;
+
+do {
+  console.log(arr[i]);
+  i++;
+} while (i < arr.length);
+
+
+
+
+//Et pour un objet ://////////////////////////////////////
+let obj = { a: 1, b: 2, c: 3 };
+let keys = Object.keys(obj);
+let i = 0;
+
+do {
+  console.log(obj[keys[i]]);
+  i++;
+} while (i < keys.length);
+
+/*Notez que dans chaque exemple, la boucle do while garantit qu'au moins une itération
+sera exécutée, même si la chaîne, le tableau ou l'objet sont vides.*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+/*Les propriétés de classe
+Les propriétés de classe sont des variables qui définissent l'état de l'objet. Elles sont définies à l'intérieur de la classe, mais à l'extérieur des méthodes. Voici comment définir les propriétés de classe :*/
+
+class Personne {
+  constructor(nom, age) {
+    this.nom = nom;
+    this.age = age;
+  }
+}
+
+/*Dans cet exemple, la classe Personne a deux propriétés : nom et age. Lorsqu'un nouvel objet est créé à partir de cette classe, le constructeur initialise ces propriétés avec les valeurs spécifiées.
+
+Nous pouvons accéder aux propriétés de l'objet en utilisant la notation par point :*/
+
+const personne1 = new Personne("Rexxar", 25);
+console.log(personne1.nom); // Affiche : Rexxar
+console.log(personne1.age); // Affiche : 25
+
+/*Nous pouvons également modifier les valeurs des propriétés :*/
+
+personne1.nom = "Vol'jin";
+personne1.age = 30;
+console.log(personne1.nom); // Affiche : Vol'jin
+console.log(personne1.age); // Affiche : 30
+
+/*Les propriétés de classe sont spécifiques à chaque objet créé à partir de la classe. Chaque objet aura ses propres valeurs pour ces propriétés.*/
+</script>
+</body>
+</html>

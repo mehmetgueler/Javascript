@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+/*Le constructeur de classe
+Le constructeur est une méthode spéciale dans une classe qui est appelée lorsqu'un nouvel objet est créé à partir de cette classe. Il est utilisé pour initialiser les propriétés de l'objet. Voici comment définir un constructeur dans une classe :*/
+
+class Personne {
+  constructor(nom, age) {
+    this.nom = nom;
+    this.age = age;
+  }
+}
+
+/*Dans cet exemple, le constructeur de la classe Personne prend deux paramètres, nom et age. Lorsqu'un nouvel objet est créé à partir de la classe Personne, ces paramètres sont utilisés pour initialiser les propriétés nom et age de l'objet.
+
+Maintenant,nous pouvons créer un nouvel objet à partir de la classe Personne en utilisant le constructeur :*/
+
+const personne1 = new Personne('Tamara', 25);
+
+/*Dans cet exemple, nous créons un nouvel objet personne1 en utilisant le mot-clé new suivi du nom de la classe Personne et des arguments pour le constructeur ('Tamara' et 25).
+
+À partir de là, tu peux accéder aux propriétés de l'objet créé en utilisant la notation par point :*/
+
+
+console.log(personne1.nom); // Affiche : Alice
+console.log(personne1.age); // Affiche : 25
+
+/*Cela permet d'accéder et de manipuler les propriétés de l'objet nouvellement créé.*/
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

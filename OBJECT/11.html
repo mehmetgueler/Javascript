@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les objets</title>
+</head>
+<body>
+  <script>
+
+//Fonction déclaré dans l'objet peut accèder les paramètres/valeur de l'objet et les modifier dans l'objet
+let personne = {
+  nom: 'pascal',
+  prenom: 'blaise',
+    details: function () {
+    // Définition des variables lenom et leprenom en accédant aux propriétés nom et prenom de l'objet personne
+    let lenom = personne.nom;
+    let leprenom = personne.prenom;
+    console.log(lenom, leprenom);// affiche pascal blaise 
+  }
+};
+
+// Appel de la méthode "details" de l'objet "personne"
+personne.details();
+
+/*Dans cet exemple, nous avons un objet appelé "personne" qui a trois propriétés :
+ "nom", "prenom" et "details". La propriété "details" est une méthode qui utilise la notation 
+pointée pour accéder aux propriétés "nom" et "prenom" de l'objet "personne" et les stocker dans
+des variables locales "lenom" et "leprenom". Ensuite, elle affiche ces variables dans la console
+ à l'aide de la fonction "console.log()".
+
+Lorsque la méthode "details" est appelée sur l'objet "personne" en utilisant la notation pointée,
+elle affiche le nom et le prénom de la personne dans la console.
+
+Ce code est un exemple de la manière dont les méthodes peuvent être définies dans un objet en JavaScript.
+Les méthodes sont simplement des fonctions qui sont associées à des propriétés d'objet.
+Dans cet exemple, la méthode "details" est une fonction qui est associée à la propriété "details"
+de l'objet "personne".
+
+L'utilisation de la notation pointée pour accéder aux propriétés de l'objet à l'intérieur
+de la méthode est une autre caractéristique importante de la programmation orientée objet en JavaScript.
+Cela permet de créer des méthodes qui peuvent interagir avec les propriétés de l'objet
+sur lequel elles sont appelées.*/
+
+
+
+
+  </script>
+</body>
+</html>

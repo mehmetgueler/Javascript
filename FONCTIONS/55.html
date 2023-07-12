@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Fonctions</title>
+</head>
+
+<body>
+  "Fonctions imbriquées/imbriqués (fonction interne) en JavaScrip
+    Définir des parametres dans une fonction interne
+  <script>
+
+function foo1(a) {
+    function foo2(b) { 
+        function foo3(c) { 
+            function foo4(d) {
+
+              let addition = a + b + c + d // Calcul de la somme des 4 paramètres et stockage dans la variable addition
+              console.log(addition); 
+
+            }
+            foo4(6)    // Appel de la fonction foo4 avec la valeur 6 en paramètre
+        }
+        foo3(7);       // Appel de la fonction foo3 avec la valeur 7 en paramètre
+    }
+    foo2(8);           // Appel de la fonction foo2 avec la valeur 8 en paramètre
+}
+
+foo1(10);// Appel de la fonction foo1 avec la valeur 10 en paramètre
+
+/*Dans ce code, nous avons quatre fonctions imbriquées : foo1, foo2, foo3 et foo4.
+La fonction foo1 prend en paramètre a, la fonction foo2 prend en paramètre b,
+la fonction foo3 prend en paramètre c et la fonction foo4 prend en paramètre d.
+
+Lorsque la fonction foo1 est appelée avec une valeur en paramètre,
+elle appelle la fonction foo2 avec une valeur en paramètre. 
+La fonction foo2 appelle à son tour la fonction foo3 avec une valeur en paramètre,
+qui elle-même appelle la fonction foo4 avec une valeur en paramètre. 
+Cette dernière fonction calcule la somme des quatre paramètres passés
+en paramètre depuis les fonctions précédentes et affiche le résultat dans la console.
+
+Ainsi, lorsqu'on appelle la fonction foo1 avec la valeur 10 en paramètre, les fonctions
+imbriquées sont appelées dans l'ordre suivant : foo2 avec la valeur 8 en paramètre,
+foo3 avec la valeur 7 en paramètre, et foo4 avec la valeur 6 en paramètre. 
+La somme de ces quatre valeurs est calculée et affichée dans la console,
+ ce qui donne le résultat suivant : 31. */
+ 
+//même exemple avec les variable
+let varfoo1 = function (a) {
+  let varfoo2 = function (b) {
+    let varfoo3 =  function (c) {
+            function foo4(d) {
+              let addition = a + b + c + d  
+              console.log(addition); 
+            }
+            foo4(7)
+        }
+        foo3(8);
+    }
+    foo2(9);
+}
+
+foo1(11); //32
+/*************************************************************************************/
+
+
+
+
+/*************************************************************************************/
+// Déclaration de variables
+let var1 = 1;
+let var2 = 2;
+let var3 = 3;
+let var4 = 4;
+let var5 = 5;
+let var6 = 6;
+let var7 = 7;
+let var8 = 8;
+
+// Définition des fonctions imbriquées
+function mFoo1(a, a2) {
+  function mFoo2(b, b2) {
+    function mFoo3(c, c2) {
+      function mFoo4(d, d2) {
+        let aDDItion = a + a2 + b + b2 + c + c2 + d + d2;
+        console.log(aDDItion);
+      }
+      mFoo4(var7, var8); // Appel de la fonction mFoo4 avec var7 et var8 comme arguments
+    }
+    mFoo3(var5, var6); // Appel de la fonction mFoo3 avec var5 et var6 comme arguments
+  }
+  mFoo2(var3, var4); // Appel de la fonction mFoo2 avec var3 et var4 comme arguments
+}
+
+mFoo1(var1, var2);// Appel de la fonction mFoo1 avec var1 et var2 comme arguments
+
+/* Le code définit huit variables var1, var2, var3, var4, var5, var6, var7 et var8. 
+La fonction mFoo1 prend deux paramètres a et a2, la fonction mFoo2 prend deux paramètres b et b2, 
+la fonction mFoo3 prend deux paramètres c et c2, et la fonction mFoo4 prend deux paramètres d et d2. 
+Les fonctions imbriquées effectuent des additions des valeurs passées en paramètres, 
+et finalement, la somme de toutes les valeurs est affichée dans la console. */
+
+  </script>
+</body>
+
+</html>
