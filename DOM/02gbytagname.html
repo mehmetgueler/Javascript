@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>getElementByName</title>
+    <title>DOM</title>
 </head>
 <body>
 
@@ -12,100 +12,104 @@
 IL EST RECOMMANDÉ DE COPIER-COLLER CHAQUE BLOC DE CODE DANS UNE PAGE DISTINCTE. -->
 
 
-<!--getElementsByTagName, permet de récupérer tous les éléments du DOM qui ont une
-balise HTML spécifiée. Cette méthode retourne également une liste d'éléments (NodeList)
-respondant à la balise donnée. Par exemple, document.getElementsByTagName('p')
-récupérera tous les éléments <p> de la page.
+<!--getElementsByTagName, permet de récupérer tous les éléments du DOM qui ont une balise HTML spécifiée. Cette méthode retourne également une liste d'éléments (NodeList) respondant à la balise donnée. Par exemple, document.getElementsByTagName('p') récupérera tous les éléments <p> de la page.
 
-Il est important de noter que getElementsByName est moins utilisé que getElementById
-ou querySelector, car l'attribut name n'est pas aussi largement utilisé que l'attribut id.-->
+const elements = document.getElementsByTagName('nom-de-balise');
+
+elements : C'est la collection (ou liste) d'éléments HTML correspondant à la balise spécifiée. Vous pouvez accéder à ces éléments en utilisant les indices ou en itérant sur la collection.
+'nom-de-balise' : C'est le nom de balise HTML que vous souhaitez sélectionner. Par exemple, pour sélectionner tous les éléments de paragraphe <p>, vous utilisez 'p'. Le nom de balise doit être en minuscules.
+
+Il est important de noter que getElementsByName est moins utilisé que getElementById ou querySelector, car l'attribut name n'est pas aussi largement utilisé que l'attribut id.-->
+
+
+  <h1>Titre principal</h1>
+  <p>Paragraphe 1</p>
+  <p>Paragraphe 2</p>
+  <p>Paragraphe 3</p>
+
+  <script>
+    const paragraphs = document.getElementsByTagName('p');
+
+    for (let i = 0; i < paragraphs.length; i++) {
+      console.log(paragraphs[i].textContent);
+    }
+  </script>
+
+
+<!-- Dans cet exemple, nous utilisons getElementsByTagName('p') pour sélectionner tous les éléments de paragraphe <p> du document. La méthode renvoie une collection d'éléments qui correspond à cette balise.
+
+Ensuite, nous utilisons une boucle for pour parcourir la collection d'éléments de paragraphe et afficher leur contenu textuel à l'aide de textContent.
+  
+Ainsi, lorsque vous exécutez ce code, les contenus textuels de chaque élément de paragraphe seront affichés dans la console du navigateur.
+  
+La méthode getElementsByTagName() est très utile lorsque vous souhaitez travailler avec plusieurs éléments qui partagent la même balise. Vous pouvez accéder à leurs propriétés, les modifier, ou effectuer d'autres opérations en utilisant les indices ou en itérant sur la collection.
 
 
 
 
-<div>Powerfull Javascrip</div><!--L'indice du premier élément de type div est [0]-->
-<div>Le miel ne se périme jamais.</div>
-<p>Couleur bleu symbolise confiance.</p><!--L'indice du premier élément de type paragraphe est [0]-->
+L'utilisation de boucles avec la méthode getElementsByTagName() est couramment utilisée pour parcourir la collection d'éléments renvoyée par cette méthode. Cependant, il existe d'autres façons d'interagir avec les éléments sélectionnés sans utiliser de boucles.
 
+
+Voici quelques autres approches courantes :
+
+Accès par indice :
+Lorsque vous utilisez la méthode getElementsByTagName(), elle renvoie une collection d'éléments correspondant à la balise spécifiée. Cette collection est semblable à un tableau, mais ce n'est pas un tableau réel.
+
+Pour accéder à un élément spécifique dans la collection, vous pouvez utiliser l'indice de cet élément. Les indices commencent à partir de zéro, ce qui signifie que le premier élément a un indice de zéro, le deuxième élément a un indice de un, et ainsi de suite.
+
+Voici un exemple:-->
+
+<p>un paragragraphe</p>
+<p>deuxième paragragraphe</p>
+<p>troisième paragragraphe</p>
+
+<script>
+const elements = document.getElementsByTagName('p')[2];
+console.log(elements);
+</script>
+
+<!--Dans cet exemple, nous utilisons getElementsByTagName('p') pour sélectionner tous les éléments de paragraphe <p> du document. Cela renvoie une collection de ces éléments.
+
+Ensuite, nous utilisons l'indice [2] pour accéder à un élément spécifique dans la collection. Dans cet exemple, l'indice [2] fait référence au troisième élément de la collection. Les indices commencent à partir de zéro, donc le premier élément a l'indice [0], le deuxième élément a l'indice [1], et ainsi de suite.
+
+En utilisant [2], nous stockons cet élément spécifique dans la variable elements. Vous pouvez également utiliser cette variable pour travailler avec l'élément sélectionné, par exemple, pour modifier son contenu, ses styles, ses attributs, etc.
+
+Cet exemple montre comment sélectionner un élément spécifique en utilisant son indice dans la collection renvoyée par getElementsByTagName(). Vous pouvez utiliser cette approche pour travailler avec des éléments spécifiques et effectuer des opérations sur eux en utilisant les propriétés et méthodes de l'élément-->
+
+
+
+
+<script>
+const nombreDeParagraphes = document.getElementsByTagName('p');
+console.log(nombreDeParagraphes.length); 
+
+/*Dans cet exemple, nous utilisons getElementsByTagName('p') pour sélectionner tous les éléments de paragraphe <p> du document. La méthode getElementsByTagName() renvoie une collection de ces éléments.
+
+Ensuite, nous utilisons nombreDeParagraphes.length pour obtenir la taille de la collection, c'est-à-dire le nombre d'éléments de paragraphe présents dans le document. La propriété length nous donne le nombre d'éléments dans la collection.*/
+</script>
 
 
 <ul>
-<li>Pareidolia</li>
-<li>Verisimilitude</li>
-<li>Accismus</li>
-<li>Opinion</li>
+  <li>JavaScript</li>
+  <li>Python</li>
+  <li>CSS</li>
 </ul>
-<br /><br /><br />
+<ul>
+  <li>Ruby</li>
+  <li>C++</li>
+  <li>html</li>
+</ul>
 
-
-
-<div id="unid"></div>
-<div id="secid"></div>
-<div id="troid"></div>
-<div id="quaid"></div>
-<div id="maListe"></div>
-<div id="listeboucle"></div>
 <script>
+const selecLIelement = document.getElementsByTagName("li")[4]
+console.log(selecLIelement); //Affiche html
+</script>
 
-/*********************************************************************/
-// Récupération le contenu du premier élément div de la page
-let exemple1 = document.getElementsByTagName('DIV')[0].innerHTML;
-// Affiche le contenu récupéré dans l'élément div ayant l'ID "unid"
-document.getElementById('unid').innerHTML = exemple1;
-/*********************************************************************/
+<!--Dans cet exemple, nous avons deux listes <ul> avec plusieurs éléments <li>. Nous utilisons la méthode getElementsByTagName('li') pour sélectionner tous les éléments <li> présents dans le document. Ensuite, nous accédons à l'élément spécifique d'indice [4] dans cette collection.
 
-
-/*********************************************************************/
-// Récupération du premier élément "P" de la page
-// Si on ajoute du contenu, cela affectera également le contenu de l'élément P
-let exemple2= document.getElementsByTagName('P')[0].innerHTML;// = 'nouveau contenu'
-// Affichage du contenu récupéré dans la balise avec l'id "secid"
-document.getElementById('secid').innerHTML =  exemple2;
-/*********************************************************************/
+Le résultat sera affiché dans la console du navigateur. Dans cet exemple, l'élément spécifique est "C++". -->
 
 
 
-/*********************************************************************/
-// Sélectionne le premier élément de type "LI" dans le document
-let exemple3= document.getElementsByTagName('UL')[0].innerHTML;
-// Sélectionne l'élément ayant l'identifiant "quaid" et modifie son contenu avec le contenu de "exemple4"
-document.getElementById('troid').innerHTML = exemple3;
-// on peut faire la même chose pour la liste avec
-//let exemple= document.getElementsByTagName('LI')[l'indice de l'élément souhaité].innerHTML;
-/*********************************************************************/
-
-
-
-
-/*********************************************************************/
-// Récupération du nombre d'éléments "LI" de la page
-let elementsLi = document.getElementsByTagName('LI').length;
-// Ajout du nombre récupéré dans la balise avec l'id "maListe"
-document.getElementById('maListe').innerHTML = elementsLi;
-/*********************************************************************/
-
-
-/*********************************************************************/
-// Récupération de tous les éléments 'LI'
-var elementsLifor = document.getElementsByTagName('LI');
-// Boucle for pour parcourir tous les éléments
-for (var i = 0; i < elementsLifor.length; i++) {
-  // Ajout du contenu de chaque élément dans la div 'listeboucle' avec un saut de ligne entre chaque élément
-  document.getElementById('listeboucle').innerHTML += elementsLifor[i].innerHTML + '<br />';
-}
-/*********************************************************************/
-
-
-
-// Sélectionne tous les éléments du DOM ayant la balise spécifiée et les stocke dans la variable "recupererelement"
-let recupererelement = document.getElementsByTagName('*');
-// Récupère l'élément du DOM ayant l'ID "monid" et modifie son contenu avec le contenu de l'élément à l'indice 2 de la liste des éléments récupérés
-document.getElementById('monid').innerHTML = recupererelement[2].innerHTML;
-
-
-
-
-
-    </script>
 </body>
 </html>

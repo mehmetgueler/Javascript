@@ -4,98 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .mon-style {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
+    <title>DOM</title>
 </head>
 
 <body>
-<!--getElementById est une méthode de l'objet document en JavaScript qui permet de récupérer un élément HTML unique à partir de son identifiant id.*/-->
+<!--La méthode getElementById() est utilisée pour sélectionner un élément HTML spécifique en utilisant son identifiant unique (valeur de l'attribut id). Cela vous permet de sélectionner et de travailler avec un élément spécifique dans le DOM.
+
+Syntaxe :
+
+const element = document.getElementById('id-de-l-element');
+
+element : C'est la variable dans laquelle vous stockez la référence à l'élément HTML sélectionné. Vous pouvez utiliser cette variable pour accéder et modifier les propriétés de l'élément, telles que son contenu, ses attributs, ses styles, etc.
+document :document, représente le document HTML actuel.
+'id-de-l-element' : C'est l'identifiant unique de l'élément HTML que vous souhaitez sélectionner. Vous devez fournir le nom de l'identifiant entre guillemets simples ou doubles.
 
 
+Exemple :
+Considérons le code HTML suivant :
 
- <h1 id="titre">Titre de la page</h1>
- <p>Contenu de la page...</p>
+<div id="mon-element">
+  <h1>Titre</h1>
+  <p>Ceci est un paragraphe.</p>
+</div>
 
+Si vous souhaitez sélectionner l'élément <div> avec l'identifiant "mon-element", vous pouvez utiliser la méthode getElementById() de la manière suivante :
 
+const element = document.getElementById('mon-element');
 
+Dans cet exemple, la méthode getElementById('mon-element') est appelée sur l'objet document pour rechercher l'élément ayant l'identifiant "mon-element" dans le document. Une fois que l'élément est trouvé, une référence à cet élément est renvoyée et stockée dans la variable element.
 
+Vous pouvez maintenant utiliser la variable element pour interagir avec l'élément sélectionné. Par exemple, vous pouvez modifier le contenu de l'élément ou accéder à ses attributs et styles.
 
-<div id="exemple">Appuyer sur le bouton pour afficher le contenu modifié</div>
-<div id="exemple1">Un texte dans un div avec ID 'exemple1'</div>
-<div id="exemple2">Un texte dans un div avec ID 'exemple2'</div>
-<div id="exemple3">Un texte à afficher dans la console'</div>
+N'oubliez pas que l'identifiant fourni à getElementById() doit correspondre exactement à la valeur de l'attribut id de l'élément que vous souhaitez sélectionner. De plus, les identifiants sont sensibles à la casse, ce qui signifie que "monElement" et "monelement" sont considérés comme deux identifiants différents. Si aucun élément ne correspond à l'identifiant spécifié, la méthode getElementById() renverra null.
 
+Supposons que vous souhaitiez modifier le contenu du titre principal (<h1>) à l'aide de JavaScript. Vous pouvez utiliser getElementById() pour sélectionner l'élément avec l'identifiant "titre" et mettre à jour son contenu.-->
 
+    <h1 id="titre">Titre principal</h1>
+    <p id="paragraphe">Ceci est un paragraphe.</p>
 
-
-
-<button onclick="avecFonction()">appuyer</button>
-
-
-<p id="mon-paragraph">Mon paragraphe de départ</p>
-<button onclick="ajouterStyle()">Ajouter une classe CSS</button>
+<!--Voici comment vous pouvez le faire :-->
 
 <script>
-//// CHANGEMENT d'un titre dans la page
+const titreElement = document.getElementById('titre');
+titreElement.textContent = 'Nouveau titre';
+</script>
 
-let titre = document.getElementById('titre');// Récupère l'élément avec l'identifiant 'titre'
-titre.textContent = "Exemples getElementById";// Modifie le contenu textuel de l'élément
+<!--Dans cet exemple, nous utilisons getElementById('titre') pour sélectionner l'élément avec l'identifiant "titre" et le stocker dans la variable titreElement. Ensuite, nous utilisons la propriété textContent pour modifier le contenu de l'élément en lui attribuant la nouvelle valeur "Nouveau titre". Ainsi, le titre principal affichera maintenant "Nouveau titre".
 
+***textContent: est une propriété de l'interface Node dans le DOM (Document Object Model) qui représente le contenu textuel d'un élément. Il permet d'accéder au contenu texte contenu dans un élément HTML et de le modifier
 
+Dans cet exemple, textContent est utilisé pour obtenir le contenu texte de l'élément avec l'identifiant "titre" et pour le stocker dans la variable TitreElement. Dans le deuxième exemple, textContent est utilisé pour attribuer une nouvelle valeur au contenu texte de l'élément.
 
-//// Récupérer un élément avec l'identifiant(ID) et modifiler le contenu par innerHTML
-document.getElementById('exemple1').innerHTML='Texte recupére par getElementById et remplacé par innerHTML ';
+⁡⁢⁣⁣Il est important de noter que textContent retourne le texte brut contenu dans l'élément, sans interpréter les balises HTML présentes à l'intérieur. Cela signifie que si l'élément contient du texte et des balises HTML, textContent renverra le texte tel qu'il est sans les balises.
 
-
-
-
-//Récupérer un éléement avec l'identifiant(ID) et stocker le contenu dans une variable pour una usage ultérieur
-let stockIDexemple2 = document.getElementById('exemple2').innerHTML//sans modification du contenu
-
-//Récupérer un éléement avec l'identifiant(ID) et stocker le contenu dans une variable avec nouveau contenu
-let stockage = document.getElementById('exemple2').innerHTML = "Modifiction contenu de l'élément et stockage dans une variable ";
-console.log(stockage);//Modifiction contenu de l'élément et stockage dans une variable 
+⁡⁢⁣⁣Par exemple, si l'élément est <p>Mon <strong>paragraphe</strong> de texte</p>, alors textContent retournera "Mon paragraphe de texte".⁡⁡-->
 
 
 
 
 
-//Récupérer un élément(bouton) avec l'ID, insérer un centenu dans la page en modifiant le contenu d'un autre élément spécifique ID
-function avecFonction(){
-    document.getElementById('exemple').innerHTML = "Exemple avec bouton"
-}
-////////////////////////////////////////
+
+<div id="container">
+    <h1 id="mon-titre">Mon titre</h1>
+    <p id="mon-paragraphe">Ceci est un paragraphe.</p>
+  </div>
+
+<script>
+const newColorTitle = document.getElementById('mon-titre');
+const addBoldElement = document.getElementById('mon-paragraphe');
+
+newColorTitle.style.color = 'red';
+addBoldElement.style.fontWeight = 'bold';
+</script>
+
+<!--Dans cet exemple, nous avons un élément <h1> avec l'identifiant "mon-titre" et un élément <p> avec l'identifiant "mon-paragraphe". Nous utilisons la méthode getElementById() pour sélectionner ces éléments spécifiques et les stocker dans les variables newcolorTitle et addBoldElement, respectivement.
+
+Ensuite, nous modifions les styles de ces éléments en utilisant les propriétés style. Par exemple, nous définissons la couleur du texte du titre sur rouge en utilisant newColorTitle.style.color = 'red', et nous mettons le paragraphe en gras en utilisant addBoldElement.style.fontWeight = 'bold'.-->
 
 
 
 
 
-////////////////////////////////////////
-function consoleLog() {
-      let afficherMsgDansConsole = document.getElementById("exemple3").innerHTML;
-      console.log(afficherMsgDansConsole);
-  }
-  consoleLog();
-////////////////////////////////////////
 
 
+<!--Pour résumer, la méthode getElementById() est une fonction essentielle du JavaScript DOM (Document Object Model) qui permet de sélectionner un élément spécifique dans le document HTML en utilisant son identifiant unique. Voici quelques points clés à retenir :
 
-///// CSS
-function ajouterStyle() {
-			let element = document.getElementById("mon-paragraph");
-			element.classList.add("mon-style");
-		}
+getElementById() est appelée sur l'objet document, qui représente le document HTML actuel.
+Vous devez fournir l'identifiant unique de l'élément en tant que paramètre, entre guillemets simples ou doubles.
+La méthode renvoie une référence à l'élément correspondant à l'identifiant spécifié, ou null s'il n'existe aucun élément correspondant.
+Vous pouvez utiliser la référence renvoyée pour interagir avec l'élément, en accédant à ses propriétés, en modifiant son contenu ou ses styles, en ajoutant ou supprimant des classes, etc.
+Les identifiants d'élément doivent être uniques dans le document HTML pour garantir la sélection correcte de l'élément souhaité.
+getElementById() est une méthode simple mais puissante qui facilite la manipulation des éléments spécifiques dans le DOM. Elle est couramment utilisée pour effectuer des opérations telles que la modification du contenu, l'ajout ou la suppression de classes, ou l'interaction avec des événements.
 
 
+NOTE
+La méthode getElementById() est spécifique à l'objet global document et n'est pas disponible sur tous les objets du DOM comme d'autres méthodes de recherche d'éléments, par exemple Document.querySelector() et Document.querySelectorAll(). La raison en est que les identifiants (ID) doivent être uniques dans l'ensemble du document HTML, ce qui signifie qu'il n'est pas nécessaire d'avoir une version "locale" de cette fonction pour les autres objets du DOM.
+
+Ainsi, pour sélectionner un élément en utilisant son identifiant unique, vous devez utiliser getElementById() en l'appelant directement sur l'objet global document. Cette méthode effectue une recherche dans tout le document et renvoie la référence de l'élément correspondant à l'identifiant spécifié.-->
 
 
         
 
-    </script>
 </body>
 </html>

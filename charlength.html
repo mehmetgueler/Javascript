@@ -5,21 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .highlight {
+          background-color: yellow;
+        }
+      </style>
+    
 </head>
 <body>
-    <script>
+
+  <div id="container">
+    <h1 id="titre">Titre principal</h1>
+    <p id="paragraphe">Ceci est un paragraphe.</p>
+  </div></head>
+
+  <script>
+const titreElement = document.getElementById('titre');
+    const paragrapheElement = document.getElementById('paragraphe');
+
+    titreElement.style.color = 'red';
+    paragrapheElement.style.fontWeight = 'bold';
 
 
-let x = [10, 11, 12, 13];
-console.log(x);
 
-let Y = [...x, 50];
-
-console.log(Y);
-
-
-
-
-    </script>
+</script>
 </body>
 </html>
